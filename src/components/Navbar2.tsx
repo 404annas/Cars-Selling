@@ -68,10 +68,10 @@ const Navbar2 = () => {
 
                     {/* Navigation Links */}
                     <div className="flex items-center ml-36 space-x-6 text-white font-bold text-sm overflow-x-auto no-scrollbar">
-                        <a href="#featured-cars" className="hover:opacity-80 transition-all duration-300 whitespace-nowrap ">Available Cars</a>
+                        <a href="#featured-cars" className="hover:opacity-80 transition-all duration-300 whitespace-nowrap ">Available Cars <span className="text-[10px]">( Coming Soon )</span></a>
                         <Link href="/how-we-deliver" className="hover:opacity-80 transition-all duration-300 whitespace-nowrap">How We Deliver</Link>
                         <Link href="/choose-us" className="hover:opacity-80 transition-all duration-300 whitespace-nowrap">Why Choose Us</Link>
-                        <a href="#" className="hover:opacity-80 transition-all duration-300 whitespace-nowrap">Testimonials</a>
+                        <a href="#testimonials" className="hover:opacity-80 transition-all duration-300 whitespace-nowrap">Testimonials</a>
                         <Link href="/faqs" className="hover:opacity-80 transition-all duration-300 whitespace-nowrap">FAQ's</Link>
                     </div>
 
@@ -236,16 +236,16 @@ const Navbar2 = () => {
                             {/* 2. Navigation Links */}
                             <div className="flex flex-col space-y-4">
                                 <span className="text-xs font-bold text-gray-400 uppercase">Pages</span>
-                                <Link href="/#featured-cars" className="flex items-center gap-3 text-gray-700 font-medium hover:text-[#4e0505] transition-colors">
-                                    <Home size={18} /> Available Cars
+                                <Link href="/" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3 text-gray-700 font-medium hover:text-[#4e0505] transition-colors">
+                                    <Home size={18} /> Available Cars <span className="text-[10px]">( Coming Soon )</span>
                                 </Link>
-                                <Link href="/how-we-deliver" className="flex items-center gap-3 text-gray-700 font-medium hover:text-[#4e0505] transition-colors">
+                                <Link href="/how-we-deliver" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3 text-gray-700 font-medium hover:text-[#4e0505] transition-colors">
                                     <Truck size={18} /> How We Deliver
                                 </Link>
-                                <Link href="/choose-us" className="flex items-center gap-3 text-gray-700 font-medium hover:text-[#4e0505] transition-colors">
+                                <Link href="/choose-us" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3 text-gray-700 font-medium hover:text-[#4e0505] transition-colors">
                                     <Info size={18} /> Why Choose Us
                                 </Link>
-                                <Link href="/faqs" className="flex items-center gap-3 text-gray-700 font-medium hover:text-[#4e0505] transition-colors">
+                                <Link href="/faqs" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3 text-gray-700 font-medium hover:text-[#4e0505] transition-colors">
                                     <HelpCircle size={18} /> FAQ's
                                 </Link>
                             </div>

@@ -40,7 +40,7 @@ const Footer2 = () => {
                 <div className="flex-shrink-0">
                     <h3 className="text-white font-bold text-sm uppercase tracking-widest mb-6">Navigation</h3>
                     <ul className="space-y-3 text-gray-300 text-[15px]">
-                        {["Home", "Available Cars", "How We Deliver", "Why Choose Us", "Testimonials", "FAQ's"].map((item) => (
+                        {["Home", "How We Deliver", "Why Choose Us", "Testimonials", "FAQ's"].map((item) => (
                             <li key={item}>
                                 <a href="#" className="hover:text-white transition-colors">{item}</a>
                             </li>
