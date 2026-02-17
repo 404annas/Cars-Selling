@@ -36,7 +36,7 @@ const stats = [
 
 const Numbers = () => {
     return (
-        <section className="pt-10 pb-20 bg-white">
+        <section className="pt-10 pb-20 bg-black">
             <div className="container mx-auto px-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {stats.map((stat) => (
@@ -44,8 +44,8 @@ const Numbers = () => {
                             key={stat.id}
                             className={`relative rounded-[30px] overflow-hidden shadow-sm transition-transform duration-300 hover:-translate-y-2
                 ${stat.theme === "blue"
-                                    ? "bg-blue-500" // blue Card
-                                    : "bg-[#161621]" // Dark Card
+                                    ? "bg-red-600" // blue Card
+                                    : "bg-red-800" // Dark Card
                                 }
               `}
                         >
@@ -55,8 +55,8 @@ const Numbers = () => {
                                 <div
                                     className={`absolute top-0 right-0 w-full h-full 
                     ${stat.theme === "blue"
-                                            ? "bg-blue-400" // Lighter blue shape on blue Card
-                                            : "bg-blue-500/10" // Faint blue shape on Dark Card
+                                            ? "bg-red-400" // Lighter blue shape on blue Card
+                                            : "bg-red-500/10" // Faint blue shape on Dark Card
                                         }
                   `}
                                     style={{
@@ -66,8 +66,8 @@ const Numbers = () => {
                                 <div
                                     className={`absolute top-0 left-0 w-full h-full 
                     ${stat.theme === "blue"
-                                            ? "bg-blue-600" // Darker blue shape on blue Card
-                                            : "bg-blue-900/20" // Dark blue shape on Dark Card
+                                            ? "bg-red-600" // Darker blue shape on blue Card
+                                            : "bg-red-900/20" // Dark blue shape on Dark Card
                                         }
                   `}
                                     style={{
@@ -81,8 +81,8 @@ const Numbers = () => {
                                 <div
                                     className={`h-full w-full rounded-[24px] border border-opacity-40 flex flex-col items-center justify-center py-12 space-y-4
                     ${stat.theme === "blue"
-                                            ? "border-blue-800" // Dark blue line on blue card
-                                            : "border-blue-500" // Bright blue line on Dark card
+                                            ? "border-red-800" // Dark blue line on blue card
+                                            : "border-red-500" // Bright blue line on Dark card
                                         }
                   `}
                                 >
@@ -90,8 +90,8 @@ const Numbers = () => {
                                     <div
                                         className={`mb-2
                       ${stat.theme === "blue"
-                                                ? "text-[#161621]" // Dark Icon on blue
-                                                : "text-blue-500" // blue Icon on Dark
+                                                ? "text-red-800" // Dark Icon on blue
+                                                : "text-red-500" // blue Icon on Dark
                                             }
                     `}
                                     >
@@ -99,7 +99,7 @@ const Numbers = () => {
                                     </div>
 
                                     {/* Number Value */}
-                                    <h3 className="text-4xl md:text-5xl font-bold text-white tracking-wide orb">
+                                    <h3 className="text-4xl md:text-5xl font-bold text-black tracking-wide orb">
                                         {stat.value}
                                     </h3>
 
@@ -107,8 +107,8 @@ const Numbers = () => {
                                     <p
                                         className={`font-medium text-base -mt-2 md:text-lg orb capitalize tracking-wide
                       ${stat.theme === "blue"
-                                                ? "text-[#161621]" // Dark Text on blue
-                                                : "text-blue-500" // blue Text on Dark
+                                                ? "text-red-900" // Dark Text on blue
+                                                : "text-red-500" // blue Text on Dark
                                             }
                     `}
                                     >

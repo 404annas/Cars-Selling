@@ -48,16 +48,16 @@ const WorkSection = () => {
 
     return (
         <>
-            <section className="py-10 px-4 bg-white overflow-hidden">
+            <section className="py-10 px-4 bg-black overflow-hidden">
                 {/* --- Heading Part --- */}
                 <div className="text-center mb-10">
-                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#050c4e] mb-4">
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-red-600 mb-4">
                         More Than Just a Dealership: We Are Your Automotive Partners
                     </h2>
-                    <p className="text-gray-500 max-w-3xl mx-auto text-sm md:text-base leading-relaxed">
+                    <p className="text-gray-400 max-w-3xl mx-auto text-sm md:text-base leading-relaxed">
                         At Elite Motor Cars, we define value as the intersection of access, peace of mind, and simplicity. Buying a specialized import or luxury European vehicle can be complex and risky — our role is to absorb that complexity so you can simply enjoy the drive.
                     </p>
-                    <button className="mt-8 border-2 border-[#050c4e] text-[#050c4e] font-bold py-2 px-8 rounded-lg hover:bg-[#050c4e] hover:text-white transition-all text-sm cursor-pointer duration-300">
+                    <button className="mt-8 border-2 border-red-600 text-red-600 font-bold py-2 px-8 rounded-lg hover:bg-red-600 hover:text-white transition-all text-sm cursor-pointer duration-300">
                         Experience the Elite Difference &gt;
                     </button>
                 </div>
@@ -81,7 +81,7 @@ const WorkSection = () => {
                                                 : "left-0 lg:left-15"}
                                         `}
                                         style={{
-                                            WebkitTextStroke: "1px #9ca3af",
+                                            WebkitTextStroke: "1px #f63b3b",
                                             color: "transparent",
                                         }}
                                     >
@@ -93,8 +93,8 @@ const WorkSection = () => {
                                         ${index % 2 !== 0
                                             ? "lg:right-24 text-center lg:text-left"
                                             : "lg:left-50 text-center lg:text-left"}`}>
-                                        <h3 className="text-lg sm:text-xl font-bold text-[#050c4e] mb-4">{step.title}</h3>
-                                        <p className="text-gray-600 text-sm leading-normal max-w-sm mx-auto lg:mx-0">
+                                        <h3 className="text-lg sm:text-xl font-bold text-red-600 mb-4">{step.title}</h3>
+                                        <p className="text-gray-400 text-sm leading-normal max-w-sm mx-auto lg:mx-0">
                                             {step.desc}
                                         </p>
                                     </div>
