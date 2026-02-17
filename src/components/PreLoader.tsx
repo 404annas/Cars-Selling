@@ -77,7 +77,7 @@ const PreLoader = () => {
 
                         {/* Wheels - Spinning Fast */}
                         <g className="origin-[25px_35px] animate-spin-wheels">
-                            <circle cx="25" cy="35" r="7" fill="black" stroke="f63b3b" strokeWidth="2.5" />
+                            <circle cx="25" cy="35" r="7" fill="black" stroke="#f63b3b" strokeWidth="2.5" />
                             <circle cx="25" cy="35" r="2" fill="#f63b3b" />
                             <rect x="24" y="28" width="2" height="14" fill="#f63b3b" rx="1" />
                             <rect x="18" y="34" width="14" height="2" fill="#f63b3b" rx="1" />

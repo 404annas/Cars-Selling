@@ -9,7 +9,7 @@ const page = () => {
     <div>
       <PreLoader />
       <NextTopLoader
-        color="#050c4e"
+        color="#f63b3b"
         initialPosition={0.08}
         crawlSpeed={200}
         height={3}
@@ -17,7 +17,7 @@ const page = () => {
         showSpinner={true}
         easing="ease"
         speed={200}
-        shadow="0 0 10px #050c4e,0 0 5px #050c4e"
+        shadow="0 0 10px #f63b3b,0 0 5px #f63b3b"
         template='<div class="bar" role="bar"><div class="peg"></div></div>
   <div class="spinner" role="spinner"><div class="spinner-icon"></div></div>'
         zIndex={1600}
