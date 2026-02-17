@@ -242,23 +242,23 @@ const cars = [
 
 const AllCarsPage = () => {
     return (
-        <div className="min-h-screen bg-gray-50 pb-10">
+        <div className="min-h-screen bg-black">
             {/* Breadcrumb */}
-            <div className="bg-white border-b border-gray-200">
-                <div className="container mx-auto px-4 py-4 flex items-center text-sm text-gray-500">
-                    <Link href="/" className="hover:text-blue-600 transition">Home</Link>
+            <div className="bg-black border-b border-red-800">
+                <div className="container mx-auto px-4 py-4 flex items-center text-sm text-gray-400">
+                    <Link href="/" className="hover:text-red-600 transition">Home</Link>
                     <span className="mx-2">/</span>
-                    <span className="text-gray-900 font-semibold">All Cars</span>
+                    <span className="text-red-600 font-semibold">All Cars</span>
                 </div>
             </div>
 
             <section className="px-4 sm:px-10 py-10 bg-black">
                 {/* Header */}
                 <div className="flex sm:flex-row flex-col gap-2 items-center justify-between mb-10">
-                    <h2 className="text-2xl sm:text-3xl font-bold orb text-white">
+                    <h2 className="text-2xl sm:text-3xl font-bold orb text-red-600">
                         ALL CARS
                     </h2>
-                    <p className="text-white underline text-sm">
+                    <p className="text-red-600 underline text-sm">
                         Showing all {cars.length} vehicles
                     </p>
                 </div>
@@ -299,7 +299,7 @@ const AllCarsPage = () => {
 
                             {/* Specs */}
                             <div className="bg-black text-white rounded-xl p-0 space-y-4">
-                                <div className="grid grid-cols-3 gap-4 text-center text-xs sm:text-sm border border-blue-950 rounded-xl py-3 pl-2 pr-1">
+                                <div className="grid grid-cols-3 gap-4 text-center text-xs sm:text-sm border border-red-950 rounded-xl py-3 pl-2 pr-1">
                                     {car.specs.map((spec, i) => {
                                         const Icon = spec.icon
                                         return (
@@ -316,7 +316,7 @@ const AllCarsPage = () => {
 
                                 {/* Button */}
                                 <Link href={`/cars/${index}`}>
-                                    <button className="w-full bg-[#050c4e] text-white py-3 rounded-xl font-medium hover:bg-[#030835] orb transition-all duration-300 cursor-pointer sm:text-base text-sm">
+                                    <button className="w-full bg-red-700 text-white py-3 rounded-xl font-medium hover:bg-red-800 orb transition-all duration-300 cursor-pointer sm:text-base text-sm">
                                         SEE DETAILS
                                     </button>
                                 </Link>
