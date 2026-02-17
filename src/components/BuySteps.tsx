@@ -85,14 +85,14 @@ const BuySteps = () => {
     ];
 
     return (
-        <section className="pt-10 sm:pt-14 bg-white px-4 sm:px-6">
+        <section className="pt-10 sm:pt-14 bg-black px-4 sm:px-6">
             <div className="max-w-5xl mx-auto">
                 {/* Main Heading Section */}
                 <div className="mb-10 text-center">
-                    <h2 className="text-xl sm:text-2xl md:text-3xl font-bold leading-none text-gray-900 mb-3 px-2">
+                    <h2 className="text-xl sm:text-2xl md:text-3xl font-bold leading-none text-red-600 mb-3 px-2">
                         What value and how we add value to our customers
                     </h2>
-                    <p className="text-gray-600 text-xs sm:text-sm md:text-base max-w-2xl mx-auto px-4">
+                    <p className="text-gray-400 text-xs sm:text-sm md:text-base max-w-2xl mx-auto px-4">
                         More Than Just a Dealership: We Are Your Automotive Partners. Our role is to absorb complexity so you can simply enjoy the drive.
                     </p>
                 </div>
@@ -105,7 +105,7 @@ const BuySteps = () => {
                             {/* Left Side: Icon and Vertical Line */}
                             <div className="flex flex-col items-center min-w-[50px] sm:min-w-[80px]">
                                 <div
-                                    className="w-10 h-10 sm:w-14 sm:h-14 rounded-full border-[3px] sm:border-[4px] flex items-center justify-center bg-white z-20 shadow-sm shrink-0"
+                                    className="w-10 h-10 sm:w-14 sm:h-14 rounded-full border-[3px] sm:border-[4px] flex items-center justify-center bg-black z-20 shadow-sm shrink-0"
                                     style={{ borderColor: step.color }}
                                 >
                                     {step.icon}
@@ -143,7 +143,7 @@ const BuySteps = () => {
 
                                 {/* Content text */}
                                 <div className="pl-1 sm:pl-6 pr-2">
-                                    <div className="text-gray-700 text-xs sm:text-sm md:text-base leading-relaxed font-medium max-w-3xl">
+                                    <div className="text-gray-400 text-xs sm:text-sm md:text-base leading-relaxed font-medium max-w-3xl">
                                         {step.content}
                                     </div>
                                 </div>
@@ -154,7 +154,7 @@ const BuySteps = () => {
 
                 {/* Closing Footer */}
                 <div className="flex items-center justify-center mt-10">
-                    <button className="w-full sm:w-auto bg-gradient-to-r from-[#3b82f6] to-[#1a4fc2] text-white font-semibold tracking-wide px-10 py-3 rounded-full shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 active:scale-95 cursor-pointer text-sm sm:text-base">
+                    <button className="w-full sm:w-auto bg-gradient-to-r from-[#f63b3b] to-[#c21a1a] text-white font-semibold tracking-wide px-10 py-3 rounded-full shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 active:scale-95 cursor-pointer text-sm sm:text-base">
                         Enquire Now
                     </button>
                 </div>

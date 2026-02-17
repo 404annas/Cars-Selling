@@ -40,10 +40,10 @@ const HowToBuy = () => {
     ];
 
     return (
-        <section className="py-10 px-6 bg-white">
+        <section className="py-10 px-6 bg-black">
             <div className="max-w-7xl mx-auto">
                 {/* Section Heading */}
-                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#333] mb-12 ml-2">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-red-600 mb-12 ml-2">
                     Why Choose Elite Motor Cars
                 </h2>
                 {/* Steps Container */}
@@ -55,7 +55,7 @@ const HowToBuy = () => {
                         >
                             {/* Circular ID Part */}
                             <div className="bg-white m-1 rounded-full min-w-[50px] h-[50px] flex items-center justify-center">
-                                <span className={`text-xl font-bold ${index === 0 ? 'text-[#3498db]' : index === 1 ? 'text-[#2980b9]' : index === 2 ? 'text-[#d63384]' : index === 3 ? 'text-[#e67e22]' : 'text-[#d4ac0d]'}`}>
+                                <span className={`text-xl font-bold ${index === 0 ? 'text-[#3498db]' : index === 1 ? 'text-[#2980b9]' : index === 2 ? 'text-[#d63392]' : index === 3 ? 'text-[#e67e22]' : 'text-[#d4ac0d]'}`}>
                                     {step.id}
                                 </span>
                             </div>
