@@ -110,30 +110,30 @@ const SearchResultsContent = () => {
     }, [searchParams]);
 
     return (
-        <div className="min-h-screen bg-gray-50">
+        <div className="min-h-screen bg-black">
             {/* Breadcrumb */}
-            <div className="bg-white border-b border-gray-200">
-                <div className="container mx-auto px-4 py-4 flex items-center text-sm text-gray-500">
-                    <Link href="/" className="hover:text-blue-600 transition">Home</Link>
+            <div className="bg-black border-b border-red-800">
+                <div className="container mx-auto px-4 py-4 flex items-center text-sm text-red-600">
+                    <Link href="/" className="hover:text-red-600 transition">Home</Link>
                     <span className="mx-2">/</span>
-                    <span className="text-gray-900 font-semibold">Search Results</span>
+                    <span className="text-red-600 font-semibold">Search Results</span>
                 </div>
             </div>
 
             <div className="container mx-auto px-4 mt-8">
                 {/* Search Info Header */}
-                <div className="bg-white rounded-2xl p-6 border border-gray-300 mb-8">
+                <div className="bg-black rounded-2xl p-6 border border-red-800 mb-8">
                     <div className="flex items-center gap-3 mb-2">
-                        <SearchIcon className="text-blue-500" size={24} />
-                        <h1 className="text-xl sm:text-2xl font-bold text-gray-900">Search Results</h1>
+                        <SearchIcon className="text-red-600" size={24} />
+                        <h1 className="text-xl sm:text-2xl font-bold text-red-600">Search Results</h1>
                     </div>
                     {hasSearched && (
-                        <p className="text-gray-600">
-                            Found <span className="font-bold text-blue-600">{filteredCars.length}</span> {filteredCars.length === 1 ? 'car' : 'cars'} matching your criteria
+                        <p className="text-gray-400">
+                            Found <span className="font-bold text-red-600">{filteredCars.length}</span> {filteredCars.length === 1 ? 'car' : 'cars'} matching your criteria
                         </p>
                     )}
                     {!hasSearched && (
-                        <p className="text-gray-600">
+                        <p className="text-gray-400">
                             No filters applied. Use the search bar above to find your perfect car.
                         </p>
                     )}
@@ -145,7 +145,7 @@ const SearchResultsContent = () => {
                         {filteredCars.map((car) => (
                             <div
                                 key={car.id}
-                                className="bg-white rounded-2xl overflow-hidden border border-gray-300"
+                                className="bg-black rounded-2xl overflow-hidden border border-gray-300"
                             >
                                 {/* Car Image */}
                                 <div className="relative h-48 w-full">
@@ -155,33 +155,33 @@ const SearchResultsContent = () => {
                                         fill
                                         className="object-cover"
                                     />
-                                    <div className="absolute top-3 left-3 bg-blue-500 text-white px-3 py-1 rounded-full text-xs font-bold">
+                                    <div className="absolute top-3 left-3 bg-red-500 text-white px-3 py-1 rounded-full text-xs font-bold">
                                         In Stock
                                     </div>
                                 </div>
 
                                 {/* Car Details */}
                                 <div className="p-5">
-                                    <h3 className="text-lg font-bold text-gray-900 mb-1 truncate">{car.name}</h3>
-                                    <p className="text-sm text-gray-500 mb-3 truncate">{car.tagline}</p>
+                                    <h3 className="text-lg font-bold text-red-600 mb-1 truncate">{car.name}</h3>
+                                    <p className="text-sm text-gray-400 mb-3 truncate">{car.tagline}</p>
 
                                     <div className="flex items-center gap-2 mb-4">
-                                        <span className="text-xl font-bold text-blue-600">USD ${car.price}</span>
+                                        <span className="text-xl font-bold text-red-600">USD ${car.price}</span>
                                         <span className="text-xs text-gray-400">Excl. Gov Charges</span>
                                     </div>
 
                                     {/* Specs */}
                                     <div className="grid grid-cols-3 gap-2 mb-4">
-                                        <div className="bg-gray-50 p-2 rounded-lg text-center">
-                                            <Gauge size={16} className="mx-auto mb-1 text-gray-600" />
+                                        <div className="bg-red-50 p-2 rounded-lg text-center">
+                                            <Gauge size={16} className="mx-auto mb-1 text-gray-700" />
                                             <p className="text-xs text-gray-500 font-medium">{car.specs.mileage}</p>
                                         </div>
-                                        <div className="bg-gray-50 p-2 rounded-lg text-center">
-                                            <Cog size={16} className="mx-auto mb-1 text-gray-600" />
+                                        <div className="bg-red-50 p-2 rounded-lg text-center">
+                                            <Cog size={16} className="mx-auto mb-1 text-gray-700" />
                                             <p className="text-xs text-gray-500 font-medium">{car.specs.engine}</p>
                                         </div>
-                                        <div className="bg-gray-50 p-2 rounded-lg text-center">
-                                            <Settings size={16} className="mx-auto mb-1 text-gray-600" />
+                                        <div className="bg-red-50 p-2 rounded-lg text-center">
+                                            <Settings size={16} className="mx-auto mb-1 text-gray-700" />
                                             <p className="text-xs text-gray-500 font-medium">{car.specs.transmission}</p>
                                         </div>
                                     </div>
@@ -189,7 +189,7 @@ const SearchResultsContent = () => {
                                     {/* Action Buttons */}
                                     <div className="flex gap-2">
                                         <Link href={`/cars/${car.id}`} className="flex-1">
-                                            <button className="w-full bg-[#050c4e] hover:bg-[#030835] text-white font-semibold py-2.5 rounded-lg transition-all duration-300 cursor-pointer text-sm">
+                                            <button className="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-2.5 rounded-lg transition-all duration-300 cursor-pointer text-sm">
                                                 View Details
                                             </button>
                                         </Link>
@@ -212,7 +212,7 @@ const SearchResultsContent = () => {
                                                     toast.error(`${car.name} is already in your cart.`);
                                                 }
                                             }}
-                                            className="bg-white border-2 border-blue-200 hover:border-blue-500 hover:text-blue-600 text-gray-700 font-semibold py-2.5 px-4 rounded-lg transition-all duration-300 cursor-pointer"
+                                            className="bg-white border-2 border-red-200 hover:border-red-500 hover:text-red-600 text-gray-700 font-semibold py-2.5 px-4 rounded-lg transition-all duration-300 cursor-pointer"
                                         >
                                             <ShoppingCart size={18} />
                                         </button>
@@ -225,14 +225,14 @@ const SearchResultsContent = () => {
 
                 {/* No Results */}
                 {hasSearched && filteredCars.length === 0 && (
-                    <div className="bg-white rounded-2xl p-12 text-center shadow-sm border border-gray-100">
-                        <SearchIcon size={64} className="mx-auto text-gray-300 mb-4" />
-                        <h3 className="text-xl font-bold text-gray-900 mb-2">No Cars Found</h3>
-                        <p className="text-gray-600 mb-6">
+                    <div className="bg-black rounded-2xl p-12 text-center shadow-sm border border-red-800">
+                        <SearchIcon size={64} className="mx-auto text-gray-400 mb-4" />
+                        <h3 className="text-xl font-bold text-red-600 mb-2">No Cars Found</h3>
+                        <p className="text-gray-400 mb-6">
                             No cars match your current filters. Try adjusting your search criteria.
                         </p>
-                        <Link href="/">
-                            <button className="bg-[#050c4e] hover:bg-[#030835] text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300">
+                        <Link href="/cars/list">
+                            <button className="bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300">
                                 Browse All Cars
                             </button>
                         </Link>
