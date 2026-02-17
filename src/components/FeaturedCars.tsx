@@ -279,7 +279,7 @@ const FeaturedCars = () => {
 
             {/* Header */}
             <div className="flex sm:flex-row flex-col gap-2 items-center justify-between mb-10">
-                <h2 className="text-2xl sm:text-3xl font-bold orb text-white">
+                <h2 className="text-2xl sm:text-3xl font-bold orb text-red-600">
                     FEATURED CARS
                 </h2>
 

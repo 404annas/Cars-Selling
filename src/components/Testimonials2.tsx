@@ -78,18 +78,18 @@ const Testimonials2 = () => {
   };
 
   return (
-    <section className="w-full py-10 bg-[#fbebeb] overflow-hidden">
+    <section className="w-full py-10 bg-black overflow-hidden">
       <div className="container mx-auto px-4">
 
         {/* Header with Lines and Navigation Arrows */}
         <div className="flex items-center justify-between mb-10 relative">
           {/* Background Line */}
-          <div className="absolute left-0 right-0 top-1/2 h-[1px] bg-gray-200 -z-10 hidden md:block"></div>
+          <div className="absolute left-0 right-0 top-1/2 h-[1px] bg-red-200 -z-10 hidden md:block"></div>
 
           <div className="bg-[#fbebeb] pr-6 z-10 mx-auto md:mx-0">
             {/* Centered Title logic roughly matching image */}
             <div className="absolute left-0 right-0 top-1/2 -translate-y-1/2 text-center pointer-events-none hidden md:block">
-              <span className="bg-[#fbebeb] px-6 text-2xl sm:text-3xl font-bold text-black">
+              <span className="bg-black px-6 text-2xl sm:text-3xl font-bold text-red-600">
                 User Reviews & Ratings
               </span>
             </div>
@@ -100,18 +100,18 @@ const Testimonials2 = () => {
           </div>
 
           {/* Navigation Arrows (Top Right) */}
-          <div className="bg-[#fbebeb] pl-6 z-10 hidden md:flex items-center gap-4">
+          <div className="bg-black pl-6 z-10 hidden md:flex items-center gap-4">
             <button
               onClick={handlePrev}
               disabled={currentIndex === 0}
-              className={`p-2 rounded-full transition-colors cursor-pointer duration-300 ${currentIndex === 0 ? 'text-red-300 bg-black hover:cursor-not-allowed' : 'text-red-600 hover:bg-black'}`}
+              className={`p-2 rounded-full transition-colors cursor-pointer duration-300 ${currentIndex === 0 ? 'text-red-300 bg-red-50 hover:cursor-not-allowed' : 'text-red-600 hover:bg-red-100'}`}
             >
               <ChevronLeft size={24} strokeWidth={3} />
             </button>
             <button
               onClick={handleNext}
               disabled={currentIndex >= maxIndex}
-              className={`p-2 rounded-full transition-colors cursor-pointer duration-300 ${currentIndex >= maxIndex ? 'text-red-300 bg-black hover:cursor-not-allowed' : 'text-red-600 hover:bg-black'}`}
+              className={`p-2 rounded-full transition-colors cursor-pointer duration-300 ${currentIndex >= maxIndex ? 'text-red-300 bg-red-50 hover:cursor-not-allowed' : 'text-red-600 hover:bg-red-100'}`}
             >
               <ChevronRight size={24} strokeWidth={3} />
             </button>
@@ -146,7 +146,7 @@ const Testimonials2 = () => {
                   key={review.id}
                   className="min-w-[100%] md:min-w-[calc(50%-12px)] lg:min-w-[calc(33.333%-16px)]"
                 >
-                  <div className="border border-gray-200 rounded-xl p-6 h-[250px] flex flex-col justify-between bg-white">
+                  <div className="border border-red-200 rounded-xl p-6 h-[250px] flex flex-col justify-between bg-black">
 
                     {/* Card Top: Name & Stars */}
                     <div>
@@ -163,7 +163,7 @@ const Testimonials2 = () => {
                         {review.date} | {review.location}
                       </p>
 
-                      <p className="text-gray-600 text-sm leading-relaxed line-clamp-4">
+                      <p className="text-gray-500 text-sm leading-relaxed line-clamp-4">
                         {review.text}
                       </p>
                     </div>

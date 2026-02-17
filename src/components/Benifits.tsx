@@ -21,11 +21,11 @@ const Benefits = () => {
     ];
 
     return (
-        <section className="w-full py-10 bg-[#F8F8F8]">
+        <section className="w-full py-10 bg-black">
             <div className="container mx-auto px-4">
 
                 {/* Title */}
-                <h2 className="text-center text-2xl sm:text-3xl font-bold text-black mb-10">
+                <h2 className="text-center text-2xl sm:text-3xl font-bold text-red-600 mb-10">
                     Benefits With Us
                 </h2>
 
@@ -34,7 +34,7 @@ const Benefits = () => {
                     {benefits.map((item) => (
                         <div
                             key={item.id}
-                            className="bg-black rounded-2xl h-[200px] flex flex-col items-center justify-center p-4 transition-transform hover:-translate-y-1 duration-300 shadow-sm"
+                            className="bg-red-900 rounded-2xl h-[200px] flex flex-col items-center justify-center p-4 transition-transform hover:-translate-y-1 duration-300 shadow-sm"
                         >
                             {/* Lottie Animation */}
                             <div className="w-30 h-30 mb-2">

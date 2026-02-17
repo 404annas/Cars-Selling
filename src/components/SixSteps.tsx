@@ -15,9 +15,9 @@ const SixSteps = () => {
     ];
 
     return (
-        <section className="relative w-full py-10 md:pt-20 pb-14 overflow-hidden">
+        <section className="relative w-full py-10 md:pt-20 pb-14 bg-black overflow-hidden">
             {/* Background Image with Overlay */}
-            <div className="absolute inset-0 z-0">
+            {/* <div className="absolute inset-0 z-0">
                 <Image
                     src={sixBgImg}
                     alt="Background Pattern"
@@ -25,13 +25,13 @@ const SixSteps = () => {
                     priority
                     className="object-cover"
                 />
-            </div>
+            </div> */}
 
             <div className="container mx-auto px-4 relative z-10">
 
                 {/* Main Heading */}
                 <div className="text-center mb-10">
-                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black">
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-red-600">
                         Your Dream Car, Delivered: The 6-Step Sourcing Roadmap
                     </h2>
                 </div>
