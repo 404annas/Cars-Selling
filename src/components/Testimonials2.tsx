@@ -89,7 +89,7 @@ const Testimonials2 = () => {
           <div className="bg-[#fbebeb] pr-6 z-10 mx-auto md:mx-0">
             {/* Centered Title logic roughly matching image */}
             <div className="absolute left-0 right-0 top-1/2 -translate-y-1/2 text-center pointer-events-none hidden md:block">
-              <span className="bg-[#fbebeb] px-6 text-2xl sm:text-3xl font-bold text-red-600">
+              <span className="bg-[#fbebeb] px-6 text-2xl sm:text-3xl font-bold text-black">
                 User Reviews & Ratings
               </span>
             </div>

@@ -21,7 +21,7 @@ const HeroBottom = () => {
       <div className="container mx-auto px-4 max-w-[1200px]">
 
         {/* Heading */}
-        <h2 className="text-2xl font-bold text-red-600 mb-8 text-center sm:text-left">
+        <h2 className="text-2xl font-bold text-black mb-8 text-center sm:text-left">
           We Deal Into
         </h2>
 

@@ -64,7 +64,7 @@ const Navbar2 = () => {
             {/* ========================================= */}
             <div className="hidden lg:block">
                 {/* --- Top Blue Bar --- */}
-                <div className={`bg-[#050c4e] flex items-center px-4 md:px-8 relative transition-all duration-500 ${isScrolled ? "h-0 opacity-0 invisible" : "h-[60px] opacity-100 visible"}`}>
+                <div className={`bg-black flex items-center px-4 md:px-8 relative transition-all duration-500 ${isScrolled ? "h-0 opacity-0 invisible" : "h-[60px] opacity-100 visible"}`}>
 
                     {/* Navigation Links */}
                     <div className="flex items-center ml-36 space-x-6 text-white font-bold text-sm overflow-x-auto no-scrollbar">
@@ -77,16 +77,16 @@ const Navbar2 = () => {
 
                     {/* Right Side Icons */}
                     <div className="ml-auto flex items-center space-x-3">
-                        <div className="bg-[#051072] text-white flex items-center px-3 py-1.5 rounded-full cursor-pointer hover:bg-[#020f86] transition-colors duration-300">
+                        <div className="bg-[#720505] text-white flex items-center px-3 py-1.5 rounded-full cursor-pointer hover:bg-[#860202] transition-colors duration-300">
                             <div className="bg-white rounded-full p-1.5 mr-2">
-                                <Phone size={14} className="text-[#050c4e]" />
+                                <Phone size={14} className="text-red-600" />
                             </div>
                             <div className="flex flex-col leading-none">
                                 <span className="text-xs opacity-90 font-medium">+61 466 318 074</span>
                             </div>
                         </div>
 
-                        <div className="bg-[#051072] text-white flex items-center px-3 py-1.5 rounded-full cursor-pointer hover:bg-[#020f86] transition-colors duration-300">
+                        <div className="bg-[#720505] text-white flex items-center px-3 py-1.5 rounded-full cursor-pointer hover:bg-[#860202] transition-colors duration-300">
                             <MapPin size={18} className="mr-2" />
                             <div className="flex flex-col leading-none pr-4">
                                 <span className="text-xs opacity-90 font-medium">Located At:</span>
@@ -98,7 +98,7 @@ const Navbar2 = () => {
                             <Mail size={20} />
                         </div>
 
-                        <div className="flex items-center bg-[#020f86] rounded-full px-0.5 py-0.5 cursor-pointer border border-[#8ec6e8]">
+                        <div className="flex items-center bg-[#860202] rounded-full px-0.5 py-0.5 cursor-pointer border border-[#e88e8e]">
                             <Link href="/cart" className="bg-white rounded-full p-2">
                                 <ShoppingCart size={20} className="text-gray-700" />
                             </Link>
@@ -136,7 +136,7 @@ const Navbar2 = () => {
                         onTriggerSearch={handleTriggerSearch}
                     />
 
-                    <button onClick={handleSearchClick} className="bg-[#050c4e] text-white font-bold py-2.5 px-10 rounded-md hover:bg-[#020f86] transition-colors duration-300 cursor-pointer text-sm">
+                    <button onClick={handleSearchClick} className="bg-red-700 text-white font-bold py-2.5 px-10 rounded-md hover:bg-red-800 transition-colors duration-300 cursor-pointer text-sm">
                         Search
                     </button>
                 </div>
@@ -155,12 +155,12 @@ const Navbar2 = () => {
                     </div>
 
                     <div className="flex items-center gap-3">
-                        <Link href="/cart" className="p-2 text-blue-700">
+                        <Link href="/cart" className="p-2 text-red-700">
                             <ShoppingCart size={22} />
                         </Link>
                         <button
                             onClick={() => setMobileMenuOpen(true)}
-                            className="p-2 text-[#050c4e] bg-gray-100 rounded-full cursor-pointer hover:bg-gray-200 transition-colors"
+                            className="p-2 text-red-600 bg-gray-100 rounded-full cursor-pointer hover:bg-gray-200 transition-colors"
                         >
                             <Menu size={20} />
                         </button>
@@ -188,7 +188,7 @@ const Navbar2 = () => {
                     >
 
                         {/* Drawer Header */}
-                        <div className="flex items-center justify-between p-6 border-b bg-[#050c4e] text-white">
+                        <div className="flex items-center justify-between p-6 border-b bg-red-800 text-white">
                             <span className="font-bold text-lg">Elite Motor Cars</span>
                             <button
                                 onClick={() => setMobileMenuOpen(false)}
@@ -207,7 +207,7 @@ const Navbar2 = () => {
                                     <input
                                         type="text"
                                         placeholder="Search cars..."
-                                        className="w-full bg-gray-100 py-3 pl-10 pr-4 rounded-md outline-none text-sm focus:ring-1 focus:ring-[#050c4e]"
+                                        className="w-full bg-gray-100 py-3 pl-10 pr-4 rounded-md outline-none text-sm focus:ring-1 focus:ring-[#4e0505]"
                                         value={searchQuery}
                                         onChange={(e) => setSearchQuery(e.target.value)}
                                     />
@@ -225,7 +225,7 @@ const Navbar2 = () => {
 
                                 <button
                                     onClick={handleSearchClick}
-                                    className="w-full bg-[#050c4e] text-white font-bold py-3 rounded-md mt-2 shadow-lg hover:bg-[#020f86] cursor-pointer transition-all duration-300 active:scale-95"
+                                    className="w-full bg-red-700 text-white font-bold py-3 rounded-md mt-2 shadow-lg hover:bg-red-800 cursor-pointer transition-all duration-300 active:scale-95"
                                 >
                                     Search Results
                                 </button>
@@ -236,16 +236,16 @@ const Navbar2 = () => {
                             {/* 2. Navigation Links */}
                             <div className="flex flex-col space-y-4">
                                 <span className="text-xs font-bold text-gray-400 uppercase">Pages</span>
-                                <Link href="/#featured-cars" className="flex items-center gap-3 text-gray-700 font-medium hover:text-[#050c4e] transition-colors">
+                                <Link href="/#featured-cars" className="flex items-center gap-3 text-gray-700 font-medium hover:text-[#4e0505] transition-colors">
                                     <Home size={18} /> Available Cars
                                 </Link>
-                                <Link href="/how-we-deliver" className="flex items-center gap-3 text-gray-700 font-medium hover:text-[#050c4e] transition-colors">
+                                <Link href="/how-we-deliver" className="flex items-center gap-3 text-gray-700 font-medium hover:text-[#4e0505] transition-colors">
                                     <Truck size={18} /> How We Deliver
                                 </Link>
-                                <Link href="/choose-us" className="flex items-center gap-3 text-gray-700 font-medium hover:text-[#050c4e] transition-colors">
+                                <Link href="/choose-us" className="flex items-center gap-3 text-gray-700 font-medium hover:text-[#4e0505] transition-colors">
                                     <Info size={18} /> Why Choose Us
                                 </Link>
-                                <Link href="/faqs" className="flex items-center gap-3 text-gray-700 font-medium hover:text-[#050c4e] transition-colors">
+                                <Link href="/faqs" className="flex items-center gap-3 text-gray-700 font-medium hover:text-[#4e0505] transition-colors">
                                     <HelpCircle size={18} /> FAQ's
                                 </Link>
                             </div>
@@ -253,22 +253,22 @@ const Navbar2 = () => {
                             <hr className="border-gray-100" />
 
                             {/* 3. Contact Info */}
-                            <div className="bg-blue-50 p-4 rounded-xl space-y-3">
-                                <div className="flex items-center gap-3 text-[#050c4e]">
+                            <div className="bg-red-50 p-4 rounded-xl space-y-3">
+                                <div className="flex items-center gap-3 text-red-600">
                                     <div className="bg-white p-2 rounded-full shadow-sm"><Phone size={16} /></div>
                                     <div>
                                         <p className="text-[10px] text-gray-500 font-bold uppercase">Call Us</p>
                                         <p className="text-sm font-bold">+61 466 318 074</p>
                                     </div>
                                 </div>
-                                <div className="flex items-center gap-3 text-[#050c4e]">
+                                <div className="flex items-center gap-3 text-red-600">
                                     <div className="bg-white p-2 rounded-full shadow-sm"><MapPin size={16} /></div>
                                     <div>
                                         <p className="text-[10px] text-gray-500 font-bold uppercase">Location</p>
                                         <p className="text-sm font-bold">Australia</p>
                                     </div>
                                 </div>
-                                <div className="flex items-center gap-3 text-[#050c4e]">
+                                <div className="flex items-center gap-3 text-red-600">
                                     <div className="bg-white p-2 rounded-full shadow-sm"><Mail size={16} /></div>
                                     <div>
                                         <p className="text-[10px] text-gray-500 font-bold uppercase">Email Us</p>

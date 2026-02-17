@@ -40,11 +40,11 @@ const SellCar = () => {
         <section className="py-10 px-4 bg-white max-w-7xl mx-auto">
             {/* Header with horizontal lines */}
             <div className="flex items-center justify-center mb-6">
-                <div className="hidden md:block h-[1px] bg-[#ff9c9c] flex-grow max-w-[200px]"></div>
-                <h2 className="text-red-600 text-2xl sm:text-3xl font-bold px-6 text-center">
+                <div className="hidden md:block h-[1px] bg-[#000000] flex-grow max-w-[200px]"></div>
+                <h2 className="text-black text-2xl sm:text-3xl font-bold px-6 text-center">
                     Customer Journey With Elite Motor Cars
                 </h2>
-                <div className="hidden md:block h-[1px] bg-[#ff9c9c] flex-grow max-w-[200px]"></div>
+                <div className="hidden md:block h-[1px] bg-[#000000] flex-grow max-w-[200px]"></div>
             </div>
 
             {/* Grid for Steps */}

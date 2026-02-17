@@ -7,7 +7,7 @@ const Assistance = () => {
     return (
         <section className="py-10 bg-white flex flex-col items-center px-4">
             {/* Heading - Dark Purple Color */}
-            <h2 className="text-red-600 text-xl md:text-2xl font-bold mb-8 text-center">
+            <h2 className="text-black text-xl md:text-2xl font-bold mb-8 text-center">
                 Need further assistance?
             </h2>
 

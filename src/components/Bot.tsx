@@ -81,9 +81,9 @@ const Bot = () => {
                 {showPopup && !showModal && !showSuccess && (
                     <div
                         onClick={() => setShowModal(true)}
-                        className="bg-white border-2 border-[#050C4E] shadow-2xl w-20 h-20 rounded-full cursor-pointer flex items-center justify-center text-center animate-bounce-subtle pointer-events-auto hover:scale-105 transition-transform animate-bounce"
+                        className="bg-white border-2 border-red-600 shadow-2xl w-20 h-20 rounded-full cursor-pointer flex items-center justify-center text-center animate-bounce-subtle pointer-events-auto hover:scale-105 transition-transform animate-bounce"
                     >
-                        <p className="text-[#050C4E] text-xs font-bold uppercase leading-tight tracking-tighter">
+                        <p className="text-red-600 text-xs font-bold uppercase leading-tight tracking-tighter">
                             I WANT <br /> TO <br /> IMPORT
                         </p>
                     </div>

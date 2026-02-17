@@ -25,7 +25,7 @@ const Benefits = () => {
             <div className="container mx-auto px-4">
 
                 {/* Title */}
-                <h2 className="text-center text-2xl sm:text-3xl font-bold text-red-600 mb-10">
+                <h2 className="text-center text-2xl sm:text-3xl font-bold text-black mb-10">
                     Benefits With Us
                 </h2>
 

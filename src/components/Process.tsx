@@ -17,7 +17,7 @@ const Process = () => {
 
                 {/* Right Side: Form */}
                 <div className="w-full md:w-1/2 px-2 md:px-10 z-10">
-                    <h2 className="text-red-600 text-base sm:text-lg md:text-xl font-bold mb-8">
+                    <h2 className="text-black text-base sm:text-lg md:text-xl font-bold mb-8">
                         Enter Your Details To Request A Call Back
                     </h2>
 
