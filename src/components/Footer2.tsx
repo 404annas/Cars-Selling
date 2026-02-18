@@ -2,7 +2,7 @@ import React from 'react';
 import { FaInstagram, FaLinkedinIn, FaFacebookF } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 
-import logo from "@/assets/logo.svg"
+import logo from "@/assets/logo.png"
 import Image from 'next/image';
 import { Locate, Mail, MapPin, Phone } from 'lucide-react';
 
@@ -15,7 +15,7 @@ const Footer2 = () => {
                 <div className="flex-1 max-w-2xl">
                     {/* Logo Section */}
                     <div className="flex items-center gap-2 mb-6">
-                        <Image className='rounded-full' src={logo.src} alt="Logo" width={100} height={150} priority={true} />
+                        <Image className='rounded-full shadow-md' src={logo.src} alt="Logo" width={100} height={150} priority={true} />
                     </div>
 
                     {/* About Text */}

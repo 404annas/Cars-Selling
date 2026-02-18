@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react"
 import { Contact2, Menu, X } from "lucide-react"
 
-import logo from "@/assets/logo.svg"
+import logo from "@/assets/logo.png"
 import Image from "next/image"
 import Link from "next/link"
 
