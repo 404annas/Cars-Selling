@@ -14,7 +14,7 @@ import {
     Truck,
     HelpCircle
 } from "lucide-react";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo.jpeg";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
@@ -109,7 +109,7 @@ const Navbar2 = () => {
                 {/* --- Bottom Filter Bar --- */}
                 <div className="bg-white py-3 px-4 md:px-8 flex items-center space-x-3 shadow-sm relative overflow-visible">
                     {/* Logo */}
-                    <div className={`rounded-full shadow-lg z-[110] absolute transition-all duration-500 ease-in-out bg-black flex items-center justify-center ${isScrolled ? "top-1 left-4 w-[55px] h-[55px]" : "-top-15 left-6 w-[120px] h-[120px]"}`}>
+                    <div className={`rounded-full shadow-lg z-[110] absolute transition-all duration-500 ease-in-out bg-black flex items-center justify-center ${isScrolled ? "top-1 left-4 w-[55px] h-[55px]" : "-top-13 left-6 w-[140px] h-[90px]"}`}>
                         <Link href="/" className="relative">
                             <Image src={logo} alt="Car From Japan" width={200} height={200} className="object-contain rounded-full" />
                         </Link>

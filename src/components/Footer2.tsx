@@ -2,7 +2,7 @@ import React from 'react';
 import { FaInstagram, FaLinkedinIn, FaFacebookF } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 
-import logo from "@/assets/logo.png"
+import logo from "@/assets/logo.jpeg"
 import Image from 'next/image';
 import { Locate, Mail, MapPin, Phone } from 'lucide-react';
 
@@ -19,7 +19,7 @@ const Footer2 = () => {
                     </div>
 
                     {/* About Text */}
-                    <p className="text-gray-300 text-sm md:text-base leading-normal -mt-4 mb-4">
+                    <p className="text-gray-300 text-sm md:text-base leading-normal -mt-8 mb-4">
                         Elite Motor Cars is the most trusted way of buying and selling used cars. Choose from over
                         10K fully inspected second-hand car models. Select online and book a test drive at
                         your home or at a Elite Motor Cars near you. Get a no-questions-asked* 5-day
