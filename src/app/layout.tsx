@@ -53,6 +53,7 @@ export default function RootLayout({
         <Footer2 />
 
         <Bot />
+        
         <Toaster
           position="bottom-right"
           richColors={true}
