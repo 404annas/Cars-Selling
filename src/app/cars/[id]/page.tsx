@@ -1,15 +1,9 @@
-"use client";
-
-import { useEffect, useState } from "react";
-import { useParams } from "next/navigation";
-import Image from "next/image";
 import Link from "next/link";
 import {
   Check,
   MapPin,
   Phone,
   ShieldCheck,
-  ShoppingCart,
   Calendar,
   Gauge,
   Fuel,
@@ -17,36 +11,37 @@ import {
   ChevronRight,
   Star
 } from "lucide-react";
-import { toast } from 'sonner';
 
 // Import the data
-import { allCars } from "@/data/cars"; // Adjust path if you put the folder elsewhere
+import { allCars } from "@/data/cars";
+import AddToCartButton from "./AddToCartButton";
+import ImageGallery from "./ImageGallery";
 
-const CarDetailsPage = () => {
-  const params = useParams();
+// Generate static params for all cars
+export function generateStaticParams() {
+  return allCars.map((car) => ({
+    id: car.id.toString(),
+  }));
+}
 
-  // Find the car based on the URL ID
-  // Note: params.id comes as a string, so we convert it to Number
-  const carData = allCars.find((c) => c.id === Number(params.id));
+interface CarPageProps {
+  params: Promise<{ id: string }>;
+}
 
-  // State for Image Gallery
-  const [mainImage, setMainImage] = useState(carData ? carData.images[0] : null);
+export default async function CarDetailsPage({ params }: CarPageProps) {
+  const { id } = await params;
+  const carData = allCars.find((c) => c.id === Number(id));
 
-  // Effect: Update main image when carData loads or changes
-  useEffect(() => {
-    if (carData) {
-      setMainImage(carData.images[0]);
-    }
-  }, [carData]);
-
-  // Handle case where car is not found (optional: show 404 or loading)
-  if (!carData || !mainImage) {
+  // Handle case where car is not found
+  if (!carData) {
     return (
       <div className="h-96 flex items-center justify-center">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-red-400">Car Not Found</h2>
       </div>
     );
   }
+
+  const mainImage = carData.images[0];
 
   return (
     <div className="min-h-screen bg-black pb-10">
@@ -66,42 +61,7 @@ const CarDetailsPage = () => {
           {/* LEFT COLUMN: IMAGES (lg:col-span-7) */}
           <div className="lg:col-span-7 space-y-4">
 
-            {/* Main Image Stage */}
-            <div className="relative w-full h-[510px] rounded-2xl overflow-hidden shadow-sm border border-red-800 bg-black">
-              <Image
-                src={mainImage}
-                alt={carData.name}
-                fill
-                
-                className="object-cover object-center transition-all duration-500"
-                priority
-              />
-              <div className="absolute top-4 left-4 bg-red-500 text-white px-4 py-1 rounded-full text-sm font-bold shadow-md orb">
-                In Stock
-              </div>
-            </div>
-
-            {/* Thumbnail Gallery */}
-            <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-hide">
-              {carData.images.map((img, index) => (
-                <button
-                  key={index}
-                  onClick={() => setMainImage(img)}
-                  className={`relative flex-shrink-0 w-16 h-26 sm:w-18 sm:h-18 rounded-xl overflow-hidden border-2 transition-all duration-300 cursor-pointer outline-none
-                    ${mainImage === img ? "border-red-500" : "border-transparent opacity-70 hover:opacity-100"}
-                  `}
-                >
-                  <Image
-                    src={img}
-                    alt={`Thumbnail ${index}`}
-                    fill
-                    quality={100}
-                    sizes="(max-width: 768px) 25vw, 15vw"
-                    className="object-cover"
-                  />
-                </button>
-              ))}
-            </div>
+            <ImageGallery images={carData.images} carName={carData.name} />
 
             {/* Description Block */}
             <div className="bg-black rounded-2xl p-6 sm:p-8 shadow-sm border border-red-800 mt-8">
@@ -186,38 +146,7 @@ const CarDetailsPage = () => {
                 <button className="flex-1 bg-red-500 hover:bg-red-600 text-white font-bold py-4 rounded-lg shadow-sm shadow-red-200 transition-all duration-300 active:scale-95 flex justify-center items-center gap-2 cursor-pointer">
                   Reserve Now
                 </button>
-                <button 
-                  onClick={() => {
-                    // Get existing cart items from localStorage or initialize empty array
-                    const existingCart = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('cart') || '[]') : [];
-                    
-                    // Check if the car is already in the cart
-                    const carExists = existingCart.some((item: any) => item.id === carData.id);
-                    
-                    if (!carExists) {
-                      // Add the car to the cart
-                      const updatedCart = [...existingCart, carData];
-                      
-                      // Save updated cart to localStorage
-                      if (typeof window !== 'undefined') {
-                        localStorage.setItem('cart', JSON.stringify(updatedCart));
-                      }
-                      
-                      toast.success(`${carData.name} has been added to your cart!`, {
-                        action: {
-                          label: 'Go to Cart',
-                          onClick: () => window.location.href = '/cart',
-                        },
-                      });
-                    } else {
-                      toast.error(`${carData.name} is already in your cart.`);
-                    }
-                  }}
-                  className="flex-1 bg-black border-2 border-red-200 hover:border-red-500 hover:text-red-600 text-gray-400 font-bold py-4 rounded-lg transition-all duration-300 active:scale-95 flex justify-center items-center gap-2 cursor-pointer"
-                >
-                  <ShoppingCart size={20} />
-                  Add to Cart
-                </button>
+                <AddToCartButton carData={carData} />
               </div>
             </div>
 
@@ -281,5 +210,3 @@ const CarDetailsPage = () => {
     </div>
   );
 };
-
-export default CarDetailsPage;
