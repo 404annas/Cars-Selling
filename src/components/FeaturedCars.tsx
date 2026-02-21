@@ -48,7 +48,7 @@ const cars = [
         meta: "3 Years Warranty Included",
         img: car1,
         image: car1,
-        price: "USD $14,500",
+        price: "AUD $14,500",
         specs: [
             { icon: Gauge, label: "64,000 km" },
             { icon: Cog, label: "1.8L" },
@@ -60,7 +60,7 @@ const cars = [
         meta: "1 Year warranty for peace of mind",
         img: car2,
         image: car2,
-        price: "USD $17,500",
+        price: "AUD $17,500",
         specs: [
             { icon: Gauge, label: "89,000 km" },
             { icon: Cog, label: "3.5L" },
@@ -72,7 +72,7 @@ const cars = [
         meta: "5 years warranty",
         img: car3,
         image: car3,
-        price: "USD $16,500",
+        price: "AUD $16,500",
         specs: [
             { icon: Gauge, label: "99 km" },
             { icon: Cog, label: "4.5L" },
@@ -84,7 +84,7 @@ const cars = [
         meta: "3 Years warranty",
         img: car4,
         image: car4,
-        price: "USD $24, 999",
+        price: "AUD $24, 999",
         specs: [
             { icon: Gauge, label: "93 km" },
             { icon: Cog, label: "4.6L" },
@@ -96,7 +96,7 @@ const cars = [
         meta: "5 Years Warranty",
         img: car5,
         image: car5,
-        price: "USD $34,500",
+        price: "AUD $34,500",
         specs: [
             { icon: Gauge, label: "135,000 km" },
             { icon: Cog, label: "4.6L" },
@@ -108,7 +108,7 @@ const cars = [
         meta: "5 years mechanical warranty ",
         img: car6,
         image: car6,
-        price: "USD $32,000",
+        price: "AUD $32,000",
         specs: [
             { icon: Gauge, label: "50,200 km" },
             { icon: Cog, label: "2.0L" },
@@ -120,7 +120,7 @@ const cars = [
         meta: "3 Years warranty",
         img: car7,
         image: car7,
-        price: "USD $16,900",
+        price: "AUD $16,900",
         specs: [
             { icon: Gauge, label: "154,000 km" },
             { icon: Cog, label: "4.6L" },
@@ -132,7 +132,7 @@ const cars = [
         meta: "6-Month Warranty",
         img: car8,
         image: car8,
-        price: "USD $26,500",
+        price: "AUD $26,500",
         specs: [
             { icon: Gauge, label: "60,000 km" },
             { icon: Cog, label: "1.8L" },
@@ -144,7 +144,7 @@ const cars = [
         meta: "1 year warranty",
         img: car9,
         image: car9,
-        price: "USD $28,500",
+        price: "AUD $28,500",
         specs: [
             { icon: Gauge, label: "40,000 km" },
             { icon: Cog, label: "3.5L" },
@@ -156,7 +156,7 @@ const cars = [
         meta: "1 Year Rego & Ctp",
         img: car10,
         image: car10,
-        price: "USD $16,000",
+        price: "AUD $16,000",
         specs: [
             { icon: Gauge, label: "43,000 km" },
             { icon: Cog, label: "1.5L" },
@@ -168,7 +168,7 @@ const cars = [
         meta: "1 Year Rego + CTP Included",
         img: car11,
         image: car11,
-        price: "USD $18,500",
+        price: "AUD $18,500",
         specs: [
             { icon: Gauge, label: "100,000 km" },
             { icon: Cog, label: "4.5L" },
@@ -180,7 +180,7 @@ const cars = [
         meta: "4 years warranty",
         img: car12,
         image: car12,
-        price: "USD $26,800",
+        price: "AUD $26,800",
         specs: [
             { icon: Gauge, label: "80,000 km" },
             { icon: Cog, label: "4.6L" },
@@ -192,7 +192,7 @@ const cars = [
         meta: "Warranty",
         img: car13,
         image: car13,
-        price: "USD $23,000",
+        price: "AUD $23,000",
         specs: [
             { icon: Gauge, label: "100 km" },
             { icon: Cog, label: "3.0L" },
@@ -204,7 +204,7 @@ const cars = [
         meta: "Warranty",
         img: car14,
         image: car14,
-        price: "USD $18,000",
+        price: "AUD $18,000",
         specs: [
             { icon: Gauge, label: "40,000 km" },
             { icon: Cog, label: "1.2L" },
@@ -216,7 +216,7 @@ const cars = [
         meta: "Warranty",
         img: car15,
         image: car15,
-        price: "USD $18,000",
+        price: "AUD $18,000",
         specs: [
             { icon: Gauge, label: "100 km" },
             { icon: Cog, label: "1.5L" },
@@ -228,7 +228,7 @@ const cars = [
         meta: "Warranty",
         img: car16,
         image: car16,
-        price: "USD $39,999",
+        price: "AUD $39,999",
         specs: [
             { icon: Gauge, label: "40,000 km" },
             { icon: Cog, label: "2.5L" },
@@ -240,7 +240,7 @@ const cars = [
         meta: "Warranty",
         img: car17,
         image: car17,
-        price: "USD $25,999",
+        price: "AUD $25,999",
         specs: [
             { icon: Gauge, label: "200,000 km" },
             { icon: Cog, label: "4.6L" },
@@ -252,7 +252,7 @@ const cars = [
         meta: "Warranty",
         img: car18,
         image: car18,
-        price: "USD $17,000",
+        price: "AUD $17,000",
         specs: [
             { icon: Gauge, label: "60,000 km" },
             { icon: Cog, label: "1.5L" },
@@ -264,7 +264,7 @@ const cars = [
         meta: "Warranty",
         img: car19,
         image: car19,
-        price: "USD $26,000",
+        price: "AUD $26,000",
         specs: [
             { icon: Gauge, label: "50,000 km" },
             { icon: Cog, label: "1.8L" },

@@ -104,7 +104,7 @@ export default async function CarDetailsPage({ params }: CarPageProps) {
 
               <div className="flex items-center gap-2 mb-6 border-b border-red-100 pb-6">
                 <h2 className="text-2xl font-bold text-red-600 orb">
-                  USD ${carData.price}
+                  AUD ${carData.price}
                 </h2>
                 <span className="text-gray-400 font-medium text-sm">Excl. Gov Charges</span>
               </div>

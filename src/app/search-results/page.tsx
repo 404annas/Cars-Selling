@@ -166,7 +166,7 @@ const SearchResultsContent = () => {
                                     <p className="text-sm text-gray-400 mb-3 truncate">{car.tagline}</p>
 
                                     <div className="flex items-center gap-2 mb-4">
-                                        <span className="text-xl font-bold text-red-600">USD ${car.price}</span>
+                                        <span className="text-xl font-bold text-red-600">AUD ${car.price}</span>
                                         <span className="text-xs text-gray-400">Excl. Gov Charges</span>
                                     </div>
 

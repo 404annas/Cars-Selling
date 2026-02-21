@@ -33,7 +33,7 @@ const cars = [
         name: "Toyota Prius 2011",
         meta: "3 Years Warranty Included",
         img: car1,
-        price: "USD $14,500",
+        price: "AUD $14,500",
         specs: [
             { icon: Gauge, label: "64,000 km" },
             { icon: Cog, label: "1.8L" },
@@ -44,7 +44,7 @@ const cars = [
         name: "Toyota Crown Sedan 2010",
         meta: "1 Year warranty for peace of mind",
         img: car2,
-        price: "USD $17,500",
+        price: "AUD $17,500",
         specs: [
             { icon: Gauge, label: "89,000 km" },
             { icon: Cog, label: "3.5L" },
@@ -55,7 +55,7 @@ const cars = [
         name: "Honda Vezel 2014",
         meta: "5 years warranty",
         img: car3,
-        price: "USD $16,500",
+        price: "AUD $16,500",
         specs: [
             { icon: Gauge, label: "99 km" },
             { icon: Cog, label: "4.5L" },
@@ -66,7 +66,7 @@ const cars = [
         name: "LEXUS LS460 V8 2012",
         meta: "3 Years warranty",
         img: car4,
-        price: "USD $24, 999",
+        price: "AUD $24, 999",
         specs: [
             { icon: Gauge, label: "93 km" },
             { icon: Cog, label: "4.6L" },
@@ -77,7 +77,7 @@ const cars = [
         name: "Lexus LS460 2006, V8 Luxury",
         meta: "5 Years Warranty",
         img: car5,
-        price: "USD $34,500",
+        price: "AUD $34,500",
         specs: [
             { icon: Gauge, label: "135,000 km" },
             { icon: Cog, label: "4.6L" },
@@ -88,7 +88,7 @@ const cars = [
         name: "Mitsubishi Lancer Evolution 2007",
         meta: "5 years mechanical warranty ",
         img: car6,
-        price: "USD $32,000",
+        price: "AUD $32,000",
         specs: [
             { icon: Gauge, label: "50,200 km" },
             { icon: Cog, label: "2.0L" },
@@ -99,7 +99,7 @@ const cars = [
         name: "Lexus LS460 V8 2007",
         meta: "3 Years warranty",
         img: car7,
-        price: "USD $16,900",
+        price: "AUD $16,900",
         specs: [
             { icon: Gauge, label: "154,000 km" },
             { icon: Cog, label: "4.6L" },
@@ -110,7 +110,7 @@ const cars = [
         name: "Toyota C-HR Hybrid G Mode-Nero",
         meta: "6-Month Warranty",
         img: car8,
-        price: "USD $26,500",
+        price: "AUD $26,500",
         specs: [
             { icon: Gauge, label: "60,000 km" },
             { icon: Cog, label: "1.8L" },
@@ -121,7 +121,7 @@ const cars = [
         name: "Mercedes-Benz S400h Hybrid",
         meta: "1 year warranty",
         img: car9,
-        price: "USD $28,500",
+        price: "AUD $28,500",
         specs: [
             { icon: Gauge, label: "40,000 km" },
             { icon: Cog, label: "3.5L" },
@@ -132,7 +132,7 @@ const cars = [
         name: "Honda Grace Hybrid EX 2015",
         meta: "1 Year Rego & Ctp",
         img: car10,
-        price: "USD $16,000",
+        price: "AUD $16,000",
         specs: [
             { icon: Gauge, label: "43,000 km" },
             { icon: Cog, label: "1.5L" },
@@ -143,7 +143,7 @@ const cars = [
         name: "Toyota Yaris Hybrid G AWD 2020",
         meta: "1 Year Rego + CTP Included",
         img: car11,
-        price: "USD $18,500",
+        price: "AUD $18,500",
         specs: [
             { icon: Gauge, label: "100,000 km" },
             { icon: Cog, label: "4.5L" },
@@ -154,7 +154,7 @@ const cars = [
         name: "Lexus LS460 V8 RWD 2013",
         meta: "4 years warranty",
         img: car12,
-        price: "USD $26,800",
+        price: "AUD $26,800",
         specs: [
             { icon: Gauge, label: "80,000 km" },
             { icon: Cog, label: "4.6L" },
@@ -165,7 +165,7 @@ const cars = [
         name: "Honda Fit Hybrid eHEV Hatchback",
         meta: "Warranty",
         img: car13,
-        price: "USD $23,000",
+        price: "AUD $23,000",
         specs: [
             { icon: Gauge, label: "100 km" },
             { icon: Cog, label: "3.0L" },
@@ -176,7 +176,7 @@ const cars = [
         name: "Suzuki Swift Hybrid Hatchback",
         meta: "Warranty",
         img: car14,
-        price: "USD $18,000",
+        price: "AUD $18,000",
         specs: [
             { icon: Gauge, label: "40,000 km" },
             { icon: Cog, label: "1.2L" },
@@ -187,7 +187,7 @@ const cars = [
         name: "Honda Fit Hybrid 2018",
         meta: "Warranty",
         img: car15,
-        price: "USD $18,000",
+        price: "AUD $18,000",
         specs: [
             { icon: Gauge, label: "100 km" },
             { icon: Cog, label: "1.5L" },
@@ -198,7 +198,7 @@ const cars = [
         name: "Toyota Crown RS Advance 2019",
         meta: "Warranty",
         img: car16,
-        price: "USD $39,999",
+        price: "AUD $39,999",
         specs: [
             { icon: Gauge, label: "40,000 km" },
             { icon: Cog, label: "2.5L" },
@@ -209,7 +209,7 @@ const cars = [
         name: "Lexus LS460 V8 RWD 2007",
         meta: "Warranty",
         img: car17,
-        price: "USD $25,999",
+        price: "AUD $25,999",
         specs: [
             { icon: Gauge, label: "200,000 km" },
             { icon: Cog, label: "4.6L" },
@@ -220,7 +220,7 @@ const cars = [
         name: "Honda Vezel Hybrid 2014",
         meta: "Warranty",
         img: car18,
-        price: "USD $17,000",
+        price: "AUD $17,000",
         specs: [
             { icon: Gauge, label: "60,000 km" },
             { icon: Cog, label: "1.5L" },
@@ -231,7 +231,7 @@ const cars = [
         name: "Toyota C-HR Hybrid 2018",
         meta: "Warranty",
         img: car19,
-        price: "USD $26,000",
+        price: "AUD $26,000",
         specs: [
             { icon: Gauge, label: "50,000 km" },
             { icon: Cog, label: "1.8L" },
