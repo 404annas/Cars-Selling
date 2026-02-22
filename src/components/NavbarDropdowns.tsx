@@ -135,7 +135,7 @@ const NavbarDropdowns: React.FC<NavbarDropdownsProps> = ({
                 <span className={`absolute -top-2 left-3 bg-white px-1 text-[10px] text-gray-500 z-10 font-bold uppercase tracking-tight ${isMobile ? "hidden" : "block"}`}>Make</span>
                 <div
                     onClick={() => toggleTab("Make")}
-                    className={`border rounded-md py-2.5 px-3 flex items-center justify-between cursor-pointer transition-all ${activeTab === "Make" ? "border-[#050c4e] ring-1 ring-[#050c4e]" : "border-gray-300 hover:border-gray-400"} ${isMobile ? "bg-white" : ""}`}
+                    className={`border rounded-md py-2.5 px-3 flex items-center justify-between cursor-pointer transition-all ${activeTab === "Make" ? "border-[#4e0505] ring-1 ring-[#4e0505]" : "border-gray-300 hover:border-gray-400"} ${isMobile ? "bg-white" : ""}`}
                 >
                     <div className="flex flex-col">
                         {isMobile && <span className="text-[10px] text-gray-500 font-bold uppercase">Make</span>}
@@ -147,8 +147,8 @@ const NavbarDropdowns: React.FC<NavbarDropdownsProps> = ({
                 {activeTab === "Make" && (
                     <div className={`${dropdownContainerClass} ${makeWidth}`}>
                         <div className="flex justify-between items-center mb-4 border-b pb-2">
-                            <h4 className="font-bold text-[#050c4e] text-sm uppercase tracking-tight">Popular Makes</h4>
-                            <button onClick={(e) => { e.stopPropagation(); setSelectedMake(""); setSelectedModel(""); }} className="text-xs text-gray-400 hover:text-blue-500 transition-all duration-300 cursor-pointer">Reset</button>
+                            <h4 className="font-bold text-[#4e0505] text-sm uppercase tracking-tight">Popular Makes</h4>
+                            <button onClick={(e) => { e.stopPropagation(); setSelectedMake(""); setSelectedModel(""); }} className="text-xs text-gray-400 hover:text-red-500 transition-all duration-300 cursor-pointer">Reset</button>
                         </div>
                         {/* Mobile uses 2 cols, Desktop uses 3 cols */}
                         <div className={`grid gap-3 ${isMobile ? "grid-cols-2" : "grid-cols-3"}`}>
@@ -156,7 +156,7 @@ const NavbarDropdowns: React.FC<NavbarDropdownsProps> = ({
                                 <div
                                     key={make}
                                     onClick={() => handleMakeSelect(make)}
-                                    className={`flex flex-col items-center justify-center p-3 rounded-lg border cursor-pointer transition-all hover:bg-white ${selectedMake === make ? "border-[#050c4e] bg-blue-50" : "border-gray-100 bg-white"}`}
+                                    className={`flex flex-col items-center justify-center p-3 rounded-lg border cursor-pointer transition-all hover:bg-white ${selectedMake === make ? "border-[#4e0505] bg-red-50" : "border-gray-100 bg-white"}`}
                                 >
                                     <div className="w-10 h-8 relative mb-1">
                                         <Image src={data.logo} alt={make} fill className="object-contain" />
@@ -174,7 +174,7 @@ const NavbarDropdowns: React.FC<NavbarDropdownsProps> = ({
                 <span className={`absolute -top-2 left-3 bg-white px-1 text-[10px] text-gray-500 z-10 font-bold uppercase tracking-tight ${isMobile ? "hidden" : "block"}`}>Model</span>
                 <div
                     onClick={() => toggleTab("Model")}
-                    className={`border rounded-md py-2.5 px-3 flex items-center justify-between transition-all ${!selectedMake ? "bg-gray-50 cursor-not-allowed" : "cursor-pointer hover:border-gray-400"} ${activeTab === "Model" ? "border-[#050c4e] ring-1 ring-[#050c4e]" : "border-gray-300"} ${isMobile ? "bg-white" : ""}`}
+                    className={`border rounded-md py-2.5 px-3 flex items-center justify-between transition-all ${!selectedMake ? "bg-gray-50 cursor-not-allowed" : "cursor-pointer hover:border-gray-400"} ${activeTab === "Model" ? "border-[#4e0505] ring-1 ring-[#4e0505]" : "border-gray-300"} ${isMobile ? "bg-white" : ""}`}
                 >
                     <div className="flex flex-col">
                         {isMobile && <span className="text-[10px] text-gray-500 font-bold uppercase">Model</span>}
@@ -186,7 +186,7 @@ const NavbarDropdowns: React.FC<NavbarDropdownsProps> = ({
                 {activeTab === "Model" && selectedMake && (
                     <div className={`${dropdownContainerClass} ${modelWidth}`}>
                         <div className="flex justify-between items-center mb-4">
-                            <h4 className="font-bold text-[#050c4e] text-sm uppercase">Models of <span className="text-blue-600">{selectedMake}</span></h4>
+                            <h4 className="font-bold text-[#4e0505] text-sm uppercase">Models of <span className="text-red-600">{selectedMake}</span></h4>
                             {!isMobile && <X size={16} className="cursor-pointer text-gray-400 hover:text-gray-600" onClick={(e) => { e.stopPropagation(); setActiveTab(null); }} />}
                         </div>
                         <div className="grid grid-cols-2 gap-x-4 gap-y-1">
@@ -197,9 +197,9 @@ const NavbarDropdowns: React.FC<NavbarDropdownsProps> = ({
                                         name="model"
                                         checked={selectedModel === model}
                                         onChange={() => { setSelectedModel(model); setActiveTab(null); }}
-                                        className="w-4 h-4 accent-[#050c4e]"
+                                        className="w-4 h-4 accent-[#4e0505]"
                                     />
-                                    <span className="text-sm text-gray-600 font-medium group-hover:text-[#050c4e] transition-colors duration-300">{model}</span>
+                                    <span className="text-sm text-gray-600 font-medium group-hover:text-[#4e0505] transition-colors duration-300">{model}</span>
                                 </label>
                             ))}
                         </div>
@@ -212,7 +212,7 @@ const NavbarDropdowns: React.FC<NavbarDropdownsProps> = ({
                 <span className={`absolute -top-2 left-3 bg-white px-1 text-[10px] text-gray-500 z-10 font-bold uppercase tracking-tight ${isMobile ? "hidden" : "block"}`}>Price</span>
                 <div
                     onClick={() => toggleTab("Price")}
-                    className={`border rounded-md py-2.5 px-3 flex items-center justify-between cursor-pointer transition-all ${activeTab === "Price" ? "border-[#050c4e] ring-1 ring-[#050c4e]" : "border-gray-300 hover:border-gray-400"} ${isMobile ? "bg-white" : ""}`}
+                    className={`border rounded-md py-2.5 px-3 flex items-center justify-between cursor-pointer transition-all ${activeTab === "Price" ? "border-[#4e0505] ring-1 ring-[#4e0505]" : "border-gray-300 hover:border-gray-400"} ${isMobile ? "bg-white" : ""}`}
                 >
                     <div className="flex flex-col">
                         {isMobile && <span className="text-[10px] text-gray-500 font-bold uppercase">Price</span>}
@@ -226,7 +226,7 @@ const NavbarDropdowns: React.FC<NavbarDropdownsProps> = ({
                 {activeTab === "Price" && (
                     <div className={`${dropdownContainerClass} ${commonWidth} z-[300]`}>
                         <div className="flex border-b mb-4">
-                            <button className="flex-1 pb-2 border-b-2 border-[#050c4e] text-sm font-bold text-[#050c4e]">Car Price</button>
+                            <button className="flex-1 pb-2 border-b-2 border-[#4e0505] text-sm font-bold text-[#4e0505]">Car Price</button>
                         </div>
                         <div className="grid grid-cols-2 gap-4">
                             <div>
@@ -234,7 +234,7 @@ const NavbarDropdowns: React.FC<NavbarDropdownsProps> = ({
                                 <input
                                     type="number"
                                     placeholder="All"
-                                    className="w-full border rounded p-2 text-sm outline-none focus:border-[#050c4e]"
+                                    className="w-full border rounded p-2 text-sm outline-none focus:border-[#4e0505]"
                                     value={priceRange.min}
                                     onChange={(e) => setPriceRange({ ...priceRange, min: e.target.value })}
                                 />
@@ -244,13 +244,13 @@ const NavbarDropdowns: React.FC<NavbarDropdownsProps> = ({
                                 <input
                                     type="number"
                                     placeholder="All"
-                                    className="w-full border rounded p-2 text-sm outline-none focus:border-[#050c4e]"
+                                    className="w-full border rounded p-2 text-sm outline-none focus:border-[#4e0505]"
                                     value={priceRange.max}
                                     onChange={(e) => setPriceRange({ ...priceRange, max: e.target.value })}
                                 />
                             </div>
                         </div>
-                        <button onClick={() => handleApplyFilters()} className="w-full bg-[#050c4e] hover:scale-95 transition-all duration-300 cursor-pointer text-white rounded-md py-2 mt-4 text-sm font-bold">Apply Filter</button>
+                        <button onClick={() => handleApplyFilters()} className="w-full bg-[#4e0505] hover:scale-95 transition-all duration-300 cursor-pointer text-white rounded-md py-2 mt-4 text-sm font-bold">Apply Filter</button>
                     </div>
                 )}
             </div>
@@ -260,7 +260,7 @@ const NavbarDropdowns: React.FC<NavbarDropdownsProps> = ({
                 <span className={`absolute -top-2 left-3 bg-white px-1 text-[10px] text-gray-500 z-10 font-bold uppercase tracking-tight ${isMobile ? "hidden" : "block"}`}>Year</span>
                 <div
                     onClick={() => toggleTab("Year")}
-                    className={`border rounded-md py-2.5 px-3 flex items-center justify-between cursor-pointer transition-all ${activeTab === "Year" ? "border-[#050c4e] ring-1 ring-[#050c4e]" : "border-gray-300 hover:border-gray-400"} ${isMobile ? "bg-white" : ""}`}
+                    className={`border rounded-md py-2.5 px-3 flex items-center justify-between cursor-pointer transition-all ${activeTab === "Year" ? "border-[#4e0505] ring-1 ring-[#4e0505]" : "border-gray-300 hover:border-gray-400"} ${isMobile ? "bg-white" : ""}`}
                 >
                     <div className="flex flex-col">
                         {isMobile && <span className="text-[10px] text-gray-500 font-bold uppercase">Year</span>}
@@ -273,7 +273,7 @@ const NavbarDropdowns: React.FC<NavbarDropdownsProps> = ({
 
                 {activeTab === "Year" && (
                     <div className={`${dropdownContainerClass} ${commonWidth} ${!isMobile ? "right-0" : ""}`}>
-                        <h4 className="font-bold text-[#050c4e] text-sm uppercase mb-4">Registration Year</h4>
+                        <h4 className="font-bold text-[#4e0505] text-sm uppercase mb-4">Registration Year</h4>
                         <div className="grid grid-cols-2 gap-4">
                             <div>
                                 <label className="text-[10px] font-bold text-gray-400 uppercase">From</label>
@@ -296,7 +296,7 @@ const NavbarDropdowns: React.FC<NavbarDropdownsProps> = ({
                                 </select>
                             </div>
                         </div>
-                        <button onClick={() => handleApplyFilters()} className="w-full bg-[#050c4e] hover:scale-95 transition-all duration-300 cursor-pointer text-white rounded-md py-2 mt-4 text-sm font-bold">Apply Filter</button>
+                        <button onClick={() => handleApplyFilters()} className="w-full bg-[#4e0505] hover:scale-95 transition-all duration-300 cursor-pointer text-white rounded-md py-2 mt-4 text-sm font-bold">Apply Filter</button>
                     </div>
                 )}
             </div>
