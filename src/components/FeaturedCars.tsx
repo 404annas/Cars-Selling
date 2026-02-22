@@ -42,6 +42,7 @@ import car17 from "@/assets/car17.avif"
 import car18 from "@/assets/car18.avif"
 import car19 from "@/assets/car19.avif"
 import car20 from "@/assets/car20.jpg"
+import car21 from "@/assets/car21.jpg"
 
 const cars = [
     {
@@ -282,6 +283,18 @@ const cars = [
             { icon: Gauge, label: "72,000 km" },
             { icon: Cog, label: "5.0L" },
             { icon: Settings, label: "Hybrid" },
+        ]
+    },
+    {
+        name: "2013 BMW M5 F10 4.4L TWIN TURBO V8",
+        meta: "3 years extended warranty",
+        img: car21,
+        image: car21,
+        price: "AUD $48,499",
+        specs: [
+            { icon: Gauge, label: "123,000 km" },
+            { icon: Cog, label: "4.4L" },
+            { icon: Settings, label: "Twin Turbo" },
         ]
     },
 ]

@@ -187,6 +187,14 @@ import car20_7 from "@/assets/car20-7.jpg"
 import car20_8 from "@/assets/car20-8.jpg"
 import car20_9 from "@/assets/car20-9.jpg"
 
+import car21_1 from "@/assets/car21-1.jpg"
+import car21_2 from "@/assets/car21-2.jpg"
+import car21_3 from "@/assets/car21-3.jpg"
+import car21_4 from "@/assets/car21-4.jpg"
+import car21_5 from "@/assets/car21-5.jpg"
+import car21_6 from "@/assets/car21-6.jpg"
+import car21_7 from "@/assets/car21-7.jpg"
+
 export interface CarDetails {
     id: number;
     name: string;
@@ -467,6 +475,20 @@ export const allCars: CarDetails[] = [
             "439hp stock", "Fledermaus Cuervo 21 inch wheels", "Long wheel base", "Rare spec in prestine condition", "Mark levinson Sound system", "Adjustable suspension", "Soft closing doors", "2x keys", "Dual-zone automatic Climate Control", "Power-Adjustable Front Seats", "Memory Front Seats", "Front & rear Heated & ventilated seats", "Keyless Entry & Push-button start", "Pre-Collision System", "Lane Departure Alert", "Adaptive Cruise Control", "Premium wood trim"
         ],
         images: [car20_1, car20_2, car20_3, car20_4, car20_5, car20_6, car20_7, car20_8, car20_9],
+        dealer: "Elite Motor Cars",
+        dealerLocation: "Sydney, Australia",
+        license: "MD100405"
+    },
+    {
+        id: 20,
+        name: "2013 BMW M5 F10 4.4L TWIN TURBO V8",
+        tagline: "Finished in Bmw individual Frozen Blue Matte Metallic",
+        price: "48,499",
+        description: "The F10 M5 is a high-performance sedan that combines luxury with blistering speed. The 4.4L twin-turbo V8 produces 560hp, making it one of the most powerful sedans of its era. This particular example is finished in the rare Frozen Blue Matte Metallic, making it a true head-turner on the road.",
+        specs: { mileage: "123,000 km", engine: "4.4L V8", transmission: "Automatic", fuel: "Hybrid", year: "2013", color: "Frozen Blue Matte Metallic" },
+        highlights: [
+            "Finished in Bmw individual Frozen Blue Matte Metallic", "4.4L Twin turbo V8", "7 speed sports Dual Clutch", "2x keys", "Ventilated/Heated luxury seating", "Electric side blind package", "Bmw connect drive option", "Remote central locking", "Regenerative brakes", "360 parking sensors", "Available for immediate Delivery", "Finance Available", "Alot more"],
+        images: [car21_1, car21_2, car21_3, car21_4, car21_5, car21_6, car21_7],
         dealer: "Elite Motor Cars",
         dealerLocation: "Sydney, Australia",
         license: "MD100405"

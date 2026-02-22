@@ -29,10 +29,8 @@ const Footer2 = () => {
 
                     {/* Social Icons */}
                     <div className="flex gap-6 text-xl">
-                        <FaInstagram className="cursor-pointer hover:text-gray-400 transition-all duration-300 hover:-translate-y-1" />
-                        <FaLinkedinIn className="cursor-pointer hover:text-gray-400 transition-all duration-300 hover:-translate-y-1" />
-                        <FaFacebookF className="cursor-pointer hover:text-gray-400 transition-all duration-300 hover:-translate-y-1" />
-                        <FaXTwitter className="cursor-pointer hover:text-gray-400 transition-all duration-300 hover:-translate-y-1" />
+                        <a href="https://www.instagram.com/elitemotorcarsau?igsh=MWJqbGgwZHFuazMxbg%3D%3D&utm_source=qr" target='_blank'><FaInstagram className="cursor-pointer hover:text-gray-400 transition-all duration-300 hover:-translate-y-1" /></a>
+                        <a href="https://www.facebook.com/profile.php?id=61576211886817&mibextid=wwXIfr&rdid=GHHTkWX86rqdvYY8&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1Da79KmHou%2F%3Fmibextid%3DwwXIfr#" target='_blank'><FaFacebookF className="cursor-pointer hover:text-gray-400 transition-all duration-300 hover:-translate-y-1" /></a>
                     </div>
                 </div>
 
