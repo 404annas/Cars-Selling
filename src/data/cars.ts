@@ -254,6 +254,12 @@ import car28_5 from "@/assets/car28-5.jpg"
 import car28_6 from "@/assets/car28-6.jpg"
 import car28_7 from "@/assets/car28-7.jpg"
 
+import car29_1 from "@/assets/car29-1.jpg"
+import car29_2 from "@/assets/car29-2.jpg"
+import car29_3 from "@/assets/car29-3.jpg"
+import car29_4 from "@/assets/car29-4.jpg"
+import car29_5 from "@/assets/car29-5.jpg"
+
 
 export interface CarDetails {
     id: number;
@@ -642,11 +648,25 @@ export const allCars: CarDetails[] = [
         name: "2014 LEXUS CT200H F SPORT",
         tagline: "1 year Rego & Ctp",
         price: "SOLD",
-        description: "This 2020 Toyota Yaris Hybrid Z 4WD is a reliable and fuel-efficient hybrid vehicle. With only 117,000 km on the odometer, it's in excellent condition and ready for immediate delivery. The Yaris Hybrid is perfect for city driving, offering a compact size and impressive fuel economy. Whether you're looking for a daily commuter or a practical ride for ridesharing, this Yaris Hybrid delivers on all fronts.",
+        description: "This 2014 Lexus CT200H F Sport is a stylish and well-maintained hybrid luxury vehicle. With only 79,000 km on the odometer, it's in excellent condition and ready for immediate delivery. The CT200H F Sport combines luxury with practicality, offering a comfortable ride and advanced features. Whether you're looking for a daily commuter or a premium ride for business or leisure, this CT200H delivers on all fronts.",
         specs: { mileage: "79,000 km", engine: "4.0L Hybrid", transmission: "Hybrid", fuel: "Hybrid", year: "2014", color: "Silver" },
         highlights: [
             "Aggressive grille, spoiler, 17″ wheels, unique colours", "Plush F Sport seats, steering wheel, pedals, premium trims", "Enhancement packs for added luxury and tech features", "Hybrid", "Full Service History & Log books", "Well Maintained", "Heated seats", "Electric seats", "4 Driving modes Eco/Ev/Normal/Sports", "Push Start", "Electric Folding mirrors", "Reverse Camera", "Infotainment system", "Gps Navigation", "Automatic seats with Lumbar Support", "ALOT MORE"],
         images: [car28_1, car28_2, car28_3, car28_4, car28_5, car28_6, car28_7],
+        dealer: "Elite Motor Cars",
+        dealerLocation: "Sydney, Australia",
+        license: "MD100405"
+    },
+    {
+        id: 28,
+        name: "2020 Lexus Ct200h Hybrid",
+        tagline: "4 months rego",
+        price: "SOLD",
+        description: "This 2020 Lexus CT200H Hybrid is a well-maintained hybrid luxury vehicle. With only 188,000 km on the odometer, it's in excellent condition and ready for immediate delivery. The CT200H Hybrid combines luxury with practicality, offering a comfortable ride and advanced features. Whether you're looking for a daily commuter or a premium ride for business or leisure, this CT200H delivers on all fronts.",
+        specs: { mileage: "188,000 km", engine: "4.2L Hybrid", transmission: "Hybrid", fuel: "Hybrid", year: "2020", color: "Silver" },
+        highlights: [
+            "Range: 650-800 kms on full tank", "Hybrid engine", "Eco mode", "Traction control", "2x keys", "Log books & Service history", "Reverse camera", "Parking sensors", "15” Wheels with Good Tyres", "Bluetooth Connectivity", "Recently Serviced", "Registration & CTP"],
+        images: [car29_1, car29_2, car29_3, car29_4, car29_5],
         dealer: "Elite Motor Cars",
         dealerLocation: "Sydney, Australia",
         license: "MD100405"

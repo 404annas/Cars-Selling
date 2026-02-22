@@ -50,6 +50,7 @@ import car25 from "@/assets/car25.jpg"
 import car26 from "@/assets/car26.jpg"
 import car27 from "@/assets/car27.jpg"
 import car28 from "@/assets/car28.jpg"
+import car29 from "@/assets/car29.jpg"
 
 const cars = [
     {
@@ -385,6 +386,18 @@ const cars = [
         specs: [
             { icon: Gauge, label: "79,000 km" },
             { icon: Cog, label: "4.0L" },
+            { icon: Settings, label: "Hybrid" },
+        ]
+    },
+    {
+        name: "2020 Lexus Ct200h Hybrid",
+        meta: "4 months rego",
+        img: car29,
+        image: car29,
+        price: "SOLD",
+        specs: [
+            { icon: Gauge, label: "188,000 km" },
+            { icon: Cog, label: "4.2L" },
             { icon: Settings, label: "Hybrid" },
         ]
     },
