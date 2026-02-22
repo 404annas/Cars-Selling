@@ -204,6 +204,17 @@ import car22_6 from "@/assets/car22-6.jpg"
 import car22_7 from "@/assets/car22-7.jpg"
 import car22_8 from "@/assets/car22-8.jpg"
 
+import car23_1 from "@/assets/car23-1.jpg"
+import car23_2 from "@/assets/car23-2.jpg"
+import car23_3 from "@/assets/car23-3.jpg"
+import car23_4 from "@/assets/car23-4.jpg"
+import car23_5 from "@/assets/car23-5.jpg"
+import car23_6 from "@/assets/car23-6.jpg"
+import car23_7 from "@/assets/car23-7.jpg"
+import car23_8 from "@/assets/car23-8.jpg"
+import car23_9 from "@/assets/car23-9.jpg"
+
+
 export interface CarDetails {
     id: number;
     name: string;
@@ -512,6 +523,20 @@ export const allCars: CarDetails[] = [
         highlights: [
             "Apple carplay + Android Auto", "Reverse camera", "360 parking sensors", "Hybrid", "Brand new condition not a single scratch on the car", "Premium audio system with six speakers and DAB+ for rich sound clarity", "ABS, EBD, brake assist, traction and stability control, hill-start assist, and lane departure warning", "Also include cross-traffic alert,rear-camera assistance, and automatic braking for pedestrian and collision avoidance", "Enhancement packs for luxury and tech features", "4 Driving modes Eco/Ev/Normal/Sports", "Push Start", "Service history & logbooks", "Electric Folding mirrors", "Optional 1,3 and 5 years hybrid battery warranty available", "Finance Available", "Rent to own Available", "Genuine odometer reading that can be verified through japnese Auction sheet,Export documents & Australian compliance certificate."],
         images: [car22_1, car22_2, car22_3, car22_4, car22_5, car22_6, car22_7, car22_8],
+        dealer: "Elite Motor Cars",
+        dealerLocation: "Sydney, Australia",
+        license: "MD100405"
+    },
+    {
+        id: 22,
+        name: "2009 Crown 3.5L V6 Hybrid",
+        tagline: "Clean 10/10 condition no scratches or dent",
+        price: "16,499",
+        description: "This 2009 Crown 3.5L V6 Hybrid is a rare find in such immaculate condition. With only 107,000 km on the odometer, this vehicle has been meticulously cared for and maintained. The hybrid powertrain offers a perfect blend of performance and efficiency, while the luxurious interior ensures a comfortable ride. Whether you're looking for a reliable daily driver or a stylish executive car, this Crown delivers on all fronts.",
+        specs: { mileage: "107,000 km", engine: "3.5L Hybrid", transmission: "Hybrid", fuel: "Hybrid", year: "2009", color: "Off White" },
+        highlights: [
+            "1 Year Rego + CTP Included", "2x keys", "Keyless entry + Push Start", "Cruise control", "3.5L Hybrid", "Auto mirrors", "Full service history & log books", "Premium interior", "Driving modes,(Sports,Snow,Eco,Ev)", "Clean 10/10 condition no scratches or dent", "Reverse camera", "Finance Available", "Rent to own Available", "Alot more"],
+        images: [car23_1, car23_2, car23_3, car23_4, car23_5, car23_6, car23_7, car23_8, car23_9],
         dealer: "Elite Motor Cars",
         dealerLocation: "Sydney, Australia",
         license: "MD100405"

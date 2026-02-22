@@ -44,6 +44,7 @@ import car19 from "@/assets/car19.avif"
 import car20 from "@/assets/car20.jpg"
 import car21 from "@/assets/car21.jpg"
 import car22 from "@/assets/car22.jpg"
+import car23 from "@/assets/car23.jpg"
 
 const cars = [
     {
@@ -307,6 +308,18 @@ const cars = [
         specs: [
             { icon: Gauge, label: "6500 km" },
             { icon: Cog, label: "4.0L" },
+            { icon: Settings, label: "Hybrid" },
+        ]
+    },
+    {
+        name: "2009 Crown 3.5L V6 Hybrid",
+        meta: "1 Year warranty for peace of mind",
+        img: car23,
+        image: car23,
+        price: "AUD $16,499",
+        specs: [
+            { icon: Gauge, label: "107,000 km" },
+            { icon: Cog, label: "3.5L" },
             { icon: Settings, label: "Hybrid" },
         ]
     },
