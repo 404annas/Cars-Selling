@@ -51,6 +51,7 @@ import car26 from "@/assets/car26.jpg"
 import car27 from "@/assets/car27.jpg"
 import car28 from "@/assets/car28.jpg"
 import car29 from "@/assets/car29.jpg"
+import car30 from "@/assets/car30.jpg"
 
 const cars = [
     {
@@ -399,6 +400,18 @@ const cars = [
             { icon: Gauge, label: "188,000 km" },
             { icon: Cog, label: "4.2L" },
             { icon: Settings, label: "Hybrid" },
+        ]
+    },
+    {
+        name: "2015 Audi A4 Quattro Sedan",
+        meta: "Great condition - full service history with Audi",
+        img: car30,
+        image: car30,
+        price: "SOLD",
+        specs: [
+            { icon: Gauge, label: "131,000 km" },
+            { icon: Cog, label: "2.0L" },
+            { icon: Settings, label: "Automatic" },
         ]
     },
 ]
