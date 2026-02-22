@@ -9,6 +9,8 @@ interface AddToCartButtonProps {
 }
 
 export default function AddToCartButton({ carData }: AddToCartButtonProps) {
+  const isSold = carData.price === "SOLD";
+
   return (
     <button
       onClick={() => {
@@ -37,10 +39,15 @@ export default function AddToCartButton({ carData }: AddToCartButtonProps) {
           toast.error(`${carData.name} is already in your cart.`);
         }
       }}
-      className="flex-1 bg-black border-2 border-red-200 hover:border-red-500 hover:text-red-600 text-gray-400 font-bold py-4 rounded-lg transition-all duration-300 active:scale-95 flex justify-center items-center gap-2 cursor-pointer"
+      disabled={isSold}
+      className={`flex-1 border-2 font-bold py-4 rounded-lg transition-all duration-300 flex justify-center items-center gap-2 cursor-pointer ${
+        isSold
+          ? 'bg-gray-800 border-gray-700 text-gray-500 hover:cursor-not-allowed'
+          : 'bg-black border-red-200 hover:border-red-500 hover:text-red-600 text-gray-400 active:scale-95'
+      }`}
     >
       <ShoppingCart size={20} />
-      Add to Cart
+      {isSold ? "Sold Out" : "Add to Cart"}
     </button>
   );
 }

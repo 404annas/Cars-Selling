@@ -33,13 +33,15 @@ import car22 from "@/assets/car22.jpg"
 import car23 from "@/assets/car23.jpg"
 import car24 from "@/assets/car24.jpg"
 import car25 from "@/assets/car25.jpg"
+import car26 from "@/assets/car26.jpg"
+import car27 from "@/assets/car27.jpg"
 
 const cars = [
     {
         name: "Toyota Prius 2011",
         meta: "3 Years Warranty Included",
         img: car1,
-        price: "AUD $14,500",
+        price: "SOLD",
         specs: [
             { icon: Gauge, label: "64,000 km" },
             { icon: Cog, label: "1.8L" },
@@ -50,7 +52,7 @@ const cars = [
         name: "Toyota Crown Sedan 2010",
         meta: "1 Year warranty for peace of mind",
         img: car2,
-        price: "AUD $17,500",
+        price: "SOLD",
         specs: [
             { icon: Gauge, label: "89,000 km" },
             { icon: Cog, label: "3.5L" },
@@ -61,7 +63,7 @@ const cars = [
         name: "Honda Vezel 2014",
         meta: "5 years warranty",
         img: car3,
-        price: "AUD $16,500",
+        price: "SOLD",
         specs: [
             { icon: Gauge, label: "99 km" },
             { icon: Cog, label: "4.5L" },
@@ -72,7 +74,7 @@ const cars = [
         name: "LEXUS LS460 V8 2012",
         meta: "3 Years warranty",
         img: car4,
-        price: "AUD $24, 999",
+        price: "SOLD",
         specs: [
             { icon: Gauge, label: "93 km" },
             { icon: Cog, label: "4.6L" },
@@ -94,7 +96,7 @@ const cars = [
         name: "Mitsubishi Lancer Evolution 2007",
         meta: "5 years mechanical warranty ",
         img: car6,
-        price: "AUD $32,000",
+        price: "SOLD",
         specs: [
             { icon: Gauge, label: "50,200 km" },
             { icon: Cog, label: "2.0L" },
@@ -105,7 +107,7 @@ const cars = [
         name: "Lexus LS460 V8 2007",
         meta: "3 Years warranty",
         img: car7,
-        price: "AUD $16,900",
+        price: "SOLD",
         specs: [
             { icon: Gauge, label: "154,000 km" },
             { icon: Cog, label: "4.6L" },
@@ -116,7 +118,7 @@ const cars = [
         name: "Toyota C-HR Hybrid G Mode-Nero",
         meta: "6-Month Warranty",
         img: car8,
-        price: "AUD $26,500",
+        price: "SOLD",
         specs: [
             { icon: Gauge, label: "60,000 km" },
             { icon: Cog, label: "1.8L" },
@@ -127,7 +129,7 @@ const cars = [
         name: "Mercedes-Benz S400h Hybrid",
         meta: "1 year warranty",
         img: car9,
-        price: "AUD $28,500",
+        price: "SOLD",
         specs: [
             { icon: Gauge, label: "40,000 km" },
             { icon: Cog, label: "3.5L" },
@@ -138,7 +140,7 @@ const cars = [
         name: "Honda Grace Hybrid EX 2015",
         meta: "1 Year Rego & Ctp",
         img: car10,
-        price: "AUD $16,000",
+        price: "SOLD",
         specs: [
             { icon: Gauge, label: "43,000 km" },
             { icon: Cog, label: "1.5L" },
@@ -149,7 +151,7 @@ const cars = [
         name: "Toyota Yaris Hybrid G AWD 2020",
         meta: "1 Year Rego + CTP Included",
         img: car11,
-        price: "AUD $18,500",
+        price: "SOLD",
         specs: [
             { icon: Gauge, label: "100,000 km" },
             { icon: Cog, label: "1.5L" },
@@ -160,7 +162,7 @@ const cars = [
         name: "Lexus LS460 V8 RWD 2013",
         meta: "4 years warranty",
         img: car12,
-        price: "AUD $26,800",
+        price: "SOLD",
         specs: [
             { icon: Gauge, label: "80,000 km" },
             { icon: Cog, label: "4.6L" },
@@ -171,7 +173,7 @@ const cars = [
         name: "Honda Fit Hybrid eHEV Hatchback",
         meta: "Warranty",
         img: car13,
-        price: "AUD $23,000",
+        price: "SOLD",
         specs: [
             { icon: Gauge, label: "100 km" },
             { icon: Cog, label: "1.5L" },
@@ -182,7 +184,7 @@ const cars = [
         name: "Suzuki Swift Hybrid Hatchback",
         meta: "Warranty",
         img: car14,
-        price: "AUD $18,000",
+        price: "SOLD",
         specs: [
             { icon: Gauge, label: "40,000 km" },
             { icon: Cog, label: "1.2L" },
@@ -193,7 +195,7 @@ const cars = [
         name: "Honda Fit Hybrid 2018",
         meta: "Warranty",
         img: car15,
-        price: "AUD $18,000",
+        price: "SOLD",
         specs: [
             { icon: Gauge, label: "100 km" },
             { icon: Cog, label: "1.5L" },
@@ -204,7 +206,7 @@ const cars = [
         name: "Toyota Crown RS Advance 2019",
         meta: "Warranty",
         img: car16,
-        price: "AUD $39,999",
+        price: "SOLD",
         specs: [
             { icon: Gauge, label: "40,000 km" },
             { icon: Cog, label: "2.5L" },
@@ -215,7 +217,7 @@ const cars = [
         name: "Lexus LS460 V8 RWD 2007",
         meta: "Warranty",
         img: car17,
-        price: "AUD $25,999",
+        price: "SOLD",
         specs: [
             { icon: Gauge, label: "200,000 km" },
             { icon: Cog, label: "4.6L" },
@@ -226,7 +228,7 @@ const cars = [
         name: "Honda Vezel Hybrid 2014",
         meta: "Warranty",
         img: car18,
-        price: "AUD $17,000",
+        price: "SOLD",
         specs: [
             { icon: Gauge, label: "60,000 km" },
             { icon: Cog, label: "1.5L" },
@@ -237,7 +239,7 @@ const cars = [
         name: "Toyota C-HR Hybrid 2018",
         meta: "Warranty",
         img: car19,
-        price: "AUD $26,000",
+        price: "SOLD",
         specs: [
             { icon: Gauge, label: "50,000 km" },
             { icon: Cog, label: "1.8L" },
@@ -273,7 +275,7 @@ const cars = [
         meta: "1 year Rego + CTP Included",
         img: car22,
         image: car22,
-        price: "AUD $25,000",
+        price: "SOLD",
         specs: [
             { icon: Gauge, label: "6500 km" },
             { icon: Cog, label: "1.5L" },
@@ -285,7 +287,7 @@ const cars = [
         meta: "1 Year warranty for peace of mind",
         img: car23,
         image: car23,
-        price: "AUD $16,499",
+        price: "SOLD",
         specs: [
             { icon: Gauge, label: "107,000 km" },
             { icon: Cog, label: "3.5L" },
@@ -297,7 +299,7 @@ const cars = [
         meta: "Eligible for Uber X , Didi, Ubereats Etc",
         img: car24,
         image: car24,
-        price: "AUD $18,499",
+        price: "SOLD",
         specs: [
             { icon: Gauge, label: "109,000 km" },
             { icon: Cog, label: "4.0L" },
@@ -313,6 +315,30 @@ const cars = [
         specs: [
             { icon: Gauge, label: "14,300 km" },
             { icon: Cog, label: "3.9L" },
+            { icon: Settings, label: "Hybrid" },
+        ]
+    },
+    {
+        name: "2020 YARIS HYBRID X 4WD",
+        meta: "1 Year Rego & Ctp",
+        img: car26,
+        image: car26,
+        price: "SOLD",
+        specs: [
+            { icon: Gauge, label: "117,000 km" },
+            { icon: Cog, label: "3.0L" },
+            { icon: Settings, label: "Hybrid" },
+        ]
+    },
+     {
+        name: "2020 YARIS HYBRID Z 4WD",
+        meta: "1 Year Rego & Ctp",
+        img: car27,
+        image: car27,
+        price: "SOLD",
+        specs: [
+            { icon: Gauge, label: "130,000 km" },
+            { icon: Cog, label: "1.5L" },
             { icon: Settings, label: "Hybrid" },
         ]
     },

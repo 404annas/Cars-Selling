@@ -31,6 +31,7 @@ interface CarPageProps {
 export default async function CarDetailsPage({ params }: CarPageProps) {
   const { id } = await params;
   const carData = allCars.find((c) => c.id === Number(id));
+  const isSold = carData?.price === "SOLD";
 
   // Handle case where car is not found
   if (!carData) {
@@ -104,9 +105,9 @@ export default async function CarDetailsPage({ params }: CarPageProps) {
 
               <div className="flex items-center gap-2 mb-6 border-b border-red-100 pb-6">
                 <h2 className="text-2xl font-bold text-red-600 orb">
-                  AUD ${carData.price}
+                  {isSold ? "SOLD" : `AUD $${carData.price}`}
                 </h2>
-                <span className="text-gray-400 font-medium text-sm">Excl. Gov Charges</span>
+                {!isSold && <span className="text-gray-400 font-medium text-sm">Excl. Gov Charges</span>}
               </div>
 
               {/* Key Specs Grid */}
@@ -143,8 +144,15 @@ export default async function CarDetailsPage({ params }: CarPageProps) {
 
               {/* Action Buttons */}
               <div className="flex flex-col sm:flex-row gap-3 orb">
-                <button className="flex-1 bg-red-500 hover:bg-red-600 text-white font-bold py-4 rounded-lg shadow-sm shadow-red-200 transition-all duration-300 active:scale-95 flex justify-center items-center gap-2 cursor-pointer">
-                  Reserve Now
+                <button
+                  disabled={isSold}
+                  className={`flex-1 font-bold py-4 rounded-lg transition-all duration-300 flex justify-center items-center gap-2 cursor-pointer ${
+                    isSold
+                      ? 'bg-gray-800 text-gray-500 hover:cursor-not-allowed'
+                      : 'bg-red-500 hover:bg-red-600 text-white shadow-sm shadow-red-200 active:scale-95'
+                  }`}
+                >
+                  {isSold ? "Reserved" : "Reserve Now"}
                 </button>
                 <AddToCartButton carData={carData} />
               </div>

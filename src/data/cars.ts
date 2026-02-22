@@ -229,6 +229,24 @@ import car25_3 from "@/assets/car25-3.jpg"
 import car25_4 from "@/assets/car25-4.jpg"
 import car25_5 from "@/assets/car25-5.jpg"
 
+import car26_1 from "@/assets/car26-1.jpg"
+import car26_2 from "@/assets/car26-2.jpg"
+import car26_3 from "@/assets/car26-3.jpg"
+import car26_4 from "@/assets/car26-4.jpg"
+import car26_5 from "@/assets/car26-5.jpg"
+import car26_6 from "@/assets/car26-6.jpg"
+
+import car27_1 from "@/assets/car27-1.jpg"
+import car27_2 from "@/assets/car27-2.jpg"
+import car27_3 from "@/assets/car27-3.jpg"
+import car27_4 from "@/assets/car27-4.jpg"
+import car27_5 from "@/assets/car27-5.jpg"
+import car27_6 from "@/assets/car27-6.jpg"
+import car27_7 from "@/assets/car27-7.jpg"
+import car27_8 from "@/assets/car27-8.jpg"
+import car27_9 from "@/assets/car27-9.jpg"
+
+
 export interface CarDetails {
     id: number;
     name: string;
@@ -255,11 +273,11 @@ export const allCars: CarDetails[] = [
         id: 0,
         name: "Toyota Prius 2011",
         tagline: "Reliable Hybrid Technology - Excellent Economy",
-        price: "14,500",
-        description: "This 2011 Toyota Prius represents the gold standard in hybrid efficiency. Perfect for city driving and long commutes alike, it offers exceptional fuel economy without compromising on space or comfort. Meticulously maintained and ready for its next owner.",
+        price: "SOLD",
+        description: "SOLD - This 2011 Toyota Prius represents the gold standard in hybrid efficiency. Perfect for city driving and long commutes alike, it offers exceptional fuel economy without compromising on space or comfort. Meticulously maintained and ready for its next owner.",
         specs: { mileage: "64,000 km", engine: "1.8L Hybrid", transmission: "CVT", fuel: "Hybrid", year: "2011", color: "Pearl White" },
         highlights: ["Push Button Start", "Reverse Camera", "Keyless Entry", "Climate Control", "Bluetooth Connectivity"],
-        images: [car1_1, car1_2, car1_3, car1_4, car1_5, car1_6, car1_7], // You can add more specific images later
+        images: [car1_1, car1_2, car1_3, car1_4, car1_5, car1_6, car1_7],
         dealer: "Elite Motor Cars",
         dealerLocation: "Sydney, Australia",
         license: "MD100405"
@@ -268,8 +286,8 @@ export const allCars: CarDetails[] = [
         id: 1,
         name: "Toyota Crown Sedan 2010",
         tagline: "Luxury Meets Reliability - V6 Power",
-        price: "17,500",
-        description: "Experience true luxury with the Toyota Crown. This sedan offers a whisper-quiet cabin, premium materials, and a smooth ride that rivals European competitors at a fraction of the cost.",
+        price: "SOLD",
+        description: "SOLD - Experience true luxury with the Toyota Crown. This sedan offers a whisper-quiet cabin, premium materials, and a smooth ride that rivals European competitors at a fraction of the cost.",
         specs: { mileage: "89,000 km", engine: "3.5L V6", transmission: "Automatic", fuel: "Petrol", year: "2010", color: "Black" },
         highlights: ["Leather Seats", "Electric Power Seats", "Soft Close Doors", "Premium Sound System", "Cruise Control"],
         images: [car2_1, car2_2, car2_3, car2_4, car2_5, car2_6, car2_7, car2_8],
@@ -281,8 +299,8 @@ export const allCars: CarDetails[] = [
         id: 2,
         name: "Honda Vezel 2014",
         tagline: "Compact SUV with Hybrid Efficiency",
-        price: "16,500",
-        description: "The Honda Vezel (HR-V) combines the practicality of an SUV with the fuel efficiency of a hybrid hatch. Its magic seats offer versatile cargo options perfect for active lifestyles.",
+        price: "SOLD",
+        description: "SOLD - The Honda Vezel (HR-V) combines the practicality of an SUV with the fuel efficiency of a hybrid hatch. Its magic seats offer versatile cargo options perfect for active lifestyles.",
         specs: { mileage: "99,000 km", engine: "1.5L Hybrid", transmission: "Automatic", fuel: "Hybrid", year: "2014", color: "Silver" },
         highlights: ["Magic Seats", "Sport Mode", "Paddle Shifters", "Touchscreen Display", "LED Headlights"],
         images: [car3_1, car3_2, car3_3, car3_4, car3_5, car3_6, car3_7, car3_8],
@@ -294,8 +312,8 @@ export const allCars: CarDetails[] = [
         id: 3,
         name: "LEXUS LS460 V8 2012",
         tagline: "The Pinnacle of Japanese Luxury",
-        price: "24,999",
-        description: "A flagship luxury sedan powered by a silky smooth V8 engine. The LS460 offers an abundance of power, sophisticated technology, and world-class comfort.",
+        price: "SOLD",
+        description: "SOLD - A flagship luxury sedan powered by a silky smooth V8 engine. The LS460 offers an abundance of power, sophisticated technology, and world-class comfort.",
         specs: { mileage: "93,000 km", engine: "4.6L V8", transmission: "8-Speed Auto", fuel: "Petrol", year: "2012", color: "Black" },
         highlights: ["Mark Levinson Audio", "Heated/Cooled Seats", "Sunroof", "Air Suspension", "Radar Cruise Control"],
         images: [car4_1, car4_2, car4_3, car4_4, car4_5, car4_6, car4_7],
@@ -320,8 +338,8 @@ export const allCars: CarDetails[] = [
         id: 5,
         name: "Mitsubishi Lancer Evolution 2007",
         tagline: "Rally Bred Performance Icon",
-        price: "32,000",
-        description: "A legend of the streets. The Lancer Evolution offers raw, turbocharged performance and incredible handling dynamics thanks to its advanced all-wheel-drive system.",
+        price: "SOLD",
+        description: "SOLD - A legend of the streets. The Lancer Evolution offers raw, turbocharged performance and incredible handling dynamics thanks to its advanced all-wheel-drive system.",
         specs: { mileage: "50,200 km", engine: "2.0L Turbo", transmission: "Dual-Clutch", fuel: "Petrol", year: "2007", color: "Red" },
         highlights: ["Recaro Seats", "Brembo Brakes", "AWC System", "Turbocharged", "Sport Suspension"],
         images: [car6_1, car6_2, car6_3, car6_4, car6_5, car6_6, car6_7, car6_8],
@@ -333,8 +351,8 @@ export const allCars: CarDetails[] = [
         id: 6,
         name: "Lexus LS460 V8 2007",
         tagline: "Executive Travel at its Best",
-        price: "16,900",
-        description: "Another fine example of the LS460 lineage. This vehicle offers exceptional value for money, giving you access to V8 power and luxury for the price of a standard hatchback.",
+        price: "SOLD",
+        description: "SOLD - Another fine example of the LS460 lineage. This vehicle offers exceptional value for money, giving you access to V8 power and luxury for the price of a standard hatchback.",
         specs: { mileage: "154,000 km", engine: "4.6L V8", transmission: "Automatic", fuel: "Petrol", year: "2007", color: "Grey" },
         highlights: ["Leather Interior", "Navigation System", "Alloy Wheels", "Auto Headlights", "Rain Sensing Wipers"],
         images: [car7_1, car7_2, car7_3, car7_4, car7_5, car7_6, car7_7, car7_8],
@@ -346,8 +364,8 @@ export const allCars: CarDetails[] = [
         id: 7,
         name: "Toyota C-HR Hybrid G Mode-Nero",
         tagline: "Stylish Crossover with Hybrid Tech",
-        price: "26,500",
-        description: "The C-HR stands out with its futuristic design. The G Mode-Nero edition adds stylish black accents and premium interior features to this fuel-sipping hybrid.",
+        price: "SOLD",
+        description: "SOLD - The C-HR stands out with its futuristic design. The G Mode-Nero edition adds stylish black accents and premium interior features to this fuel-sipping hybrid.",
         specs: { mileage: "60,000 km", engine: "1.8L Hybrid", transmission: "CVT", fuel: "Hybrid", year: "2018", color: "Two-Tone" },
         highlights: ["Blind Spot Monitor", "Lane Assist", "Heated Seats", "Nero Styling Pack", "Adaptive Cruise"],
         images: [car8_1, car8_2, car8_3, car8_4, car8_5, car8_6, car8_7, car8_8],
@@ -359,8 +377,8 @@ export const allCars: CarDetails[] = [
         id: 8,
         name: "Mercedes-Benz S400h Hybrid",
         tagline: "German Engineering, Hybrid Efficiency",
-        price: "28,500",
-        description: "The S-Class is the benchmark for luxury. This S400h combines Mercedes prestige with hybrid technology for a quieter, more efficient executive transport.",
+        price: "SOLD",
+        description: "SOLD - The S-Class is the benchmark for luxury. This S400h combines Mercedes prestige with hybrid technology for a quieter, more efficient executive transport.",
         specs: { mileage: "40,000 km", engine: "3.5L Hybrid", transmission: "Automatic", fuel: "Hybrid", year: "2015", color: "Black" },
         highlights: ["Burmester Sound", "Panoramic Roof", "Massage Seats", "Digital Dash", "Ambient Lighting"],
         images: [car9_1, car9_2, car9_3, car9_4, car9_5, car9_6, car9_7, car9_8],
@@ -372,8 +390,8 @@ export const allCars: CarDetails[] = [
         id: 9,
         name: "Honda Grace Hybrid EX 2015",
         tagline: "Compact Sedan Perfection",
-        price: "16,000",
-        description: "The Honda Grace is the sedan version of the Fit/Jazz. It offers immense reliability, great fuel economy, and a surprisingly spacious interior.",
+        price: "SOLD",
+        description: "SOLD - The Honda Grace is the sedan version of the Fit/Jazz. It offers immense reliability, great fuel economy, and a surprisingly spacious interior.",
         specs: { mileage: "43,000 km", engine: "1.5L Hybrid", transmission: "DCT", fuel: "Hybrid", year: "2015", color: "Pearl White" },
         highlights: ["Paddle Shifters", "Smart Key", "LED Lights", "Rear Vents", "Econ Mode"],
         images: [car10_1, car10_2, car10_3, car10_4, car10_5, car10_6, car10_7],
@@ -385,8 +403,8 @@ export const allCars: CarDetails[] = [
         id: 10,
         name: "Toyota Yaris Hybrid G AWD 2020",
         tagline: "Modern, Safe, and AWD",
-        price: "18,500",
-        description: "A late-model Yaris with the added safety of All-Wheel Drive. Packed with Toyota's latest Safety Sense technology and incredibly fuel efficient.",
+        price: "SOLD",
+        description: "SOLD - A late-model Yaris with the added safety of All-Wheel Drive. Packed with Toyota's latest Safety Sense technology and incredibly fuel efficient.",
         specs: { mileage: "10,000 km", engine: "1.5L Hybrid", transmission: "CVT", fuel: "Hybrid", year: "2020", color: "Red" },
         highlights: ["Apple CarPlay", "Lane Trace Assist", "Pre-Collision Safety", "AWD System", "Digital Cluster"],
         images: [car11_1, car11_2, car11_3, car11_4, car11_5, car11_6, car11_7],
@@ -398,8 +416,8 @@ export const allCars: CarDetails[] = [
         id: 11,
         name: "Lexus LS460 V8 RWD 2013",
         tagline: "Updated Facelift Model",
-        price: "26,800",
-        description: "The 2013 facelift brought the spindle grille and modernized interior to the LS460. A stunning vehicle that commands respect on the road.",
+        price: "SOLD",
+        description: "SOLD - The 2013 facelift brought the spindle grille and modernized interior to the LS460. A stunning vehicle that commands respect on the road.",
         specs: { mileage: "80,000 km", engine: "4.6L V8", transmission: "8-Speed Auto", fuel: "Petrol", year: "2013", color: "White" },
         highlights: ["Spindle Grille", "Updated Infotainment", "Blind Spot Monitor", "Soft Close Doors", "19-inch Alloys"],
         images: [car12_1, car12_2, car12_3, car12_4, car12_5, car12_6, car12_7, car12_8],
@@ -411,8 +429,8 @@ export const allCars: CarDetails[] = [
         id: 12,
         name: "Honda Fit Hybrid eHEV",
         tagline: "The Ultimate City Hatchback",
-        price: "23,000",
-        description: "The new generation Fit (Jazz) features the e:HEV system which feels more like an EV to drive. Incredible visibility and best-in-class space.",
+        price: "SOLD",
+        description: "SOLD - The new generation Fit (Jazz) features the e:HEV system which feels more like an EV to drive. Incredible visibility and best-in-class space.",
         specs: { mileage: "10,000 km", engine: "1.5L e:HEV", transmission: "e-CVT", fuel: "Hybrid", year: "2021", color: "Blue" },
         highlights: ["Honda Sensing", "Electronic Parking Brake", "Magic Seats", "Digital Cockpit", "LED Projectors"],
         images: [car13_1, car13_2, car13_3, car13_4, car13_5, car13_6],
@@ -424,8 +442,8 @@ export const allCars: CarDetails[] = [
         id: 13,
         name: "Suzuki Swift Hybrid Hatchback",
         tagline: "JDM Ultra-Efficient Hatchback",
-        price: "18,000",
-        description: "Imported directly from the JDM market, this Swift features the mild-hybrid system for superior economy. Sporty handling meets frugal running costs.",
+        price: "SOLD",
+        description: "SOLD - Imported directly from the JDM market, this Swift features the mild-hybrid system for superior economy. Sporty handling meets frugal running costs.",
         specs: { mileage: "40,000 km", engine: "1.2L Hybrid", transmission: "CVT", fuel: "Hybrid", year: "2017", color: "Black" },
         highlights: ["Paddle Shifters", "Mild Hybrid", "Sport Seats", "Keyless Start", "Alloy Wheels"],
         images: [car14_1, car14_2, car14_3, car14_4, car14_5, car14_6, car14_7],
@@ -437,8 +455,8 @@ export const allCars: CarDetails[] = [
         id: 14,
         name: "Honda Fit Hybrid 2018",
         tagline: "Sporty Facelift Model",
-        price: "18,000",
-        description: "The 2018 facelift Fit Hybrid offers sharper styling and improved DCT transmission tuning. A reliable, fun-to-drive daily driver.",
+        price: "SOLD",
+        description: "SOLD - The 2018 facelift Fit Hybrid offers sharper styling and improved DCT transmission tuning. A reliable, fun-to-drive daily driver.",
         specs: { mileage: "55,000 km", engine: "1.5L Hybrid", transmission: "DCT", fuel: "Hybrid", year: "2018", color: "Grey" },
         highlights: ["S-Package Styling", "LED Lights", "Cruise Control", "Safety Sense", "Reverse Cam"],
         images: [car15_1, car15_2, car15_3, car15_4, car15_5, car15_6, car15_7],
@@ -450,8 +468,8 @@ export const allCars: CarDetails[] = [
         id: 15,
         name: "Toyota Crown RS Advance 2019",
         tagline: "The Future of Japanese Luxury",
-        price: "39,999",
-        description: "The 15th Generation Crown is a technological marvel. The RS Advance trim offers sporty suspension and aggressive styling coupled with next-gen connectivity.",
+        price: "SOLD",
+        description: "SOLD - The 15th Generation Crown is a technological marvel. The RS Advance trim offers sporty suspension and aggressive styling coupled with next-gen connectivity.",
         specs: { mileage: "40,000 km", engine: "2.5L Hybrid", transmission: "CVT", fuel: "Hybrid", year: "2019", color: "White" },
         highlights: ["Connected Services", "Lane Tracing", "Heads Up Display", "Digital Mirror", "RS Bodykit"],
         images: [car16_1, car16_2, car16_3, car16_4, car16_5, car16_6],
@@ -463,8 +481,8 @@ export const allCars: CarDetails[] = [
         id: 16,
         name: "Lexus LS460 V8 RWD 2007",
         tagline: "Timeless Elegance",
-        price: "25,999",
-        description: "A low mileage example of the classic LS460. These vehicles are known to last for hundreds of thousands of kilometers with basic maintenance.",
+        price: "SOLD",
+        description: "SOLD - A low mileage example of the classic LS460. These vehicles are known to last for hundreds of thousands of kilometers with basic maintenance.",
         specs: { mileage: "200,000 km", engine: "4.6L V8", transmission: "Automatic", fuel: "Petrol", year: "2007", color: "Silver" },
         highlights: ["Mark Levinson", "Sunroof", "Leather", "Parking Assist", "Keyless Go"],
         images: [car17_1, car17_2, car17_3, car17_4, car17_5],
@@ -476,8 +494,8 @@ export const allCars: CarDetails[] = [
         id: 17,
         name: "Honda Vezel Hybrid 2014",
         tagline: "Best Selling Compact SUV",
-        price: "17,000",
-        description: "Another great Vezel option in a different colorway. High driving position, great economy, and Honda reliability make this a top choice.",
+        price: "SOLD",
+        description: "SOLD - Another great Vezel option in a different colorway. High driving position, great economy, and Honda reliability make this a top choice.",
         specs: { mileage: "60,000 km", engine: "1.5L Hybrid", transmission: "Automatic", fuel: "Hybrid", year: "2014", color: "Red" },
         highlights: ["Electric Park Brake", "City Brake Assist", "Eco Assist", "Folding Mirrors", "Climate Control"],
         images: [car18_1, car18_2, car18_3, car18_4, car18_5, car18_6],
@@ -489,8 +507,8 @@ export const allCars: CarDetails[] = [
         id: 18,
         name: "Toyota C-HR Hybrid 2018",
         tagline: "Urban Crossover",
-        price: "26,000",
-        description: "Designed for the urban jungle. The C-HR handles like a hatchback but rides like an SUV. Hybrid powertrain ensures visits to the petrol station are rare.",
+        price: "SOLD",
+        description: "SOLD - Designed for the urban jungle. The C-HR handles like a hatchback but rides like an SUV. Hybrid powertrain ensures visits to the petrol station are rare.",
         specs: { mileage: "50,000 km", engine: "1.8L Hybrid", transmission: "CVT", fuel: "Hybrid", year: "2018", color: "Metal Stream" },
         highlights: ["Toyota Safety Sense", "Dual Zone Climate", "Auto High Beam", "8-inch Screen", "Alloy Wheels"],
         images: [car19_1, car19_2, car19_3, car19_4, car19_5, car19_6, car19_7, car19_8],
@@ -531,7 +549,7 @@ export const allCars: CarDetails[] = [
         id: 21,
         name: "2024 Yaris Hybrid 4WD",
         tagline: "Brand new condition not a single scratch on the car",
-        price: "25,000",
+        price: "SOLD",
         description: "This 2024 Yaris Hybrid 4WD is in pristine condition with only 6,500 km on the clock. It combines the latest hybrid technology with the added traction of all-wheel drive, making it perfect for any driving conditions. The car is loaded with features and has been meticulously maintained, ensuring it looks and drives like new.",
         specs: { mileage: "6500 km", engine: "1.5L Hybrid", transmission: "Hybrid", fuel: "Hybrid", year: "2024", color: "Red" },
         highlights: [
@@ -545,7 +563,7 @@ export const allCars: CarDetails[] = [
         id: 22,
         name: "2009 Crown 3.5L V6 Hybrid",
         tagline: "Clean 10/10 condition no scratches or dent",
-        price: "16,499",
+        price: "SOLD",
         description: "This 2009 Crown 3.5L V6 Hybrid is a rare find in such immaculate condition. With only 107,000 km on the odometer, this vehicle has been meticulously cared for and maintained. The hybrid powertrain offers a perfect blend of performance and efficiency, while the luxurious interior ensures a comfortable ride. Whether you're looking for a reliable daily driver or a stylish executive car, this Crown delivers on all fronts.",
         specs: { mileage: "107,000 km", engine: "3.5L Hybrid", transmission: "Hybrid", fuel: "Hybrid", year: "2009", color: "Off White" },
         highlights: [
@@ -559,8 +577,8 @@ export const allCars: CarDetails[] = [
         id: 23,
         name: "2018 Toyota Prius C Hyrbid",
         tagline: "Eligible for Uber X , Didi, Ubereats Etc",
-        price: "18,499",
-        description: "This 2009 Crown 3.5L V6 Hybrid is a rare find in such immaculate condition. With only 107,000 km on the odometer, this vehicle has been meticulously cared for and maintained. The hybrid powertrain offers a perfect blend of performance and efficiency, while the luxurious interior ensures a comfortable ride. Whether you're looking for a reliable daily driver or a stylish executive car, this Crown delivers on all fronts.",
+        price: "SOLD",
+        description: "This 2018 Toyota Prius C Hybrid is a reliable and fuel-efficient hybrid vehicle. With only 109,000 km on the odometer, it's in excellent condition and ready for immediate delivery. The Prius C is perfect for city driving, offering a compact size and impressive fuel economy. Whether you're looking for a daily commuter or a practical ride for ridesharing, this Prius C delivers on all fronts.",
         specs: { mileage: "109,000 km", engine: "4.0L Hybrid", transmission: "Hybrid", fuel: "Hybrid", year: "2018", color: "Blue" },
         highlights: [
             "1 Year rego & ctp", "Keyless entry + Push Start", "Cruise control", "2x keys", "Hybrid", "Multimedia Steering wheel", "360 Parking sensors", "Auto mirrors", "Driving modes,(Sports,Eco,Ev)", "Reverse camera + Dashcam", "Optional 1, 3 & 5 Years Hybrid battery warranty Available", "Alot more"],
@@ -574,11 +592,39 @@ export const allCars: CarDetails[] = [
         name: "2014 Toyota Prius c / Aqua",
         tagline: "Eligible for Uber X, UberEats, Didi, DoorDash etc",
         price: "SOLD",
-        description: "This 2009 Crown 3.5L V6 Hybrid is a rare find in such immaculate condition. With only 107,000 km on the odometer, this vehicle has been meticulously cared for and maintained. The hybrid powertrain offers a perfect blend of performance and efficiency, while the luxurious interior ensures a comfortable ride. Whether you're looking for a reliable daily driver or a stylish executive car, this Crown delivers on all fronts.",
+        description: "This 2014 Toyota Prius c / Aqua is a reliable and fuel-efficient hybrid vehicle. With only 14,300 km on the odometer, it's in excellent condition and ready for immediate delivery. The Prius c is perfect for city driving, offering a compact size and impressive fuel economy. Whether you're looking for a daily commuter or a practical ride for ridesharing, this Prius c delivers on all fronts.",
         specs: { mileage: "14,300 km", engine: "3.9L Hybrid", transmission: "Hybrid", fuel: "Hybrid", year: "2014", color: "Red" },
         highlights: [
             "1 year Rego & Ctp", "Has a sporty look and feel to it with a very comfortable drive and cheap to run.", "Has a sporty look and feel to it with a very comfortable drive and cheap to run.", "Retractable mirrors", "Reverse camera", "Push start", "Keyless entry", "Cruise control", "Multimedia steering wheel", "Parking sensors", "Apple carply", "Traction control", "Eco mode", "Sports mode", "All 4 tyres like new"],
         images: [car25_1, car25_2, car25_3, car25_4, car25_5],
+        dealer: "Elite Motor Cars",
+        dealerLocation: "Sydney, Australia",
+        license: "MD100405"
+    },
+    {
+        id: 25,
+        name: "2020 YARIS HYBRID X 4WD",
+        tagline: "1 year Rego & Ctp",
+        price: "SOLD",
+        description: "This 2020 Toyota Yaris Hybrid X 4WD is a reliable and fuel-efficient hybrid vehicle. With only 117,000 km on the odometer, it's in excellent condition and ready for immediate delivery. The Yaris Hybrid is perfect for city driving, offering a compact size and impressive fuel economy. Whether you're looking for a daily commuter or a practical ride for ridesharing, this Yaris Hybrid delivers on all fronts.",
+        specs: { mileage: "117,000 km", engine: "3.0L Hybrid", transmission: "Hybrid", fuel: "Hybrid", year: "2020", color: "White" },
+        highlights: [
+            "Keyless entry (2x keys)", "Hybrid", "Premium audio system with six speakers and DAB+ for rich sound clarity", "Parking sensors", "Safety levels equipped with multiple airbags, ABS, EBD, brake assist, traction and stability control, hill-start assist, and lane departure warning", "Also include cross-traffic alert, blind-spot monitoring automatic braking for pedestrian and collision avoidance", "Premium fabric seats", "4 Driving modes Eco/Ev/Normal/Sports", "Push Start", "Infotainment system", "Gps Navigation", "New tyres", "ALOT MORE"],
+        images: [car26_1, car26_2, car26_3, car26_4, car26_5, car26_6],
+        dealer: "Elite Motor Cars",
+        dealerLocation: "Sydney, Australia",
+        license: "MD100405"
+    },
+    {
+        id: 26,
+        name: "2020 YARIS HYBRID Z 4WD",
+        tagline: "1 year Rego & Ctp",
+        price: "SOLD",
+        description: "This 2020 Toyota Yaris Hybrid Z 4WD is a reliable and fuel-efficient hybrid vehicle. With only 117,000 km on the odometer, it's in excellent condition and ready for immediate delivery. The Yaris Hybrid is perfect for city driving, offering a compact size and impressive fuel economy. Whether you're looking for a daily commuter or a practical ride for ridesharing, this Yaris Hybrid delivers on all fronts.",
+        specs: { mileage: "117,000 km", engine: "3.0L Hybrid", transmission: "Hybrid", fuel: "Hybrid", year: "2020", color: "Blue" },
+        highlights: [
+            "Two tone interior", "Heads up Display", "Keyless entry (2x keys)", "Hybrid", "Led Hid’s sporty appearance", "Premium audio system with six speakers and DAB+ for rich sound clarity", "Parking sensors", "Safety levels equipped with multiple airbags, ABS, EBD, brake assist, traction and stability control, hill-start assist, and lane departure warning", "Also include cross-traffic alert, blind-spot monitoring, rear-camera assistance, and automatic braking for pedestrian and collision avoidance", "Premium leather & fabric two tone interior", "Enhancement packs for added luxury and tech features", "Heated seats", "4 Driving modes Eco/Ev/Normal/Sports", "Push Start", "Electric Folding mirrors", "Reverse Camera + 360 Camera", "Dashcam hard wired installed ($600)", "Infotainment system", "Gps Navigation", "New battery", "New tyres", "ALOT MORE"],
+        images: [car27_1, car27_2, car27_3, car27_4, car27_5, car27_6, car27_7, car27_8, car27_9],
         dealer: "Elite Motor Cars",
         dealerLocation: "Sydney, Australia",
         license: "MD100405"
