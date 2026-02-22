@@ -223,6 +223,12 @@ import car24_6 from "@/assets/car24-6.jpg"
 import car24_7 from "@/assets/car24-7.jpg"
 import car24_8 from "@/assets/car24-8.jpg"
 
+import car25_1 from "@/assets/car25-1.jpg"
+import car25_2 from "@/assets/car25-2.jpg"
+import car25_3 from "@/assets/car25-3.jpg"
+import car25_4 from "@/assets/car25-4.jpg"
+import car25_5 from "@/assets/car25-5.jpg"
+
 export interface CarDetails {
     id: number;
     name: string;
@@ -559,6 +565,20 @@ export const allCars: CarDetails[] = [
         highlights: [
             "1 Year rego & ctp", "Keyless entry + Push Start", "Cruise control", "2x keys", "Hybrid", "Multimedia Steering wheel", "360 Parking sensors", "Auto mirrors", "Driving modes,(Sports,Eco,Ev)", "Reverse camera + Dashcam", "Optional 1, 3 & 5 Years Hybrid battery warranty Available", "Alot more"],
         images: [car24_1, car24_2, car24_3, car24_4, car24_5, car24_6, car24_7, car24_8],
+        dealer: "Elite Motor Cars",
+        dealerLocation: "Sydney, Australia",
+        license: "MD100405"
+    },
+    {
+        id: 24,
+        name: "2014 Toyota Prius c / Aqua",
+        tagline: "Eligible for Uber X, UberEats, Didi, DoorDash etc",
+        price: "SOLD",
+        description: "This 2009 Crown 3.5L V6 Hybrid is a rare find in such immaculate condition. With only 107,000 km on the odometer, this vehicle has been meticulously cared for and maintained. The hybrid powertrain offers a perfect blend of performance and efficiency, while the luxurious interior ensures a comfortable ride. Whether you're looking for a reliable daily driver or a stylish executive car, this Crown delivers on all fronts.",
+        specs: { mileage: "14,300 km", engine: "3.9L Hybrid", transmission: "Hybrid", fuel: "Hybrid", year: "2014", color: "Red" },
+        highlights: [
+            "1 year Rego & Ctp", "Has a sporty look and feel to it with a very comfortable drive and cheap to run.", "Has a sporty look and feel to it with a very comfortable drive and cheap to run.", "Retractable mirrors", "Reverse camera", "Push start", "Keyless entry", "Cruise control", "Multimedia steering wheel", "Parking sensors", "Apple carply", "Traction control", "Eco mode", "Sports mode", "All 4 tyres like new"],
+        images: [car25_1, car25_2, car25_3, car25_4, car25_5],
         dealer: "Elite Motor Cars",
         dealerLocation: "Sydney, Australia",
         license: "MD100405"

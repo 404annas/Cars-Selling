@@ -33,7 +33,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Elite Motor Cars - Your Import Partner",
-  description: "",
+  description: "Your trusted partner for importing high-grade vehicles directly from Japan and Europe. We specialize in luxury sedans, hybrid efficiency, and performance icons with end-to-end service and zero stress.",
 };
 
 export default function RootLayout({

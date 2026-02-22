@@ -32,6 +32,7 @@ import car21 from "@/assets/car21.jpg"
 import car22 from "@/assets/car22.jpg"
 import car23 from "@/assets/car23.jpg"
 import car24 from "@/assets/car24.jpg"
+import car25 from "@/assets/car25.jpg"
 
 const cars = [
     {
@@ -300,6 +301,18 @@ const cars = [
         specs: [
             { icon: Gauge, label: "109,000 km" },
             { icon: Cog, label: "4.0L" },
+            { icon: Settings, label: "Hybrid" },
+        ]
+    },
+    {
+        name: "2014 Toyota Prius c / Aqua",
+        meta: "Eligible for Uber X, UberEats, Didi, DoorDash etc",
+        img: car25,
+        image: car25,
+        price: "SOLD",
+        specs: [
+            { icon: Gauge, label: "14,300 km" },
+            { icon: Cog, label: "3.9L" },
             { icon: Settings, label: "Hybrid" },
         ]
     },
