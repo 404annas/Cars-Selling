@@ -40,6 +40,7 @@ import car29 from "@/assets/car29.jpg"
 import car30 from "@/assets/car30.jpg"
 import car31 from "@/assets/car31.jpg"
 import car32 from "@/assets/car32.jpg"
+import car33 from "@/assets/car33.jpg"
 
 const cars = [
     {
@@ -404,6 +405,18 @@ const cars = [
         specs: [
             { icon: Gauge, label: "102,000 km" },
             { icon: Cog, label: "5.0L" },
+            { icon: Settings, label: "Hybrid" },
+        ]
+    },
+    {
+        name: "2019 Toyota Vitz / Yaris Hybrid",
+        meta: "1 year rego",
+        img: car33,
+        image: car33,
+        price: "SOLD",
+        specs: [
+            { icon: Gauge, label: "92,000 km" },
+            { icon: Cog, label: "4.0L" },
             { icon: Settings, label: "Hybrid" },
         ]
     },

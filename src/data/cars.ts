@@ -279,6 +279,9 @@ import car32_2 from "@/assets/car32-2.jpg"
 import car32_3 from "@/assets/car32-3.jpg"
 import car32_4 from "@/assets/car32-4.jpg"
 
+import car33_1 from "@/assets/car33-1.jpg"
+import car33_2 from "@/assets/car33-2.jpg"
+import car33_3 from "@/assets/car33-3.jpg"
 export interface CarDetails {
     id: number;
     name: string;
@@ -727,6 +730,20 @@ export const allCars: CarDetails[] = [
         highlights: [
             "Has a sporty look and feel to it", "With a very comfortable drive and cheap to run", "1 year Rego & Ctp", "2x keys", "Paddle shifters", "Push start", "Keyless entry", "Cruise control", "Multimedia steering wheel", "Parking sensors", "Apple carply", "Traction control", "Eco mode", "Sports mode", "Dual climate zone", "All 4 brand new tyres just installed", "Fresh Japanese import"],
         images: [car32_1, car32_2, car32_3, car32_4],
+        dealer: "Elite Motor Cars",
+        dealerLocation: "Sydney, Australia",
+        license: "MD100405"
+    },
+    {
+        id: 32,
+        name: "2019 Toyota Vitz / Yaris Hybrid",
+        tagline: "1 year rego",
+        price: "SOLD",
+        description: "This 2019 Toyota Vitz / Yaris Hybrid is in excellent condition with a full service history from Toyota. It has been meticulously maintained and is ready for immediate delivery. The vehicle features a fuel-efficient hybrid engine, all-wheel drive, and a range of premium features including a sunroof, Bang and Olufsen sound system, and upgraded infotainment screen with Apple CarPlay and Android Auto.",
+        specs: { mileage: "92,000 km", engine: "4.0L Hybrid", transmission: "Hybrid", fuel: "Hybrid", year: "2019", color: "Silver" },
+        highlights: [
+            "Has a sporty look and feel to it", "With a very comfortable drive and cheap to run", "Hybrid engine", "Eco mode", "Traction control", "Dashcam installed", "Log books & Service history", "Reverse camera", "Parking sensors", "15” Wheels with Good Tyres", "Bluetooth Connectivity", "Recently Serviced", "Registration & CTP", "Fresh Japanese import"],
+        images: [car33_1, car33_2, car33_3],
         dealer: "Elite Motor Cars",
         dealerLocation: "Sydney, Australia",
         license: "MD100405"
