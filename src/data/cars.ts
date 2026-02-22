@@ -267,6 +267,12 @@ import car30_4 from "@/assets/car30-4.jpg"
 import car30_5 from "@/assets/car30-5.jpg"
 import car30_6 from "@/assets/car30-6.jpg"
 
+import car31_1 from "@/assets/car31-1.jpg"
+import car31_2 from "@/assets/car31-2.jpg"
+import car31_3 from "@/assets/car31-3.jpg"
+import car31_4 from "@/assets/car31-4.jpg"
+import car31_5 from "@/assets/car31-5.jpg"
+import car31_6 from "@/assets/car31-6.jpg"
 
 export interface CarDetails {
     id: number;
@@ -683,11 +689,25 @@ export const allCars: CarDetails[] = [
         name: "2015 Audi A4 Quattro Sedan",
         tagline: "Great condition - full service history with Audi",
         price: "SOLD",
-        description: "This 2020 Lexus CT200H Hybrid is a well-maintained hybrid luxury vehicle. With only 188,000 km on the odometer, it's in excellent condition and ready for immediate delivery. The CT200H Hybrid combines luxury with practicality, offering a comfortable ride and advanced features. Whether you're looking for a daily commuter or a premium ride for business or leisure, this CT200H delivers on all fronts.",
+        description: "This 2015 Audi A4 Quattro Sedan is in excellent condition with a full service history from Audi. It has been meticulously maintained and is ready for immediate delivery. The vehicle features a powerful 2.0L engine, all-wheel drive, and a range of premium features including a sunroof, Bang and Olufsen sound system, and upgraded infotainment screen with Apple CarPlay and Android Auto.",
         specs: { mileage: "131,000 km", engine: "2.0L Hybrid", transmission: "Automatic", fuel: "Automatic", year: "2015", color: "Gray" },
         highlights: [
             "Top of the line model - full spec", "Great condition - full service history with Audi", "Paramatta and Northside Euros ACT", "Freshly serviced - new brakes", "131xxx kms - mostly highway kms", "Full radar cruise control system", "Active blindspot assist system", "Active crash mitigation system (automatic braking)", "Keyless entry and drive", "Sunroof", "Bang and Olufsen sound system", "Upgraded Infotainment Screen - Apple CarPlay and Android Auto", "Dark tints for privacy", "Steering wheel wrapped in Alcantara - can be taken off prior to sale if needed", "Michelin PS5 tires", "2 keys", "Full paint correction and ceramic coated by Elite", "Auto Lab - Sydney"],
         images: [car30_1, car30_2, car30_3, car30_4, car30_5, car30_6],
+        dealer: "Elite Motor Cars",
+        dealerLocation: "Sydney, Australia",
+        license: "MD100405"
+    },
+    {
+        id: 30,
+        name: "2020 Toyota Vitz / Yaris Hybrid",
+        tagline: "Great condition - full service history with Audi",
+        price: "SOLD",
+        description: "This 2020 Toyota Vitz / Yaris Hybrid is in excellent condition with a full service history from Toyota. It has been meticulously maintained and is ready for immediate delivery. The vehicle features a fuel-efficient hybrid engine, all-wheel drive, and a range of premium features including a sunroof, Bang and Olufsen sound system, and upgraded infotainment screen with Apple CarPlay and Android Auto.",
+        specs: { mileage: "43,000 km", engine: "3.5L Hybrid", transmission: "Hybrid", fuel: "Hybrid", year: "2020", color: "Silver" },
+        highlights: [
+            "Has a sporty look and feel to it", "With a very comfortable drive and cheap to run", "Hybrid engine", "Eco mode", "Traction control", "Dashcam installed", "Log books & Service history", "Reverse camera", "15” Wheels with Good Tyres", "Bluetooth Connectivity", "Recently Serviced", "Registration & CTP", "Fresh Japanese import"],
+        images: [car31_1, car31_2, car31_3, car31_4, car31_5, car31_6],
         dealer: "Elite Motor Cars",
         dealerLocation: "Sydney, Australia",
         license: "MD100405"

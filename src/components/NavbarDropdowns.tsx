@@ -11,6 +11,8 @@ import hondaImg from "@/assets/honda.png"
 import lexusImg from "@/assets/lexus.png"
 import suzukiImg from "@/assets/suzuki.png"
 import toyotaImg from "@/assets/toyota.png"
+import bmw from "@/assets/bmw.png"
+import audi from "@/assets/audi.png"
 
 const CAR_DATA = {
     "Toyota": {
@@ -36,6 +38,14 @@ const CAR_DATA = {
     "Lexus": {
         models: ["LX 570", "LX 600", "RX 450h", "NX 300h", "ES 250", "IS 300", "GX 460", "LS 500"],
         logo: lexusImg
+    },
+    "BMW": {
+        models: ["3 Series", "5 Series", "7 Series", "X5", "X3", "Z4", "M3", "M5"],
+        logo: bmw
+    },
+    "Audi": {
+        models: ["A4", "A6", "A8", "Q5", "Q7", "TT", "R8", "RS5"],
+        logo: audi
     }
 };
 

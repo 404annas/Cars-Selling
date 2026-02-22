@@ -52,6 +52,7 @@ import car27 from "@/assets/car27.jpg"
 import car28 from "@/assets/car28.jpg"
 import car29 from "@/assets/car29.jpg"
 import car30 from "@/assets/car30.jpg"
+import car31 from "@/assets/car31.jpg"
 
 const cars = [
     {
@@ -412,6 +413,18 @@ const cars = [
             { icon: Gauge, label: "131,000 km" },
             { icon: Cog, label: "2.0L" },
             { icon: Settings, label: "Automatic" },
+        ]
+    },
+    {
+        name: "2020 Toyota Vitz / Yaris Hybrid",
+        meta: "12 months rego",
+        img: car31,
+        image: car31,
+        price: "SOLD",
+        specs: [
+            { icon: Gauge, label: "43,000 km" },
+            { icon: Cog, label: "3.5L" },
+            { icon: Settings, label: "Hybrid" },
         ]
     },
 ]
