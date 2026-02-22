@@ -39,6 +39,7 @@ import car28 from "@/assets/car28.jpg"
 import car29 from "@/assets/car29.jpg"
 import car30 from "@/assets/car30.jpg"
 import car31 from "@/assets/car31.jpg"
+import car32 from "@/assets/car32.jpg"
 
 const cars = [
     {
@@ -391,6 +392,18 @@ const cars = [
         specs: [
             { icon: Gauge, label: "43,000 km" },
             { icon: Cog, label: "3.5L" },
+            { icon: Settings, label: "Hybrid" },
+        ]
+    },
+    {
+        name: "2014 Honda vezel / Hrv Hybrid",
+        meta: "Eligible for Uber X, UberEats, Didi, DoorDash etc",
+        img: car32,
+        image: car32,
+        price: "SOLD",
+        specs: [
+            { icon: Gauge, label: "102,000 km" },
+            { icon: Cog, label: "5.0L" },
             { icon: Settings, label: "Hybrid" },
         ]
     },

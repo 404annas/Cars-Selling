@@ -274,6 +274,11 @@ import car31_4 from "@/assets/car31-4.jpg"
 import car31_5 from "@/assets/car31-5.jpg"
 import car31_6 from "@/assets/car31-6.jpg"
 
+import car32_1 from "@/assets/car32-1.jpg"
+import car32_2 from "@/assets/car32-2.jpg"
+import car32_3 from "@/assets/car32-3.jpg"
+import car32_4 from "@/assets/car32-4.jpg"
+
 export interface CarDetails {
     id: number;
     name: string;
@@ -708,6 +713,20 @@ export const allCars: CarDetails[] = [
         highlights: [
             "Has a sporty look and feel to it", "With a very comfortable drive and cheap to run", "Hybrid engine", "Eco mode", "Traction control", "Dashcam installed", "Log books & Service history", "Reverse camera", "15” Wheels with Good Tyres", "Bluetooth Connectivity", "Recently Serviced", "Registration & CTP", "Fresh Japanese import"],
         images: [car31_1, car31_2, car31_3, car31_4, car31_5, car31_6],
+        dealer: "Elite Motor Cars",
+        dealerLocation: "Sydney, Australia",
+        license: "MD100405"
+    },
+    {
+        id: 31,
+        name: "2014 Honda vezel / Hrv Hybrid",
+        tagline: "Eligible for Uber X, UberEats, Didi, DoorDash etc",
+        price: "SOLD",
+        description: "This 2014 Honda vezel / Hrv Hybrid is in excellent condition with a full service history from Honda. It has been meticulously maintained and is ready for immediate delivery. The vehicle features a fuel-efficient hybrid engine, all-wheel drive, and a range of premium features including a sunroof, Bang and Olufsen sound system, and upgraded infotainment screen with Apple CarPlay and Android Auto.",
+        specs: { mileage: "102,000 km", engine: "5.0L Hybrid", transmission: "Hybrid", fuel: "Hybrid", year: "2014", color: "Silver" },
+        highlights: [
+            "Has a sporty look and feel to it", "With a very comfortable drive and cheap to run", "1 year Rego & Ctp", "2x keys", "Paddle shifters", "Push start", "Keyless entry", "Cruise control", "Multimedia steering wheel", "Parking sensors", "Apple carply", "Traction control", "Eco mode", "Sports mode", "Dual climate zone", "All 4 brand new tyres just installed", "Fresh Japanese import"],
+        images: [car32_1, car32_2, car32_3, car32_4],
         dealer: "Elite Motor Cars",
         dealerLocation: "Sydney, Australia",
         license: "MD100405"
