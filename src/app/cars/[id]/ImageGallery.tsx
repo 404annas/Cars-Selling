@@ -33,7 +33,7 @@ export default function ImageGallery({ images, carName }: ImageGalleryProps) {
           <button
             key={index}
             onClick={() => setMainImage(img)}
-            className={`relative flex-shrink-0 w-16 h-26 sm:w-18 sm:h-18 rounded-xl overflow-hidden border-2 transition-all duration-300 cursor-pointer outline-none
+            className={`relative flex-shrink-0 w-14 h-14 sm:w-16 sm:h-16 rounded-xl overflow-hidden border-2 transition-all duration-300 cursor-pointer outline-none
               ${mainImage === img ? "border-red-500" : "border-transparent opacity-70 hover:opacity-100"}
             `}
           >

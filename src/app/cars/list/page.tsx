@@ -27,6 +27,7 @@ import car16 from "@/assets/car16.avif"
 import car17 from "@/assets/car17.avif"
 import car18 from "@/assets/car18.avif"
 import car19 from "@/assets/car19.avif"
+import car20 from "@/assets/car20.jpg"
 
 const cars = [
     {
@@ -237,6 +238,18 @@ const cars = [
             { icon: Cog, label: "1.8L" },
             { icon: Settings, label: "Hybrid" },
         ],
+    },
+    {
+        name: "2007 LEXUS LS600HL V8 5000CC",
+        meta: "1 Year warranty for peace of mind",
+        img: car20,
+        image: car20,
+        price: "AUD $29,000",
+        specs: [
+            { icon: Gauge, label: "72,000 km" },
+            { icon: Cog, label: "5.0L" },
+            { icon: Settings, label: "Hybrid" },
+        ]
     },
 ]
 

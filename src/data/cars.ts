@@ -177,6 +177,16 @@ import car19_6 from "@/assets/car19-6.avif"
 import car19_7 from "@/assets/car19-7.avif"
 import car19_8 from "@/assets/car19-8.avif"
 
+import car20_1 from "@/assets/car20-1.jpg"
+import car20_2 from "@/assets/car20-2.jpg"
+import car20_3 from "@/assets/car20-3.jpg"
+import car20_4 from "@/assets/car20-4.jpg"
+import car20_5 from "@/assets/car20-5.jpg"
+import car20_6 from "@/assets/car20-6.jpg"
+import car20_7 from "@/assets/car20-7.jpg"
+import car20_8 from "@/assets/car20-8.jpg"
+import car20_9 from "@/assets/car20-9.jpg"
+
 export interface CarDetails {
     id: number;
     name: string;
@@ -446,4 +456,19 @@ export const allCars: CarDetails[] = [
         dealerLocation: "Sydney, Australia",
         license: "MD100405"
     },
+    {
+        id: 19,
+        name: "2007 LEXUS LS600HL V8 5000CC",
+        tagline: "Dual-zone automatic Climate Control",
+        price: "29,000",
+        description: "The LS600hL is the long-wheelbase hybrid version of the LS460. It offers rear-seat luxury and a powerful V8 hybrid system for effortless cruising.",
+        specs: { mileage: "72,000 km", engine: "5.0L V8 Hybrid", transmission: "Hyrid", fuel: "Hybrid", year: "2007", color: "Black" },
+        highlights: [
+            "439hp stock", "Fledermaus Cuervo 21 inch wheels", "Long wheel base", "Rare spec in prestine condition", "Mark levinson Sound system", "Adjustable suspension", "Soft closing doors", "2x keys", "Dual-zone automatic Climate Control", "Power-Adjustable Front Seats", "Memory Front Seats", "Front & rear Heated & ventilated seats", "Keyless Entry & Push-button start", "Pre-Collision System", "Lane Departure Alert", "Adaptive Cruise Control", "Premium wood trim"
+        ],
+        images: [car20_1, car20_2, car20_3, car20_4, car20_5, car20_6, car20_7, car20_8, car20_9],
+        dealer: "Elite Motor Cars",
+        dealerLocation: "Sydney, Australia",
+        license: "MD100405"
+    }
 ];
