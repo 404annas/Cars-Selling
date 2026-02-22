@@ -6,9 +6,10 @@ import Image, { StaticImageData } from "next/image";
 interface ImageGalleryProps {
   images: StaticImageData[];
   carName: string;
+  isSold: boolean;
 }
 
-export default function ImageGallery({ images, carName }: ImageGalleryProps) {
+export default function ImageGallery({ images, carName, isSold }: ImageGalleryProps) {
   const [mainImage, setMainImage] = useState(images[0]);
 
   return (
@@ -22,8 +23,12 @@ export default function ImageGallery({ images, carName }: ImageGalleryProps) {
           className="object-contain object-center transition-all duration-500"
           priority
         />
-        <div className="absolute top-4 left-4 bg-red-500 text-white px-4 py-1 rounded-full text-sm font-bold shadow-md orb">
-          In Stock
+        <div className={`absolute top-4 left-4 px-4 py-1 rounded-full text-sm font-bold shadow-md orb ${
+          isSold 
+            ? 'bg-gray-700 text-gray-400' 
+            : 'bg-red-500 text-white'
+        }`}>
+          {isSold ? "Out of Stock" : "In Stock"}
         </div>
       </div>
 

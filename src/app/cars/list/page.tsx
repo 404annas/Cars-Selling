@@ -35,6 +35,7 @@ import car24 from "@/assets/car24.jpg"
 import car25 from "@/assets/car25.jpg"
 import car26 from "@/assets/car26.jpg"
 import car27 from "@/assets/car27.jpg"
+import car28 from "@/assets/car28.jpg"
 
 const cars = [
     {
@@ -339,6 +340,18 @@ const cars = [
         specs: [
             { icon: Gauge, label: "130,000 km" },
             { icon: Cog, label: "1.5L" },
+            { icon: Settings, label: "Hybrid" },
+        ]
+    },
+    {
+        name: "2014 LEXUS CT200H F SPORT",
+        meta: "1 Year Rego & Ctp",
+        img: car28,
+        image: car28,
+        price: "SOLD",
+        specs: [
+            { icon: Gauge, label: "79,000 km" },
+            { icon: Cog, label: "4.0L" },
             { icon: Settings, label: "Hybrid" },
         ]
     },

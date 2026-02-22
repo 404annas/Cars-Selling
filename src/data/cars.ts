@@ -246,6 +246,14 @@ import car27_7 from "@/assets/car27-7.jpg"
 import car27_8 from "@/assets/car27-8.jpg"
 import car27_9 from "@/assets/car27-9.jpg"
 
+import car28_1 from "@/assets/car28-1.jpg"
+import car28_2 from "@/assets/car28-2.jpg"
+import car28_3 from "@/assets/car28-3.jpg"
+import car28_4 from "@/assets/car28-4.jpg"
+import car28_5 from "@/assets/car28-5.jpg"
+import car28_6 from "@/assets/car28-6.jpg"
+import car28_7 from "@/assets/car28-7.jpg"
+
 
 export interface CarDetails {
     id: number;
@@ -621,10 +629,24 @@ export const allCars: CarDetails[] = [
         tagline: "1 year Rego & Ctp",
         price: "SOLD",
         description: "This 2020 Toyota Yaris Hybrid Z 4WD is a reliable and fuel-efficient hybrid vehicle. With only 117,000 km on the odometer, it's in excellent condition and ready for immediate delivery. The Yaris Hybrid is perfect for city driving, offering a compact size and impressive fuel economy. Whether you're looking for a daily commuter or a practical ride for ridesharing, this Yaris Hybrid delivers on all fronts.",
-        specs: { mileage: "117,000 km", engine: "3.0L Hybrid", transmission: "Hybrid", fuel: "Hybrid", year: "2020", color: "Blue" },
+        specs: { mileage: "117,000 km", engine: "1.5L Hybrid", transmission: "Hybrid", fuel: "Hybrid", year: "2020", color: "Blue" },
         highlights: [
             "Two tone interior", "Heads up Display", "Keyless entry (2x keys)", "Hybrid", "Led Hid’s sporty appearance", "Premium audio system with six speakers and DAB+ for rich sound clarity", "Parking sensors", "Safety levels equipped with multiple airbags, ABS, EBD, brake assist, traction and stability control, hill-start assist, and lane departure warning", "Also include cross-traffic alert, blind-spot monitoring, rear-camera assistance, and automatic braking for pedestrian and collision avoidance", "Premium leather & fabric two tone interior", "Enhancement packs for added luxury and tech features", "Heated seats", "4 Driving modes Eco/Ev/Normal/Sports", "Push Start", "Electric Folding mirrors", "Reverse Camera + 360 Camera", "Dashcam hard wired installed ($600)", "Infotainment system", "Gps Navigation", "New battery", "New tyres", "ALOT MORE"],
         images: [car27_1, car27_2, car27_3, car27_4, car27_5, car27_6, car27_7, car27_8, car27_9],
+        dealer: "Elite Motor Cars",
+        dealerLocation: "Sydney, Australia",
+        license: "MD100405"
+    },
+    {
+        id: 27,
+        name: "2014 LEXUS CT200H F SPORT",
+        tagline: "1 year Rego & Ctp",
+        price: "SOLD",
+        description: "This 2020 Toyota Yaris Hybrid Z 4WD is a reliable and fuel-efficient hybrid vehicle. With only 117,000 km on the odometer, it's in excellent condition and ready for immediate delivery. The Yaris Hybrid is perfect for city driving, offering a compact size and impressive fuel economy. Whether you're looking for a daily commuter or a practical ride for ridesharing, this Yaris Hybrid delivers on all fronts.",
+        specs: { mileage: "79,000 km", engine: "4.0L Hybrid", transmission: "Hybrid", fuel: "Hybrid", year: "2014", color: "Silver" },
+        highlights: [
+            "Aggressive grille, spoiler, 17″ wheels, unique colours", "Plush F Sport seats, steering wheel, pedals, premium trims", "Enhancement packs for added luxury and tech features", "Hybrid", "Full Service History & Log books", "Well Maintained", "Heated seats", "Electric seats", "4 Driving modes Eco/Ev/Normal/Sports", "Push Start", "Electric Folding mirrors", "Reverse Camera", "Infotainment system", "Gps Navigation", "Automatic seats with Lumbar Support", "ALOT MORE"],
+        images: [car28_1, car28_2, car28_3, car28_4, car28_5, car28_6, car28_7],
         dealer: "Elite Motor Cars",
         dealerLocation: "Sydney, Australia",
         license: "MD100405"

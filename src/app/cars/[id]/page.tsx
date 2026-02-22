@@ -62,7 +62,7 @@ export default async function CarDetailsPage({ params }: CarPageProps) {
           {/* LEFT COLUMN: IMAGES (lg:col-span-7) */}
           <div className="lg:col-span-7 space-y-4">
 
-            <ImageGallery images={carData.images} carName={carData.name} />
+            <ImageGallery images={carData.images} carName={carData.name} isSold={isSold} />
 
             {/* Description Block */}
             <div className="bg-black rounded-2xl p-6 sm:p-8 shadow-sm border border-red-800 mt-8">
@@ -92,9 +92,16 @@ export default async function CarDetailsPage({ params }: CarPageProps) {
 
             {/* Title & Price Card */}
             <div className="bg-black rounded-2xl p-6 sm:p-8 shadow-sm border border-red-800">
-              <div className="mb-2">
+              <div className="mb-2 flex items-center gap-3">
                 <span className="bg-red-50 text-red-700 px-3 py-1 rounded-md orb text-xs font-bold uppercase tracking-wider">
                   Used / Import
+                </span>
+                <span className={`px-3 py-1 rounded-md orb text-xs font-bold uppercase tracking-wider ${
+                  isSold 
+                    ? 'bg-gray-700 text-gray-400' 
+                    : 'bg-green-100 text-green-700'
+                }`}>
+                  {isSold ? "Out of Stock" : "In Stock"}
                 </span>
               </div>
 
