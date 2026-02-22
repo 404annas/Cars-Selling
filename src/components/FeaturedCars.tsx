@@ -368,7 +368,7 @@ const FeaturedCars = () => {
                         </div>
 
                         {/* Image */}
-                        <div className="relative h-48 sm:h-80 w-full mb-4 rounded-xl overflow-hidden group">
+                        <div className="relative h-48 sm:h-[450px] w-full mb-4 rounded-xl overflow-hidden group">
                             <Image
                                 src={car.img}
                                 alt={car.name}

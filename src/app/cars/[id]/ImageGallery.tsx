@@ -14,12 +14,12 @@ export default function ImageGallery({ images, carName }: ImageGalleryProps) {
   return (
     <div className="space-y-4">
       {/* Main Image Stage */}
-      <div className="relative w-full h-[510px] rounded-2xl overflow-hidden shadow-sm border border-red-800 bg-black">
+      <div className="relative w-full h-[500px] rounded-2xl overflow-hidden shadow-sm border border-red-800 bg-black">
         <Image
           src={mainImage}
           alt={carName}
           fill
-          className="object-cover object-center transition-all duration-500"
+          className="object-contain object-center transition-all duration-500"
           priority
         />
         <div className="absolute top-4 left-4 bg-red-500 text-white px-4 py-1 rounded-full text-sm font-bold shadow-md orb">
