@@ -529,11 +529,11 @@ export const allCars: CarDetails[] = [
     },
     {
         id: 21,
-        name: "2023 Yaris Hybrid 4WD",
+        name: "2024 Yaris Hybrid 4WD",
         tagline: "Brand new condition not a single scratch on the car",
         price: "25,000",
-        description: "This 2023 Yaris Hybrid 4WD is in pristine condition with only 6,500 km on the clock. It combines the latest hybrid technology with the added traction of all-wheel drive, making it perfect for any driving conditions. The car is loaded with features and has been meticulously maintained, ensuring it looks and drives like new.",
-        specs: { mileage: "6500 km", engine: "4.0L Hybrid", transmission: "Hybrid", fuel: "Hybrid", year: "2023", color: "Red" },
+        description: "This 2024 Yaris Hybrid 4WD is in pristine condition with only 6,500 km on the clock. It combines the latest hybrid technology with the added traction of all-wheel drive, making it perfect for any driving conditions. The car is loaded with features and has been meticulously maintained, ensuring it looks and drives like new.",
+        specs: { mileage: "6500 km", engine: "1.5L Hybrid", transmission: "Hybrid", fuel: "Hybrid", year: "2024", color: "Red" },
         highlights: [
             "Apple carplay + Android Auto", "Reverse camera", "360 parking sensors", "Hybrid", "Brand new condition not a single scratch on the car", "Premium audio system with six speakers and DAB+ for rich sound clarity", "ABS, EBD, brake assist, traction and stability control, hill-start assist, and lane departure warning", "Also include cross-traffic alert,rear-camera assistance, and automatic braking for pedestrian and collision avoidance", "Enhancement packs for luxury and tech features", "4 Driving modes Eco/Ev/Normal/Sports", "Push Start", "Service history & logbooks", "Electric Folding mirrors", "Optional 1,3 and 5 years hybrid battery warranty available", "Finance Available", "Rent to own Available", "Genuine odometer reading that can be verified through japnese Auction sheet,Export documents & Australian compliance certificate."],
         images: [car22_1, car22_2, car22_3, car22_4, car22_5, car22_6, car22_7, car22_8],

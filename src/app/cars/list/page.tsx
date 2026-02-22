@@ -16,7 +16,7 @@ import car5 from "@/assets/car5.avif"
 import car6 from "@/assets/car6.avif"
 import car7 from "@/assets/car7.avif"
 import car8 from "@/assets/car8.avif"
-import car9 from "@/assets/car9.avif"
+import car9 from "@/assets/car9-1.avif"
 import car10 from "@/assets/car10.avif"
 import car11 from "@/assets/car11.avif"
 import car12 from "@/assets/car12.avif"
@@ -152,7 +152,7 @@ const cars = [
         price: "AUD $18,500",
         specs: [
             { icon: Gauge, label: "100,000 km" },
-            { icon: Cog, label: "4.5L" },
+            { icon: Cog, label: "1.5L" },
             { icon: Settings, label: "Hybrid" },
         ],
     },
@@ -174,7 +174,7 @@ const cars = [
         price: "AUD $23,000",
         specs: [
             { icon: Gauge, label: "100 km" },
-            { icon: Cog, label: "3.0L" },
+            { icon: Cog, label: "1.5L" },
             { icon: Settings, label: "Hybrid" },
         ],
     },
@@ -269,14 +269,14 @@ const cars = [
         ]
     },
     {
-        name: "2023 Yaris Hybrid 4WD",
+        name: "2024 Yaris Hybrid 4WD",
         meta: "1 year Rego + CTP Included",
         img: car22,
         image: car22,
         price: "AUD $25,000",
         specs: [
             { icon: Gauge, label: "6500 km" },
-            { icon: Cog, label: "4.0L" },
+            { icon: Cog, label: "1.5L" },
             { icon: Settings, label: "Hybrid" },
         ]
     },
