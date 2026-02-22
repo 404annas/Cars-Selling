@@ -31,6 +31,7 @@ import car20 from "@/assets/car20.jpg"
 import car21 from "@/assets/car21.jpg"
 import car22 from "@/assets/car22.jpg"
 import car23 from "@/assets/car23.jpg"
+import car24 from "@/assets/car24.jpg"
 
 const cars = [
     {
@@ -290,6 +291,18 @@ const cars = [
             { icon: Settings, label: "Hybrid" },
         ]
     },
+    {
+        name: "2018 Toyota Prius C Hyrbid",
+        meta: "Eligible for Uber X , Didi, Ubereats Etc",
+        img: car24,
+        image: car24,
+        price: "AUD $18,499",
+        specs: [
+            { icon: Gauge, label: "109,000 km" },
+            { icon: Cog, label: "4.0L" },
+            { icon: Settings, label: "Hybrid" },
+        ]
+    },
 ]
 
 const AllCarsPage = () => {
@@ -339,7 +352,7 @@ const AllCarsPage = () => {
                             </div>
 
                             {/* Image */}
-                            <div className="relative h-48 sm:h-[450px] w-full mb-4 rounded-xl overflow-hidden group">
+                            <div className="relative h-[400px] sm:h-[450px] w-full mb-4 rounded-xl overflow-hidden group">
                                 <Image
                                     src={car.img}
                                     alt={car.name}

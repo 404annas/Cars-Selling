@@ -32,8 +32,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Car Detailing",
-  description: "Get Your Car Details Now!",
+  title: "Elite Motor Cars - Your Import Partner",
+  description: "",
 };
 
 export default function RootLayout({

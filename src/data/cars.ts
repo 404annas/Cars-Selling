@@ -214,6 +214,14 @@ import car23_7 from "@/assets/car23-7.jpg"
 import car23_8 from "@/assets/car23-8.jpg"
 import car23_9 from "@/assets/car23-9.jpg"
 
+import car24_1 from "@/assets/car24-1.jpg"
+import car24_2 from "@/assets/car24-2.jpg"
+import car24_3 from "@/assets/car24-3.jpg"
+import car24_4 from "@/assets/car24-4.jpg"
+import car24_5 from "@/assets/car24-5.jpg"
+import car24_6 from "@/assets/car24-6.jpg"
+import car24_7 from "@/assets/car24-7.jpg"
+import car24_8 from "@/assets/car24-8.jpg"
 
 export interface CarDetails {
     id: number;
@@ -537,6 +545,20 @@ export const allCars: CarDetails[] = [
         highlights: [
             "1 Year Rego + CTP Included", "2x keys", "Keyless entry + Push Start", "Cruise control", "3.5L Hybrid", "Auto mirrors", "Full service history & log books", "Premium interior", "Driving modes,(Sports,Snow,Eco,Ev)", "Clean 10/10 condition no scratches or dent", "Reverse camera", "Finance Available", "Rent to own Available", "Alot more"],
         images: [car23_1, car23_2, car23_3, car23_4, car23_5, car23_6, car23_7, car23_8, car23_9],
+        dealer: "Elite Motor Cars",
+        dealerLocation: "Sydney, Australia",
+        license: "MD100405"
+    },
+    {
+        id: 23,
+        name: "2018 Toyota Prius C Hyrbid",
+        tagline: "Eligible for Uber X , Didi, Ubereats Etc",
+        price: "18,499",
+        description: "This 2009 Crown 3.5L V6 Hybrid is a rare find in such immaculate condition. With only 107,000 km on the odometer, this vehicle has been meticulously cared for and maintained. The hybrid powertrain offers a perfect blend of performance and efficiency, while the luxurious interior ensures a comfortable ride. Whether you're looking for a reliable daily driver or a stylish executive car, this Crown delivers on all fronts.",
+        specs: { mileage: "109,000 km", engine: "4.0L Hybrid", transmission: "Hybrid", fuel: "Hybrid", year: "2018", color: "Blue" },
+        highlights: [
+            "1 Year rego & ctp", "Keyless entry + Push Start", "Cruise control", "2x keys", "Hybrid", "Multimedia Steering wheel", "360 Parking sensors", "Auto mirrors", "Driving modes,(Sports,Eco,Ev)", "Reverse camera + Dashcam", "Optional 1, 3 & 5 Years Hybrid battery warranty Available", "Alot more"],
+        images: [car24_1, car24_2, car24_3, car24_4, car24_5, car24_6, car24_7, car24_8],
         dealer: "Elite Motor Cars",
         dealerLocation: "Sydney, Australia",
         license: "MD100405"
