@@ -43,6 +43,7 @@ import car18 from "@/assets/car18.avif"
 import car19 from "@/assets/car19.avif"
 import car20 from "@/assets/car20.jpg"
 import car21 from "@/assets/car21.jpg"
+import car22 from "@/assets/car22.jpg"
 
 const cars = [
     {
@@ -295,6 +296,18 @@ const cars = [
             { icon: Gauge, label: "123,000 km" },
             { icon: Cog, label: "4.4L" },
             { icon: Settings, label: "Twin Turbo" },
+        ]
+    },
+    {
+        name: "2023 Yaris Hybrid 4WD",
+        meta: "1 year Rego + CTP Included",
+        img: car22,
+        image: car22,
+        price: "AUD $25,000",
+        specs: [
+            { icon: Gauge, label: "6500 km" },
+            { icon: Cog, label: "4.0L" },
+            { icon: Settings, label: "Hybrid" },
         ]
     },
 ]
