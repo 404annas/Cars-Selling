@@ -1,11 +1,11 @@
 "use client";
 import Image from "next/image";
 
-import heroBottomImg1 from "@/assets/heroB1.svg"; // EV
-import heroBottomImg2 from "@/assets/heroB2.svg"; // SUV
-import heroBottomImg3 from "@/assets/heroB3.svg"; // Truck
-import heroBottomImg4 from "@/assets/heroB4.svg"; // Sedan
-import heroBottomImg5 from "@/assets/heroB5.svg"; // Hybrid
+import heroBottomImg1 from "@/assets/herob1.svg"; // EV
+import heroBottomImg2 from "@/assets/herob2.svg"; // SUV
+import heroBottomImg3 from "@/assets/herob3.svg"; // Truck
+import heroBottomImg4 from "@/assets/herob4.svg"; // Sedan
+import heroBottomImg5 from "@/assets/herob5.svg"; // Hybrid
 
 const HeroBottom = () => {
   const types = [
@@ -40,7 +40,7 @@ const HeroBottom = () => {
                 className="group flex flex-col items-center justify-end cursor-pointer gap-3 transition-transform duration-300 hover:-translate-y-1"
               >
                 {/* Image Container */}
-                <div className="relative h-16 w-full flex items-end justify-center">
+                <div className="relative h-44 w-full flex items-end justify-center">
                   <Image
                     src={type.img}
                     alt={type.label}
@@ -49,7 +49,7 @@ const HeroBottom = () => {
                 </div>
 
                 {/* Label */}
-                <span className="text-red-600 font-bold text-sm md:text-base border-b-2 border-transparent group-hover:border-red-600 transition-all pb-0.5 duration-300">
+                <span className="text-red-600 font-bold text-sm md:text-base border-b-2 border-transparent group-hover:border-red-600 transition-all pb-0.5 duration-30 -mt-10">
                   {type.label}
                 </span>
               </div>

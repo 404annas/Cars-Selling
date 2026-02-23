@@ -9,17 +9,17 @@ import { Locate, Mail, MapPin, Phone } from 'lucide-react';
 const Footer2 = () => {
     return (
         <footer className="bg-black text-white pb-6 px-6 md:px-16">
-            <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-10">
+            <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-10">
 
                 {/* Left Side: Logo & Description */}
                 <div className="flex-1 max-w-2xl">
                     {/* Logo Section */}
                     <div className="flex items-center gap-2">
-                        <Image className='rounded-full shadow-md' src={logo.src} alt="Logo" width={200} height={100} priority={true} />
+                        <Image className='rounded-full shadow-md' src={logo.src} alt="Logo" width={300} height={100} priority={true} />
                     </div>
 
                     {/* About Text */}
-                    <p className="text-gray-300 text-sm md:text-base leading-normal -mt-8 mb-4">
+                    <p className="text-gray-300 text-sm md:text-base leading-normal -mt-10 mb-4">
                         Elite Motor Cars is the most trusted way of buying and selling used cars. Choose from over
                         10K fully inspected second-hand car models. Select online and book a test drive at
                         your home or at a Elite Motor Cars near you. Get a no-questions-asked* 5-day
@@ -50,7 +50,7 @@ const Footer2 = () => {
                     <h3 className="text-white font-bold text-sm uppercase tracking-widest mb-6">Contact</h3>
                     <div className='flex items-center gap-2 mb-2 bg-red-900 rounded-xl px-6 py-4'>
                         <Mail size={20}/>
-                        <p>contact@elitemotorcars.com.au</p>
+                        <a href="mailto:sales@elitemotorcars.com.au" className="text-white hover:text-gray-300 transition-colors duration-300">sales@elitemotorcars.com.au</a>
                     </div>
                     <div className='flex items-center gap-2 mb-2 bg-red-900 rounded-xl px-6 py-4'>
                         <Phone size={20}/>
@@ -58,7 +58,7 @@ const Footer2 = () => {
                     </div>
                     <div className='flex items-center gap-2 mb-2 bg-red-900 rounded-xl px-6 py-4'>
                         <MapPin size={20}/>
-                        <p>164-166 High Street, Australia</p>
+                        <p>Sydney, NSW, 2000</p>
                     </div>
                 </div>
             </div>

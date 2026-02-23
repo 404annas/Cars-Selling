@@ -24,10 +24,10 @@ const Bot = () => {
     const [activeTab, setActiveTab] = useState('Cars');
 
     const tabs = [
-        { id: "Cars", icon: <Car size={30} /> },
-        { id: "vans", icon: <Van size={30} /> },
-        { id: "suv", icon: <TbCarSuv size={30} /> },
-        { id: "jeep", icon: <GiJeep size={30} /> },
+        { id: "Sedan", icon: <Car size={30} /> },
+        { id: "Hatch", icon: <Van size={30} /> },
+        { id: "Suv", icon: <TbCarSuv size={30} /> },
+        { id: "Other", icon: <GiJeep size={30} /> },
     ];
 
     useEffect(() => {

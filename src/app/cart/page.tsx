@@ -37,7 +37,7 @@ const CartPage = () => {
     address: '',
     city: '',
     state: '',
-    zip: ''
+    zip: '' // Representing Postcode
   });
 
   useEffect(() => {
@@ -61,7 +61,6 @@ const CartPage = () => {
     }, 0);
   };
 
-  // Handle input changes
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({
@@ -70,9 +69,7 @@ const CartPage = () => {
     }));
   };
 
-  // Validate and Submit
   const handleConfirmReservation = () => {
-    // Check if any field is empty
     const isValid = Object.values(formData).every(value => value.trim() !== '');
 
     if (!isValid) {
@@ -89,7 +86,6 @@ const CartPage = () => {
 
   if (!isClient) return <div className="min-h-screen bg-red-50" />;
 
-  // --- Success State ---
   if (orderPlaced) {
     return (
       <div className="min-h-screen bg-black flex items-center justify-center px-6">
@@ -109,7 +105,6 @@ const CartPage = () => {
     );
   }
 
-  // --- Empty State ---
   if (cartItems.length === 0) {
     return (
       <div className="min-h-screen bg-black flex items-center justify-center p-6">
@@ -129,8 +124,6 @@ const CartPage = () => {
 
   return (
     <div className="min-h-screen bg-black pb-10">
-
-      {/* --- Top Header Section --- */}
       <div className="bg-black border-b border-red-800 pt-4 pb-4 z-10">
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
@@ -156,11 +149,8 @@ const CartPage = () => {
 
       <div className="container mx-auto px-4 sm:px-6 mt-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-
-          {/* --- LEFT COLUMN: Items & Form (lg:col-span-8) --- */}
           <div className="lg:col-span-8 space-y-8">
-
-            {/* 1. Cart Items List */}
+            {/* Selected Vehicles */}
             <div className="bg-black border border-red-200 rounded-2xl overflow-hidden">
               <div className="p-6 border-b border-red-100 bg-black flex justify-between items-center">
                 <h2 className="orb font-bold text-lg text-red-600 uppercase flex items-center gap-2">
@@ -171,7 +161,6 @@ const CartPage = () => {
               <div className="divide-y divide-red-100">
                 {cartItems.map((car) => (
                   <div key={car.id} className="p-6 flex flex-col sm:flex-row gap-6">
-                    {/* Image */}
                     <div className="w-full sm:w-48 h-32 relative rounded-xl overflow-hidden bg-red-200 flex-shrink-0 border border-red-100">
                       <Image
                         src={car.images?.[0] || '/placeholder-car.jpg'}
@@ -181,7 +170,6 @@ const CartPage = () => {
                       />
                     </div>
 
-                    {/* Details */}
                     <div className="flex-1 flex flex-col justify-between">
                       <div>
                         <div className="flex justify-between items-center">
@@ -189,7 +177,6 @@ const CartPage = () => {
                           <span className="text-base sm:text-lg orb font-black text-red-600">${car.price}</span>
                         </div>
 
-                        {/* Specs Grid */}
                         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-2">
                           <div className="flex items-center gap-2 text-xs text-gray-500 bg-red-50 p-2 rounded-lg">
                             <Calendar size={14} className="text-gray-400" />
@@ -222,7 +209,7 @@ const CartPage = () => {
               </div>
             </div>
 
-            {/* 2. Delivery & Personal Info */}
+            {/* Delivery Details - Updated to Australian Format */}
             <div className="bg-black border border-red-200 rounded-2xl p-4 md:p-8">
               <h2 className="orb font-bold text-lg text-red-600 uppercase mb-6 flex items-center gap-2">
                 <MapPin size={20} className="text-red-600" /> Delivery Details
@@ -274,7 +261,7 @@ const CartPage = () => {
                       value={formData.phone}
                       onChange={handleInputChange}
                       className="w-full bg-white border border-red-200 rounded-xl px-4 py-3 focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition-all"
-                      placeholder="+1 (555) 000-0000"
+                      placeholder="+61 12 345 678"
                     />
                   </div>
                 </div>
@@ -293,14 +280,14 @@ const CartPage = () => {
 
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                   <div className="col-span-2 space-y-2">
-                    <label className="text-xs font-bold text-red-500 uppercase tracking-wider">City</label>
+                    <label className="text-xs font-bold text-red-500 uppercase tracking-wider">Suburb / City</label>
                     <input
                       type="text"
                       name="city"
                       value={formData.city}
                       onChange={handleInputChange}
                       className="w-full bg-white border border-red-200 rounded-xl px-4 py-3 focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition-all"
-                      placeholder="New York"
+                      placeholder="Sydney"
                     />
                   </div>
                   <div className="space-y-2">
@@ -311,30 +298,29 @@ const CartPage = () => {
                       value={formData.state}
                       onChange={handleInputChange}
                       className="w-full bg-white border border-red-200 rounded-xl px-4 py-3 focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition-all"
-                      placeholder="NY"
+                      placeholder="NSW"
                     />
                   </div>
                   <div className="space-y-2">
-                    <label className="text-xs font-bold text-red-500 uppercase tracking-wider">Zip Code</label>
+                    <label className="text-xs font-bold text-red-500 uppercase tracking-wider">Postcode</label>
                     <input
                       type="text"
                       name="zip"
                       value={formData.zip}
                       onChange={handleInputChange}
                       className="w-full bg-white border border-red-200 rounded-xl px-4 py-3 focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition-all"
-                      placeholder="10001"
+                      placeholder="2000"
                     />
                   </div>
                 </div>
 
-                {/* 3. New Payment Method Section */}
+                {/* Payment Methods */}
                 <div className="pt-6 border-t border-red-100">
                   <h3 className="orb font-bold text-lg text-red-600 uppercase mb-4 flex items-center gap-2">
                     <CreditCard size={20} className="text-red-600" /> Payment Method
                   </h3>
 
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    {/* Option 1: Wire Transfer */}
                     <label
                       className={`relative border rounded-xl p-4 cursor-pointer transition-all flex flex-col items-center text-center gap-3
                       ${paymentMethod === 'wire' ? 'border-red-500 bg-red-50 ring-1 ring-red-500' : 'border-red-200 hover:border-red-300'}`}
@@ -350,7 +336,6 @@ const CartPage = () => {
                       {paymentMethod === 'wire' && <div className="absolute top-2 right-2 text-red-600"><CheckCircle2 size={16} /></div>}
                     </label>
 
-                    {/* Option 2: Financing */}
                     <label
                       className={`relative border rounded-xl p-4 cursor-pointer transition-all flex flex-col items-center text-center gap-3
                       ${paymentMethod === 'finance' ? 'border-red-500 bg-red-50 ring-1 ring-red-500' : 'border-red-200 hover:border-red-300'}`}
@@ -366,7 +351,6 @@ const CartPage = () => {
                       {paymentMethod === 'finance' && <div className="absolute top-2 right-2 text-red-600"><CheckCircle2 size={16} /></div>}
                     </label>
 
-                    {/* Option 3: Card Hold */}
                     <label
                       className={`relative border rounded-xl p-4 cursor-pointer transition-all flex flex-col items-center text-center gap-3
                       ${paymentMethod === 'card' ? 'border-red-500 bg-red-50 ring-1 ring-red-500' : 'border-red-200 hover:border-red-300'}`}
@@ -387,7 +371,7 @@ const CartPage = () => {
             </div>
           </div>
 
-          {/* --- RIGHT COLUMN: Summary (lg:col-span-4) --- */}
+          {/* Order Summary */}
           <div className="lg:col-span-4 space-y-6 lg:sticky lg:top-28">
             <div className="bg-red-900 text-white rounded-2xl p-8 shadow-xl">
               <h2 className="orb font-bold text-lg uppercase mb-6 flex items-center gap-3">
@@ -431,7 +415,6 @@ const CartPage = () => {
               </div>
             </div>
 
-            {/* Trust Badge */}
             <div className="bg-black border border-red-200 rounded-xl p-4 flex items-center gap-4">
               <div className="bg-red-50 p-2 rounded-full">
                 <ShieldCheck className="text-red-600" size={24} />
@@ -442,7 +425,6 @@ const CartPage = () => {
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </div>
