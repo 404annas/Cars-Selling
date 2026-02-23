@@ -16,6 +16,7 @@ const HeroBottom = () => {
     { id: 5, label: "Hybrid", img: heroBottomImg5 },
   ];
 
+  
   return (
     <section className="bg-black pt-12 pb-10 w-full">
       <div className="container mx-auto px-4 max-w-[1200px]">
