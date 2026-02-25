@@ -61,9 +61,9 @@ const Home = () => {
       {/* <div id="faqs">
         <Faqs />
         </div> */}
-      <div id="testimonials">
+      {/* <div id="testimonials">
         <Testimonials2 />
-      </div>
+      </div> */}
         {/* <Process /> */}
       {/* <div id="contact">
         <Contact />

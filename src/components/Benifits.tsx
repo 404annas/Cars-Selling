@@ -25,7 +25,7 @@ const Benefits = () => {
             <div className="container mx-auto px-4">
 
                 {/* Title */}
-                <h2 className="text-center text-2xl sm:text-3xl font-bold text-red-600 mb-10">
+                <h2 className="text-center text-2xl sm:text-3xl font-bold text-[#f23410] mb-10">
                     Benefits With Us
                 </h2>
 
@@ -34,7 +34,7 @@ const Benefits = () => {
                     {benefits.map((item) => (
                         <div
                             key={item.id}
-                            className="bg-red-900 rounded-2xl h-[200px] flex flex-col items-center justify-center p-4 transition-transform hover:-translate-y-1 duration-300 shadow-sm"
+                            className="bg-[#8B1A0A] rounded-2xl h-[200px] flex flex-col items-center justify-center p-4 transition-transform hover:-translate-y-1 duration-300 shadow-sm"
                         >
                             {/* Lottie Animation */}
                             <div className="w-30 h-30 mb-2">

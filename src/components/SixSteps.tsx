@@ -31,7 +31,7 @@ const SixSteps = () => {
 
                 {/* Main Heading */}
                 <div className="text-center mb-10">
-                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-red-600">
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#f23410]">
                         Your Dream Car, Delivered: The 6-Step Sourcing Roadmap
                     </h2>
                 </div>
@@ -42,7 +42,7 @@ const SixSteps = () => {
                         <div key={step.id} className="flex items-center w-full group">
 
                             {/* Large Number */}
-                            <span className="text-5xl md:text-6xl font-bold text-[#ff5757] mr-3 shrink-0 leading-none">
+                            <span className="text-5xl md:text-6xl font-bold text-[#ff6c3f] mr-3 shrink-0 leading-none">
                                 {step.id}
                             </span>
 
@@ -64,7 +64,7 @@ const SixSteps = () => {
                     ))}
                 </div>
                 <Link href={"how-we-deliver"} className="flex items-center justify-center mt-16">
-                    <button className="bg-gradient-to-r from-[#f63b3b] to-[#c21a1a] text-white font-semibold tracking-wide px-8 py-3 rounded-full shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 active:scale-95 cursor-pointer">
+                    <button className="bg-gradient-to-r from-[#f63b3b] to-[#c2411a] text-white font-semibold tracking-wide px-8 py-3 rounded-full shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 active:scale-95 cursor-pointer">
                         How We Deliver
                     </button>
                 </Link>

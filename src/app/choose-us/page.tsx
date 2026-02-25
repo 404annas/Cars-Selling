@@ -43,7 +43,7 @@ const HowToBuy = () => {
         <section className="py-10 px-6 bg-black">
             <div className="max-w-7xl mx-auto">
                 {/* Section Heading */}
-                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-red-600 mb-12 ml-2">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#f23410] mb-12 ml-2">
                     Why Choose Elite Motor Cars
                 </h2>
                 {/* Steps Container */}

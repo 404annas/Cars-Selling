@@ -461,12 +461,12 @@ const FeaturedCars = () => {
 
             {/* Header */}
             <div className="flex sm:flex-row flex-col gap-2 items-center justify-between mb-10">
-                <h2 className="text-2xl sm:text-3xl font-bold orb text-red-600">
+                <h2 className="text-2xl sm:text-3xl font-bold orb text-[#f23410]">
                     FEATURED CARS
                 </h2>
 
                 <Link href="/cars/list">
-                    <button className="bg-red-700 text-white px-6 py-3 rounded-lg font-medium hover:scale-98 transition-all duration-300 cursor-pointer orb sm:text-base text-sm w-full sm:w-fit">
+                    <button className="bg-[#f23410] text-white px-6 py-3 rounded-lg font-medium hover:scale-98 transition-all duration-300 cursor-pointer orb sm:text-base text-sm w-full sm:w-fit">
                         SHOW ALL
                     </button>
                 </Link>
@@ -510,7 +510,7 @@ const FeaturedCars = () => {
 
                         {/* Specs */}
                         <div className="bg-black text-white rounded-xl p-0 space-y-4">
-                            <div className="grid grid-cols-3 gap-4 text-center text-xs sm:text-sm border border-red-950 rounded-xl py-3 pl-2 pr-1">
+                            <div className="grid grid-cols-3 gap-4 text-center text-xs sm:text-sm border border-orange-950 rounded-xl py-3 pl-2 pr-1">
                                 {car.specs.map((spec, i) => {
                                     const Icon = spec.icon
                                     return (
@@ -527,7 +527,7 @@ const FeaturedCars = () => {
 
                             {/* Button */}
                             <Link href={`/cars/${index}`}>
-                                <button className="w-full bg-red-700 text-white py-3 rounded-xl font-medium hover:bg-red-800 orb transition-all duration-300 cursor-pointer sm:text-base text-sm">
+                                <button className="w-full bg-[#f23410] text-white py-3 rounded-xl font-medium hover:bg-[#d92c0d] orb transition-all duration-300 cursor-pointer sm:text-base text-sm">
                                     SEE DETAILS
                                 </button>
                             </Link>

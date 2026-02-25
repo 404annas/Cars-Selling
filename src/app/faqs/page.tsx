@@ -41,17 +41,17 @@ const Faqs = () => {
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 sm:mb-16 gap-6 sm:gap-10">
                     <div className="max-w-2xl">
                         <div className="flex items-center gap-3 mb-4">
-                            <div className="w-8 sm:w-10 h-[2px] bg-red-600"></div>
-                            <span className="text-red-600 orb font-bold uppercase text-[10px] sm:text-xs tracking-wider">
+                            <div className="w-8 sm:w-10 h-[2px] bg-[#f23410]"></div>
+                            <span className="text-[#f23410] orb font-bold uppercase text-[10px] sm:text-xs tracking-wider">
                                 Frequently Asked Questions
                             </span>
                         </div>
-                        <h2 className="text-3xl sm:text-4xl md:text-5xl orb font-bold text-red-600 uppercase leading-[0.95] tracking-tighter">
+                        <h2 className="text-3xl sm:text-4xl md:text-5xl orb font-bold text-[#f23410] uppercase leading-[0.95] tracking-tighter">
                             Common
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-red-950 block sm:inline"> Questions.</span>
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#f23410] to-[#bd5907] block sm:inline"> Questions.</span>
                         </h2>
                     </div>
-                    <p className="text-gray-400 text-[10px] sm:text-xs md:text-sm max-w-sm orb uppercase leading-relaxed border-l-2 border-red-200 pl-4 sm:pl-6">
+                    <p className="text-gray-400 text-[10px] sm:text-xs md:text-sm max-w-sm orb uppercase leading-relaxed border-l-2 border-orange-200 pl-4 sm:pl-6">
                         Elite Motor Cars Global Sourcing Division — Frequently Asked Questions.
                     </p>
                 </div>
@@ -63,22 +63,22 @@ const Faqs = () => {
                         return (
                             <div
                                 key={index}
-                                className="group border-b border-red-100 last:border-0"
+                                className="group border-b border-orange-100 last:border-0"
                             >
                                 <button
                                     onClick={() => setActiveIndex(isOpen ? null : index)}
                                     className="w-full flex items-center justify-between py-6 sm:py-8 text-left transition-all duration-300 cursor-pointer gap-4"
                                 >
                                     <div className="flex items-start gap-3 sm:gap-8">
-                                        <span className={`orb font-bold text-xs sm:text-sm mt-1 transition-colors duration-300 shrink-0 ${isOpen ? 'text-red-500' : 'text-red-300'}`}>
+                                        <span className={`orb font-bold text-xs sm:text-sm mt-1 transition-colors duration-300 shrink-0 ${isOpen ? 'text-[#f23410]' : 'text-orange-300'}`}>
                                             0{index + 1}
                                         </span>
-                                        <span className={`text-sm sm:text-lg md:text-xl orb font-bold transition-all duration-300 leading-tight ${isOpen ? 'text-red-600 translate-x-1 sm:translate-x-2' : 'text-red-600'}`}>
+                                        <span className={`text-sm sm:text-lg md:text-xl orb font-bold transition-all duration-300 leading-tight ${isOpen ? 'text-[#f23410] translate-x-1 sm:translate-x-2' : 'text-orange-600'}`}>
                                             {faq.question}
                                         </span>
                                     </div>
 
-                                    <div className={`relative flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-full transition-all duration-500 shrink-0 ${isOpen ? 'bg-red-950 text-white rotate-45' : 'bg-red-100 text-red-600'}`}>
+                                    <div className={`relative flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-full transition-all duration-500 shrink-0 ${isOpen ? 'bg-[#f23410] text-white rotate-45' : 'bg-orange-100 text-orange-600'}`}>
                                         <Plus size={18} className="sm:size-[20px] transition-transform duration-500" />
                                     </div>
                                 </button>
@@ -95,7 +95,7 @@ const Faqs = () => {
                                             <p className="text-gray-400 text-sm sm:text-base md:text-lg leading-relaxed font-light">
                                                 {faq.answer}
                                             </p>
-                                            <div className="mt-5 flex items-center gap-2 text-red-600 font-bold orb text-[10px] sm:text-xs uppercase cursor-pointer hover:gap-4 transition-all duration-300">
+                                            <div className="mt-5 flex items-center gap-2 text-[#f23410] font-bold orb text-[10px] sm:text-xs uppercase cursor-pointer hover:gap-4 transition-all duration-300">
                                                 Need more info <ArrowRight size={14} />
                                             </div>
                                         </div>
@@ -107,14 +107,14 @@ const Faqs = () => {
                 </div>
 
                 {/* Bottom Footer: Responsive Layout */}
-                <div className="mt-10 pt-10 border-t border-red-100 flex flex-col sm:flex-row justify-between items-center gap-6 sm:gap-8 text-center sm:text-left">
+                <div className="mt-10 pt-10 border-t border-orange-100 flex flex-col sm:flex-row justify-between items-center gap-6 sm:gap-8 text-center sm:text-left">
                     <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
-                        <HelpCircle className="text-red-600 w-10 h-10 sm:w-12 sm:h-12" />
-                        <p className="text-red-600 font-bold orb text-xs sm:text-sm uppercase tracking-wider">
+                        <HelpCircle className="text-[#f23410] w-10 h-10 sm:w-12 sm:h-12" />
+                        <p className="text-[#f23410] font-bold orb text-xs sm:text-sm uppercase tracking-wider">
                             Still have a specific inquiry?
                         </p>
                     </div>
-                    <button className="w-full sm:w-auto px-8 sm:px-10 py-4 bg-red-600 text-white orb text-[10px] sm:text-xs font-bold uppercase hover:bg-red-700 transition-all duration-300 cursor-pointer rounded-xl active:scale-95 shadow-lg">
+                    <button className="w-full sm:w-auto px-8 sm:px-10 py-4 bg-[#f23410] text-white orb text-[10px] sm:text-xs font-bold uppercase hover:bg-[#d92c0f] transition-all duration-300 cursor-pointer rounded-xl active:scale-95 shadow-lg">
                         Contact Our Specialists
                     </button>
                 </div>

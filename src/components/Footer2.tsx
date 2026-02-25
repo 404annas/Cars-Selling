@@ -48,15 +48,15 @@ const Footer2 = () => {
 
                 <div className="flex-shrink-0">
                     <h3 className="text-white font-bold text-sm uppercase tracking-widest mb-6">Contact</h3>
-                    <div className='flex items-center gap-2 mb-2 bg-red-900 rounded-xl px-6 py-4'>
+                    <div className='flex items-center gap-2 mb-2 bg-[#f23410] rounded-xl px-6 py-4'>
                         <Mail size={20}/>
                         <a href="mailto:sales@elitemotorcars.com.au" className="text-white hover:text-gray-300 transition-colors duration-300">sales@elitemotorcars.com.au</a>
                     </div>
-                    <div className='flex items-center gap-2 mb-2 bg-red-900 rounded-xl px-6 py-4'>
+                    <div className='flex items-center gap-2 mb-2 bg-[#f23410] rounded-xl px-6 py-4'>
                         <Phone size={20}/>
                         <p>+61 466 318 074</p>
                     </div>
-                    <div className='flex items-center gap-2 mb-2 bg-red-900 rounded-xl px-6 py-4'>
+                    <div className='flex items-center gap-2 mb-2 bg-[#f23410] rounded-xl px-6 py-4'>
                         <MapPin size={20}/>
                         <p>Sydney, NSW, 2000</p>
                     </div>

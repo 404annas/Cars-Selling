@@ -89,7 +89,7 @@ const BuySteps = () => {
             <div className="max-w-5xl mx-auto">
                 {/* Main Heading Section */}
                 <div className="mb-10 text-center">
-                    <h2 className="text-xl sm:text-2xl md:text-3xl font-bold leading-none text-red-600 mb-3 px-2">
+                    <h2 className="text-xl sm:text-2xl md:text-3xl font-bold leading-none text-[#f23410] mb-3 px-2">
                         What value and how we add value to our customers
                     </h2>
                     <p className="text-gray-400 text-xs sm:text-sm md:text-base max-w-2xl mx-auto px-4">
@@ -154,7 +154,7 @@ const BuySteps = () => {
 
                 {/* Closing Footer */}
                 <div className="flex items-center justify-center mt-10">
-                    <button className="w-full sm:w-auto bg-gradient-to-r from-[#f63b3b] to-[#c21a1a] text-white font-semibold tracking-wide px-10 py-3 rounded-full shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 active:scale-95 cursor-pointer text-sm sm:text-base">
+                    <button className="w-full sm:w-auto bg-gradient-to-r from-[#f23410] to-[#bd5907] text-white font-semibold tracking-wide px-10 py-3 rounded-full shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 active:scale-95 cursor-pointer text-sm sm:text-base">
                         Enquire Now
                     </button>
                 </div>

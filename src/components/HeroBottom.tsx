@@ -22,7 +22,7 @@ const HeroBottom = () => {
       <div className="container mx-auto px-4 max-w-[1200px]">
 
         {/* Heading */}
-        <h2 className="text-2xl font-bold text-red-600 mb-8 text-center sm:text-left">
+        <h2 className="text-2xl font-bold text-[#f23410] mb-8 text-center sm:text-left">
           We Deal Into
         </h2>
 
@@ -31,7 +31,7 @@ const HeroBottom = () => {
 
           {/* THE SHADOW / PLATFORM EFFECT */}
           {/* This div creates the curved light blue ground behind the cars */}
-          <div className="absolute bottom-[20%] left-[2%] w-[95%] lg:block hidden h-16 bg-[#ffb3b3] rounded-[100%] -z-0 blur-[2px] opacity-80 scale-y-75"></div>
+          <div className="absolute bottom-[20%] left-[2%] w-[95%] lg:block hidden h-16 bg-[#ff9868] rounded-[100%] -z-0 blur-[2px] opacity-80 scale-y-75"></div>
 
           {/* Icons Grid */}
           <div className="grid sm:grid-cols-2 md:grid-cols-5 gap-4 relative z-10">
@@ -50,7 +50,7 @@ const HeroBottom = () => {
                 </div>
 
                 {/* Label */}
-                <span className="text-red-600 font-bold text-sm md:text-base border-b-2 border-transparent group-hover:border-red-600 transition-all pb-0.5 duration-30 -mt-10">
+                <span className="text-[#f23410] font-bold text-sm md:text-base border-b-2 border-transparent group-hover:border-[#f23410] transition-all pb-0.5 duration-30 -mt-10">
                   {type.label}
                 </span>
               </div>

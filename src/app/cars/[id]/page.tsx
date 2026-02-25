@@ -37,7 +37,7 @@ export default async function CarDetailsPage({ params }: CarPageProps) {
   if (!carData) {
     return (
       <div className="h-96 flex items-center justify-center">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-red-400">Car Not Found</h2>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#f23410]">Car Not Found</h2>
       </div>
     );
   }
@@ -48,11 +48,11 @@ export default async function CarDetailsPage({ params }: CarPageProps) {
     <div className="min-h-screen bg-black pb-10">
 
       {/* Breadcrumb */}
-      <div className="bg-black border-b border-red-800 orb">
+      <div className="bg-black border-b border-[#f23410] orb">
         <div className="container mx-auto px-4 py-4 flex items-center text-sm text-gray-400">
-          <Link href="/" className="hover:text-red-600 transition">Home</Link>
+          <Link href="/" className="hover:text-[#f23410] transition">Home</Link>
           <ChevronRight size={16} className="mx-2" />
-          <span className="text-red-600 font-semibold truncate">{carData.name}</span>
+          <span className="text-[#f23410] font-semibold truncate">{carData.name}</span>
         </div>
       </div>
 
@@ -65,19 +65,19 @@ export default async function CarDetailsPage({ params }: CarPageProps) {
             <ImageGallery images={carData.images} carName={carData.name} isSold={isSold} />
 
             {/* Description Block */}
-            <div className="bg-black rounded-2xl p-6 sm:p-8 shadow-sm border border-red-800 mt-8">
-              <h3 className="text-xl font-bold orb text-red-600 mb-4 flex items-center gap-2">
+            <div className="bg-black rounded-2xl p-6 sm:p-8 shadow-sm border border-[#f23410] mt-8">
+              <h3 className="text-xl font-bold orb text-[#f23410] mb-4 flex items-center gap-2">
                 Vehicle Overview
               </h3>
               <p className="text-gray-400 leading-relaxed mb-6">
                 {carData.description}
               </p>
 
-              <h4 className="font-bold text-red-600 mb-4 orb">Vehicle Highlights:</h4>
+              <h4 className="font-bold text-[#f23410] mb-4 orb">Vehicle Highlights:</h4>
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {carData.highlights.map((item, idx) => (
-                  <li key={idx} className="flex items-start gap-3 text-sm sm:text-base text-red-700">
-                    <span className="mt-1 text-red-500 shrink-0">
+                  <li key={idx} className="flex items-start gap-3 text-sm sm:text-base text-[#f23410]">
+                    <span className="mt-1 text-[#f23410] shrink-0">
                       <Check size={18} strokeWidth={3} />
                     </span>
                     {item}
@@ -91,9 +91,9 @@ export default async function CarDetailsPage({ params }: CarPageProps) {
           <div className="lg:col-span-5 space-y-6">
 
             {/* Title & Price Card */}
-            <div className="bg-black rounded-2xl p-6 sm:p-8 shadow-sm border border-red-800">
+            <div className="bg-black rounded-2xl p-6 sm:p-8 shadow-sm border border-[#f23410]">
               <div className="mb-2 flex items-center gap-3">
-                <span className="bg-red-50 text-red-700 px-3 py-1 rounded-md orb text-xs font-bold uppercase tracking-wider">
+                <span className="bg-orange-50 text-[#f23410] px-3 py-1 rounded-md orb text-xs font-bold uppercase tracking-wider">
                   Used / Import
                 </span>
                 <span className={`px-3 py-1 rounded-md orb text-xs font-bold uppercase tracking-wider ${
@@ -105,13 +105,13 @@ export default async function CarDetailsPage({ params }: CarPageProps) {
                 </span>
               </div>
 
-              <h1 className="text-2xl sm:text-3xl orb font-extrabold text-red-600 leading-none mb-2">
+              <h1 className="text-2xl sm:text-3xl orb font-extrabold text-[#f23410] leading-none mb-2">
                 {carData.name}
               </h1>
               <p className="text-gray-400 text-sm mb-6">{carData.tagline}</p>
 
-              <div className="flex items-center gap-2 mb-6 border-b border-red-100 pb-6">
-                <h2 className="text-2xl font-bold text-red-600 orb">
+              <div className="flex items-center gap-2 mb-6 border-b border-orange-100 pb-6">
+                <h2 className="text-2xl font-bold text-[#f23410] orb">
                   {isSold ? "SOLD" : `AUD $${carData.price}`}
                 </h2>
                 {!isSold && <span className="text-gray-400 font-medium text-sm">Excl. Gov Charges</span>}
@@ -119,32 +119,32 @@ export default async function CarDetailsPage({ params }: CarPageProps) {
 
               {/* Key Specs Grid */}
               <div className="grid sm:grid-cols-2 gap-4 mb-8">
-                <div className="bg-red-100 p-3 rounded-xl flex items-center gap-3">
-                  <div className="bg-red-300 p-2 rounded-lg shadow-sm text-gray-700"><Gauge size={20} /></div>
+                <div className="bg-orange-100 p-3 rounded-xl flex items-center gap-3">
+                  <div className="bg-orange-300 p-2 rounded-lg shadow-sm text-gray-700"><Gauge size={20} /></div>
                   <div>
                     <p className="text-xs text-gray-500 uppercase font-bold">Mileage</p>
-                    <p className="font-semibold orb text-red-600">{carData.specs.mileage}</p>
+                    <p className="font-semibold orb text-[#f23410]">{carData.specs.mileage}</p>
                   </div>
                 </div>
-                <div className="bg-red-100 p-3 rounded-xl flex items-center gap-3">
-                  <div className="bg-red-300 p-2 rounded-lg shadow-sm text-gray-700"><Cog size={20} /></div>
+                <div className="bg-orange-100 p-3 rounded-xl flex items-center gap-3">
+                  <div className="bg-orange-300 p-2 rounded-lg shadow-sm text-gray-700"><Cog size={20} /></div>
                   <div>
                     <p className="text-xs text-gray-500 uppercase font-bold">Engine</p>
-                    <p className="font-semibold orb text-red-600">{carData.specs.engine}</p>
+                    <p className="font-semibold orb text-[#f23410]">{carData.specs.engine}</p>
                   </div>
                 </div>
-                <div className="bg-red-100 p-3 rounded-xl flex items-center gap-3">
-                  <div className="bg-red-300 p-2 rounded-lg shadow-sm text-gray-700"><Fuel size={20} /></div>
+                <div className="bg-orange-100 p-3 rounded-xl flex items-center gap-3">
+                  <div className="bg-orange-300 p-2 rounded-lg shadow-sm text-gray-700"><Fuel size={20} /></div>
                   <div>
                     <p className="text-xs text-gray-500 uppercase font-bold">Fuel</p>
-                    <p className="font-semibold orb text-red-600">{carData.specs.fuel}</p>
+                    <p className="font-semibold orb text-[#f23410]">{carData.specs.fuel}</p>
                   </div>
                 </div>
-                <div className="bg-red-100 p-3 rounded-xl flex items-center gap-3">
-                  <div className="bg-red-300 p-2 rounded-lg shadow-sm text-gray-700"><Calendar size={20} /></div>
+                <div className="bg-orange-100 p-3 rounded-xl flex items-center gap-3">
+                  <div className="bg-orange-300 p-2 rounded-lg shadow-sm text-gray-700"><Calendar size={20} /></div>
                   <div>
                     <p className="text-xs text-gray-500 uppercase font-bold">Year</p>
-                    <p className="font-semibold orb text-red-600">{carData.specs.year}</p>
+                    <p className="font-semibold orb text-[#f23410]">{carData.specs.year}</p>
                   </div>
                 </div>
               </div>
@@ -156,7 +156,7 @@ export default async function CarDetailsPage({ params }: CarPageProps) {
                   className={`flex-1 font-bold py-4 rounded-lg transition-all duration-300 flex justify-center items-center gap-2 cursor-pointer ${
                     isSold
                       ? 'bg-gray-800 text-gray-500 hover:cursor-not-allowed'
-                      : 'bg-red-500 hover:bg-red-600 text-white shadow-sm shadow-red-200 active:scale-95'
+                      : 'bg-[#f23410] hover:bg-[#d92c0d] text-white shadow-sm shadow-orange-200 active:scale-95'
                   }`}
                 >
                   {isSold ? "Reserved" : "Reserve Now"}
@@ -166,7 +166,7 @@ export default async function CarDetailsPage({ params }: CarPageProps) {
             </div>
 
             {/* Dealer / Company Info Card */}
-            <div className="bg-gradient-to-br from-[#240b0b] to-[#1a0707] text-white rounded-2xl p-6 sm:p-8 shadow-sm">
+            <div className="bg-gradient-to-br from-[#241a0b] to-[#4d1f00] text-white rounded-2xl p-6 sm:p-8 shadow-sm">
               <div className="flex items-center justify-between mb-6">
                 <div>
                   <h3 className="text-xl font-bold mb-1 orb">{carData.dealer}</h3>
@@ -180,26 +180,26 @@ export default async function CarDetailsPage({ params }: CarPageProps) {
                   </div>
                 </div>
                 <div className="bg-white/10 p-3 rounded-full">
-                  <ShieldCheck size={32} className="text-red-400" />
+                  <ShieldCheck size={32} className="text-[#f23410]" />
                 </div>
               </div>
 
               <div className="space-y-4 text-sm text-gray-300 mb-6">
                 <div className="flex items-start gap-3">
-                  <MapPin className="shrink-0 text-red-600" size={18} />
+                  <MapPin className="shrink-0 text-[#f23410]" size={18} />
                   <p>{carData.dealerLocation}</p>
                 </div>
                 <div className="flex items-center gap-3">
-                  <ShieldCheck className="shrink-0 text-red-600" size={18} />
+                  <ShieldCheck className="shrink-0 text-[#f23410]" size={18} />
                   <p>Dealer Licence: {carData.license}</p>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Check className="shrink-0 text-red-600" size={18} />
+                  <Check className="shrink-0 text-[#f23410]" size={18} />
                   <p>Meticulously Inspected & Fully Compliant</p>
                 </div>
               </div>
 
-              <button className="w-full bg-red/10 hover:bg-red/20 text-white border border-red/20 font-semibold py-3 rounded-xl transition-all duration-300 cursor-pointer flex items-center justify-center gap-2 orb">
+              <button className="w-full bg-[#f23410]/10 hover:bg-[#f23410]/20 text-white border border-[#f23410]/20 font-semibold py-3 rounded-xl transition-all duration-300 cursor-pointer flex items-center justify-center gap-2 orb">
                 <Phone size={18} />
                 Contact Dealer
               </button>
@@ -207,10 +207,10 @@ export default async function CarDetailsPage({ params }: CarPageProps) {
 
             {/* Warranty / Trust Badges */}
             <div className="grid sm:grid-cols-2 gap-3">
-              <div className="bg-red-50 border border-red-100 p-4 rounded-xl flex flex-col items-center text-center">
-                <ShieldCheck className="text-red-600 mb-2" size={24} />
-                <span className="text-xs font-bold text-red-800 uppercase orb">3 Year Warranty</span>
-                <span className="text-[10px] text-red-600">Included in price</span>
+              <div className="bg-orange-50 border border-orange-100 p-4 rounded-xl flex flex-col items-center text-center">
+                <ShieldCheck className="text-[#f23410] mb-2" size={24} />
+                <span className="text-xs font-bold text-[#f23410] uppercase orb">3 Year Warranty</span>
+                <span className="text-[10px] text-orange-600">Included in price</span>
               </div>
               <div className="bg-orange-50 border border-orange-100 p-4 rounded-xl flex flex-col items-center text-center">
                 <Fuel className="text-orange-500 mb-2" size={24} />

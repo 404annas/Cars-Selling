@@ -43,7 +43,7 @@ export default function AddToCartButton({ carData }: AddToCartButtonProps) {
       className={`flex-1 border-2 font-bold py-4 rounded-lg transition-all duration-300 flex justify-center items-center gap-2 cursor-pointer ${
         isSold
           ? 'bg-gray-800 border-gray-700 text-gray-500 hover:cursor-not-allowed'
-          : 'bg-black border-red-200 hover:border-red-500 hover:text-red-600 text-gray-400 active:scale-95'
+          : 'bg-black border-orange-200 hover:border-[#f23410] hover:text-[#f23410] text-gray-400 active:scale-95'
       }`}
     >
       <ShoppingCart size={20} />

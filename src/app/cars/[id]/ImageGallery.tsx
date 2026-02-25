@@ -15,7 +15,7 @@ export default function ImageGallery({ images, carName, isSold }: ImageGalleryPr
   return (
     <div className="space-y-4">
       {/* Main Image Stage */}
-      <div className="relative w-full h-[500px] rounded-2xl overflow-hidden shadow-sm border border-red-800 bg-black">
+      <div className="relative w-full h-[500px] rounded-2xl overflow-hidden shadow-sm border border-[#f23410] bg-black">
         <Image
           src={mainImage}
           alt={carName}
@@ -26,7 +26,7 @@ export default function ImageGallery({ images, carName, isSold }: ImageGalleryPr
         <div className={`absolute top-4 left-4 px-4 py-1 rounded-full text-sm font-bold shadow-md orb ${
           isSold 
             ? 'bg-gray-700 text-gray-400' 
-            : 'bg-red-500 text-white'
+            : 'bg-[#f23410] text-white'
         }`}>
           {isSold ? "Out of Stock" : "In Stock"}
         </div>
@@ -39,7 +39,7 @@ export default function ImageGallery({ images, carName, isSold }: ImageGalleryPr
             key={index}
             onClick={() => setMainImage(img)}
             className={`relative flex-shrink-0 w-14 h-14 sm:w-16 sm:h-16 rounded-xl overflow-hidden border-2 transition-all duration-300 cursor-pointer outline-none
-              ${mainImage === img ? "border-red-500" : "border-transparent opacity-70 hover:opacity-100"}
+              ${mainImage === img ? "border-[#f23410]" : "border-transparent opacity-70 hover:opacity-100"}
             `}
           >
             <Image

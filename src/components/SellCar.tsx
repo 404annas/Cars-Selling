@@ -40,11 +40,11 @@ const SellCar = () => {
         <section className="py-10 px-4 bg-black">
             {/* Header with horizontal lines */}
             <div className="flex items-center justify-center mb-6">
-                <div className="hidden md:block h-[1px] bg-red-600 flex-grow max-w-[200px]"></div>
-                <h2 className="text-red-600 text-2xl sm:text-3xl font-bold px-6 text-center">
+                <div className="hidden md:block h-[1px] bg-[#f23410] flex-grow max-w-[200px]"></div>
+                <h2 className="text-[#f23410] text-2xl sm:text-3xl font-bold px-6 text-center">
                     Customer Journey With Elite Motor Cars
                 </h2>
-                <div className="hidden md:block h-[1px] bg-red-600 flex-grow max-w-[200px]"></div>
+                <div className="hidden md:block h-[1px] bg-[#f23410] flex-grow max-w-[200px]"></div>
             </div>
 
             {/* Grid for Steps */}
@@ -61,7 +61,7 @@ const SellCar = () => {
                         </div>
 
                         {/* Content */}
-                        <h3 className="text-red-600 font-bold text-lg mb-3 leading-tight">
+                        <h3 className="text-[#f23410] font-bold text-lg mb-3 leading-tight">
                             {step.title}
                         </h3>
                         <p className="text-gray-400 text-sm mb-4 leading-relaxed max-w-[250px]">
@@ -71,7 +71,7 @@ const SellCar = () => {
                         {/* Action Link */}
                         <a
                             href="#"
-                            className="text-red-700 font-bold text-sm flex items-center hover:underline transition-all duration-300"
+                            className="text-[#c92a0e] font-bold text-sm flex items-center hover:underline transition-all duration-300"
                         >
                             {step.linkText} <ChevronRight size={16} className="ml-1" />
                         </a>
