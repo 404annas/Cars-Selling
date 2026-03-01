@@ -282,6 +282,35 @@ import car32_4 from "@/assets/car32-4.jpg"
 import car33_1 from "@/assets/car33-1.jpg"
 import car33_2 from "@/assets/car33-2.jpg"
 import car33_3 from "@/assets/car33-3.jpg"
+
+import car34_1 from "@/assets/car34-1.jpg"
+import car34_2 from "@/assets/car34-2.jpg"
+import car34_3 from "@/assets/car34-3.jpg"
+import car34_4 from "@/assets/car34-4.jpg"
+import car34_5 from "@/assets/car34-5.jpg"
+import car34_6 from "@/assets/car34-6.jpg"
+import car34_7 from "@/assets/car34-7.jpg"
+import car34_8 from "@/assets/car34-8.jpg"
+import car34_9 from "@/assets/car34-9.jpg"
+
+import car35_1 from "@/assets/car35-1.jpg"
+import car35_2 from "@/assets/car35-2.jpg"
+import car35_3 from "@/assets/car35-3.jpg"
+import car35_4 from "@/assets/car35-4.jpg"
+import car35_5 from "@/assets/car35-5.jpg"
+import car35_6 from "@/assets/car35-6.jpg"
+import car35_7 from "@/assets/car35-7.jpg"
+import car35_8 from "@/assets/car35-8.jpg"
+import car35_9 from "@/assets/car35-9.jpg"
+
+import car36_1 from "@/assets/car36-1.jpg"
+import car36_2 from "@/assets/car36-2.jpg"
+import car36_3 from "@/assets/car36-3.jpg"
+import car36_4 from "@/assets/car36-4.jpg"
+import car36_5 from "@/assets/car36-5.jpg"
+import car36_6 from "@/assets/car36-6.jpg"
+
+
 export interface CarDetails {
     id: number;
     name: string;
@@ -305,7 +334,7 @@ export interface CarDetails {
 
 export const allCars: CarDetails[] = [
     {
-        id: 0,
+        id: 3,
         name: "Toyota Prius 2011",
         tagline: "Reliable Hybrid Technology - Excellent Economy",
         price: "SOLD",
@@ -318,7 +347,7 @@ export const allCars: CarDetails[] = [
         license: "MD100405"
     },
     {
-        id: 1,
+        id: 4,
         name: "Toyota Crown Sedan 2010",
         tagline: "Luxury Meets Reliability - V6 Power",
         price: "SOLD",
@@ -331,7 +360,7 @@ export const allCars: CarDetails[] = [
         license: "MD100405"
     },
     {
-        id: 2,
+        id: 5,
         name: "Honda Vezel 2014",
         tagline: "Compact SUV with Hybrid Efficiency",
         price: "SOLD",
@@ -344,7 +373,7 @@ export const allCars: CarDetails[] = [
         license: "MD100405"
     },
     {
-        id: 3,
+        id: 6,
         name: "LEXUS LS460 V8 2012",
         tagline: "The Pinnacle of Japanese Luxury",
         price: "SOLD",
@@ -357,7 +386,7 @@ export const allCars: CarDetails[] = [
         license: "MD100405"
     },
     {
-        id: 4,
+        id: 7,
         name: "Lexus LS460 2006, V8 Luxury",
         tagline: "Classic V8 Power and Comfort",
         price: "34,500",
@@ -370,7 +399,7 @@ export const allCars: CarDetails[] = [
         license: "MD100405"
     },
     {
-        id: 5,
+        id: 8,
         name: "Mitsubishi Lancer Evolution 2007",
         tagline: "Rally Bred Performance Icon",
         price: "SOLD",
@@ -383,7 +412,7 @@ export const allCars: CarDetails[] = [
         license: "MD100405"
     },
     {
-        id: 6,
+        id: 9,
         name: "Lexus LS460 V8 2007",
         tagline: "Executive Travel at its Best",
         price: "SOLD",
@@ -396,7 +425,7 @@ export const allCars: CarDetails[] = [
         license: "MD100405"
     },
     {
-        id: 7,
+        id: 10,
         name: "Toyota C-HR Hybrid G Mode-Nero",
         tagline: "Stylish Crossover with Hybrid Tech",
         price: "SOLD",
@@ -409,7 +438,7 @@ export const allCars: CarDetails[] = [
         license: "MD100405"
     },
     {
-        id: 8,
+        id: 11,
         name: "Mercedes-Benz S400h Hybrid",
         tagline: "German Engineering, Hybrid Efficiency",
         price: "SOLD",
@@ -422,7 +451,7 @@ export const allCars: CarDetails[] = [
         license: "MD100405"
     },
     {
-        id: 9,
+        id: 12,
         name: "Honda Grace Hybrid EX 2015",
         tagline: "Compact Sedan Perfection",
         price: "SOLD",
@@ -435,7 +464,7 @@ export const allCars: CarDetails[] = [
         license: "MD100405"
     },
     {
-        id: 10,
+        id: 13,
         name: "Toyota Yaris Hybrid G AWD 2020",
         tagline: "Modern, Safe, and AWD",
         price: "SOLD",
@@ -448,7 +477,7 @@ export const allCars: CarDetails[] = [
         license: "MD100405"
     },
     {
-        id: 11,
+        id: 14,
         name: "Lexus LS460 V8 RWD 2013",
         tagline: "Updated Facelift Model",
         price: "SOLD",
@@ -461,7 +490,7 @@ export const allCars: CarDetails[] = [
         license: "MD100405"
     },
     {
-        id: 12,
+        id: 15,
         name: "Honda Fit Hybrid eHEV",
         tagline: "The Ultimate City Hatchback",
         price: "SOLD",
@@ -474,7 +503,7 @@ export const allCars: CarDetails[] = [
         license: "MD100405"
     },
     {
-        id: 13,
+        id: 16,
         name: "Suzuki Swift Hybrid Hatchback",
         tagline: "JDM Ultra-Efficient Hatchback",
         price: "SOLD",
@@ -487,7 +516,7 @@ export const allCars: CarDetails[] = [
         license: "MD100405"
     },
     {
-        id: 14,
+        id: 17,
         name: "Honda Fit Hybrid 2018",
         tagline: "Sporty Facelift Model",
         price: "SOLD",
@@ -500,7 +529,7 @@ export const allCars: CarDetails[] = [
         license: "MD100405"
     },
     {
-        id: 15,
+        id: 18,
         name: "Toyota Crown RS Advance 2019",
         tagline: "The Future of Japanese Luxury",
         price: "SOLD",
@@ -513,7 +542,7 @@ export const allCars: CarDetails[] = [
         license: "MD100405"
     },
     {
-        id: 16,
+        id: 19,
         name: "Lexus LS460 V8 RWD 2007",
         tagline: "Timeless Elegance",
         price: "SOLD",
@@ -526,7 +555,7 @@ export const allCars: CarDetails[] = [
         license: "MD100405"
     },
     {
-        id: 17,
+        id: 20,
         name: "Honda Vezel Hybrid 2014",
         tagline: "Best Selling Compact SUV",
         price: "SOLD",
@@ -539,7 +568,7 @@ export const allCars: CarDetails[] = [
         license: "MD100405"
     },
     {
-        id: 18,
+        id: 21,
         name: "Toyota C-HR Hybrid 2018",
         tagline: "Urban Crossover",
         price: "SOLD",
@@ -552,7 +581,7 @@ export const allCars: CarDetails[] = [
         license: "MD100405"
     },
     {
-        id: 19,
+        id: 22,
         name: "2007 LEXUS LS600HL V8 5000CC",
         tagline: "Dual-zone automatic Climate Control",
         price: "29,000",
@@ -567,7 +596,7 @@ export const allCars: CarDetails[] = [
         license: "MD100405"
     },
     {
-        id: 20,
+        id: 23,
         name: "2013 BMW M5 F10 4.4L TWIN TURBO V8",
         tagline: "Finished in Bmw individual Frozen Blue Matte Metallic",
         price: "48,499",
@@ -581,7 +610,7 @@ export const allCars: CarDetails[] = [
         license: "MD100405"
     },
     {
-        id: 21,
+        id: 24,
         name: "2024 Yaris Hybrid 4WD",
         tagline: "Brand new condition not a single scratch on the car",
         price: "SOLD",
@@ -595,7 +624,7 @@ export const allCars: CarDetails[] = [
         license: "MD100405"
     },
     {
-        id: 22,
+        id: 25,
         name: "2009 Crown 3.5L V6 Hybrid",
         tagline: "Clean 10/10 condition no scratches or dent",
         price: "SOLD",
@@ -609,7 +638,7 @@ export const allCars: CarDetails[] = [
         license: "MD100405"
     },
     {
-        id: 23,
+        id: 26,
         name: "2018 Toyota Prius C Hyrbid",
         tagline: "Eligible for Uber X , Didi, Ubereats Etc",
         price: "SOLD",
@@ -623,7 +652,7 @@ export const allCars: CarDetails[] = [
         license: "MD100405"
     },
     {
-        id: 24,
+        id: 27,
         name: "2014 Toyota Prius c / Aqua",
         tagline: "Eligible for Uber X, UberEats, Didi, DoorDash etc",
         price: "SOLD",
@@ -637,7 +666,7 @@ export const allCars: CarDetails[] = [
         license: "MD100405"
     },
     {
-        id: 25,
+        id: 28,
         name: "2020 YARIS HYBRID X 4WD",
         tagline: "1 year Rego & Ctp",
         price: "SOLD",
@@ -651,7 +680,7 @@ export const allCars: CarDetails[] = [
         license: "MD100405"
     },
     {
-        id: 26,
+        id: 29,
         name: "2020 YARIS HYBRID Z 4WD",
         tagline: "1 year Rego & Ctp",
         price: "SOLD",
@@ -665,7 +694,7 @@ export const allCars: CarDetails[] = [
         license: "MD100405"
     },
     {
-        id: 27,
+        id: 30,
         name: "2014 LEXUS CT200H F SPORT",
         tagline: "1 year Rego & Ctp",
         price: "SOLD",
@@ -679,7 +708,7 @@ export const allCars: CarDetails[] = [
         license: "MD100405"
     },
     {
-        id: 28,
+        id: 31,
         name: "2020 Lexus Ct200h Hybrid",
         tagline: "4 months rego",
         price: "SOLD",
@@ -693,7 +722,7 @@ export const allCars: CarDetails[] = [
         license: "MD100405"
     },
     {
-        id: 29,
+        id: 32,
         name: "2015 Audi A4 Quattro Sedan",
         tagline: "Great condition - full service history with Audi",
         price: "SOLD",
@@ -707,7 +736,7 @@ export const allCars: CarDetails[] = [
         license: "MD100405"
     },
     {
-        id: 30,
+        id: 33,
         name: "2020 Toyota Vitz / Yaris Hybrid",
         tagline: "Great condition - full service history with Audi",
         price: "SOLD",
@@ -721,7 +750,7 @@ export const allCars: CarDetails[] = [
         license: "MD100405"
     },
     {
-        id: 31,
+        id: 34,
         name: "2014 Honda vezel / Hrv Hybrid",
         tagline: "Eligible for Uber X, UberEats, Didi, DoorDash etc",
         price: "SOLD",
@@ -735,7 +764,7 @@ export const allCars: CarDetails[] = [
         license: "MD100405"
     },
     {
-        id: 32,
+        id: 35,
         name: "2019 Toyota Vitz / Yaris Hybrid",
         tagline: "1 year rego",
         price: "SOLD",
@@ -744,6 +773,48 @@ export const allCars: CarDetails[] = [
         highlights: [
             "Has a sporty look and feel to it", "With a very comfortable drive and cheap to run", "Hybrid engine", "Eco mode", "Traction control", "Dashcam installed", "Log books & Service history", "Reverse camera", "Parking sensors", "15” Wheels with Good Tyres", "Bluetooth Connectivity", "Recently Serviced", "Registration & CTP", "Fresh Japanese import"],
         images: [car33_1, car33_2, car33_3],
+        dealer: "Elite Motor Cars",
+        dealerLocation: "Sydney, Australia",
+        license: "MD100405"
+    },
+    {
+        id: 0,
+        name: "2007 LEXUS LS600H V8 5000CC",
+        tagline: "5 Year’s warranty for peace of mind",
+        price: "29,999",
+        description: "This 2007 Lexus LS600h is a rare find in such immaculate condition. With only 89,000 km on the odometer, this vehicle has been meticulously cared for and maintained. The hybrid powertrain offers a perfect blend of performance and efficiency, while the luxurious interior ensures a comfortable ride. Whether you're looking for a reliable daily driver or a stylish executive car, this LS600h delivers on all fronts.",
+        specs: { mileage: "89,000 km", engine: "5.0L Hybrid", transmission: "Hybrid", fuel: "Hybrid", year: "2007", color: "Black" },
+        highlights: [
+            "6 months rego & Ctp", "439hp stock", "Full Aimgain body kit", "Rare spec in prestine condition", "Mark levinson Sound system", "Adjustable suspension", "Soft closing doors", "3x keys (2x remote 1x card)", "Dual-zone automatic Climate Control", "Power-Adjustable Front Seats", "Keyless Entry & Push-button start", "Pre-Collision System", "Lane Departure Alert", "Adaptive Cruise Control", "Premium wood trim", "Finance available"],
+        images: [car34_1, car34_2, car34_3, car34_4, car34_5, car34_6, car34_7, car34_8, car34_9],
+        dealer: "Elite Motor Cars",
+        dealerLocation: "Sydney, Australia",
+        license: "MD100405"
+    },
+    {
+        id: 1,
+        name: "2007 LEXUS LS460 V8 4600CC",
+        tagline: "5 years extended warranty",
+        price: "21,999",
+        description: "This 2007 Lexus LS460 is a timeless luxury sedan that offers a perfect blend of performance, comfort, and reliability. With only 99,000 km on the odometer, this vehicle has been meticulously maintained and is in pristine condition. The powerful 4.6L V8 engine delivers smooth and effortless performance, while the luxurious interior features premium materials and advanced technology. Whether you're looking for a reliable daily driver or a stylish executive car, this LS460 is an excellent choice.",
+        specs: { mileage: "99,000 km", engine: "4.6L Automatic", transmission: "Automatic", fuel: "Automatic", year: "2007", color: "White" },
+        highlights: [
+            "Auction Grade 4B", "360 parking sensors", "Adjustable suspension", "Soft closing doors", "Full service history & log books", "2x keys", "Leather Interior", "Dual-zone automatic Climate Control", "Power-Adjustable Front Seats", "Memory Front Seats", "Heated & Ventilated Front Seats + Rear seats", "Keyless Entry & Push-button start", "Pre-Collision System", "Lane Departure Alert", "Adaptive Cruise Control", "Premium wood trim", "7 Driving modes", "Rear recliner seats", "Custom,Snow,Comfort,Eco,Normal,Sports s & Sports", "10 Air bags"],
+        images: [car35_1, car35_2, car35_3, car35_4, car35_5, car35_6, car35_7, car35_8, car35_9],
+        dealer: "Elite Motor Cars",
+        dealerLocation: "Sydney, Australia",
+        license: "MD100405"
+    },
+    {
+        id: 2,
+        name: "2013 Toyota Prius Hybrid",
+        tagline: "3 months Rego + CTP Included",
+        price: "14,999",
+        description: "This 2013 Toyota Prius Hybrid is a reliable and fuel-efficient hybrid vehicle. With only 138,000 km on the odometer, it's in excellent condition and ready for immediate delivery. The Prius is perfect for city driving, offering a compact size and impressive fuel economy. Whether you're looking for a daily commuter or a practical ride for ridesharing, this Prius delivers on all fronts.",
+        specs: { mileage: "138,000 km", engine: "1.8L Hybrid", transmission: "Hybrid", fuel: "Hybrid", year: "2013", color: "White" },
+        highlights: [
+            "Reliable and fuel efficient", "2x Keys", "Keyless Entry with Push Button Start", "Dual-Zone Climate Control", "Automatic Folding Mirrors", "3 Driving Modes: Power, Eco & EV", "Full Log Books & Complete Service History", "1,3 & 5 Years Hybrid Battery Warranty Available", "Finance Available", "Rent to own Available"],
+        images: [car36_1, car36_2, car36_3, car36_4, car36_5, car36_6],
         dealer: "Elite Motor Cars",
         dealerLocation: "Sydney, Australia",
         license: "MD100405"

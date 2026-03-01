@@ -41,8 +41,47 @@ import car30 from "@/assets/car30.jpg"
 import car31 from "@/assets/car31.jpg"
 import car32 from "@/assets/car32.jpg"
 import car33 from "@/assets/car33.jpg"
+import car34 from "@/assets/car34.jpg"
+import car35 from "@/assets/car35.jpg"
+import car36 from "@/assets/car36.jpg"
 
 const cars = [
+    {
+        name: "2007 LEXUS LS600H V8 5000CC",
+        meta: "5 Year’s warranty for peace of mind",
+        img: car34,
+        image: car34,
+        price: "AUD $29,999",
+        specs: [
+            { icon: Gauge, label: "89,000 km" },
+            { icon: Cog, label: "5.0L" },
+            { icon: Settings, label: "Hybrid" },
+        ]
+    },
+    {
+        name: "2007 LEXUS LS460 V8 4600CC",
+        meta: "5 years extended warranty",
+        img: car35,
+        image: car35,
+        price: "AUD $21,999",
+        specs: [
+            { icon: Gauge, label: "99,000 km" },
+            { icon: Cog, label: "4.6L" },
+            { icon: Settings, label: "Automatic" },
+        ]
+    },
+    {
+        name: "2013 Toyota Prius Hybrid",
+        meta: "3 months Rego + CTP Included",
+        img: car36,
+        image: car36,
+        price: "AUD $14,999",
+        specs: [
+            { icon: Gauge, label: "138,000 km" },
+            { icon: Cog, label: "1.8L" },
+            { icon: Settings, label: "Hybrid" },
+        ]
+    },
     {
         name: "Toyota Prius 2011",
         meta: "3 Years Warranty Included",
@@ -336,7 +375,7 @@ const cars = [
             { icon: Settings, label: "Hybrid" },
         ]
     },
-     {
+    {
         name: "2020 YARIS HYBRID Z 4WD",
         meta: "1 Year Rego & Ctp",
         img: car27,

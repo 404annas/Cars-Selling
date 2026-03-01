@@ -36,7 +36,7 @@ const Assistance = () => {
                     </div>
                     <div className="flex justify-between items-center w-full">
                         <p className="text-[#f23410] font-semibold text-sm sm:text-base">
-                            contact@elitemotorcars.com.au
+                            sales@elitemotorcars.com.au
                         </p>
                         {/* Right Arrow Icon */}
                         <ChevronRight size={20} className="text-[#f23410] group-hover:translate-x-1 transition-transform" />
