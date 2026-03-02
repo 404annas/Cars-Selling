@@ -805,6 +805,7 @@ export const allCars: CarDetails[] = [
         dealerLocation: "Sydney, Australia",
         license: "MD100405"
     },
+    
     {
         id: 2,
         name: "2013 Toyota Prius Hybrid",
