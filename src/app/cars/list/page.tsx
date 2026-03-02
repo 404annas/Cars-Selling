@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import {
     Gauge,
     Cog,
@@ -462,6 +463,14 @@ const cars = [
 ]
 
 const AllCarsPage = () => {
+    const searchParams = useSearchParams();
+    const status = searchParams.get("status");
+    const filteredCars = cars.filter((car) => {
+        if (status === "available") return car.price !== "SOLD";
+        if (status === "sold") return car.price === "SOLD";
+        return true;
+    });
+
     return (
         <div className="min-h-screen bg-black">
             {/* Breadcrumb */}
@@ -475,18 +484,42 @@ const AllCarsPage = () => {
 
             <section className="px-4 sm:px-10 py-10 bg-black">
                 {/* Header */}
-                <div className="flex sm:flex-row flex-col gap-2 items-center justify-between mb-10">
+                <div className="flex sm:flex-row flex-col gap-3 items-center justify-between mb-10">
                     <h2 className="text-2xl sm:text-3xl font-bold orb text-[#f23410]">
                         ALL CARS
                     </h2>
-                    <p className="text-[#f23410] underline text-sm">
-                        Showing all {cars.length} vehicles
-                    </p>
+                    <div className="flex flex-row-reverse sm:items-center gap-2">
+                        <p className="text-[#f23410] underline text-sm">
+                            Showing all {filteredCars.length} vehicles
+                        </p>
+                        <div className="flex items-center gap-2">
+                            <Link
+                                href="/cars/list?status=available"
+                                className={`px-3 py-1 rounded-full border text-xs font-semibold transition-colors ${
+                                    status === "available"
+                                        ? "bg-[#f23410] text-white border-[#f23410]"
+                                        : "text-[#f23410] border-[#f23410]/60 hover:border-[#f23410]"
+                                }`}
+                            >
+                                Available Cars
+                            </Link>
+                            <Link
+                                href="/cars/list?status=sold"
+                                className={`px-3 py-1 rounded-full border text-xs font-semibold transition-colors ${
+                                    status === "sold"
+                                        ? "bg-[#f23410] text-white border-[#f23410]"
+                                        : "text-[#f23410] border-[#f23410]/60 hover:border-[#f23410]"
+                                }`}
+                            >
+                                Solded Cars
+                            </Link>
+                        </div>
+                    </div>
                 </div>
 
                 {/* Cards Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-4">
-                    {cars.map((car, index) => (
+                    {filteredCars.map((car, index) => (
                         <div
                             key={index}
                             className="border border-[#E5E5E5] rounded-2xl p-4 mb-4 bg-black"

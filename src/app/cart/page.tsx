@@ -107,14 +107,14 @@ const CartPage = () => {
 
   if (cartItems.length === 0) {
     return (
-      <div className="min-h-screen bg-black flex items-center justify-center p-6">
+      <div className="min-h-screen bg-black flex items-center justify-center p-6 -mt-10">
         <div className="bg-black border border-orange-200 rounded-3xl p-8 sm:p-10 md:p-16 text-center shadow-sm max-w-lg w-full">
-          <div className="bg-orange-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
-            <ShoppingBag size={32} className="text-gray-400" />
+          <div className="bg-orange-200 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+            <ShoppingBag size={32} className="text-orange-600" />
           </div>
           <h2 className="text-xl sm:text-2xl orb font-bold text-[#f23410] mb-2">Your garage is empty</h2>
           <p className="text-gray-500 mb-8">You haven't selected any vehicles for reservation yet.</p>
-          <Link href="/" className="inline-block px-10 py-4 bg-[#f23410] text-white orb font-bold rounded-xl hover:bg-[#d92c0d] transition-all duration-300 shadow-lg shadow-orange-200">
+          <Link href="/cars/list" className="inline-block px-10 py-4 bg-[#f23410] text-white orb font-bold rounded-xl hover:bg-[#d92c0d] transition-all duration-300 shadow-md shadow-orange-500">
             BROWSE INVENTORY
           </Link>
         </div>
