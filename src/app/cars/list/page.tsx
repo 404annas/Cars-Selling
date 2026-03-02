@@ -1,7 +1,8 @@
-"use client";
+"use client"; // 👇 1. Sabse upar yeh add kiya
 
 import Image from "next/image";
 import Link from "next/link";
+import { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import {
     Gauge,
@@ -47,13 +48,14 @@ import car35 from "@/assets/car35.jpg"
 import car36 from "@/assets/car36.jpg"
 
 const cars = [
+    // ...[Aapka cars array waise ka waisa hi hai, usme koi change nahi kiya]
     {
         name: "2007 LEXUS LS600H V8 5000CC",
         meta: "5 Year’s warranty for peace of mind",
         img: car34,
         image: car34,
         price: "AUD $29,999",
-        specs: [
+        specs:[
             { icon: Gauge, label: "89,000 km" },
             { icon: Cog, label: "5.0L" },
             { icon: Settings, label: "Hybrid" },
@@ -65,7 +67,7 @@ const cars = [
         img: car35,
         image: car35,
         price: "AUD $21,999",
-        specs: [
+        specs:[
             { icon: Gauge, label: "99,000 km" },
             { icon: Cog, label: "4.6L" },
             { icon: Settings, label: "Automatic" },
@@ -77,7 +79,7 @@ const cars = [
         img: car36,
         image: car36,
         price: "AUD $14,999",
-        specs: [
+        specs:[
             { icon: Gauge, label: "138,000 km" },
             { icon: Cog, label: "1.8L" },
             { icon: Settings, label: "Hybrid" },
@@ -88,7 +90,7 @@ const cars = [
         meta: "3 Years Warranty Included",
         img: car1,
         price: "SOLD",
-        specs: [
+        specs:[
             { icon: Gauge, label: "64,000 km" },
             { icon: Cog, label: "1.8L" },
             { icon: Settings, label: "Hybrid" },
@@ -99,7 +101,7 @@ const cars = [
         meta: "1 Year warranty for peace of mind",
         img: car2,
         price: "SOLD",
-        specs: [
+        specs:[
             { icon: Gauge, label: "89,000 km" },
             { icon: Cog, label: "3.5L" },
             { icon: Settings, label: "Hybrid" },
@@ -110,7 +112,7 @@ const cars = [
         meta: "5 years warranty",
         img: car3,
         price: "SOLD",
-        specs: [
+        specs:[
             { icon: Gauge, label: "99 km" },
             { icon: Cog, label: "4.5L" },
             { icon: Settings, label: "Hybrid" },
@@ -121,7 +123,7 @@ const cars = [
         meta: "3 Years warranty",
         img: car4,
         price: "SOLD",
-        specs: [
+        specs:[
             { icon: Gauge, label: "93 km" },
             { icon: Cog, label: "4.6L" },
             { icon: Settings, label: "AWD" },
@@ -132,7 +134,7 @@ const cars = [
         meta: "5 Years Warranty",
         img: car5,
         price: "AUD $34,500",
-        specs: [
+        specs:[
             { icon: Gauge, label: "135,000 km" },
             { icon: Cog, label: "4.6L" },
             { icon: Settings, label: "Automatic" },
@@ -143,7 +145,7 @@ const cars = [
         meta: "5 years mechanical warranty ",
         img: car6,
         price: "SOLD",
-        specs: [
+        specs:[
             { icon: Gauge, label: "50,200 km" },
             { icon: Cog, label: "2.0L" },
             { icon: Settings, label: "Dual-Clutch" },
@@ -154,7 +156,7 @@ const cars = [
         meta: "3 Years warranty",
         img: car7,
         price: "SOLD",
-        specs: [
+        specs:[
             { icon: Gauge, label: "154,000 km" },
             { icon: Cog, label: "4.6L" },
             { icon: Settings, label: "Automatic" },
@@ -165,7 +167,7 @@ const cars = [
         meta: "6-Month Warranty",
         img: car8,
         price: "SOLD",
-        specs: [
+        specs:[
             { icon: Gauge, label: "60,000 km" },
             { icon: Cog, label: "1.8L" },
             { icon: Settings, label: "Hybrid" },
@@ -176,7 +178,7 @@ const cars = [
         meta: "1 year warranty",
         img: car9,
         price: "SOLD",
-        specs: [
+        specs:[
             { icon: Gauge, label: "40,000 km" },
             { icon: Cog, label: "3.5L" },
             { icon: Settings, label: "Hybrid" },
@@ -187,7 +189,7 @@ const cars = [
         meta: "1 Year Rego & Ctp",
         img: car10,
         price: "SOLD",
-        specs: [
+        specs:[
             { icon: Gauge, label: "43,000 km" },
             { icon: Cog, label: "1.5L" },
             { icon: Settings, label: "Hybrid" },
@@ -198,7 +200,7 @@ const cars = [
         meta: "1 Year Rego + CTP Included",
         img: car11,
         price: "SOLD",
-        specs: [
+        specs:[
             { icon: Gauge, label: "100,000 km" },
             { icon: Cog, label: "1.5L" },
             { icon: Settings, label: "Hybrid" },
@@ -209,7 +211,7 @@ const cars = [
         meta: "4 years warranty",
         img: car12,
         price: "SOLD",
-        specs: [
+        specs:[
             { icon: Gauge, label: "80,000 km" },
             { icon: Cog, label: "4.6L" },
             { icon: Settings, label: "Automatic" },
@@ -220,7 +222,7 @@ const cars = [
         meta: "Warranty",
         img: car13,
         price: "SOLD",
-        specs: [
+        specs:[
             { icon: Gauge, label: "100 km" },
             { icon: Cog, label: "1.5L" },
             { icon: Settings, label: "Hybrid" },
@@ -231,7 +233,7 @@ const cars = [
         meta: "Warranty",
         img: car14,
         price: "SOLD",
-        specs: [
+        specs:[
             { icon: Gauge, label: "40,000 km" },
             { icon: Cog, label: "1.2L" },
             { icon: Settings, label: "Hybrid" },
@@ -242,7 +244,7 @@ const cars = [
         meta: "Warranty",
         img: car15,
         price: "SOLD",
-        specs: [
+        specs:[
             { icon: Gauge, label: "100 km" },
             { icon: Cog, label: "1.5L" },
             { icon: Settings, label: "Hybrid" },
@@ -253,7 +255,7 @@ const cars = [
         meta: "Warranty",
         img: car16,
         price: "SOLD",
-        specs: [
+        specs:[
             { icon: Gauge, label: "40,000 km" },
             { icon: Cog, label: "2.5L" },
             { icon: Settings, label: "Hybrid" },
@@ -264,7 +266,7 @@ const cars = [
         meta: "Warranty",
         img: car17,
         price: "SOLD",
-        specs: [
+        specs:[
             { icon: Gauge, label: "200,000 km" },
             { icon: Cog, label: "4.6L" },
             { icon: Settings, label: "Automatic" },
@@ -275,7 +277,7 @@ const cars = [
         meta: "Warranty",
         img: car18,
         price: "SOLD",
-        specs: [
+        specs:[
             { icon: Gauge, label: "60,000 km" },
             { icon: Cog, label: "1.5L" },
             { icon: Settings, label: "Hybrid" },
@@ -286,7 +288,7 @@ const cars = [
         meta: "Warranty",
         img: car19,
         price: "SOLD",
-        specs: [
+        specs:[
             { icon: Gauge, label: "50,000 km" },
             { icon: Cog, label: "1.8L" },
             { icon: Settings, label: "Hybrid" },
@@ -298,7 +300,7 @@ const cars = [
         img: car20,
         image: car20,
         price: "AUD $29,000",
-        specs: [
+        specs:[
             { icon: Gauge, label: "72,000 km" },
             { icon: Cog, label: "5.0L" },
             { icon: Settings, label: "Hybrid" },
@@ -310,7 +312,7 @@ const cars = [
         img: car21,
         image: car21,
         price: "AUD $48,499",
-        specs: [
+        specs:[
             { icon: Gauge, label: "123,000 km" },
             { icon: Cog, label: "4.4L" },
             { icon: Settings, label: "Twin Turbo" },
@@ -322,7 +324,7 @@ const cars = [
         img: car22,
         image: car22,
         price: "SOLD",
-        specs: [
+        specs:[
             { icon: Gauge, label: "6500 km" },
             { icon: Cog, label: "1.5L" },
             { icon: Settings, label: "Hybrid" },
@@ -334,7 +336,7 @@ const cars = [
         img: car23,
         image: car23,
         price: "SOLD",
-        specs: [
+        specs:[
             { icon: Gauge, label: "107,000 km" },
             { icon: Cog, label: "3.5L" },
             { icon: Settings, label: "Hybrid" },
@@ -346,7 +348,7 @@ const cars = [
         img: car24,
         image: car24,
         price: "SOLD",
-        specs: [
+        specs:[
             { icon: Gauge, label: "109,000 km" },
             { icon: Cog, label: "4.0L" },
             { icon: Settings, label: "Hybrid" },
@@ -358,7 +360,7 @@ const cars = [
         img: car25,
         image: car25,
         price: "SOLD",
-        specs: [
+        specs:[
             { icon: Gauge, label: "14,300 km" },
             { icon: Cog, label: "3.9L" },
             { icon: Settings, label: "Hybrid" },
@@ -370,7 +372,7 @@ const cars = [
         img: car26,
         image: car26,
         price: "SOLD",
-        specs: [
+        specs:[
             { icon: Gauge, label: "117,000 km" },
             { icon: Cog, label: "3.0L" },
             { icon: Settings, label: "Hybrid" },
@@ -382,7 +384,7 @@ const cars = [
         img: car27,
         image: car27,
         price: "SOLD",
-        specs: [
+        specs:[
             { icon: Gauge, label: "130,000 km" },
             { icon: Cog, label: "1.5L" },
             { icon: Settings, label: "Hybrid" },
@@ -394,7 +396,7 @@ const cars = [
         img: car28,
         image: car28,
         price: "SOLD",
-        specs: [
+        specs:[
             { icon: Gauge, label: "79,000 km" },
             { icon: Cog, label: "4.0L" },
             { icon: Settings, label: "Hybrid" },
@@ -406,7 +408,7 @@ const cars = [
         img: car29,
         image: car29,
         price: "SOLD",
-        specs: [
+        specs:[
             { icon: Gauge, label: "188,000 km" },
             { icon: Cog, label: "4.2L" },
             { icon: Settings, label: "Hybrid" },
@@ -418,7 +420,7 @@ const cars = [
         img: car30,
         image: car30,
         price: "SOLD",
-        specs: [
+        specs:[
             { icon: Gauge, label: "131,000 km" },
             { icon: Cog, label: "2.0L" },
             { icon: Settings, label: "Automatic" },
@@ -430,7 +432,7 @@ const cars = [
         img: car31,
         image: car31,
         price: "SOLD",
-        specs: [
+        specs:[
             { icon: Gauge, label: "43,000 km" },
             { icon: Cog, label: "3.5L" },
             { icon: Settings, label: "Hybrid" },
@@ -442,7 +444,7 @@ const cars = [
         img: car32,
         image: car32,
         price: "SOLD",
-        specs: [
+        specs:[
             { icon: Gauge, label: "102,000 km" },
             { icon: Cog, label: "5.0L" },
             { icon: Settings, label: "Hybrid" },
@@ -454,17 +456,19 @@ const cars = [
         img: car33,
         image: car33,
         price: "SOLD",
-        specs: [
+        specs:[
             { icon: Gauge, label: "92,000 km" },
             { icon: Cog, label: "4.0L" },
             { icon: Settings, label: "Hybrid" },
         ]
     },
-]
+];
 
-const AllCarsPage = () => {
+// 👇 2. Isko ek separate function bana diya jo browser mein URL read karega
+const CarListContent = () => {
     const searchParams = useSearchParams();
     const status = searchParams.get("status");
+
     const filteredCars = cars.filter((car) => {
         if (status === "available") return car.price !== "SOLD";
         if (status === "sold") return car.price === "SOLD";
@@ -526,7 +530,7 @@ const AllCarsPage = () => {
                         >
                             {/* Title */}
                             <div className="flex items-center gap-3 mb-4">
-                                <div className="relative w-12 h-12 rounded-lg overflow-hidden">
+                                <div className="relative w-12 h-12 rounded-lg overflow-hidden shrink-0">
                                     <Image
                                         src={car.img}
                                         alt={car.name}
@@ -580,7 +584,14 @@ const AllCarsPage = () => {
                 </div>
             </section>
         </div>
-    )
+    );
 }
 
-export default AllCarsPage;
+// 👇 3. Yahan Suspense use kiya takay Build ke time error na aaye
+export default function AllCarsPage() {
+    return (
+        <Suspense fallback={<div className="min-h-screen bg-black text-[#f23410] flex items-center justify-center font-bold text-xl">Loading Vehicles...</div>}>
+            <CarListContent />
+        </Suspense>
+    );
+}
