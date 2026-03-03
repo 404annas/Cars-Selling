@@ -37,11 +37,11 @@ const SellCar = () => {
     ];
 
     return (
-        <section className="py-10 px-4 bg-black">
+        <section className="py-10 2xl:py-20 px-4 bg-black">
             {/* Header with horizontal lines */}
             <div className="flex items-center justify-center mb-6">
                 <div className="hidden md:block h-[1px] bg-[#f23410] flex-grow max-w-[200px]"></div>
-                <h2 className="text-[#f23410] text-2xl sm:text-3xl font-bold px-6 text-center">
+                <h2 className="text-[#f23410] text-2xl sm:text-3xl 2xl:text-5xl font-bold px-6 text-center">
                     Customer Journey With Elite Motor Cars
                 </h2>
                 <div className="hidden md:block h-[1px] bg-[#f23410] flex-grow max-w-[200px]"></div>
@@ -52,26 +52,27 @@ const SellCar = () => {
                 {steps.map((step, index) => (
                     <div key={index} className="flex flex-col items-center text-center">
                         {/* Image Container */}
-                        <div className="h-50 flex items-center justify-center mb-8">
+                        <div className="h-50 2xl:h-96 flex items-center justify-center mb-8">
                             <img
+                                loading='lazy'
                                 src={step.img}
                                 alt={step.title}
-                                className="max-h-full w-auto object-contain"
+                                className="max-h-full w-auto 2xl:w-[2000px] object-contain"
                             />
                         </div>
 
                         {/* Content */}
-                        <h3 className="text-[#f23410] font-bold text-lg mb-3 leading-tight">
+                        <h3 className="text-[#f23410] font-bold text-lg 2xl:text-4xl mb-3 leading-tight">
                             {step.title}
                         </h3>
-                        <p className="text-gray-400 text-sm mb-4 leading-relaxed max-w-[250px]">
+                        <p className="text-gray-400 text-sm 2xl:text-2xl mb-4 leading-relaxed max-w-[250px] 2xl:max-w-[450px]">
                             {step.desc}
                         </p>
 
                         {/* Action Link */}
                         <a
                             href="#"
-                            className="text-[#c92a0e] font-bold text-sm flex items-center hover:underline transition-all duration-300"
+                            className="text-[#c92a0e] font-bold text-sm 2xl:text-2xl flex items-center hover:underline transition-all duration-300"
                         >
                             {step.linkText} <ChevronRight size={16} className="ml-1" />
                         </a>

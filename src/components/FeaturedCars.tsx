@@ -500,19 +500,19 @@ const FeaturedCars = () => {
 
             {/* Header */}
             <div className="flex sm:flex-row flex-col gap-2 items-center justify-between mb-10">
-                <h2 className="text-2xl sm:text-3xl font-bold orb text-[#f23410]">
+                <h2 className="text-2xl sm:text-3xl 2xl:text-6xl font-bold orb text-[#f23410]">
                     FEATURED CARS
                 </h2>
 
                 <Link href="/cars/list">
-                    <button className="bg-[#f23410] text-white px-6 py-3 rounded-lg font-medium hover:scale-98 transition-all duration-300 cursor-pointer orb sm:text-base text-sm w-full sm:w-fit">
+                    <button className="bg-[#f23410] text-white px-6 py-3 rounded-lg font-medium hover:scale-98 transition-all duration-300 cursor-pointer orb 2xl:text-4xl sm:text-base text-sm w-full sm:w-fit">
                         SHOW ALL
                     </button>
                 </Link>
             </div>
 
             {/* Cards - Only show first 6 */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-4 2xl:gap-6">
                 {cars.slice(0, 6).map((car, index) => (
                     <div
                         key={index}
@@ -520,7 +520,7 @@ const FeaturedCars = () => {
                     >
                         {/* Title */}
                         <div className="flex items-center gap-3 mb-4">
-                            <div className="relative w-12 h-12 rounded-lg overflow-hidden">
+                            <div className="relative w-12 h-12 2xl:w-30 2xl:h-30 rounded-lg overflow-hidden">
                                 <Image
                                     src={car.img}
                                     alt={car.name}
@@ -531,13 +531,13 @@ const FeaturedCars = () => {
                                 />
                             </div>
                             <div>
-                                <h3 className="font-semibold orb text-base sm:text-lg leading-none text-white">{car.name}</h3>
-                                <p className="text-sm text-gray-400">{car.meta}</p>
+                                <h3 className="font-semibold orb text-base sm:text-lg 2xl:text-5xl leading-none text-white">{car.name}</h3>
+                                <p className="text-sm text-gray-400 2xl:text-3xl">{car.meta}</p>
                             </div>
                         </div>
 
                         {/* Image */}
-                        <div className="relative h-[400px] sm:h-[450px] w-full mb-4 rounded-xl overflow-hidden group">
+                        <div className="relative h-[400px] sm:h-[450px] 2xl:h-[2500px] w-full mb-4 rounded-xl overflow-hidden group">
                             <Image
                                 src={car.img}
                                 alt={car.name}
@@ -548,25 +548,25 @@ const FeaturedCars = () => {
                         </div>
 
                         {/* Specs */}
-                        <div className="bg-black text-white rounded-xl p-0 space-y-4">
+                        <div className="bg-black text-white rounded-xl p-0 space-y-4 2xl:space-y-14">
                             <div className="grid grid-cols-3 gap-4 text-center text-xs sm:text-sm border border-orange-950 rounded-xl py-3 pl-2 pr-1">
                                 {car.specs.map((spec, i) => {
                                     const Icon = spec.icon
                                     return (
                                         <div key={i} className="flex flex-col items-center gap-1">
-                                            <Icon size={22} />
-                                            <span>{spec.label}</span>
+                                            <Icon className="w-4 sm:w-5 h-4 sm:h-5 2xl:w-15 2xl:h-15" />
+                                            <span className="text-sm 2xl:text-4xl mt-0 2xl:mt-2">{spec.label}</span>
                                         </div>
                                     )
                                 })}
                             </div>
 
                             {/* Price */}
-                            <p className="text-xl orb font-semibold">{car.price}</p>
+                            <p className="text-xl 2xl:text-6xl orb font-semibold">{car.price}</p>
 
                             {/* Button */}
                             <Link href={`/cars/${index}`}>
-                                <button className="w-full bg-[#f23410] text-white py-3 rounded-xl font-medium hover:bg-[#d92c0d] orb transition-all duration-300 cursor-pointer sm:text-base text-sm">
+                                <button className="w-full bg-[#f23410] text-white py-3 rounded-xl font-medium hover:bg-[#d92c0d] orb transition-all duration-300 cursor-pointer sm:text-base text-sm 2xl:text-5xl">
                                     SEE DETAILS
                                 </button>
                             </Link>

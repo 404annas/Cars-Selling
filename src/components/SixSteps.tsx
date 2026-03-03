@@ -15,7 +15,7 @@ const SixSteps = () => {
     ];
 
     return (
-        <section className="relative w-full py-10 md:pt-20 pb-14 bg-black overflow-hidden">
+        <section className="relative w-full py-10 md:pt-20 pb-14 px-4 2xl:px-10 bg-black overflow-hidden">
             {/* Background Image with Overlay */}
             {/* <div className="absolute inset-0 z-0">
                 <Image
@@ -27,22 +27,22 @@ const SixSteps = () => {
                 />
             </div> */}
 
-            <div className="container mx-auto px-4 relative z-10">
+            <div className="px-4 relative z-10">
 
                 {/* Main Heading */}
-                <div className="text-center mb-10">
-                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#f23410]">
+                <div className="text-center mb-10 2xl:mb-20">
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl 2xl:text-5xl font-bold text-[#f23410]">
                         Your Dream Car, Delivered: The 6-Step Sourcing Roadmap
                     </h2>
                 </div>
 
                 {/* Steps Row */}
-                <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 items-center justify-center">
+                <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 2xl:gap-10 items-center justify-center">
                     {steps.map((step) => (
                         <div key={step.id} className="flex items-center w-full group">
 
                             {/* Large Number */}
-                            <span className="text-5xl md:text-6xl font-bold text-[#ff6c3f] mr-3 shrink-0 leading-none">
+                            <span className="text-5xl md:text-6xl 2xl:text-7xl font-bold text-[#ff6c3f] mr-3 shrink-0 leading-none">
                                 {step.id}
                             </span>
 
@@ -55,7 +55,7 @@ const SixSteps = () => {
                                     filter: "drop-shadow(0px 2px 3px rgba(0,0,0,0.05))"
                                 }}
                             >
-                                <p className="text-[#333] text-xs md:text-[11px] lg:text-xs font-medium leading-tight pr-2">
+                                <p className="text-[#333] text-xs md:text-[11px] lg:text-xs 2xl:text-4xl font-medium leading-tight pr-2">
                                     {step.title}
                                 </p>
                             </div>
@@ -64,7 +64,7 @@ const SixSteps = () => {
                     ))}
                 </div>
                 <Link href={"how-we-deliver"} className="flex items-center justify-center mt-16">
-                    <button className="bg-gradient-to-r from-[#f63b3b] to-[#c2411a] text-white font-semibold tracking-wide px-8 py-3 rounded-full shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 active:scale-95 cursor-pointer">
+                    <button className="bg-gradient-to-r from-[#f63b3b] to-[#c2411a] text-white font-semibold tracking-wide px-8 2xl:px-14 py-3 2xl:py-5 rounded-full shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 active:scale-95 cursor-pointer text-base 2xl:text-4xl">
                         How We Deliver
                     </button>
                 </Link>

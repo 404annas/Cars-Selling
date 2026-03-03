@@ -21,24 +21,23 @@ const Benefits = () => {
     ];
 
     return (
-        <section className="w-full py-10 bg-black">
-            <div className="container mx-auto px-4">
+        <section className="w-full py-10 2xl:py-20 bg-black">
+            <div className="container mx-auto px-4 2xl:max-w-[3000px]">
 
                 {/* Title */}
-                <h2 className="text-center text-2xl sm:text-3xl font-bold text-[#f23410] mb-10">
+                <h2 className="text-center text-2xl sm:text-3xl 2xl:text-5xl font-bold text-[#f23410] mb-10 2xl:mb-14">
                     Benefits With Us
                 </h2>
 
                 {/* Cards Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 max-w-lg mx-auto">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 2xl:gap-6 max-w-lg 2xl:max-w-none mx-auto">
                     {benefits.map((item) => (
                         <div
                             key={item.id}
-                            className="bg-[#8B1A0A] rounded-2xl h-[200px] flex flex-col items-center justify-center p-4 transition-transform hover:-translate-y-1 duration-300 shadow-sm"
+                            className="bg-[#8B1A0A] rounded-2xl 2xl:rounded-3xl h-[200px] 2xl:h-[500px] flex flex-col items-center justify-center p-4 2xl:p-6 transition-transform hover:-translate-y-1 duration-300 shadow-sm"
                         >
                             {/* Lottie Animation */}
-                            <div className="w-30 h-30 mb-2">
-                                {/* 2. Corrected Component Name */}
+                            <div className="w-30 h-30 2xl:w-80 2xl:h-80 mb-2">
                                 <DotLottiePlayer
                                     src={item.src}
                                     loop
@@ -48,7 +47,7 @@ const Benefits = () => {
                             </div>
 
                             {/* Text */}
-                            <p className="text-white text-base font-medium text-center leading-tight whitespace-pre-line">
+                            <p className="text-white text-base 2xl:text-4xl font-medium text-center leading-tight whitespace-pre-line">
                                 {item.title}
                             </p>
                         </div>
