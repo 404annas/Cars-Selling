@@ -70,7 +70,7 @@ const Navbar2 = () => {
                     <div className="flex items-center ml-36 space-x-6 text-white font-bold text-sm overflow-x-auto no-scrollbar">
                         <Link href="/" className="whitespace-nowrap opacity-60 hover:cursor-not-allowed">Upcoming Cars <span className="text-[10px]">( Coming Soon )</span></Link>
                         <Link href="/car/list?status=available" className="hover:opacity-80 transition-all duration-300 whitespace-nowrap ">Available Cars <span className="text-[10px]"></span></Link>
-                        <Link href="/car/list?status=sold" className="hover:opacity-80 transition-all duration-300 whitespace-nowrap ">Solded Cars <span className="text-[10px]"></span></Link>
+                        <Link href="/car/list?status=sold" className="hover:opacity-80 transition-all duration-300 whitespace-nowrap ">Sold Cars <span className="text-[10px]"></span></Link>
                         <Link href="/how-we-deliver" className="hover:opacity-80 transition-all duration-300 whitespace-nowrap">How We Deliver</Link>
                         <Link href="/choose-us" className="hover:opacity-80 transition-all duration-300 whitespace-nowrap">Why Choose Us</Link>
                         <Link href="/faqs" className="hover:opacity-80 transition-all duration-300 whitespace-nowrap">FAQ's</Link>
@@ -237,8 +237,14 @@ const Navbar2 = () => {
                             {/* 2. Navigation Links */}
                             <div className="flex flex-col space-y-4">
                                 <span className="text-xs font-bold text-gray-400 uppercase">Pages</span>
-                                <Link href="/" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3 text-gray-700 font-medium hover:text-[#f23410] transition-colors">
-                                    <Home size={18} /> Available Cars <span className="text-[10px]">( Coming Soon )</span>
+                                <Link href="/" onClick={() => setMobileMenuOpen(false)} className="whitespace-nowrap opacity-60 hover:cursor-not-allowed flex items-center gap-3 text-gray-700 font-medium hover:text-[#f23410] transition-colors">
+                                    <Home size={18} /> Upcoming Cars <span className="text-[10px]">( Coming Soon )</span>
+                                </Link>
+                                <Link href="/car/list?status=available" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3 text-gray-700 font-medium hover:text-[#f23410] transition-colors">
+                                    <Search size={18} /> Available Cars
+                                </Link>
+                                <Link href="/car/list?status=sold" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3 text-gray-700 font-medium hover:text-[#f23410] transition-colors">
+                                    <Search size={18} /> Sold Cars
                                 </Link>
                                 <Link href="/how-we-deliver" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3 text-gray-700 font-medium hover:text-[#f23410] transition-colors">
                                     <Truck size={18} /> How We Deliver

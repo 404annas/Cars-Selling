@@ -515,7 +515,7 @@ const CarListContent = () => {
                                         : "text-[#f23410] border-[#f23410]/60 hover:border-[#f23410]"
                                 }`}
                             >
-                                Solded Cars
+                                Sold Cars
                             </Link>
                         </div>
                     </div>
