@@ -468,11 +468,11 @@ const cars = [
 const CarListContent = () => {
     const searchParams = useSearchParams();
     const status = searchParams.get("status");
+    const activeStatus = status === "sold" ? "sold" : "available";
 
     const filteredCars = cars.filter((car) => {
-        if (status === "available") return car.price !== "SOLD";
-        if (status === "sold") return car.price === "SOLD";
-        return true;
+        if (activeStatus === "available") return car.price !== "SOLD";
+        return car.price === "SOLD";
     });
 
     return (
@@ -499,8 +499,8 @@ const CarListContent = () => {
                         <div className="flex items-center gap-2">
                             <Link
                                 href="/cars/list?status=available"
-                                className={`px-3 py-1 rounded-full border text-xs font-semibold transition-colors ${
-                                    status === "available"
+                                className={`px-3 py-1 rounded-full border text-sm font-semibold transition-colors ${
+                                    activeStatus === "available"
                                         ? "bg-[#f23410] text-white border-[#f23410]"
                                         : "text-[#f23410] border-[#f23410]/60 hover:border-[#f23410]"
                                 }`}
@@ -509,8 +509,8 @@ const CarListContent = () => {
                             </Link>
                             <Link
                                 href="/cars/list?status=sold"
-                                className={`px-3 py-1 rounded-full border text-xs font-semibold transition-colors ${
-                                    status === "sold"
+                                className={`px-3 py-1 rounded-full border text-sm font-semibold transition-colors ${
+                                    activeStatus === "sold"
                                         ? "bg-[#f23410] text-white border-[#f23410]"
                                         : "text-[#f23410] border-[#f23410]/60 hover:border-[#f23410]"
                                 }`}
