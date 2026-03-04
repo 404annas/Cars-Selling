@@ -486,6 +486,7 @@ const CarListContent = () => {
                 </div>
             </div>
 
+
             <section className="px-4 sm:px-10 py-10 bg-black">
                 {/* Header */}
                 <div className="flex sm:flex-row flex-col gap-3 items-center justify-between mb-10">
