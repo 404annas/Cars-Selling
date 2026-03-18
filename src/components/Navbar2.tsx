@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import {
     Search,
+    LoaderCircle,
     MapPin,
     Mail,
     ShoppingCart,
@@ -16,13 +17,17 @@ import {
 } from "lucide-react";
 import logo from "@/assets/logo.jpeg";
 import Link from "next/link";
+import { usePathname, useSearchParams } from "next/navigation";
 
 import NavbarDropdowns from "@/components/NavbarDropdowns";
 
 const Navbar2 = () => {
+    const pathname = usePathname();
+    const searchParams = useSearchParams();
     const [isScrolled, setIsScrolled] = useState(false);
     const [searchQuery, setSearchQuery] = useState("");
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [isSearching, setIsSearching] = useState(false);
 
     const desktopSearchTriggerRef = useRef<(() => void) | null>(null);
     const mobileSearchTriggerRef = useRef<(() => void) | null>(null);
@@ -44,12 +49,27 @@ const Navbar2 = () => {
         }
     }, [mobileMenuOpen]);
 
+    useEffect(() => {
+        setIsSearching(false);
+    }, [pathname, searchParams]);
+
+    useEffect(() => {
+        if (!isSearching) return;
+
+        const timeout = window.setTimeout(() => {
+            setIsSearching(false);
+        }, 2500);
+
+        return () => window.clearTimeout(timeout);
+    }, [isSearching]);
+
     const handleSearchClick = () => {
         const activeSearchTrigger =
             typeof window !== "undefined" && window.innerWidth < 1024
                 ? mobileSearchTriggerRef.current
                 : desktopSearchTriggerRef.current;
 
+        setIsSearching(true);
         activeSearchTrigger?.();
         setMobileMenuOpen(false);
     };
@@ -144,8 +164,19 @@ const Navbar2 = () => {
                         instanceKey="desktop"
                     />
 
-                    <button onClick={handleSearchClick} className="bg-[#f23410] text-white font-bold py-2.5 px-10 rounded-md hover:bg-[#d92c0d] transition-colors duration-300 cursor-pointer text-sm">
-                        Search
+                    <button
+                        onClick={handleSearchClick}
+                        disabled={isSearching}
+                        className="bg-[#f23410] text-white font-bold py-2.5 px-10 rounded-md hover:bg-[#d92c0d] transition-colors duration-300 cursor-pointer text-sm disabled:opacity-80 disabled:cursor-wait flex items-center justify-center gap-2"
+                    >
+                        {isSearching ? (
+                            <>
+                                <LoaderCircle size={16} className="animate-spin" />
+                                Searching...
+                            </>
+                        ) : (
+                            "Search"
+                        )}
                     </button>
                 </div>
             </div>
@@ -234,9 +265,17 @@ const Navbar2 = () => {
 
                                 <button
                                     onClick={handleSearchClick}
-                                    className="w-full bg-[#f23410] text-white font-bold py-3 rounded-md mt-2 shadow-lg hover:bg-[#d92c0d] cursor-pointer transition-all duration-300 active:scale-95"
+                                    disabled={isSearching}
+                                    className="w-full bg-[#f23410] text-white font-bold py-3 rounded-md mt-2 shadow-lg hover:bg-[#d92c0d] cursor-pointer transition-all duration-300 active:scale-95 disabled:opacity-80 disabled:cursor-wait flex items-center justify-center gap-2"
                                 >
-                                    Search Results
+                                    {isSearching ? (
+                                        <>
+                                            <LoaderCircle size={18} className="animate-spin" />
+                                            Searching...
+                                        </>
+                                    ) : (
+                                        "Search Results"
+                                    )}
                                 </button>
                             </div>
 
