@@ -16,17 +16,16 @@ import {
 } from "lucide-react";
 import logo from "@/assets/logo.jpeg";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 
 import NavbarDropdowns from "@/components/NavbarDropdowns";
 
 const Navbar2 = () => {
-    const router = useRouter();
     const [isScrolled, setIsScrolled] = useState(false);
     const [searchQuery, setSearchQuery] = useState("");
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-    const searchTriggerRef = useRef<(() => void) | null>(null);
+    const desktopSearchTriggerRef = useRef<(() => void) | null>(null);
+    const mobileSearchTriggerRef = useRef<(() => void) | null>(null);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -46,14 +45,21 @@ const Navbar2 = () => {
     }, [mobileMenuOpen]);
 
     const handleSearchClick = () => {
-        if (searchTriggerRef.current) {
-            searchTriggerRef.current();
-        }
+        const activeSearchTrigger =
+            typeof window !== "undefined" && window.innerWidth < 1024
+                ? mobileSearchTriggerRef.current
+                : desktopSearchTriggerRef.current;
+
+        activeSearchTrigger?.();
         setMobileMenuOpen(false);
     };
 
-    const handleTriggerSearch = (triggerFn: () => void) => {
-        searchTriggerRef.current = triggerFn;
+    const handleDesktopTriggerSearch = (triggerFn: () => void) => {
+        desktopSearchTriggerRef.current = triggerFn;
+    };
+
+    const handleMobileTriggerSearch = (triggerFn: () => void) => {
+        mobileSearchTriggerRef.current = triggerFn;
     };
 
     return (
@@ -68,11 +74,11 @@ const Navbar2 = () => {
 
                     {/* Navigation Links */}
                     <div className="flex items-center ml-36 space-x-6 text-white font-bold text-sm overflow-x-auto no-scrollbar">
-                        <Link href="/" className="whitespace-nowrap opacity-60 hover:cursor-not-allowed">Upcoming Cars <span className="text-[10px]">( Coming Soon )</span></Link>
+                        {/* <Link href="/" className="whitespace-nowrap opacity-60 hover:cursor-not-allowed">Upcoming Cars <span className="text-[10px]">( Coming Soon )</span></Link> */}
                         <Link href="/car/list?status=available" className="hover:opacity-80 transition-all duration-300 whitespace-nowrap ">Available Cars <span className="text-[10px]"></span></Link>
                         <Link href="/car/list?status=sold" className="hover:opacity-80 transition-all duration-300 whitespace-nowrap ">Sold Cars <span className="text-[10px]"></span></Link>
                         <Link href="/how-we-deliver" className="hover:opacity-80 transition-all duration-300 whitespace-nowrap">How We Deliver</Link>
-                        <Link href="/choose-us" className="hover:opacity-80 transition-all duration-300 whitespace-nowrap">Why Choose Us</Link>
+                        <Link href="/why-choose-us" className="hover:opacity-80 transition-all duration-300 whitespace-nowrap">Why Choose Us</Link>
                         <Link href="/faqs" className="hover:opacity-80 transition-all duration-300 whitespace-nowrap">FAQ's</Link>
                     </div>
 
@@ -134,7 +140,8 @@ const Navbar2 = () => {
                     <NavbarDropdowns
                         searchQuery={searchQuery}
                         onSearchQueryChange={setSearchQuery}
-                        onTriggerSearch={handleTriggerSearch}
+                        onTriggerSearch={handleDesktopTriggerSearch}
+                        instanceKey="desktop"
                     />
 
                     <button onClick={handleSearchClick} className="bg-[#f23410] text-white font-bold py-2.5 px-10 rounded-md hover:bg-[#d92c0d] transition-colors duration-300 cursor-pointer text-sm">
@@ -219,8 +226,9 @@ const Navbar2 = () => {
                                     <NavbarDropdowns
                                         className="flex-col w-full items-stretch space-x-0 gap-3"
                                         searchQuery={searchQuery}
-                                        onTriggerSearch={handleTriggerSearch}
+                                        onTriggerSearch={handleMobileTriggerSearch}
                                         isMobile={true}
+                                        instanceKey="mobile"
                                     />
                                 </div>
 
@@ -249,7 +257,7 @@ const Navbar2 = () => {
                                 <Link href="/how-we-deliver" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3 text-gray-700 font-medium hover:text-[#f23410] transition-colors">
                                     <Truck size={18} /> How We Deliver
                                 </Link>
-                                <Link href="/choose-us" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3 text-gray-700 font-medium hover:text-[#f23410] transition-colors">
+                                <Link href="/why-choose-us" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3 text-gray-700 font-medium hover:text-[#f23410] transition-colors">
                                     <Info size={18} /> Why Choose Us
                                 </Link>
                                 <Link href="/faqs" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3 text-gray-700 font-medium hover:text-[#f23410] transition-colors">

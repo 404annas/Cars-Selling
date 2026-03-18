@@ -55,6 +55,7 @@ interface NavbarDropdownsProps {
     onTriggerSearch?: (trigger: () => void) => void;
     className?: string;
     isMobile?: boolean; // <--- NEW PROP to switch modes
+    instanceKey?: string;
 }
 
 const NavbarDropdowns: React.FC<NavbarDropdownsProps> = ({
@@ -62,7 +63,8 @@ const NavbarDropdowns: React.FC<NavbarDropdownsProps> = ({
     onSearchQueryChange,
     onTriggerSearch,
     className = "",
-    isMobile = false // Default to desktop mode
+    isMobile = false, // Default to desktop mode
+    instanceKey = "default"
 }) => {
     const router = useRouter();
     const [activeTab, setActiveTab] = useState<string | null>(null);
@@ -84,9 +86,8 @@ const NavbarDropdowns: React.FC<NavbarDropdownsProps> = ({
         if (yearRange.to) params.set('toYear', yearRange.to);
         if (searchQuery) params.set('search', searchQuery);
 
-        if (params.toString()) {
-            router.push(`/search-results?${params.toString()}`);
-        }
+        const queryString = params.toString();
+        router.push(queryString ? `/search-results?${queryString}` : '/search-results');
     }, [selectedMake, selectedModel, priceRange, yearRange, searchQuery, router]);
 
     useEffect(() => {
@@ -97,7 +98,7 @@ const NavbarDropdowns: React.FC<NavbarDropdownsProps> = ({
         if (onTriggerSearch) {
             onTriggerSearch(() => searchFnRef.current());
         }
-    }, []);
+    }, [instanceKey, onTriggerSearch]);
 
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {

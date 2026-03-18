@@ -87,12 +87,12 @@ const Footer = () => {
                         >
                             Featured Cars
                         </button>
-                        <button
+                        {/* <button
                             onClick={() => scrollToSection("#testimonials")}
                             className="hover:text-blue-400 transition-all duration-300 cursor-pointer text-left"
                         >
                             Testimonials
-                        </button>
+                        </button> */}
                         <button
                             onClick={() => scrollToSection("#faq")}
                             className="hover:text-blue-400 transition-all duration-300 cursor-pointer text-left"

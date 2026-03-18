@@ -1,5 +1,8 @@
+"use client";
+
 import React from 'react';
 import { ChevronRight } from 'lucide-react';
+import { OPEN_ENQUIRY_MODAL_EVENT } from '@/lib/enquiryModal';
 
 // Images import karein
 import sell1 from "@/assets/sell1.svg";
@@ -8,6 +11,10 @@ import sell3 from "@/assets/sell3.svg";
 import sell4 from "@/assets/sell4.svg";
 
 const SellCar = () => {
+    const openEnquiryModal = () => {
+        window.dispatchEvent(new Event(OPEN_ENQUIRY_MODAL_EVENT));
+    };
+
     // Data array taake code clean rahe
     const steps = [
         {
@@ -70,12 +77,13 @@ const SellCar = () => {
                         </p>
 
                         {/* Action Link */}
-                        <a
-                            href="#"
-                            className="text-[#c92a0e] font-bold text-sm flex items-center hover:underline transition-all duration-300"
+                        <button
+                            type="button"
+                            onClick={openEnquiryModal}
+                            className="text-[#c92a0e] font-bold cursor-pointer text-sm flex items-center hover:underline transition-all duration-300"
                         >
                             {step.linkText} <ChevronRight size={16} className="ml-1" />
-                        </a>
+                        </button>
                     </div>
                 ))}
             </div>

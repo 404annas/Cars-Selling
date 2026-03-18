@@ -1,7 +1,12 @@
 "use client";
 import { Globe, ShieldCheck, Truck, Car, HeartHandshake, CheckCircle2 } from 'lucide-react';
+import { OPEN_ENQUIRY_MODAL_EVENT } from '@/lib/enquiryModal';
 
 const BuySteps = () => {
+    const openEnquiryModal = () => {
+        window.dispatchEvent(new Event(OPEN_ENQUIRY_MODAL_EVENT));
+    };
+
     const values = [
         {
             id: "1",
@@ -154,7 +159,11 @@ const BuySteps = () => {
 
                 {/* Closing Footer */}
                 <div className="flex items-center justify-center mt-10">
-                    <button className="w-full sm:w-auto bg-gradient-to-r from-[#f23410] to-[#bd5907] text-white font-semibold tracking-wide px-10 py-3 rounded-full shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 active:scale-95 cursor-pointer text-sm sm:text-base">
+                    <button
+                        type="button"
+                        onClick={openEnquiryModal}
+                        className="w-full sm:w-auto bg-gradient-to-r from-[#f23410] to-[#bd5907] text-white font-semibold tracking-wide px-10 py-3 rounded-full shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 active:scale-95 cursor-pointer text-sm sm:text-base"
+                    >
                         Enquire Now
                     </button>
                 </div>

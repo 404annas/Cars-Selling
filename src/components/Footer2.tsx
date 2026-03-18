@@ -1,12 +1,53 @@
-import React from 'react';
-import { FaInstagram, FaLinkedinIn, FaFacebookF } from 'react-icons/fa';
-import { FaXTwitter } from 'react-icons/fa6';
+"use client";
+
+import React, { useEffect } from 'react';
+import { FaInstagram, FaFacebookF } from 'react-icons/fa';
 
 import logo from "@/assets/logo.jpeg"
 import Image from 'next/image';
-import { Locate, Mail, MapPin, Phone } from 'lucide-react';
+import { Mail, MapPin, Phone } from 'lucide-react';
+import { usePathname, useRouter } from 'next/navigation';
 
 const Footer2 = () => {
+    const router = useRouter();
+    const pathname = usePathname();
+
+    const navigationItems = [
+        { label: "Home", href: "/" },
+        { label: "How We Deliver", href: "/how-we-deliver" },
+        { label: "Why Choose Us", href: "/why-choose-us" },
+        { label: "FAQ's", href: "/faqs" },
+    ];
+
+    useEffect(() => {
+        if (sessionStorage.getItem("smooth-scroll-top") !== "true") {
+            return;
+        }
+
+        sessionStorage.removeItem("smooth-scroll-top");
+
+        requestAnimationFrame(() => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+            });
+        });
+    }, [pathname]);
+
+    const handleNavigation = (href: string) => {
+        sessionStorage.setItem("smooth-scroll-top", "true");
+
+        if (pathname === href) {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+            });
+            return;
+        }
+
+        router.push(href);
+    };
+
     return (
         <footer className="bg-black text-white pb-6 px-6 md:px-16">
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-10">
@@ -38,9 +79,15 @@ const Footer2 = () => {
                 <div className="flex-shrink-0">
                     <h3 className="text-white font-bold text-sm uppercase tracking-widest mb-6">Navigation</h3>
                     <ul className="space-y-3 text-gray-300 text-[15px]">
-                        {["Home", "How We Deliver", "Why Choose Us", "Testimonials", "FAQ's"].map((item) => (
-                            <li key={item}>
-                                <a href="#" className="hover:text-white transition-colors">{item}</a>
+                        {navigationItems.map((item) => (
+                            <li key={item.label}>
+                                <button
+                                    type="button"
+                                    onClick={() => handleNavigation(item.href)}
+                                    className="hover:text-white transition-colors cursor-pointer"
+                                >
+                                    {item.label}
+                                </button>
                             </li>
                         ))}
                     </ul>

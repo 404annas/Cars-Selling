@@ -5,6 +5,7 @@ import { Car, Van } from 'lucide-react';
 import { TbCarSuv } from 'react-icons/tb';
 import { GiJeep } from 'react-icons/gi';
 import { toast } from 'sonner'; // Sonner import kiya
+import { OPEN_ENQUIRY_MODAL_EVENT } from '@/lib/enquiryModal';
 
 const Bot = () => {
     const [showPopup, setShowPopup] = useState(false);
@@ -33,6 +34,16 @@ const Bot = () => {
     useEffect(() => {
         const timer = setTimeout(() => setShowPopup(true), 1500);
         return () => clearTimeout(timer);
+    }, []);
+
+    useEffect(() => {
+        const openModal = () => setShowModal(true);
+
+        window.addEventListener(OPEN_ENQUIRY_MODAL_EVENT, openModal);
+
+        return () => {
+            window.removeEventListener(OPEN_ENQUIRY_MODAL_EVENT, openModal);
+        };
     }, []);
 
     useEffect(() => {
