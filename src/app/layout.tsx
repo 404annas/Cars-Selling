@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { Geist, Geist_Mono, Poppins, Orbitron, Inter_Tight } from "next/font/google";
 import "./globals.css";
 import { Toaster } from 'sonner';
@@ -73,7 +74,9 @@ export default function RootLayout({
       <body
         className={`${poppins.variable} ${orbitron.variable} antialiased`}
       >
-        <Navbar2 />
+        <Suspense fallback={null}>
+          <Navbar2 />
+        </Suspense>
         {children}
         <Process />
         <Assistance />
