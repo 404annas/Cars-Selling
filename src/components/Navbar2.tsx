@@ -157,6 +157,7 @@ const Navbar2 = () => {
                         />
                     </div>
 
+
                     <NavbarDropdowns
                         searchQuery={searchQuery}
                         onSearchQueryChange={setSearchQuery}
