@@ -2,6 +2,7 @@
 
 import Image from "next/image"
 import Link from "next/link"
+import { findCarByName, getCarDetailRoute, getInventoryRoute, isSoldCar } from "@/lib/carRoutes"
 import {
     Gauge,
     Fuel,
@@ -508,7 +509,7 @@ const FeaturedCars = () => {
                     FEATURED CARS
                 </h2>
 
-                <Link href="/cars/list?status=available">
+                <Link href={getInventoryRoute("all")}>
                     <button className="bg-[#f23410] text-white px-6 py-3 rounded-lg font-medium hover:scale-98 transition-all duration-300 cursor-pointer orb sm:text-base text-sm w-full sm:w-fit">
                         SHOW ALL
                     </button>
@@ -517,7 +518,13 @@ const FeaturedCars = () => {
 
             {/* Cards - Show first 6 available cars */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-4">
-                {availableCars.slice(0, 6).map((car) => (
+                {availableCars.slice(0, 6).map((car) => {
+                    const matchedCar = findCarByName(car.name)
+                    const detailHref = matchedCar
+                        ? getCarDetailRoute(matchedCar.id, isSoldCar(matchedCar.price))
+                        : getInventoryRoute("available")
+
+                    return (
                     <div
                         key={car.originalIndex}
                         className="border border-[#E5E5E5] rounded-2xl p-4 mb-4"
@@ -569,14 +576,15 @@ const FeaturedCars = () => {
                             <p className="text-xl orb font-semibold">{car.price}</p>
 
                             {/* Button */}
-                            <Link href={`/cars/${car.originalIndex}`}>
+                            <Link href={detailHref}>
                                 <button className="w-full bg-[#f23410] text-white py-3 rounded-xl font-medium hover:bg-[#d92c0d] orb transition-all duration-300 cursor-pointer sm:text-base text-sm">
                                     SEE DETAILS
                                 </button>
                             </Link>
                         </div>
                     </div>
-                ))}
+                    )
+                })}
             </div>
         </section>
     )

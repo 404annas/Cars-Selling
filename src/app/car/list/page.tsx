@@ -1,1 +1,1 @@
-export { default } from "../../cars/list/page";
+export { default } from "../../all-cars/page";
