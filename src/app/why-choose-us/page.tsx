@@ -1,6 +1,11 @@
-"use client";
+import type { Metadata } from "next";
 import BuySteps from '@/components/BuySteps';
 import React from 'react';
+
+export const metadata: Metadata = {
+    title: "Why Choose Elite Motor Cars – Trusted Import & Used Car Experts in Australia",
+    description: "Discover why Elite Motor Cars is Australia’s most trusted choice for buying and importing used cars. Expertly sourced vehicles, full compliance, white-glove delivery, and premium post-sale support ensure a seamless car buying experience.",
+};
 
 const HowToBuy = () => {
     // Steps data based on the image

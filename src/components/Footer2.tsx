@@ -61,11 +61,7 @@ const Footer2 = () => {
 
                     {/* About Text */}
                     <p className="text-gray-300 text-sm md:text-base leading-normal -mt-10 mb-4">
-                        Elite Motor Cars is the most trusted way of buying and selling used cars. Choose from over
-                        10K fully inspected second-hand car models. Select online and book a test drive at
-                        your home or at a Elite Motor Cars near you. Get a no-questions-asked* 5-day
-                        money back guarantee and a free one-year comprehensive service warranty with
-                        Assured Resale Value on every Elite Motor Cars.
+                        Elite Motor Cars The Most Trusted Way to Buy and Sell Used Cars in Australia Choose from over 10,000 fully inspected second-hand car models at Elite Motor Cars. Buy used cars online and book a test drive at your home or visit an Elite Motor Cars location near you. Enjoy a no-questions-asked 5-day money-back guarantee and a free one-year comprehensive service warranty with Assured Resale Value on every vehicle.
                     </p>
 
                     {/* Social Icons */}

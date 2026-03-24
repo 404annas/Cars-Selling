@@ -35,8 +35,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Elite Motor Cars - Your Import Partner",
-  description: "Your trusted partner for importing high-grade vehicles directly from Japan and Europe. We specialize in luxury sedans, hybrid efficiency, and performance icons with end-to-end service and zero stress.",
+  title: "Elite Motor Cars – Buy & Sell Used Cars in Australia | 10K+ Second-Hand Cars",
+  description: "Explore over 10,000 fully inspected second-hand cars at Elite Motor Cars. Buy and sell used cars with confidence, book a test drive, and enjoy a 5-day money-back guarantee plus a free one-year comprehensive service warranty.",
 };
 
 export default function RootLayout({
