@@ -17,6 +17,7 @@ const Footer2 = () => {
         { label: "How We Deliver", href: "/how-we-deliver" },
         { label: "Why Choose Us", href: "/why-choose-us" },
         { label: "FAQ's", href: "/faqs" },
+        { label: "Blogs", href: "/blogs" },
     ];
 
     useEffect(() => {

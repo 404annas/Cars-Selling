@@ -13,17 +13,15 @@ import {
     Home,
     Info,
     Truck,
-    HelpCircle
+    HelpCircle,
+    BookOpen
 } from "lucide-react";
 import logo from "@/assets/logo.jpeg";
 import Link from "next/link";
-import { usePathname, useSearchParams } from "next/navigation";
 
 import NavbarDropdowns from "@/components/NavbarDropdowns";
 
 const Navbar2 = () => {
-    const pathname = usePathname();
-    const searchParams = useSearchParams();
     const [isScrolled, setIsScrolled] = useState(false);
     const [searchQuery, setSearchQuery] = useState("");
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -48,10 +46,6 @@ const Navbar2 = () => {
             document.body.style.overflow = 'unset';
         }
     }, [mobileMenuOpen]);
-
-    useEffect(() => {
-        setIsSearching(false);
-    }, [pathname, searchParams]);
 
     useEffect(() => {
         if (!isSearching) return;
@@ -99,7 +93,8 @@ const Navbar2 = () => {
                         <Link href="/sold-cars" className="hover:opacity-80 transition-all duration-300 whitespace-nowrap ">Sold Cars <span className="text-[10px]"></span></Link>
                         <Link href="/how-we-deliver" className="hover:opacity-80 transition-all duration-300 whitespace-nowrap">How We Deliver</Link>
                         <Link href="/why-choose-us" className="hover:opacity-80 transition-all duration-300 whitespace-nowrap">Why Choose Us</Link>
-                        <Link href="/faqs" className="hover:opacity-80 transition-all duration-300 whitespace-nowrap">FAQ's</Link>
+                        <Link href="/blogs" className="hover:opacity-80 transition-all duration-300 whitespace-nowrap">Blogs</Link>
+                        <Link href="/faqs" className="hover:opacity-80 transition-all duration-300 whitespace-nowrap">FAQ&apos;s</Link>
                     </div>
 
                     {/* Right Side Icons */}
@@ -300,8 +295,11 @@ const Navbar2 = () => {
                                 <Link href="/why-choose-us" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3 text-gray-700 font-medium hover:text-[#f23410] transition-colors">
                                     <Info size={18} /> Why Choose Us
                                 </Link>
+                                <Link href="/blogs" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3 text-gray-700 font-medium hover:text-[#f23410] transition-colors">
+                                    <BookOpen size={18} /> Blogs
+                                </Link>
                                 <Link href="/faqs" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3 text-gray-700 font-medium hover:text-[#f23410] transition-colors">
-                                    <HelpCircle size={18} /> FAQ's
+                                    <HelpCircle size={18} /> FAQ&apos;s
                                 </Link>
                             </div>
 
