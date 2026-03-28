@@ -68,6 +68,7 @@ export default function BlogsContent() {
                             </p>
                         </div>
                     </div>
+                    
                 </section>
 
                 {/* Cover Image Section */}
