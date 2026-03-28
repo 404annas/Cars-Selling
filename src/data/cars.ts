@@ -326,6 +326,7 @@ import car37_13 from "@/assets/car37-13.jpeg"
 import car37_14 from "@/assets/car37-14.jpeg"
 import car37_15 from "@/assets/car37-15.jpeg"
 import car37_16 from "@/assets/car37-16.jpeg"
+import car37 from "@/assets/car37.jpeg"
 export interface CarDetails {
     id: number;
     name: string;
@@ -802,7 +803,7 @@ export const allCars: CarDetails[] = [
         highlights: [
             "2x orignal keys", "5 Years mechanical Warranty", "Aftermarket HKS Exhaust", "Upgraded intake’s & Turbo piping", "HKS Cone performance air filter", "BlitzTurbo boost guage", "Brembo brakes", "Work emotion wheels – lightweight, aggressive stance", "Recaro Leather bucket seats – race-ready support", "Iconic Evo AWD performance & turbo power", "Engine: 4B11T 2.0L DOHC Turbocharged Inline-4 (MIVEC)", "Drivetrain: Full-time AWC (All Wheel Control)"
         ],
-        images: [car37_1, car37_2, car37_3, car37_4, car37_5, car37_6, car37_7, car37_8, car37_9, car37_10, car37_11, car37_12, car37_13, car37_14, car37_15, car37_16],
+        images: [car37,car37_7, car37_9, car37_2, car37_1, car37_8,car37_12, car37_3, car37_4, car37_5, car37_6, car37_10, car37_11, car37_13, car37_14, car37_15, car37_16],
         dealer: "Elite Motor Cars",
         dealerLocation: "Sydney, Australia",
         license: "MD100405"
