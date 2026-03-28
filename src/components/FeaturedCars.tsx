@@ -59,8 +59,21 @@ import car33 from "@/assets/car33.jpg"
 import car34 from "@/assets/car34.jpg"
 import car35 from "@/assets/car35.jpg"
 import car36 from "@/assets/car36.jpg"
+import car37 from "@/assets/car37.jpeg"
 
 const cars = [
+    {
+        name: "2007 Mitsubishi Lancer Evolution X GSR RYUSHON ",
+        meta: "1 Year rego + Ctp",
+        img: car37,
+        image: car37,
+        price: "AUD $34,999",
+        specs: [
+            { icon: Gauge, label: "94,800 km" },
+            { icon: Cog, label: "2.0L" },
+            { icon: Settings, label: "Hybrid" },
+        ]
+    },
     {
         name: "2007 LEXUS LS600H V8 5000CC",
         meta: "5 Year’s warranty for peace of mind",
