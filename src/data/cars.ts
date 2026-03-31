@@ -617,7 +617,7 @@ export const allCars: CarDetails[] = [
         tagline: "Finished in Bmw individual Frozen Blue Matte Metallic",
         price: "48,499",
         description: "The F10 M5 is a high-performance sedan that combines luxury with blistering speed. The 4.4L twin-turbo V8 produces 560hp, making it one of the most powerful sedans of its era. This particular example is finished in the rare Frozen Blue Matte Metallic, making it a true head-turner on the road.",
-        specs: { mileage: "123,000 km", engine: "4.4L V8", transmission: "Automatic", fuel: "Hybrid", year: "2013", color: "Frozen Blue Matte Metallic" },
+        specs: { mileage: "123,000 km", engine: "4.4L V8 Automatic", transmission: "Automatic", fuel: "Petorl", year: "2013", color: "Frozen Blue Matte Metallic" },
         highlights: [
             "Finished in Bmw individual Frozen Blue Matte Metallic", "4.4L Twin turbo V8", "7 speed sports Dual Clutch", "2x keys", "Ventilated/Heated luxury seating", "Electric side blind package", "Bmw connect drive option", "Remote central locking", "Regenerative brakes", "360 parking sensors", "Available for immediate Delivery", "Finance Available", "Alot more"],
         images: [car21_1, car21_2, car21_3, car21_4, car21_5, car21_6, car21_7],
@@ -799,7 +799,7 @@ export const allCars: CarDetails[] = [
         tagline: "1 Year rego + Ctp",
         price: "$34,999",
         description: "This is not your average Evo. A proper, clean, Evo X built on the legendary CZ4A chassis With some mods —raw performance, razor-sharp handling, and pure JDM aggression.",
-        specs: { mileage: "94,800 km", engine: "2.0L Hybrid", transmission: "Hybrid", fuel: "Hybrid", year: "2007", color: "Red" },
+        specs: { mileage: "94,800 km", engine: "2.0L Manual", transmission: "Manual", fuel: "Manual", year: "2007", color: "Red" },
         highlights: [
             "2x orignal keys", "5 Years mechanical Warranty", "Aftermarket HKS Exhaust", "Upgraded intake’s & Turbo piping", "HKS Cone performance air filter", "BlitzTurbo boost guage", "Brembo brakes", "Work emotion wheels – lightweight, aggressive stance", "Recaro Leather bucket seats – race-ready support", "Iconic Evo AWD performance & turbo power", "Engine: 4B11T 2.0L DOHC Turbocharged Inline-4 (MIVEC)", "Drivetrain: Full-time AWC (All Wheel Control)"
         ],
@@ -828,7 +828,7 @@ export const allCars: CarDetails[] = [
         tagline: "5 years extended warranty",
         price: "21,999",
         description: "This 2007 Lexus LS460 is a timeless luxury sedan that offers a perfect blend of performance, comfort, and reliability. With only 99,000 km on the odometer, this vehicle has been meticulously maintained and is in pristine condition. The powerful 4.6L V8 engine delivers smooth and effortless performance, while the luxurious interior features premium materials and advanced technology. Whether you're looking for a reliable daily driver or a stylish executive car, this LS460 is an excellent choice.",
-        specs: { mileage: "99,000 km", engine: "4.6L Automatic", transmission: "Automatic", fuel: "Automatic", year: "2007", color: "White" },
+        specs: { mileage: "99,000 km", engine: "4.6L Automatic", transmission: "Automatic", fuel: "Petrol", year: "2007", color: "White" },
         highlights: [
             "Auction Grade 4B", "360 parking sensors", "Adjustable suspension", "Soft closing doors", "Full service history & log books", "2x keys", "Leather Interior", "Dual-zone automatic Climate Control", "Power-Adjustable Front Seats", "Memory Front Seats", "Heated & Ventilated Front Seats + Rear seats", "Keyless Entry & Push-button start", "Pre-Collision System", "Lane Departure Alert", "Adaptive Cruise Control", "Premium wood trim", "7 Driving modes", "Rear recliner seats", "Custom,Snow,Comfort,Eco,Normal,Sports s & Sports", "10 Air bags"],
         images: [car35_1, car35_2, car35_3, car35_4, car35_5, car35_6, car35_7, car35_8, car35_9],

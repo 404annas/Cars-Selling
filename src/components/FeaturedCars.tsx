@@ -71,7 +71,7 @@ const cars = [
         specs: [
             { icon: Gauge, label: "94,800 km" },
             { icon: Cog, label: "2.0L" },
-            { icon: Settings, label: "Hybrid" },
+            { icon: Settings, label: "Manual" },
         ]
     },
     {
