@@ -1,0 +1,41 @@
+# Robots.txt for Elite Motor Cars
+# https://elitemotorcars.com.au/
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://elitemotorcars.com.au/sitemap.xml
+
+# Crawl-delay (optional, in seconds)
+Crawl-delay: 1
+
+# Allow all important pages
+Allow: /all-cars/
+Allow: /available-cars/
+Allow: /sold-cars/
+Allow: /blogs/
+Allow: /cars/list/
+Allow: /car/list/
+Allow: /faqs/
+Allow: /how-we-deliver/
+Allow: /why-choose-us/
+Allow: /search-results/
+
+# Disallow admin/private areas if any (add as needed)
+# Disallow: /admin/
+# Disallow: /api/
+
+# Block common bot abuse
+Disallow: /*?*
+Disallow: /*&*
+
+# Allow main assets
+Allow: /*.js$
+Allow: /*.css$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.gif$
+Allow: /*.webp$
+Allow: /*.svg$
