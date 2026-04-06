@@ -12,7 +12,7 @@ import {
     MapPin,
 } from "lucide-react";
 
-import { blogs, findBlogByTitle } from "@/data/blogs";
+import { BlogParagraph, blogs, findBlogByTitle } from "@/data/blogs";
 
 const descriptionClampStyle = {
     display: "-webkit-box",
@@ -35,6 +35,27 @@ const metaItems = (blog: (typeof blogs)[number]) => [
         label: blog.location,
     },
 ];
+
+function renderParagraph(paragraph: BlogParagraph) {
+    if (typeof paragraph === "string") {
+        return paragraph;
+    }
+
+    return (
+        <>
+            {paragraph.text}
+            <a
+                href={paragraph.linkHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-[#f23410] underline underline-offset-4 transition hover:text-white"
+            >
+                {paragraph.linkLabel}
+            </a>
+            {paragraph.linkSuffix ?? ""}
+        </>
+    );
+}
 
 export default function BlogsContent() {
     const searchParams = useSearchParams();
@@ -60,7 +81,7 @@ export default function BlogsContent() {
                                 <span className="h-[1px] w-8 bg-[#f23410]"></span>
                                 {selectedBlog.readTime} read
                             </div>
-                            <h1 className="orb text-4xl font-extrabold leading-[1] md:text-5xl lg:text-6xl">
+                            <h1 className="orb text-3xl font-extrabold leading-[1] md:text-4xl lg:text-5xl">
                                 {selectedBlog.title}
                             </h1>
                             <p className="max-w-4xl text-base leading-normal text-gray-400 md:text-lg">
@@ -81,7 +102,7 @@ export default function BlogsContent() {
                             priority
                             className="object-cover"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                     </div>
                 </section>
 
@@ -93,7 +114,7 @@ export default function BlogsContent() {
                             {/* Introduction */}
                             <div className="relative border-l-2 border-[#f23410] pl-8">
                                 <p className="text-base leading-normal text-gray-200 md:text-lg font-medium">
-                                    {selectedBlog.introduction}
+                                    {renderParagraph(selectedBlog.introduction)}
                                 </p>
                             </div>
 
@@ -113,7 +134,7 @@ export default function BlogsContent() {
                                                     key={pIdx}
                                                     className="text-base leading-7 text-gray-300 md:text-lg opacity-90"
                                                 >
-                                                    {paragraph}
+                                                    {renderParagraph(paragraph)}
                                                 </p>
                                             ))}
                                         </div>
@@ -127,7 +148,7 @@ export default function BlogsContent() {
                                     Final Thoughts
                                 </h3>
                                 <p className="text-lg leading-normal text-gray-300">
-                                    {selectedBlog.conclusion}
+                                    {renderParagraph(selectedBlog.conclusion)}
                                 </p>
                             </div>
                         </article>
@@ -192,19 +213,19 @@ export default function BlogsContent() {
                                 href={`/blogs?title=${encodeURIComponent(blog.title)}`}
                                 className="group overflow-hidden rounded-xl border border-white/10 bg-white/5 transition-all duration-300 hover:-translate-y-1 hover:border-[#f23410]/70"
                             >
-                                <div className="relative h-64 overflow-hidden">
-                                    <div className="absolute inset-0 z-10 bg-gradient-to-t from-black via-black/25 to-transparent" />
+                                <div className="relative h-[600px] overflow-hidden">
+                                    <div className="absolute inset-0 z-10" />
                                     <Image
                                         src={blog.image}
                                         alt={blog.title}
                                         fill
-                                        className="object-cover transition duration-500 group-hover:scale-105"
+                                        className="object-cover object-center transition duration-500 group-hover:scale-105"
                                     />
                                 </div>
 
                                 <div className="space-y-5 px-5 py-6 md:px-6">
                                     <div className="space-y-3">
-                                        <h2 className="text-2xl font-bold orb leading-tight text-white transition group-hover:text-[#f23410]">
+                                        <h2 className="text-2xl font-bold orb leading-7 text-white transition group-hover:text-[#f23410]">
                                             {blog.title}
                                         </h2>
                                         <p className="text-sm leading-6 orb text-gray-300" style={descriptionClampStyle}>

@@ -1,10 +1,20 @@
 import type { StaticImageData } from "next/image";
 
 import mainHero from "@/assets/mainHero.jpg";
+import car37 from "@/assets/car37.jpeg";
+
+export type BlogParagraph =
+    | string
+    | {
+        text: string;
+        linkLabel: string;
+        linkHref: string;
+        linkSuffix?: string;
+    };
 
 export type BlogSection = {
     heading: string;
-    paragraphs: string[];
+    paragraphs: BlogParagraph[];
 };
 
 export type BlogPost = {
@@ -14,9 +24,9 @@ export type BlogPost = {
     postedDate: string;
     readTime: string;
     location: string;
-    introduction: string;
+    introduction: BlogParagraph;
     sections: BlogSection[];
-    conclusion: string;
+    conclusion: BlogParagraph;
 };
 
 export const blogs: BlogPost[] = [
@@ -79,6 +89,63 @@ export const blogs: BlogPost[] = [
         ],
         conclusion:
             "Importing a car into Australia requires careful planning and adherence to regulations. While the process can seem complex, working with professional Car Import Services Across Australia ensures a seamless and stress-free journey. From selecting the right vehicle to managing compliance and delivery, expert services play a crucial role in making the entire process smooth and successful. If you are planning to import a vehicle, relying on experienced professionals is the smartest approach to avoid complications and achieve the best results.",
+    },
+    {
+        title: "2007 Mitsubishi Lancer Evolution X GSR Ryushon - Complete Import Guide & Why It's a Top JDM Choice in Australia",
+        description:
+            "Discover why the 2007 Mitsubishi Lancer Evolution X GSR Ryushon is a standout JDM import, how the Australian import process works, and what makes this Evo X such a smart buy.",
+        image: car37,
+        postedDate: "6 April 2026",
+        readTime: "7 min read",
+        location: "Australia",
+        introduction:
+            "The 2007 Mitsubishi Lancer Evolution X GSR Ryushon is one of the most iconic performance cars to come out of Japan. Known for its rally heritage, turbocharged engine, and aggressive styling, the Evo X has earned a loyal following among car enthusiasts worldwide. In recent years, demand for JDM import cars in Australia has grown rapidly, and the Mitsubishi Evo X 2007 fits that demand perfectly. If you are considering an imported performance car, this guide explains the process, timing, and why the Evo X GSR Ryushon remains such a smart investment.",
+        sections: [
+            {
+                heading: "Understanding the Car Import Process in Australia",
+                paragraphs: [
+                    "Importing a vehicle may sound complicated, but with the right dealer the process becomes simple and stress-free. The first step is choosing the right car. Buyers looking for a Mitsubishi Lancer Evolution X for sale in Australia should consider vehicle condition, service history, mileage, modifications, and the authenticity of limited variants like the Ryushon edition.",
+                    "Once the vehicle is selected, it is shipped from Japan or another exporting country. Common shipping methods include roll-on/roll-off and container shipping, with transit usually taking around 4 to 8 weeks. A professional importer manages the logistics to keep the vehicle protected and on schedule.",
+                    "When the car arrives in Australia, it goes through customs clearance and import approval checks. This stage usually includes duty and tax handling, biosecurity inspection, and confirmation that the documentation is in order. After that, the vehicle must complete any required compliance work and registration before it can legally be driven on Australian roads.",
+                ],
+            },
+            {
+                heading: "How Long It Takes to Import a Car",
+                paragraphs: [
+                    "One of the most common questions buyers ask is how long the import process will take. In most cases, the full process takes around 6 to 10 weeks from vehicle selection to delivery.",
+                    "That timeline can vary depending on shipping schedules, port congestion, customs processing, and whether any compliance work is needed after arrival. Working with an experienced importer is the best way to reduce delays and keep the process smooth from start to finish.",
+                ],
+            },
+            {
+                heading: "Evo X GSR Ryushon Performance and Features",
+                paragraphs: [
+                    "The Evo X is much more than a practical sedan. It is a performance-focused machine powered by a 2.0L turbocharged 4B11T engine, delivering strong acceleration, sharp response, and the kind of confidence that made the Evolution name legendary.",
+                    "Its advanced all-wheel-drive system gives the car excellent grip and stability, making it one of the most capable JDM performance cars in Australia for both daily use and spirited driving. The steering and suspension setup also work together to give drivers precise control through corners and strong confidence on city roads and highways alike.",
+                    "The Ryushon edition adds even more appeal through bold styling, an aggressive front-end design, and a stance that stands out immediately. For buyers who want a unique imported car that delivers both visual impact and genuine driver engagement, this version of the Evo X is especially attractive.",
+                ],
+            },
+            {
+                heading: "Why the Evo X Is a Smart Import Choice",
+                paragraphs: [
+                    "The 2007 Mitsubishi Lancer Evolution X continues to be highly desirable because it blends strong resale value, unmistakable JDM heritage, and real everyday usability. It offers the excitement of a serious performance car without giving up the practicality of a four-door platform.",
+                    "As part of the legendary Evolution lineup, it carries lasting recognition among enthusiasts and collectors. Limited availability in Australia also helps support long-term appeal, especially for buyers who want something distinctive rather than a mainstream performance car.",
+                ],
+            },
+            {
+                heading: "Why Buying Through a Trusted Import Dealer Matters",
+                paragraphs: [
+                    "Choosing the right importer is just as important as choosing the right vehicle. A trusted dealer gives buyers access to premium JDM stock, verified vehicle inspections, transparent pricing, and full support through import approval, compliance, and registration.",
+                    "That support helps remove the stress from the buying journey and makes it easier to secure a high-quality Mitsubishi Evo X in Australia without managing complex paperwork and logistics alone.",
+                ],
+            },
+        ],
+        conclusion: {
+            text: "The 2007 Mitsubishi Lancer Evolution X GSR Ryushon is a strong mix of performance, style, and heritage. With imported performance cars becoming more popular in Australia, owning an Evo X is about more than transport. It is a statement. Understanding the ",
+            linkLabel: "car import process in Australia",
+            linkHref: "https://elitemotorcars.com.au/available-cars/0/",
+            linkSuffix:
+                " helps buyers make informed decisions and avoid unnecessary complications. With the support of an experienced import dealer, the journey from vehicle selection to delivery becomes smooth, secure, and hassle-free.",
+        },
     },
 ];
 
