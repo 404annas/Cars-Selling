@@ -15,20 +15,18 @@ Allow: /all-cars/
 Allow: /available-cars/
 Allow: /sold-cars/
 Allow: /blogs/
-Allow: /cars/list/
-Allow: /car/list/
 Allow: /faqs/
 Allow: /how-we-deliver/
 Allow: /why-choose-us/
-Allow: /search-results/
+Allow: /blogs?title=
 
 # Disallow admin/private areas if any (add as needed)
 # Disallow: /admin/
 # Disallow: /api/
 
-# Block common bot abuse
-Disallow: /*?*
-Disallow: /*&*
+# Keep low-value utility pages out of search
+Disallow: /search-results/
+Disallow: /cart/
 
 # Allow main assets
 Allow: /*.js$
