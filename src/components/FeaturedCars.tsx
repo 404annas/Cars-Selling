@@ -71,7 +71,7 @@ const cars = [
         specs: [
             { icon: Gauge, label: "94,800 km" },
             { icon: Cog, label: "2.0L" },
-            { icon: Settings, label: "Manual" },
+            { icon: Settings, label: "Automatic" },
         ]
     },
     {
@@ -163,7 +163,7 @@ const cars = [
         meta: "5 Years Warranty",
         img: car5,
         image: car5,
-        price: "AUD $34,500",
+        price: "SOLD",
         specs: [
             { icon: Gauge, label: "135,000 km" },
             { icon: Cog, label: "4.6L" },

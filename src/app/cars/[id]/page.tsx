@@ -6,8 +6,9 @@ import {
   ShieldCheck,
   Calendar,
   Gauge,
-  Fuel,
   Cog,
+  Settings,
+  Fuel,
   ChevronRight,
   Star
 } from "lucide-react";
@@ -134,10 +135,10 @@ export default async function CarDetailsPage({ params }: CarPageProps) {
                   </div>
                 </div>
                 <div className="bg-orange-100 p-3 rounded-xl flex items-center gap-3">
-                  <div className="bg-orange-300 p-2 rounded-lg shadow-sm text-gray-700"><Fuel size={20} /></div>
+                  <div className="bg-orange-300 p-2 rounded-lg shadow-sm text-gray-700"><Settings size={20} /></div>
                   <div>
-                    <p className="text-xs text-gray-500 uppercase font-bold">Fuel</p>
-                    <p className="font-semibold orb text-[#f23410]">{carData.specs.fuel}</p>
+                    <p className="text-xs text-gray-500 uppercase font-bold">Transmission</p>
+                    <p className="font-semibold orb text-[#f23410]">{carData.specs.transmission}</p>
                   </div>
                 </div>
                 <div className="bg-orange-100 p-3 rounded-xl flex items-center gap-3">

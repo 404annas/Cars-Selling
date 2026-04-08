@@ -146,7 +146,7 @@ export default function CarInventoryPage({ mode }: CarInventoryPageProps) {
                     </div>
                     <div className="flex flex-col items-center gap-1">
                       <Settings size={22} />
-                      <span>{car.specs.fuel}</span>
+                      <span>{car.specs.transmission}</span>
                     </div>
                   </div>
 

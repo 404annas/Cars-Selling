@@ -405,8 +405,8 @@ export const allCars: CarDetails[] = [
         id: 8,
         name: "Lexus LS460 2006, V8 Luxury",
         tagline: "Classic V8 Power and Comfort",
-        price: "34,500",
-        description: "An iconic model that redefined the luxury market. This 2006 LS460 has been kept in pristine condition and offers a driving experience that is still superior to many modern cars.",
+        price: "SOLD",
+        description: "SOLD - An iconic model that redefined the luxury market. This 2006 LS460 has been kept in pristine condition and offers a driving experience that is still superior to many modern cars.",
         specs: { mileage: "135,000 km", engine: "4.6L V8", transmission: "Automatic", fuel: "Petrol", year: "2006", color: "Silver" },
         highlights: ["Wood Grain Trim", "Memory Seats", "Rear Shade", "Parking Sensors", "Dual Zone Climate"],
         images: [car5_1, car5_2, car5_3, car5_4, car5_5, car5_6, car5_7, car5_8],
@@ -797,9 +797,9 @@ export const allCars: CarDetails[] = [
         id: 0,
         name: "2007 Mitsubishi Lancer Evolution X GSR RYUSHON",
         tagline: "1 Year rego + Ctp",
-        price: "$34,999",
+        price: "34,999",
         description: "This is not your average Evo. A proper, clean, Evo X built on the legendary CZ4A chassis With some mods —raw performance, razor-sharp handling, and pure JDM aggression.",
-        specs: { mileage: "94,800 km", engine: "2.0L Manual", transmission: "Manual", fuel: "Manual", year: "2007", color: "Red" },
+        specs: { mileage: "94,800 km", engine: "2.0L", transmission: "Automatic", fuel: "Petrol", year: "2007", color: "Red" },
         highlights: [
             "2x orignal keys", "5 Years mechanical Warranty", "Aftermarket HKS Exhaust", "Upgraded intake’s & Turbo piping", "HKS Cone performance air filter", "BlitzTurbo boost guage", "Brembo brakes", "Work emotion wheels – lightweight, aggressive stance", "Recaro Leather bucket seats – race-ready support", "Iconic Evo AWD performance & turbo power", "Engine: 4B11T 2.0L DOHC Turbocharged Inline-4 (MIVEC)", "Drivetrain: Full-time AWC (All Wheel Control)"
         ],
