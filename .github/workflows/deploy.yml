@@ -44,15 +44,10 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           port: 21
-          local-dir: ./
+          local-dir: ./out/
           server-dir: ./
           dangerous-clean-slate: true
           exclude: |
             **/.git*
             **/.git*/**
-            **/.github/**
             **/node_modules/**
-            **/.next/cache/**
-            **/out/**
-            **/.env*
-            **/README.md
