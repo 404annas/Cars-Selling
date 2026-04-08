@@ -3,6 +3,8 @@ import { connectDB } from "@/lib/mongodb";
 import Car from "@/lib/models/Car.model";
 import mongoose from "mongoose";
 
+export const revalidate = 60;
+
 export async function GET(
   _request: NextRequest,
   { params }: { params: Promise<{ id: string }> }

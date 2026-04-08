@@ -1,11 +1,9 @@
 "use client";
 
-import { useMemo, useState } from "react";
-import { useRouter } from "next/navigation";
-import { Controller, useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
+import { Controller, useWatch } from "react-hook-form";
 import ImageUploader from "@/features/cars/ImageUploader";
-import { carFormSchema, type CarFormSchemaValues } from "@/features/cars/carForm.schema";
+import type { CarFormSchemaValues } from "@/features/cars/carForm.schema";
+import { useCarFormLogic } from "@/features/cars/hooks/useCarFormLogic";
 
 type CarFormMode = "create" | "edit";
 
@@ -15,110 +13,34 @@ interface CarFormProps {
   initialValues?: Partial<CarFormSchemaValues>;
 }
 
-const defaultValues: CarFormSchemaValues = {
-  name: "",
-  tagline: "",
-  description: "",
-  priceAUD: null,
-  status: "available",
-  specs: {
-    mileageKm: 0,
-    engineDisplacement: "",
-    transmission: "",
-    fuelType: "Petrol",
-    year: new Date().getFullYear(),
-    color: "",
-    driveType: null,
-  },
-  highlights: [],
-  images: [],
-  tags: [],
-  isFeatured: false,
-  dealer: "Elite Motor Cars",
-  dealerLocation: "Sydney, Australia",
-  licenseNumber: "MD100405",
-  sortOrder: 0,
-};
-
-function mergeInitialValues(
-  incoming?: Partial<CarFormSchemaValues>
-): CarFormSchemaValues {
-  if (!incoming) return defaultValues;
-
-  return {
-    ...defaultValues,
-    ...incoming,
-    specs: {
-      ...defaultValues.specs,
-      ...incoming.specs,
-    },
-    highlights: incoming.highlights ?? defaultValues.highlights,
-    images: incoming.images ?? defaultValues.images,
-    tags: incoming.tags ?? defaultValues.tags,
-  };
-}
-
-function textToArray(value: string): string[] {
-  return value
-    .split("\n")
-    .map((entry) => entry.trim())
-    .filter(Boolean);
-}
-
 export default function CarForm({ mode, carId, initialValues }: CarFormProps) {
-  const router = useRouter();
-  const mergedDefaults = useMemo(() => mergeInitialValues(initialValues), [initialValues]);
-  const [highlightsInput, setHighlightsInput] = useState(
-    mergedDefaults.highlights.join("\n")
-  );
-  const [tagsInput, setTagsInput] = useState(mergedDefaults.tags.join("\n"));
-  const [formError, setFormError] = useState<string>("");
+  const {
+    form,
+    formError,
+    submit,
+    cancel,
+    highlightsInput,
+    setHighlightsInput,
+    tagsInput,
+    setTagsInput,
+  } = useCarFormLogic({
+    mode,
+    carId,
+    initialValues,
+  });
 
   const {
     register,
     control,
     handleSubmit,
     setValue,
-    watch,
     formState: { errors, isSubmitting },
-  } = useForm<CarFormSchemaValues>({
-    resolver: zodResolver(carFormSchema),
-    defaultValues: mergedDefaults,
-  });
+  } = form;
 
-  const status = watch("status");
-
-  async function onSubmit(values: CarFormSchemaValues) {
-    setFormError("");
-
-    const payload: CarFormSchemaValues = {
-      ...values,
-      highlights: textToArray(highlightsInput),
-      tags: textToArray(tagsInput),
-      priceAUD: values.status === "sold" ? null : values.priceAUD,
-    };
-
-    const endpoint = mode === "create" ? "/api/admin/cars" : `/api/admin/cars/${carId}`;
-    const method = mode === "create" ? "POST" : "PATCH";
-
-    const response = await fetch(endpoint, {
-      method,
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload),
-    });
-
-    const json = await response.json();
-    if (!response.ok) {
-      setFormError(json.error ?? "Failed to save car");
-      return;
-    }
-
-    router.push("/dashboard/cars");
-    router.refresh();
-  }
+  const status = useWatch({ control, name: "status" });
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
+    <form onSubmit={handleSubmit(submit)} className="space-y-8">
       <div className="grid gap-4 sm:grid-cols-2">
         <div className="sm:col-span-2">
           <label className="mb-1 block text-sm text-gray-300">Car Name</label>
@@ -339,7 +261,7 @@ export default function CarForm({ mode, carId, initialValues }: CarFormProps) {
       <div className="flex items-center justify-end gap-3">
         <button
           type="button"
-          onClick={() => router.push("/dashboard/cars")}
+          onClick={cancel}
           className="rounded-xl border border-white/20 px-5 py-2.5 text-sm font-semibold text-gray-200"
         >
           Cancel

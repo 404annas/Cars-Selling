@@ -17,20 +17,37 @@ type UploadingState = {
   error?: string;
 };
 
+const CLOUD_NAME = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME;
+const UPLOAD_PRESET = process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET;
+
 async function uploadImage(file: File): Promise<string> {
+  if (!CLOUD_NAME || !UPLOAD_PRESET) {
+    throw new Error("Cloudinary is not configured");
+  }
+
   const formData = new FormData();
   formData.append("file", file);
+  formData.append("upload_preset", UPLOAD_PRESET);
+  formData.append("folder", "elite-motor-cars");
+  formData.append("quality", "auto");
+  formData.append("fetch_format", "auto");
 
-  const response = await fetch("/api/admin/upload", {
-    method: "POST",
-    body: formData,
-  });
+  const response = await fetch(
+    `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`,
+    {
+      method: "POST",
+      body: formData,
+    }
+  );
 
-  const json = await response.json();
-  if (!response.ok) {
-    throw new Error(json.error ?? "Upload failed");
+  const json = (await response.json()) as {
+    secure_url?: string;
+    error?: { message?: string };
+  };
+  if (!response.ok || !json.secure_url) {
+    throw new Error(json.error?.message ?? "Upload failed");
   }
-  return json.url as string;
+  return json.secure_url;
 }
 
 export default function ImageUploader({
@@ -148,6 +165,12 @@ export default function ImageUploader({
           <p className="mt-1 text-xs text-gray-400">
             {value.length}/{maxImages} uploaded
           </p>
+          {!CLOUD_NAME || !UPLOAD_PRESET ? (
+            <p className="mt-2 text-xs text-red-400">
+              Set `NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME` and
+              `NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET`.
+            </p>
+          ) : null}
         </div>
       )}
 

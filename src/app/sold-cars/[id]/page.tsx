@@ -1,1 +1,1 @@
-export { default, generateStaticParams } from "../../cars/[id]/page";
+export { default } from "../../cars/[id]/page";

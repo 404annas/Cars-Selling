@@ -1,607 +1,137 @@
-"use client"
+"use client";
 
-import Image from "next/image"
-import Link from "next/link"
-import { findCarByName, getCarDetailRoute, getInventoryRoute, isSoldCar } from "@/lib/carRoutes"
-import {
-    Gauge,
-    Fuel,
-    Settings,
-    Cog,
-    Key
-} from "lucide-react"
-
-// ... (Keep your existing image imports here)
-import lamboMain from "@/assets/lamboMain.png";
-import lamboSec from "@/assets/lamboSec.jpg";
-import lamboSec2 from "@/assets/lamboSec2.jpg";
-import audiMain from "@/assets/audiMain.png";
-import audiSec from "@/assets/audiSec.jpg";
-import ferrariMain from "@/assets/ferrariMain.png";
-import ferrariSec from "@/assets/ferrariSec.jpg";
-import ferrariSec2 from "@/assets/ferrariSec2.jpg"
-import bmwMain from "@/assets/bmwMain.png"
-import bmwSec from "@/assets/bmwSec.jpg"
-
-import car1 from "@/assets/car1.avif"
-import car2 from "@/assets/car2.avif"
-import car3 from "@/assets/car3.avif"
-import car4 from "@/assets/car4.avif"
-import car5 from "@/assets/car5.avif"
-import car6 from "@/assets/car6.avif"
-import car7 from "@/assets/car7.avif"
-import car8 from "@/assets/car8.avif"
-import car9 from "@/assets/car9.avif"
-import car10 from "@/assets/car10.avif"
-import car11 from "@/assets/car11.avif"
-import car12 from "@/assets/car12.avif"
-import car13 from "@/assets/car13.avif"
-import car14 from "@/assets/car14.avif"
-import car15 from "@/assets/car15.avif"
-import car16 from "@/assets/car16.avif"
-import car17 from "@/assets/car17.avif"
-import car18 from "@/assets/car18.avif"
-import car19 from "@/assets/car19.avif"
-import car20 from "@/assets/car20.jpg"
-import car21 from "@/assets/car21.jpg"
-import car22 from "@/assets/car22.jpg"
-import car23 from "@/assets/car23.jpg"
-import car24 from "@/assets/car24.jpg"
-import car25 from "@/assets/car25.jpg"
-import car26 from "@/assets/car26.jpg"
-import car27 from "@/assets/car27.jpg"
-import car28 from "@/assets/car28.jpg"
-import car29 from "@/assets/car29.jpg"
-import car30 from "@/assets/car30.jpg"
-import car31 from "@/assets/car31.jpg"
-import car32 from "@/assets/car32.jpg"
-import car33 from "@/assets/car33.jpg"
-import car34 from "@/assets/car34.jpg"
-import car35 from "@/assets/car35.jpg"
-import car36 from "@/assets/car36.jpg"
-import car37 from "@/assets/car37.jpeg"
-
-const cars = [
-    {
-        name: "2007 Mitsubishi Lancer Evolution X GSR RYUSHON ",
-        meta: "1 Year rego + Ctp",
-        img: car37,
-        image: car37,
-        price: "AUD $34,999",
-        specs: [
-            { icon: Gauge, label: "94,800 km" },
-            { icon: Cog, label: "2.0L" },
-            { icon: Settings, label: "Automatic" },
-        ]
-    },
-    {
-        name: "2007 LEXUS LS600H V8 5000CC",
-        meta: "5 Year’s warranty for peace of mind",
-        img: car34,
-        image: car34,
-        price: "AUD $29,999",
-        specs: [
-            { icon: Gauge, label: "89,000 km" },
-            { icon: Cog, label: "5.0L" },
-            { icon: Settings, label: "Hybrid" },
-        ]
-    },
-    {
-        name: "2007 LEXUS LS460 V8 4600CC",
-        meta: "5 years extended warranty",
-        img: car35,
-        image: car35,
-        price: "AUD $21,999",
-        specs: [
-            { icon: Gauge, label: "99,000 km" },
-            { icon: Cog, label: "4.6L" },
-            { icon: Settings, label: "Automatic" },
-        ]
-    },
-    {
-        name: "2013 Toyota Prius Hybrid",
-        meta: "3 months Rego + CTP Included",
-        img: car36,
-        image: car36,
-        price: "AUD $14,999",
-        specs: [
-            { icon: Gauge, label: "138,000 km" },
-            { icon: Cog, label: "1.8L" },
-            { icon: Settings, label: "Hybrid" },
-        ]
-    },
-    {
-        name: "Toyota Prius 2011",
-        meta: "3 Years Warranty Included",
-        img: car1,
-        image: car1,
-        price: "SOLD",
-        specs: [
-            { icon: Gauge, label: "64,000 km" },
-            { icon: Cog, label: "1.8L" },
-            { icon: Settings, label: "Hybrid" },
-        ],
-    },
-    {
-        name: "Toyota Crown Sedan 2010",
-        meta: "1 Year warranty for peace of mind",
-        img: car2,
-        image: car2,
-        price: "SOLD",
-        specs: [
-            { icon: Gauge, label: "89,000 km" },
-            { icon: Cog, label: "3.5L" },
-            { icon: Settings, label: "Hybrid" },
-        ],
-    },
-    {
-        name: "Honda Vezel 2014",
-        meta: "5 years warranty",
-        img: car3,
-        image: car3,
-        price: "SOLD",
-        specs: [
-            { icon: Gauge, label: "99 km" },
-            { icon: Cog, label: "4.5L" },
-            { icon: Settings, label: "Hybrid" },
-        ],
-    },
-    {
-        name: "LEXUS LS460 V8 2012",
-        meta: "3 Years warranty",
-        img: car4,
-        image: car4,
-        price: "SOLD",
-        specs: [
-            { icon: Gauge, label: "93 km" },
-            { icon: Cog, label: "4.6L" },
-            { icon: Settings, label: "AWD" },
-        ],
-    },
-    {
-        name: "Lexus LS460 2006, V8 Luxury",
-        meta: "5 Years Warranty",
-        img: car5,
-        image: car5,
-        price: "SOLD",
-        specs: [
-            { icon: Gauge, label: "135,000 km" },
-            { icon: Cog, label: "4.6L" },
-            { icon: Settings, label: "Automatic" },
-        ],
-    },
-    {
-        name: "Mitsubishi Lancer Evolution 2007",
-        meta: "5 years mechanical warranty ",
-        img: car6,
-        image: car6,
-        price: "SOLD",
-        specs: [
-            { icon: Gauge, label: "50,200 km" },
-            { icon: Cog, label: "2.0L" },
-            { icon: Settings, label: "Dual-Clutch" },
-        ],
-    },
-    {
-        name: "Lexus LS460 V8 2007",
-        meta: "3 Years warranty",
-        img: car7,
-        image: car7,
-        price: "SOLD",
-        specs: [
-            { icon: Gauge, label: "154,000 km" },
-            { icon: Cog, label: "4.6L" },
-            { icon: Settings, label: "Automatic" },
-        ],
-    },
-    {
-        name: "Toyota C-HR Hybrid G Mode-Nero",
-        meta: "6-Month Warranty",
-        img: car8,
-        image: car8,
-        price: "SOLD",
-        specs: [
-            { icon: Gauge, label: "60,000 km" },
-            { icon: Cog, label: "1.8L" },
-            { icon: Settings, label: "Hybrid" },
-        ],
-    },
-    {
-        name: "Mercedes-Benz S400h Hybrid",
-        meta: "1 year warranty",
-        img: car9,
-        image: car9,
-        price: "SOLD",
-        specs: [
-            { icon: Gauge, label: "40,000 km" },
-            { icon: Cog, label: "3.5L" },
-            { icon: Settings, label: "Hybrid" },
-        ],
-    },
-    {
-        name: "Honda Grace Hybrid EX 2015",
-        meta: "1 Year Rego & Ctp",
-        img: car10,
-        image: car10,
-        price: "SOLD",
-        specs: [
-            { icon: Gauge, label: "43,000 km" },
-            { icon: Cog, label: "1.5L" },
-            { icon: Settings, label: "Hybrid" },
-        ],
-    },
-    {
-        name: "Toyota Yaris Hybrid G AWD 2020",
-        meta: "1 Year Rego + CTP Included",
-        img: car11,
-        image: car11,
-        price: "SOLD",
-        specs: [
-            { icon: Gauge, label: "100,000 km" },
-            { icon: Cog, label: "1.5L" },
-            { icon: Settings, label: "Hybrid" },
-        ],
-    },
-    {
-        name: "Lexus LS460 V8 RWD 2013",
-        meta: "4 years warranty",
-        img: car12,
-        image: car12,
-        price: "SOLD",
-        specs: [
-            { icon: Gauge, label: "80,000 km" },
-            { icon: Cog, label: "4.6L" },
-            { icon: Settings, label: "Automatic" },
-        ],
-    },
-    {
-        name: "Honda Fit Hybrid eHEV Hatchback",
-        meta: "Warranty",
-        img: car13,
-        image: car13,
-        price: "SOLD",
-        specs: [
-            { icon: Gauge, label: "100 km" },
-            { icon: Cog, label: "1.5L" },
-            { icon: Settings, label: "Hybrid" },
-        ],
-    },
-    {
-        name: "Suzuki Swift Hybrid Hatchback",
-        meta: "Warranty",
-        img: car14,
-        image: car14,
-        price: "SOLD",
-        specs: [
-            { icon: Gauge, label: "40,000 km" },
-            { icon: Cog, label: "1.2L" },
-            { icon: Settings, label: "Hybrid" },
-        ],
-    },
-    {
-        name: "Honda Fit Hybrid 2018",
-        meta: "Warranty",
-        img: car15,
-        image: car15,
-        price: "SOLD",
-        specs: [
-            { icon: Gauge, label: "100 km" },
-            { icon: Cog, label: "1.5L" },
-            { icon: Settings, label: "Hybrid" },
-        ],
-    },
-    {
-        name: "Toyota Crown RS Advance 2019",
-        meta: "Warranty",
-        img: car16,
-        image: car16,
-        price: "SOLD",
-        specs: [
-            { icon: Gauge, label: "40,000 km" },
-            { icon: Cog, label: "2.5L" },
-            { icon: Settings, label: "Hybrid" },
-        ],
-    },
-    {
-        name: "Lexus LS460 V8 RWD 2007",
-        meta: "Warranty",
-        img: car17,
-        image: car17,
-        price: "SOLD",
-        specs: [
-            { icon: Gauge, label: "200,000 km" },
-            { icon: Cog, label: "4.6L" },
-            { icon: Settings, label: "Automatic" },
-        ],
-    },
-    {
-        name: "Honda Vezel Hybrid 2014",
-        meta: "Warranty",
-        img: car18,
-        image: car18,
-        price: "SOLD",
-        specs: [
-            { icon: Gauge, label: "60,000 km" },
-            { icon: Cog, label: "1.5L" },
-            { icon: Settings, label: "Hybrid" },
-        ],
-    },
-    {
-        name: "Toyota C-HR Hybrid 2018",
-        meta: "Warranty",
-        img: car19,
-        image: car19,
-        price: "SOLD",
-        specs: [
-            { icon: Gauge, label: "50,000 km" },
-            { icon: Cog, label: "1.8L" },
-            { icon: Settings, label: "Hybrid" },
-        ],
-    },
-    {
-        name: "2007 LEXUS LS600HL V8 5000CC",
-        meta: "1 Year warranty for peace of mind",
-        img: car20,
-        image: car20,
-        price: "AUD $29,000",
-        specs: [
-            { icon: Gauge, label: "72,000 km" },
-            { icon: Cog, label: "5.0L" },
-            { icon: Settings, label: "Hybrid" },
-        ]
-    },
-    {
-        name: "2013 BMW M5 F10 4.4L TWIN TURBO V8",
-        meta: "3 years extended warranty",
-        img: car21,
-        image: car21,
-        price: "AUD $48,499",
-        specs: [
-            { icon: Gauge, label: "123,000 km" },
-            { icon: Cog, label: "4.4L" },
-            { icon: Settings, label: "Twin Turbo" },
-        ]
-    },
-    {
-        name: "2024 Yaris Hybrid 4WD",
-        meta: "1 year Rego + CTP Included",
-        img: car22,
-        image: car22,
-        price: "SOLD",
-        specs: [
-            { icon: Gauge, label: "6500 km" },
-            { icon: Cog, label: "1.5L" },
-            { icon: Settings, label: "Hybrid" },
-        ]
-    },
-    {
-        name: "2009 Crown 3.5L V6 Hybrid",
-        meta: "1 Year warranty for peace of mind",
-        img: car23,
-        image: car23,
-        price: "SOLD",
-        specs: [
-            { icon: Gauge, label: "107,000 km" },
-            { icon: Cog, label: "3.5L" },
-            { icon: Settings, label: "Hybrid" },
-        ]
-    },
-    {
-        name: "2018 Toyota Prius C Hyrbid",
-        meta: "Eligible for Uber X , Didi, Ubereats Etc",
-        img: car24,
-        image: car24,
-        price: "SOLD",
-        specs: [
-            { icon: Gauge, label: "109,000 km" },
-            { icon: Cog, label: "4.0L" },
-            { icon: Settings, label: "Hybrid" },
-        ]
-    },
-    {
-        name: "2014 Toyota Prius c / Aqua",
-        meta: "Eligible for Uber X, UberEats, Didi, DoorDash etc",
-        img: car25,
-        image: car25,
-        price: "SOLD",
-        specs: [
-            { icon: Gauge, label: "14,300 km" },
-            { icon: Cog, label: "3.9L" },
-            { icon: Settings, label: "Hybrid" },
-        ]
-    },
-    {
-        name: "2020 YARIS HYBRID X 4WD",
-        meta: "1 Year Rego & Ctp",
-        img: car26,
-        image: car26,
-        price: "SOLD",
-        specs: [
-            { icon: Gauge, label: "117,000 km" },
-            { icon: Cog, label: "3.0L" },
-            { icon: Settings, label: "Hybrid" },
-        ]
-    },
-    {
-        name: "2020 YARIS HYBRID Z 4WD",
-        meta: "1 Year Rego & Ctp",
-        img: car27,
-        image: car27,
-        price: "SOLD",
-        specs: [
-            { icon: Gauge, label: "130,000 km" },
-            { icon: Cog, label: "1.5L" },
-            { icon: Settings, label: "Hybrid" },
-        ]
-    },
-    {
-        name: "2014 LEXUS CT200H F SPORT",
-        meta: "1 Year Rego & Ctp",
-        img: car28,
-        image: car28,
-        price: "SOLD",
-        specs: [
-            { icon: Gauge, label: "79,000 km" },
-            { icon: Cog, label: "4.0L" },
-            { icon: Settings, label: "Hybrid" },
-        ]
-    },
-    {
-        name: "2020 Lexus Ct200h Hybrid",
-        meta: "4 months rego",
-        img: car29,
-        image: car29,
-        price: "SOLD",
-        specs: [
-            { icon: Gauge, label: "188,000 km" },
-            { icon: Cog, label: "4.2L" },
-            { icon: Settings, label: "Hybrid" },
-        ]
-    },
-    {
-        name: "2015 Audi A4 Quattro Sedan",
-        meta: "Great condition - full service history with Audi",
-        img: car30,
-        image: car30,
-        price: "SOLD",
-        specs: [
-            { icon: Gauge, label: "131,000 km" },
-            { icon: Cog, label: "2.0L" },
-            { icon: Settings, label: "Automatic" },
-        ]
-    },
-    {
-        name: "2020 Toyota Vitz / Yaris Hybrid",
-        meta: "12 months rego",
-        img: car31,
-        image: car31,
-        price: "SOLD",
-        specs: [
-            { icon: Gauge, label: "43,000 km" },
-            { icon: Cog, label: "3.5L" },
-            { icon: Settings, label: "Hybrid" },
-        ]
-    },
-    {
-        name: "2014 Honda vezel / Hrv Hybrid",
-        meta: "Eligible for Uber X, UberEats, Didi, DoorDash etc",
-        img: car32,
-        image: car32,
-        price: "SOLD",
-        specs: [
-            { icon: Gauge, label: "102,000 km" },
-            { icon: Cog, label: "5.0L" },
-            { icon: Settings, label: "Hybrid" },
-        ]
-    },
-    {
-        name: "2019 Toyota Vitz / Yaris Hybrid",
-        meta: "1 year rego",
-        img: car33,
-        image: car33,
-        price: "SOLD",
-        specs: [
-            { icon: Gauge, label: "92,000 km" },
-            { icon: Cog, label: "4.0L" },
-            { icon: Settings, label: "Hybrid" },
-        ]
-    },
-]
+import Image from "next/image";
+import Link from "next/link";
+import { Gauge, Settings, Cog } from "lucide-react";
+import { getCarDetailRoute, getInventoryRoute } from "@/lib/carRoutes";
+import { useFeaturedCars } from "@/features/cars/hooks/useFeaturedCars";
 
 const FeaturedCars = () => {
-    const availableCars = cars
-        .map((car, index) => ({ ...car, originalIndex: index }))
-        .filter((car) => car.price !== "SOLD")
+  const { data: cars = [], isLoading, error } = useFeaturedCars();
 
-    return (
-        <section className="px-4 sm:px-10 py-10 bg-black">
+  const availableCars = cars.filter((car) => car.status !== "sold").slice(0, 6);
 
-            {/* Header */}
-            <div className="flex sm:flex-row flex-col gap-2 items-center justify-between mb-10">
-                <h2 className="text-2xl sm:text-3xl font-bold orb text-[#f23410]">
-                    FEATURED CARS
-                </h2>
+  return (
+    <section className="px-4 sm:px-10 py-10 bg-black">
+      {/* Header */}
+      <div className="flex sm:flex-row flex-col gap-2 items-center justify-between mb-10">
+        <h2 className="text-2xl sm:text-3xl font-bold orb text-[#f23410]">
+          FEATURED CARS
+        </h2>
 
-                <Link href={getInventoryRoute("all")}>
-                    <button className="bg-[#f23410] text-white px-6 py-3 rounded-lg font-medium hover:scale-98 transition-all duration-300 cursor-pointer orb sm:text-base text-sm w-full sm:w-fit">
-                        SHOW ALL
+        <Link href={getInventoryRoute("all")}>
+          <button className="bg-[#f23410] text-white px-6 py-3 rounded-lg font-medium hover:scale-98 transition-all duration-300 cursor-pointer orb sm:text-base text-sm w-full sm:w-fit">
+            SHOW ALL
+          </button>
+        </Link>
+      </div>
+
+      {isLoading && (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-4">
+          {Array.from({ length: 6 }).map((_, idx) => (
+            <div
+              key={idx}
+              className="border border-[#E5E5E5] rounded-2xl p-4 mb-4 animate-pulse"
+            >
+              <div className="h-[450px] w-full rounded-xl bg-white/10" />
+              <div className="mt-4 h-4 w-1/2 rounded bg-white/10" />
+            </div>
+          ))}
+        </div>
+      )}
+
+      {!isLoading && error && (
+        <div className="border border-red-400/40 bg-red-500/10 text-red-300 rounded-xl p-4">
+          {error instanceof Error ? error.message : "Failed to load featured cars."}
+        </div>
+      )}
+
+      {!isLoading && !error && (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-4">
+          {availableCars.map((car) => {
+            const detailHref = getCarDetailRoute(
+              car._id,
+              car.status === "sold" || car.priceAUD === null
+            );
+            const imageUrl = car.thumbnailUrl || car.images[0] || "";
+
+            const specs = [
+              { icon: Gauge, label: `${car.specs.mileageKm.toLocaleString()} km` },
+              { icon: Cog, label: car.specs.engineDisplacement },
+              { icon: Settings, label: car.specs.transmission },
+            ];
+
+            return (
+              <div
+                key={car._id}
+                className="border border-[#E5E5E5] rounded-2xl p-4 mb-4"
+              >
+                {/* Title */}
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="relative w-12 h-12 rounded-lg overflow-hidden">
+                    {imageUrl ? (
+                      <Image
+                        src={imageUrl}
+                        alt={car.name}
+                        fill
+                        className="object-cover object-center"
+                      />
+                    ) : null}
+                  </div>
+                  <div>
+                    <h3 className="font-semibold orb text-base sm:text-lg leading-none text-white">
+                      {car.name}
+                    </h3>
+                    <p className="text-sm text-gray-400">{car.tagline}</p>
+                  </div>
+                </div>
+
+                {/* Image */}
+                <div className="relative h-[400px] sm:h-[450px] w-full mb-4 rounded-xl overflow-hidden group">
+                  {imageUrl ? (
+                    <Image
+                      src={imageUrl}
+                      alt={car.name}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="object-cover object-center transition-transform duration-500 ease-out group-hover:scale-105 cursor-pointer"
+                    />
+                  ) : null}
+                </div>
+
+                {/* Specs */}
+                <div className="bg-black text-white rounded-xl p-0 space-y-4">
+                  <div className="grid grid-cols-3 gap-4 text-center text-xs sm:text-sm border border-orange-950 rounded-xl py-3 pl-2 pr-1">
+                    {specs.map((spec, i) => {
+                      const Icon = spec.icon;
+                      return (
+                        <div key={i} className="flex flex-col items-center gap-1">
+                          <Icon className="w-4 sm:w-5 h-4 sm:h-5" />
+                          <span className="text-sm mt-0">{spec.label}</span>
+                        </div>
+                      );
+                    })}
+                  </div>
+
+                  {/* Price */}
+                  <p className="text-xl orb font-semibold">
+                    {car.priceAUD === null ? "SOLD" : `AUD $${car.priceAUD.toLocaleString()}`}
+                  </p>
+
+                  {/* Button */}
+                  <Link href={detailHref}>
+                    <button className="w-full bg-[#f23410] text-white py-3 rounded-xl font-medium hover:bg-[#d92c0d] orb transition-all duration-300 cursor-pointer sm:text-base text-sm">
+                      SEE DETAILS
                     </button>
-                </Link>
-            </div>
+                  </Link>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      )}
+    </section>
+  );
+};
 
-            {/* Cards - Show first 6 available cars */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-4">
-                {availableCars.slice(0, 6).map((car) => {
-                    const matchedCar = findCarByName(car.name)
-                    const detailHref = matchedCar
-                        ? getCarDetailRoute(matchedCar.id, isSoldCar(matchedCar.price))
-                        : getInventoryRoute("available")
-
-                    return (
-                    <div
-                        key={car.originalIndex}
-                        className="border border-[#E5E5E5] rounded-2xl p-4 mb-4"
-                    >
-                        {/* Title */}
-                        <div className="flex items-center gap-3 mb-4">
-                            <div className="relative w-12 h-12 rounded-lg overflow-hidden">
-                                <Image
-                                    src={car.img}
-                                    alt={car.name}
-                                    fill
-                                    // width={500}
-                                    // height={500}
-                                    className="object-cover object-center"
-                                />
-                            </div>
-                            <div>
-                                <h3 className="font-semibold orb text-base sm:text-lg leading-none text-white">{car.name}</h3>
-                                <p className="text-sm text-gray-400">{car.meta}</p>
-                            </div>
-                        </div>
-
-                        {/* Image */}
-                        <div className="relative h-[400px] sm:h-[450px] w-full mb-4 rounded-xl overflow-hidden group">
-                            <Image
-                                src={car.img}
-                                alt={car.name}
-                                fill
-                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                                className="object-cover object-center transition-transform duration-500 ease-out group-hover:scale-105 cursor-pointer"
-                            />
-                        </div>
-
-                        {/* Specs */}
-                        <div className="bg-black text-white rounded-xl p-0 space-y-4">
-                            <div className="grid grid-cols-3 gap-4 text-center text-xs sm:text-sm border border-orange-950 rounded-xl py-3 pl-2 pr-1">
-                                {car.specs.map((spec, i) => {
-                                    const Icon = spec.icon
-                                    return (
-                                        <div key={i} className="flex flex-col items-center gap-1">
-                                            <Icon className="w-4 sm:w-5 h-4 sm:h-5" />
-                                            <span className="text-sm mt-0">{spec.label}</span>
-                                        </div>
-                                    )
-                                })}
-                            </div>
-
-                            {/* Price */}
-                            <p className="text-xl orb font-semibold">{car.price}</p>
-
-                            {/* Button */}
-                            <Link href={detailHref}>
-                                <button className="w-full bg-[#f23410] text-white py-3 rounded-xl font-medium hover:bg-[#d92c0d] orb transition-all duration-300 cursor-pointer sm:text-base text-sm">
-                                    SEE DETAILS
-                                </button>
-                            </Link>
-                        </div>
-                    </div>
-                    )
-                })}
-            </div>
-        </section>
-    )
-
-}
-
-export default FeaturedCars
+export default FeaturedCars;

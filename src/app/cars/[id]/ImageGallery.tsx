@@ -1,28 +1,30 @@
 "use client";
 
 import { useState } from "react";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 
 interface ImageGalleryProps {
-  images: StaticImageData[];
+  images: string[];
   carName: string;
   isSold: boolean;
 }
 
 export default function ImageGallery({ images, carName, isSold }: ImageGalleryProps) {
-  const [mainImage, setMainImage] = useState(images[0]);
+  const [mainImage, setMainImage] = useState(images[0] ?? "");
 
   return (
     <div className="space-y-4">
       {/* Main Image Stage */}
       <div className="relative w-full h-[500px] rounded-2xl overflow-hidden shadow-sm border border-[#f23410] bg-black">
-        <Image
-          src={mainImage}
-          alt={carName}
-          fill
-          className="object-contain object-center transition-all duration-500"
-          priority
-        />
+        {mainImage ? (
+          <Image
+            src={mainImage}
+            alt={carName}
+            fill
+            className="object-contain object-center transition-all duration-500"
+            priority
+          />
+        ) : null}
         <div className={`absolute top-4 left-4 px-4 py-1 rounded-full text-sm font-bold shadow-md orb ${
           isSold 
             ? 'bg-gray-700 text-gray-400' 
@@ -42,14 +44,16 @@ export default function ImageGallery({ images, carName, isSold }: ImageGalleryPr
               ${mainImage === img ? "border-[#f23410]" : "border-transparent opacity-70 hover:opacity-100"}
             `}
           >
-            <Image
-              src={img}
-              alt={`Thumbnail ${index}`}
-              fill
-              quality={100}
-              sizes="(max-width: 768px) 25vw, 15vw"
-              className="object-cover"
-            />
+            {img ? (
+              <Image
+                src={img}
+                alt={`Thumbnail ${index}`}
+                fill
+                quality={100}
+                sizes="(max-width: 768px) 25vw, 15vw"
+                className="object-cover"
+              />
+            ) : null}
           </button>
         ))}
       </div>
