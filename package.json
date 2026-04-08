@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "seed": "ts-node --compiler-options '{\"module\":\"CommonJS\",\"esModuleInterop\":true}' scripts/seed.ts",
-    "upload-images": "ts-node --compiler-options '{\"module\":\"CommonJS\",\"esModuleInterop\":true}' scripts/upload-images.ts"
+    "upload-images": "ts-node --compiler-options '{\"module\":\"CommonJS\",\"esModuleInterop\":true}' scripts/upload-images.ts",
+    "seed-admin": "ts-node --compiler-options '{\"module\":\"CommonJS\",\"esModuleInterop\":true}' scripts/seed-admin.ts"
   },
   "dependencies": {
     "@dotlottie/react-player": "^1.6.19",

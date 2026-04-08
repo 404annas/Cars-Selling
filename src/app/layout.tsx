@@ -1,14 +1,8 @@
 import type { Metadata } from "next";
-import { Suspense } from "react";
 import { Geist, Geist_Mono, Poppins, Orbitron, Inter_Tight } from "next/font/google";
 import "./globals.css";
 import { Toaster } from 'sonner';
-import Navbar2 from '@/components/Navbar2';
-import Process from "@/components/Process";
-import Assistance from "@/components/Assistance";
-import Footer from "@/components/Footer";
-import Bot from "@/components/Bot";
-import Footer2 from "@/components/Footer2";
+import RouteLayoutShell from "@/components/RouteLayoutShell";
 
 import Script from "next/script";
 
@@ -74,15 +68,7 @@ export default function RootLayout({
       <body
         className={`${poppins.variable} ${orbitron.variable} antialiased`}
       >
-        <Suspense fallback={null}>
-          <Navbar2 />
-        </Suspense>
-        {children}
-        <Process />
-        <Assistance />
-        <Footer2 />
-
-        <Bot />
+        <RouteLayoutShell>{children}</RouteLayoutShell>
 
         <Toaster
           position="bottom-right"
