@@ -6,6 +6,7 @@ const nextConfig: NextConfig = {
     ignoreBuildErrors: true,
   },
   reactCompiler: true,
+  output: "export",
   images: {
     unoptimized: true,
   },
@@ -13,5 +14,3 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
-
-
