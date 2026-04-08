@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Poppins, Orbitron, Inter_Tight } from "next/font/goo
 import "./globals.css";
 import { Toaster } from 'sonner';
 import RouteLayoutShell from "@/components/RouteLayoutShell";
+import QueryProvider from "@/components/providers/QueryProvider";
 
 import Script from "next/script";
 
@@ -68,7 +69,9 @@ export default function RootLayout({
       <body
         className={`${poppins.variable} ${orbitron.variable} antialiased`}
       >
-        <RouteLayoutShell>{children}</RouteLayoutShell>
+        <QueryProvider>
+          <RouteLayoutShell>{children}</RouteLayoutShell>
+        </QueryProvider>
 
         <Toaster
           position="bottom-right"
