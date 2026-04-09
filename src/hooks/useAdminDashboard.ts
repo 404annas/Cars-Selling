@@ -82,6 +82,7 @@ export function useAdminDashboard() {
   const [cars, setCars] = useState<AdminCarListItem[]>([]);
   const [form, setForm] = useState<CarFormValues>(emptyCarForm);
   const [editingId, setEditingId] = useState<string | null>(null);
+  const [isFormOpen, setIsFormOpen] = useState(false);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [message, setMessage] = useState("");
@@ -136,15 +137,23 @@ export function useAdminDashboard() {
     setCars([]);
     setEditingId(null);
     setForm(emptyCarForm);
+    setIsFormOpen(false);
     router.replace("/dashboard/login");
   }
 
-  async function editCar(id: string) {
+  function openCreateForm() {
+    setEditingId(null);
+    setForm(emptyCarForm);
+    setMessage("");
+    setIsFormOpen(true);
+  }
+
+  async function openEditForm(id: string) {
     setMessage("");
     const response = await getAdminCar(id);
     setEditingId(id);
     setForm(toFormValues(response.data));
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    setIsFormOpen(true);
   }
 
   async function removeCar(id: string) {
@@ -154,6 +163,7 @@ export function useAdminDashboard() {
     if (editingId === id) {
       setEditingId(null);
       setForm(emptyCarForm);
+      setIsFormOpen(false);
     }
   }
 
@@ -184,6 +194,7 @@ export function useAdminDashboard() {
 
       setEditingId(null);
       setForm(emptyCarForm);
+      setIsFormOpen(false);
       await refreshCars();
     } catch (error) {
       setMessage(error instanceof Error ? error.message : "Unable to save car");
@@ -198,17 +209,25 @@ export function useAdminDashboard() {
     setMessage("");
   }
 
+  function closeForm() {
+    setIsFormOpen(false);
+    resetForm();
+  }
+
   return {
     cars,
     editingId,
     form,
+    isFormOpen,
     loading,
     message,
     saving,
     stats,
     user,
-    editCar,
+    closeForm,
     handleLogout,
+    openCreateForm,
+    openEditForm,
     quickUpdateCar,
     removeCar,
     resetForm,

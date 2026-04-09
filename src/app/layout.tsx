@@ -1,15 +1,10 @@
 import type { Metadata } from "next";
-import { Suspense } from "react";
 import { Geist, Geist_Mono, Poppins, Inter_Tight } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "sonner";
-import Navbar2 from "@/components/Navbar2";
-import Process from "@/components/Process";
-import Assistance from "@/components/Assistance";
-import Bot from "@/components/Bot";
-import Footer2 from "@/components/Footer2";
 import QueryProvider from "@/providers/QueryProvider";
 import Script from "next/script";
+import SiteChrome from "@/components/SiteChrome";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -75,14 +70,7 @@ export default function RootLayout({
       </head>
       <body className={bodyClassName}>
         <QueryProvider>
-          <Suspense fallback={null}>
-            <Navbar2 />
-          </Suspense>
-          {children}
-          <Process />
-          <Assistance />
-          <Footer2 />
-          <Bot />
+          <SiteChrome>{children}</SiteChrome>
           <Toaster
             position="bottom-right"
             richColors={true}
