@@ -1,52 +1,23 @@
 "use client";
 
-import { useEffect, useState, Suspense } from "react";
-import { useSearchParams, useRouter } from "next/navigation";
-import Image from "next/image";
+import { Suspense, useMemo } from "react";
+import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import {
     Gauge,
     Cog,
     Settings,
-    MapPin,
-    Phone,
-    ShieldCheck,
     ShoppingCart,
-    Star,
-    Check,
     Search as SearchIcon
 } from "lucide-react";
 import { toast } from 'sonner';
-import { allCars } from "@/data/cars";
-
-interface CarDetails {
-    id: number;
-    name: string;
-    tagline: string;
-    price: string;
-    description: string;
-    specs: {
-        mileage: string;
-        engine: string;
-        transmission: string;
-        fuel: string;
-        year: string;
-        color: string;
-    };
-    highlights: string[];
-    images: any[];
-    dealer: string;
-    dealerLocation: string;
-    license: string;
-}
+import { useCars } from "@/hooks/useCars";
+import { getCarDetailRoute, isSoldCar } from "@/lib/carRoutes";
+import type { FrontendCar } from "@/types/car";
 
 const SearchResultsContent = () => {
     const searchParams = useSearchParams();
-    const router = useRouter();
-    const [filteredCars, setFilteredCars] = useState<CarDetails[]>([]);
-    const [hasSearched, setHasSearched] = useState(false);
-
-    useEffect(() => {
+    const filters = useMemo(() => {
         const make = searchParams.get("make") || "";
         const model = searchParams.get("model") || "";
         const minPrice = searchParams.get("minPrice") || "";
@@ -55,59 +26,24 @@ const SearchResultsContent = () => {
         const toYear = searchParams.get("toYear") || "";
         const searchQuery = searchParams.get("search") || "";
 
-        // Only filter if there are actual search params
-        const hasParams = make || model || minPrice || maxPrice || fromYear || toYear || searchQuery;
+        const q = searchQuery || [make, model].filter(Boolean).join(" ");
 
-        if (hasParams) {
-            const filtered = allCars.filter((car) => {
-                // Make filter
-                if (make && !car.name.toLowerCase().includes(make.toLowerCase())) {
-                    return false;
-                }
-
-                // Model filter
-                if (model && !car.name.toLowerCase().includes(model.toLowerCase())) {
-                    return false;
-                }
-
-                // Price filter
-                const carPrice = parseFloat(car.price.replace(/,/g, ""));
-                if (minPrice && carPrice < parseFloat(minPrice)) {
-                    return false;
-                }
-                if (maxPrice && carPrice > parseFloat(maxPrice)) {
-                    return false;
-                }
-
-                // Year filter
-                const carYear = parseInt(car.specs.year);
-                if (fromYear && fromYear !== "Year" && fromYear !== "Below") {
-                    if (carYear < parseInt(fromYear)) {
-                        return false;
-                    }
-                }
-                if (toYear && toYear !== "Year" && toYear !== "Below") {
-                    if (carYear > parseInt(toYear)) {
-                        return false;
-                    }
-                }
-
-                // Search query filter (searches in name and tagline)
-                if (searchQuery && !car.name.toLowerCase().includes(searchQuery.toLowerCase()) &&
-                    !car.tagline.toLowerCase().includes(searchQuery.toLowerCase())) {
-                    return false;
-                }
-
-                return true;
-            });
-
-            setFilteredCars(filtered);
-            setHasSearched(true);
-        } else {
-            setFilteredCars([]);
-            setHasSearched(false);
-        }
+        return {
+            hasParams: Boolean(make || model || minPrice || maxPrice || fromYear || toYear || searchQuery),
+            params: {
+                status: "available" as const,
+                q,
+                minPrice,
+                maxPrice,
+                fromYear: fromYear && fromYear !== "Year" && fromYear !== "Below" ? fromYear : "",
+                toYear: toYear && toYear !== "Year" && toYear !== "Below" ? toYear : "",
+                limit: 50,
+                sort: "sortOrder_asc",
+            },
+        };
     }, [searchParams]);
+    const { data, isLoading, isError, error } = useCars(filters.hasParams ? filters.params : { status: "available", limit: 0 });
+    const filteredCars = filters.hasParams ? data?.data ?? [] : [];
 
     return (
         <div className="min-h-screen bg-black">
@@ -127,20 +63,33 @@ const SearchResultsContent = () => {
                         <SearchIcon className="text-[#f23410]" size={24} />
                         <h1 className="text-xl sm:text-2xl font-bold text-[#f23410]">Search Results</h1>
                     </div>
-                    {hasSearched && (
+                    {filters.hasParams && (
                         <p className="text-gray-400">
                             Found <span className="font-bold text-[#f23410]">{filteredCars.length}</span> {filteredCars.length === 1 ? 'car' : 'cars'} matching your criteria
                         </p>
                     )}
-                    {!hasSearched && (
+                    {!filters.hasParams && (
                         <p className="text-gray-400">
                             No filters applied. Use the search bar above to find your perfect car.
                         </p>
                     )}
                 </div>
 
+                {isLoading && filters.hasParams ? (
+                    <div className="rounded-2xl border border-orange-800 p-8 text-center text-gray-400">
+                        Loading matching cars...
+                    </div>
+                ) : null}
+
+                {isError ? (
+                    <div className="rounded-2xl border border-orange-800 p-8 text-center">
+                        <p className="text-[#f23410]">Unable to load search results.</p>
+                        <p className="mt-2 text-sm text-gray-400">{error instanceof Error ? error.message : "Please try again shortly."}</p>
+                    </div>
+                ) : null}
+
                 {/* Results Grid */}
-                {hasSearched && filteredCars.length > 0 && (
+                {filters.hasParams && !isLoading && !isError && filteredCars.length > 0 && (
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                         {filteredCars.map((car) => (
                             <div
@@ -149,11 +98,10 @@ const SearchResultsContent = () => {
                             >
                                 {/* Car Image */}
                                 <div className="relative h-48 w-full">
-                                    <Image
+                                    <img
                                         src={car.images[0]}
                                         alt={car.name}
-                                        fill
-                                        className="object-cover"
+                                        className="h-full w-full object-cover"
                                     />
                                     <div className="absolute top-3 left-3 bg-[#f23410] text-white px-3 py-1 rounded-full text-xs font-bold">
                                         In Stock
@@ -188,20 +136,18 @@ const SearchResultsContent = () => {
 
                                     {/* Action Buttons */}
                                     <div className="flex gap-2">
-                                        <Link href={`/cars/${car.id}`} className="flex-1">
+                                        <Link href={getCarDetailRoute(car.id, isSoldCar(car))} className="flex-1">
                                             <button className="w-full bg-[#f23410] hover:bg-[#d92c0d] text-white font-semibold py-2.5 rounded-lg transition-all duration-300 cursor-pointer text-sm">
                                                 View Details
                                             </button>
                                         </Link>
                                         <button
                                             onClick={() => {
-                                                const existingCart = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('cart') || '[]') : [];
-                                                const carExists = existingCart.some((item: any) => item.id === car.id);
+                                                const existingCart = JSON.parse(localStorage.getItem('cart') || '[]') as FrontendCar[];
+                                                const carExists = existingCart.some((item) => item.id === car.id);
                                                 if (!carExists) {
-                                                    const updatedCart = [...existingCart, car];
-                                                    if (typeof window !== 'undefined') {
-                                                        localStorage.setItem('cart', JSON.stringify(updatedCart));
-                                                    }
+                                                    const updatedCart = existingCart.concat(car);
+                                                    localStorage.setItem('cart', JSON.stringify(updatedCart));
                                                     toast.success(`${car.name} has been added to your cart!`, {
                                                         action: {
                                                             label: 'Go to Cart',
@@ -224,7 +170,7 @@ const SearchResultsContent = () => {
                 )}
 
                 {/* No Results */}
-                {hasSearched && filteredCars.length === 0 && (
+                {filters.hasParams && !isLoading && !isError && filteredCars.length === 0 && (
                     <div className="bg-black rounded-2xl p-12 text-center shadow-sm border border-orange-800">
                         <SearchIcon size={64} className="mx-auto text-gray-400 mb-4" />
                         <h3 className="text-xl font-bold text-[#f23410] mb-2">No Cars Found</h3>

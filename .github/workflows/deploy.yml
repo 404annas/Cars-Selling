@@ -7,6 +7,12 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    concurrency:
+      group: hostinger-frontend-deploy
+      cancel-in-progress: true
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+      NEXT_PUBLIC_API_BASE_URL: ${{ secrets.NEXT_PUBLIC_API_BASE_URL }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -28,8 +34,10 @@ jobs:
           port: 21
           local-dir: ./out/
           server-dir: ./public_html/
-          dangerous-clean-slate: false
+          dangerous-clean-slate: true
+          log-level: minimal
           exclude: |
             **/.git*
             **/.git*/**
             **/node_modules/**
+            **/*.map
