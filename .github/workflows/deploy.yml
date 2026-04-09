@@ -12,7 +12,7 @@ jobs:
       cancel-in-progress: true
     env:
       NEXT_TELEMETRY_DISABLED: "1"
-      NEXT_PUBLIC_API_BASE_URL: ${{ secrets.NEXT_PUBLIC_API_BASE_URL }}
+      NEXT_PUBLIC_API_BASE_URL: ${{ secrets.NEXT_PUBLIC_API_BASE_URL || 'https://elite-motors-backend.vercel.app' }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
