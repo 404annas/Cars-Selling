@@ -12,7 +12,13 @@ import {
   logout,
   updateAdminCar,
 } from "@/lib/api";
-import type { AdminCarListItem, AuthUser, BackendCar, CarFormValues } from "@/types/car";
+import type {
+  AdminCarListItem,
+  AdminCarListResponse,
+  AuthUser,
+  BackendCar,
+  CarFormValues,
+} from "@/types/car";
 
 export const emptyCarForm: CarFormValues = {
   name: "",
@@ -77,6 +83,45 @@ function toFormValues(car: BackendCar): CarFormValues {
   };
 }
 
+function getFallbackStats(cars: AdminCarListItem[]) {
+  return {
+    total: cars.length,
+    available: cars.filter((car) => car.status === "available").length,
+    sold: cars.filter((car) => car.status === "sold").length,
+    featured: cars.filter((car) => car.isFeatured).length,
+  };
+}
+
+function applyCarsResponse(
+  response: AdminCarListResponse,
+  fallbackPage: number,
+  fallbackLimit: number,
+  setCars: (cars: AdminCarListItem[]) => void,
+  setPagination: (pagination: {
+    page: number;
+    limit: number;
+    total: number;
+    totalPages: number;
+  }) => void,
+  setStats: (stats: {
+    total: number;
+    available: number;
+    sold: number;
+    featured: number;
+  }) => void,
+) {
+  setCars(response.data);
+  setPagination(
+    response.pagination ?? {
+      page: fallbackPage,
+      limit: fallbackLimit,
+      total: response.data.length,
+      totalPages: response.data.length > 0 ? 1 : 0,
+    },
+  );
+  setStats(response.stats ?? getFallbackStats(response.data));
+}
+
 export function useAdminDashboard() {
   const router = useRouter();
   const [user, setUser] = useState<AuthUser | null>(null);
@@ -91,6 +136,7 @@ export function useAdminDashboard() {
   const [page, setPage] = useState(1);
   const [limit, setLimit] = useState(20);
   const [search, setSearch] = useState("");
+  const [debouncedSearch, setDebouncedSearch] = useState("");
   const [statusFilter, setStatusFilter] = useState<AdminCarsQueryParams["status"]>("all");
   const [featuredFilter, setFeaturedFilter] = useState<"all" | "featured" | "not-featured">("all");
   const [pagination, setPagination] = useState({
@@ -119,17 +165,25 @@ export function useAdminDashboard() {
       const response = await getAdminCars({
         page,
         limit,
-        q: search,
+        q: debouncedSearch,
         status: statusFilter,
         featured: featuredQueryValue,
       });
-      setCars(response.data);
-      setPagination(response.pagination);
-      setStats(response.stats);
+      applyCarsResponse(response, page, limit, setCars, setPagination, setStats);
     } finally {
       setCarsLoading(false);
     }
-  }, [featuredQueryValue, limit, page, search, statusFilter]);
+  }, [debouncedSearch, featuredQueryValue, limit, page, statusFilter]);
+
+  useEffect(() => {
+    const timeout = window.setTimeout(() => {
+      setDebouncedSearch(search);
+    }, 300);
+
+    return () => {
+      window.clearTimeout(timeout);
+    };
+  }, [search]);
 
   useEffect(() => {
     let mounted = true;
@@ -139,12 +193,6 @@ export function useAdminDashboard() {
         const response = await getCurrentUser();
         if (!mounted) return;
         setUser(response.user);
-        const carsResponse = await getAdminCars({ page: 1, limit });
-        if (mounted) {
-          setCars(carsResponse.data);
-          setPagination(carsResponse.pagination);
-          setStats(carsResponse.stats);
-        }
       } catch {
         if (mounted) setUser(null);
       } finally {
@@ -157,7 +205,7 @@ export function useAdminDashboard() {
     return () => {
       mounted = false;
     };
-  }, [limit]);
+  }, []);
 
   useEffect(() => {
     if (user == null || loading) {
@@ -205,6 +253,7 @@ export function useAdminDashboard() {
 
   function resetFilters() {
     setSearch("");
+    setDebouncedSearch("");
     setStatusFilter("all");
     setFeaturedFilter("all");
     setPage(1);
