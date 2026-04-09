@@ -1,13 +1,26 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { ExternalLink, Filter, LayoutDashboard, LogOut, Plus, Search, X } from "lucide-react";
+import {
+  ArrowDown,
+  ArrowUp,
+  ExternalLink,
+  Filter,
+  ImagePlus,
+  LayoutDashboard,
+  LogOut,
+  Plus,
+  Search,
+  Trash2,
+  X,
+} from "lucide-react";
 import { formatPriceAUD } from "@/lib/cars";
 import {
   joinListInput,
   splitListInput,
   useAdminDashboard,
 } from "@/hooks/useAdminDashboard";
+import { useCloudinaryUpload } from "@/hooks/useCloudinaryUpload";
 import type { AdminCarListItem, CarFormValues } from "@/types/car";
 
 const inputClass =
@@ -312,6 +325,54 @@ function CarForm({
   saving: boolean;
   setForm: React.Dispatch<React.SetStateAction<CarFormValues>>;
 }) {
+  const {
+    isConfigured,
+    isUploading,
+    totalCount,
+    uploadedCount,
+    uploadError,
+    uploadFiles,
+  } = useCloudinaryUpload();
+
+  async function handleImageSelection(files: FileList | null) {
+    if (!files) return;
+
+    const selectedFiles = Array.from(files).filter((file) => file.type.startsWith("image/"));
+    const uploadedUrls = await uploadFiles(selectedFiles, form.name);
+    if (uploadedUrls.length > 0) {
+      setForm((currentForm) => ({
+        ...currentForm,
+        images: currentForm.images.concat(uploadedUrls),
+      }));
+    }
+  }
+
+  function removeImage(indexToRemove: number) {
+    setForm((currentForm) => ({
+      ...currentForm,
+      images: currentForm.images.filter((_, index) => index !== indexToRemove),
+    }));
+  }
+
+  function moveImage(index: number, direction: -1 | 1) {
+    setForm((currentForm) => {
+      const nextIndex = index + direction;
+      if (nextIndex < 0 || nextIndex >= currentForm.images.length) {
+        return currentForm;
+      }
+
+      const images = currentForm.images.slice();
+      const currentImage = images[index];
+      images[index] = images[nextIndex];
+      images[nextIndex] = currentImage;
+
+      return {
+        ...currentForm,
+        images,
+      };
+    });
+  }
+
   return (
     <form onSubmit={saveCar}>
       <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
@@ -386,10 +447,74 @@ function CarForm({
           <textarea className={inputClass + " min-h-32"} value={form.description} onChange={(event) => setForm({ ...form, description: event.target.value })} required />
         </label>
         <div className="grid grid-cols-1 gap-4">
-          <label className="space-y-2">
-            <span className={labelClass}>Image URLs, one per line</span>
-            <textarea className={inputClass + " min-h-24"} value={joinListInput(form.images)} onChange={(event) => setForm({ ...form, images: splitListInput(event.target.value) })} required />
-          </label>
+          <div className="space-y-3 rounded-xl border border-zinc-800 p-4">
+            <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <span className={labelClass}>Car Images</span>
+                <p className="mt-1 text-xs text-zinc-500">Upload multiple photos. The first image is used as the thumbnail.</p>
+              </div>
+              <label className={buttonClass + " inline-flex cursor-pointer items-center gap-2"}>
+                <ImagePlus size={17} />
+                {isUploading ? "Uploading..." : "Upload Images"}
+                <input
+                  type="file"
+                  accept="image/*"
+                  multiple
+                  className="hidden"
+                  disabled={isUploading || !isConfigured}
+                  onChange={(event) => {
+                    void handleImageSelection(event.target.files);
+                    event.target.value = "";
+                  }}
+                />
+              </label>
+            </div>
+
+            {!isConfigured ? (
+              <p className="rounded-lg border border-[#f23410]/40 bg-[#f23410]/10 px-3 py-2 text-xs text-[#f23410]">
+                Cloudinary is not configured. Set NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME and NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET.
+              </p>
+            ) : null}
+
+            {isUploading ? (
+              <p className="text-xs text-zinc-400">Uploaded {uploadedCount} of {totalCount} images...</p>
+            ) : null}
+
+            {uploadError ? <p className="text-xs text-[#f23410]">{uploadError}</p> : null}
+
+            {form.images.length > 0 ? (
+              <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+                {form.images.map((imageUrl, index) => (
+                  <div key={imageUrl + index} className="overflow-hidden rounded-lg border border-zinc-800 bg-zinc-950">
+                    <img src={imageUrl} alt={"Car image " + (index + 1)} className="h-28 w-full object-cover" />
+                    <div className="flex items-center justify-between gap-1 p-2">
+                      <span className="text-xs text-zinc-500">{index === 0 ? "Thumbnail" : "Image " + (index + 1)}</span>
+                      <div className="flex gap-1">
+                        <button className="rounded border border-zinc-700 p-1 disabled:opacity-30" disabled={index === 0} onClick={() => moveImage(index, -1)} type="button" title="Move up">
+                          <ArrowUp size={13} />
+                        </button>
+                        <button className="rounded border border-zinc-700 p-1 disabled:opacity-30" disabled={index === form.images.length - 1} onClick={() => moveImage(index, 1)} type="button" title="Move down">
+                          <ArrowDown size={13} />
+                        </button>
+                        <button className="rounded border border-zinc-700 p-1 text-[#f23410]" onClick={() => removeImage(index)} type="button" title="Remove image">
+                          <Trash2 size={13} />
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div className="rounded-lg border border-dashed border-zinc-700 p-6 text-center text-sm text-zinc-500">
+                No car images uploaded yet.
+              </div>
+            )}
+
+            <label className="block space-y-2">
+              <span className={labelClass}>Image URLs</span>
+              <textarea className={inputClass + " min-h-20"} value={joinListInput(form.images)} onChange={(event) => setForm({ ...form, images: splitListInput(event.target.value) })} required />
+            </label>
+          </div>
           <label className="space-y-2">
             <span className={labelClass}>Highlights, one per line</span>
             <textarea className={inputClass + " min-h-24"} value={joinListInput(form.highlights)} onChange={(event) => setForm({ ...form, highlights: splitListInput(event.target.value) })} />
