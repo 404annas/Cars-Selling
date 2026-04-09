@@ -79,8 +79,27 @@ export async function getCurrentUser() {
   return fetchJson<UserResponse>("/api/auth/me");
 }
 
-export async function getAdminCars() {
-  return fetchJson<AdminCarListResponse>("/api/admin/cars");
+export type AdminCarsQueryParams = {
+  page?: number;
+  limit?: number;
+  q?: string;
+  status?: "all" | "available" | "sold" | "reserved";
+  featured?: "all" | "true" | "false";
+};
+
+export async function getAdminCars(params: AdminCarsQueryParams = {}) {
+  const searchParams = new URLSearchParams();
+
+  Object.entries(params).forEach(([key, value]) => {
+    if (value === undefined || value === "" || value === "all") {
+      return;
+    }
+
+    searchParams.set(key, String(value));
+  });
+
+  const query = searchParams.toString();
+  return fetchJson<AdminCarListResponse>("/api/admin/cars" + (query ? "?" + query : ""));
 }
 
 export async function getAdminCar(id: string) {

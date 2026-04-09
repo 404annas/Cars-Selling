@@ -60,6 +60,18 @@ export interface AdminCarListItem {
 
 export interface AdminCarListResponse {
   data: AdminCarListItem[];
+  pagination: {
+    page: number;
+    limit: number;
+    total: number;
+    totalPages: number;
+  };
+  stats: {
+    total: number;
+    available: number;
+    sold: number;
+    featured: number;
+  };
 }
 
 export interface AuthUser {
