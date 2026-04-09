@@ -5,7 +5,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { Gauge, Cog, Settings } from "lucide-react";
 import { allCars } from "@/data/cars";
-import { getCarDetailRoute, isSoldCar, type InventoryRouteType } from "@/lib/carRoutes";
+import {
+  getCarDetailRoute,
+  isSoldCar,
+  type InventoryRouteType,
+} from "@/lib/carRoutes";
 
 type InventoryFilter = InventoryRouteType;
 
@@ -30,7 +34,7 @@ export default function CarInventoryPage({ mode }: CarInventoryPageProps) {
     .filter((car) => isSoldCar(car.price))
     .sort((a, b) => a.id - b.id);
   const [activeFilter, setActiveFilter] = useState<InventoryFilter>(
-    mode === "all" ? "all" : mode
+    mode === "all" ? "all" : mode,
   );
 
   const filteredCars =
@@ -44,9 +48,13 @@ export default function CarInventoryPage({ mode }: CarInventoryPageProps) {
     <div className="min-h-screen bg-black">
       <div className="bg-black border-b border-orange-800">
         <div className="container mx-auto px-4 py-4 flex items-center text-sm text-gray-400">
-          <Link href="/" className="hover:text-[#f23410] transition">Home</Link>
+          <Link href="/" className="hover:text-[#f23410] transition">
+            Home
+          </Link>
           <span className="mx-2">/</span>
-          <span className="text-[#f23410] font-semibold">{getPageTitle(mode)}</span>
+          <span className="text-[#f23410] font-semibold">
+            {getPageTitle(mode)}
+          </span>
         </div>
       </div>
 
@@ -119,7 +127,9 @@ export default function CarInventoryPage({ mode }: CarInventoryPageProps) {
                     />
                   </div>
                   <div>
-                    <h3 className="font-semibold orb text-base sm:text-lg leading-none text-white">{car.name}</h3>
+                    <h3 className="font-semibold orb text-base sm:text-lg leading-none text-white">
+                      {car.name}
+                    </h3>
                     <p className="text-sm text-gray-400">{car.tagline}</p>
                   </div>
                 </div>
