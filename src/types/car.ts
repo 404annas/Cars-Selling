@@ -42,6 +42,66 @@ export interface CarResponse {
   data: BackendCar;
 }
 
+export interface AdminCarListItem {
+  _id: string;
+  slug: string;
+  name: string;
+  status: BackendCar["status"];
+  priceAUD: number | null;
+  isFeatured: boolean;
+  thumbnailUrl: string;
+  sortOrder: number;
+  specs: {
+    year: number;
+  };
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface AdminCarListResponse {
+  data: AdminCarListItem[];
+}
+
+export interface AuthUser {
+  id: string;
+  name: string;
+  email: string;
+  role: "admin" | "superadmin";
+}
+
+export interface AuthResponse {
+  user: AuthUser;
+}
+
+export interface UserResponse {
+  user: AuthUser;
+}
+
+export interface CarFormValues {
+  name: string;
+  tagline: string;
+  description: string;
+  priceAUD: number | null;
+  status: BackendCar["status"];
+  specs: {
+    mileageKm: number;
+    engineDisplacement: string;
+    transmission: string;
+    fuelType: BackendCar["specs"]["fuelType"];
+    year: number;
+    color: string;
+    driveType?: BackendCar["specs"]["driveType"];
+  };
+  highlights: string[];
+  images: string[];
+  tags: string[];
+  isFeatured: boolean;
+  dealer: string;
+  dealerLocation: string;
+  licenseNumber: string;
+  sortOrder: number;
+}
+
 export interface FrontendCar {
   id: string;
   slug: string;

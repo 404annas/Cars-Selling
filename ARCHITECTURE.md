@@ -1,8 +1,8 @@
-# 🚗 Elite Motor Cars — Full-Stack Architecture & Implementation Plan
+# Elite Motor Cars — Static Frontend + Express API Architecture
 
-> **Version:** 1.1  
+> **Version:** 2.0  
 > **Date:** April 2026  
-> **Project:** Cars-Selling (Next.js → Full-Stack with MongoDB)
+> **Project:** `Cars-Selling` frontend + `elite-motors-backend` Express API
 
 ---
 
@@ -23,16 +23,19 @@
 
 ## 1. Project Overview
 
-The **Elite Motor Cars** website (`Cars-Selling`) is a Next.js 14 application that currently displays a static catalogue of 37 Japanese/luxury used cars for sale in Sydney, Australia. All car data lives in a single TypeScript file (`src/data/cars.ts`) requiring a code deploy every time a new car is listed, edited, or sold.
+The **Elite Motor Cars** website (`Cars-Selling`) is now a static-exportable Next.js frontend. The dynamic car inventory and admin actions are served by the separate Express backend in `elite-motors-backend`.
+
+The frontend is designed for Hostinger static hosting. It does not depend on Next.js API routes at runtime. Browser requests go directly to the backend configured by `NEXT_PUBLIC_API_BASE_URL`.
 
 ### Goal
 
-Convert the application into a full-stack dynamic system where:
-- All car listings are stored in **MongoDB**
-- An **admin dashboard** (protected by auth) allows staff to manage listings
-- The public frontend **fetches live data** via API routes
-- Images are stored as **Cloudinary CDN URLs** — uploaded directly from the browser via unsigned upload preset
-- **No rebuild** is required to update content
+Complete a dynamic frontend integration where:
+- Public pages fetch live car data from the Express API
+- The frontend can be exported as static files for Hostinger
+- Admin authentication is handled through the backend session endpoints
+- The dashboard can list, create, edit, delete, and toggle listings through backend admin endpoints
+- Images are stored as URL strings, ready for Cloudinary CDN URLs
+- No frontend rebuild is required to update inventory content
 
 ---
 
@@ -185,7 +188,19 @@ Car
 
 ## 4. API Endpoints (CRUD)
 
-All API routes live under `src/app/api/`. Next.js Route Handlers are used (not Express).
+All API routes live in the separate Express backend: `elite-motors-backend`.
+
+The static frontend calls these endpoints with:
+
+```ts
+NEXT_PUBLIC_API_BASE_URL=https://your-backend-domain.com
+```
+
+Local development fallback:
+
+```ts
+NEXT_PUBLIC_API_BASE_URL=http://localhost:5000
+```
 
 ### 4.1 Public Car Endpoints (no auth required)
 
@@ -209,10 +224,9 @@ All API routes live under `src/app/api/`. Next.js Route Handlers are used (not E
 |---|---|---|
 | `GET` | `/api/admin/cars` | List all cars (includes sold) with full data |
 | `POST` | `/api/admin/cars` | Create a new car listing |
-| `PUT` | `/api/admin/cars/[id]` | Update an existing car |
+| `PATCH` | `/api/admin/cars/[id]` | Update an existing car |
 | `DELETE` | `/api/admin/cars/[id]` | Delete a car listing |
-| `PATCH` | `/api/admin/cars/[id]/status` | Toggle status (available/sold/reserved) |
-| `PATCH` | `/api/admin/cars/[id]/featured` | Toggle `isFeatured` flag |
+| `PATCH` | `/api/admin/cars/[id]` | Toggle status or `isFeatured` by sending a partial payload |
 
 > ℹ️ **No image upload API route needed.** Images are uploaded directly from the browser to Cloudinary using the unsigned upload preset. Only the resulting Cloudinary URL is saved to MongoDB via the car POST/PUT endpoints.
 
@@ -318,15 +332,15 @@ src/
 
 | Technology | Role | Why |
 |---|---|---|
-| **Next.js 16** (App Router) | Framework | Already in use. API routes via Route Handlers replace Express. Supports PPR (Partial Prerendering) for instant navigation |
+| **Next.js 16** (App Router) | Static frontend | Already in use. Configured with `output: "export"` for Hostinger static hosting |
+| **Express** | Backend API | Runs separately in `elite-motors-backend`; owns API routes, auth, MongoDB access, and CORS |
 | **MongoDB** | Database | Flexible schema suits car listings with variable highlights/images arrays. Easy to evolve |
-| **Mongoose** | ODM | Type-safe models, middleware, validation callbacks |
+| **Mongoose** | ODM | Used in the Express backend for models, middleware, and validation callbacks |
 | **TanStack Query (React Query)** | Client data fetching | Caching, loading states, background refetching, and mutations out of the box |
-| **React Hook Form** | Form handling | Minimal re-renders, excellent DX, integrates cleanly with Zod |
-| **Zod** | Schema validation | Single source of truth for validation on both client and server (type inference) |
-| **bcryptjs** | Password hashing | Industry standard, simple API |
-| **Cookie-based sessions** | Auth | No JWT complexity; httpOnly cookies prevent XSS; works well with Next.js middleware |
-| **Next.js Middleware** | Route protection | Intercept requests to `/dashboard/**` before they reach the page |
+| **React state + typed hooks** | Dashboard forms | Keeps dashboard logic separated from rendering without adding new dependencies |
+| **Zod** | Backend validation | Backend validates car create/update payloads |
+| **bcryptjs** | Password hashing | Used by the backend auth controller |
+| **Cookie-based sessions** | Auth | Backend sets httpOnly cookies. Frontend checks `/api/auth/me` and redirects client-side |
 | **Cloudinary** | Image CDN | Images uploaded directly from browser via **unsigned upload preset** → secure URL stored in MongoDB. Organized by car slug in media library. No API secret needed on frontend |
 | **Sonner** | Toast notifications | Already installed in the project |
 | **Lucide React** | Icons | Already installed in the project |
@@ -337,34 +351,34 @@ src/
 
 ### 7.1 Login Page (`/dashboard/login`)
 - Clean admin login form
-- Email + password fields with Zod validation
+- Email + password fields
 - Redirects to `/dashboard` on success
-- Sets httpOnly session cookie
+- Backend sets the httpOnly session cookie
+- Implemented with `src/hooks/useAdminLogin.ts`
 
 ### 7.2 Dashboard Home (`/dashboard`)
 - **Stats Cards**: Total Cars | Available | Sold | Featured
-- **Recent Listings**: Last 5 added/updated
-- Quick action buttons: "Add Car", "View Live Site"
+- Admin session check via `/api/auth/me`
+- Client-side redirect to `/dashboard/login` when unauthenticated
+- Implemented with `src/hooks/useAdminDashboard.ts`
 
-### 7.3 Car Management Table (`/dashboard/cars`)
-- Searchable, sortable table of all cars
+### 7.3 Car Management Table (`/dashboard`)
+- Table of all cars returned by `/api/admin/cars`
 - Columns: Thumbnail | Name | Year | Price | Status | Featured | Actions
-- **Inline status toggle**: Click to switch Available ↔ Sold ↔ Reserved without opening edit form
-- **Inline featured toggle**: ⭐ toggle to mark/unmark as featured
-- **Bulk actions**: Delete multiple cars
-- Pagination (12 per page)
+- **Inline status toggle**: switch Available / Sold / Reserved without opening edit form
+- **Inline featured toggle**: mark/unmark as featured
+- Delete action calls `DELETE /api/admin/cars/:id`
 
-### 7.4 Add / Edit Car Form (`/dashboard/cars/new`, `/dashboard/cars/[id]/edit`)
-- Single reusable `CarForm` component used for both create and edit
+### 7.4 Add / Edit Car Form (`/dashboard`)
+- Single form used for both create and edit in `DashboardClient.tsx`
 - **Sections:**
   - Basic Info: Name, Tagline, Description
   - Pricing & Status: Price (number), Status dropdown
   - Specifications: Mileage, Engine, Transmission, Fuel Type, Year, Color, Drive Type
-  - Features: Tag input for highlights (add/remove chips)
-  - **Images**: `<ImageUploader>` — drag-and-drop, live upload to Cloudinary, reorderable
+  - Features: multiline highlights
+  - **Images**: URL list, one image URL per line
   - Tags & Visibility: Tag chips (featured, hybrid, jdm, etc.), `isFeatured` toggle
-- **Validation**: Zod schema enforced; inline error messages per field
-- **UX**: Autosave draft to `localStorage`, unsaved changes warning on navigate away
+- Backend validation is enforced by the Express API schema
 
 ### 7.5 Image Upload via Cloudinary (Unsigned — No Server Required)
 
@@ -411,8 +425,8 @@ NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET=elite-motor-cars-unsigned
 ```
 FeaturedCars.tsx (homepage)
   ↓ useQuery(['cars', 'featured'])
-  ↓ GET /api/cars/featured
-  ↓ MongoDB: Car.find({ isFeatured: true, status: 'available' }).limit(6)
+  ↓ GET {NEXT_PUBLIC_API_BASE_URL}/api/cars/featured
+  ↓ Express → MongoDB: Car.find({ isFeatured: true, status: 'available' }).limit(6)
   ↓ Returns JSON array
   ↓ Renders car cards with loading skeleton + error state
 ```
@@ -420,8 +434,8 @@ FeaturedCars.tsx (homepage)
 ```
 CarInventoryPage.tsx (/available-cars, /sold-cars, /all-cars)
   ↓ useQuery(['cars', { status, page }])
-  ↓ GET /api/cars?status=available&page=1
-  ↓ MongoDB: Car.find({ status }).skip().limit()
+  ↓ GET {NEXT_PUBLIC_API_BASE_URL}/api/cars?status=available&page=1
+  ↓ Express → MongoDB: Car.find({ status }).skip().limit()
   ↓ Returns paginated JSON
   ↓ Renders grid with filter tabs + pagination controls
 ```
@@ -429,8 +443,8 @@ CarInventoryPage.tsx (/available-cars, /sold-cars, /all-cars)
 ```
 /cars/[id]/page.tsx (car detail)
   ↓ useQuery(['car', id])
-  ↓ GET /api/cars/:id  (lookups by _id or slug)
-  ↓ MongoDB: Car.findById(id) or Car.findOne({ slug })
+  ↓ GET {NEXT_PUBLIC_API_BASE_URL}/api/cars/:id  (lookups by _id or slug)
+  ↓ Express → MongoDB: Car.findById(id) or Car.findOne({ slug })
   ↓ Returns single car JSON
   ↓ Renders full detail with image gallery
 ```
@@ -439,54 +453,43 @@ CarInventoryPage.tsx (/available-cars, /sold-cars, /all-cars)
 
 ```
 Dashboard CRUD flow:
-  Admin fills CarForm
-  → React Hook Form validates against Zod schema client-side
-  → useMutation calls POST /api/admin/cars or PUT /api/admin/cars/:id
-  → API middleware validates session cookie → verifies User in DB
-  → Route handler validates body with Zod server-side
+  Admin signs in at /dashboard/login
+  → Backend sets httpOnly emc_session cookie
+  → /dashboard calls GET /api/auth/me before rendering data
+  → Admin fills dashboard car form
+  → useAdminDashboard calls POST /api/admin/cars or PATCH /api/admin/cars/:id
+  → Express middleware validates session cookie → verifies User in DB
+  → Backend validates body with Zod
   → Mongoose saves/updates Car document
-  → Response: 201/200 with updated Car object
-  → TanStack Query invalidates ['cars'] cache → UI auto-refreshes
+  → Dashboard refreshes the admin car table
 ```
 
 ### 8.3 Navigation Performance Strategy
 
-Fast navigation is critical for a car dealership site. The following techniques are applied:
+Fast navigation is critical for a car dealership site. Because this frontend is statically exported, runtime data freshness comes from client-side fetching against the Express API.
 
 | Technique | Applied To | Effect |
 |---|---|---|
 | **`<Link>` prefetching** | All car card links | Next.js prefetches detail pages on hover — instant navigation |
-| **ISR (Incremental Static Regeneration)** | Car detail pages | `revalidate: 60` — served from CDN edge, revalidated in background |
-| **Streaming + Suspense** | Inventory page | Shell renders instantly; car grid streams in without blocking |
-| **`router.prefetch()`** | Dashboard car table | Pre-warm edit page routes on row hover |
-| **Optimistic UI** | Status/featured toggles | Toggle updates instantly in UI before server confirms |
-| **Shallow routing** | Inventory filters | Filter tabs update URL without full page reload |
-| **Image priority** | First car card image | `priority` prop on above-the-fold images for faster LCP |
-
-```ts
-// Example: ISR on car detail page
-export const revalidate = 60 // seconds
-
-// Example: Streaming inventory with Suspense
-<Suspense fallback={<CarGridSkeleton />}>
-  <CarGrid status={status} />
-</Suspense>
-```
+| **Client query cache** | Public car hooks | Avoids refetching the same inventory repeatedly during a session |
+| **Loading skeletons** | Featured and inventory grids | Keeps layout stable while backend data loads |
+| **Static export** | Hostinger deployment | `next build` emits static files in `out/` |
 
 ### 8.4 TanStack Query Cache Strategy
 
 ```ts
 // Stale time: 5 minutes (public listing rarely changes mid-session)
 // GC time: 10 minutes
-// Refetch on window focus: true (ensures freshness when admin switches tabs)
-// Retry: 2 attempts on failure
+// Refetch on window focus: false
+// Retry: 1 attempt on failure
 
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
       staleTime: 5 * 60 * 1000,
-      gcTime: 10 * 60 * 1000,
-      retry: 2,
+      gcTime: 30 * 60 * 1000,
+      refetchOnWindowFocus: false,
+      retry: 1,
     }
   }
 })

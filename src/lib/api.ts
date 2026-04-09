@@ -1,16 +1,49 @@
-import type { CarResponse, CarsResponse } from "@/types/car";
+import type {
+  AdminCarListResponse,
+  AuthResponse,
+  CarFormValues,
+  CarResponse,
+  CarsResponse,
+  UserResponse,
+} from "@/types/car";
 
-async function fetchJson<T>(input: string): Promise<T> {
-  const response = await fetch(input, {
+const API_BASE_URL = (
+  process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:5000"
+).replace(/\/$/, "");
+
+function apiUrl(path: string) {
+  return API_BASE_URL + (path.startsWith("/") ? path : "/" + path);
+}
+
+type RequestOptions = {
+  method?: "GET" | "POST" | "PATCH" | "DELETE";
+  body?: unknown;
+};
+
+async function fetchJson<T>(
+  path: string,
+  options: RequestOptions = {},
+): Promise<T> {
+  const response = await fetch(apiUrl(path), {
+    method: options.method ?? "GET",
     credentials: "include",
     headers: {
       "Content-Type": "application/json",
     },
+    body: options.body == null ? undefined : JSON.stringify(options.body),
   });
 
   if (response.ok === false) {
-    const errorText = await response.text();
-    throw new Error(errorText || "Request failed with status " + response.status);
+    let message = "Request failed with status " + response.status;
+    try {
+      const payload = await response.json();
+      message = payload.error || message;
+    } catch {
+      const errorText = await response.text();
+      message = errorText || message;
+    }
+
+    throw new Error(message);
   }
 
   return response.json() as Promise<T>;
@@ -27,4 +60,55 @@ export async function getFeaturedCars() {
 
 export async function getCarById(id: string) {
   return fetchJson<CarResponse>("/api/cars/" + id);
+}
+
+export async function login(email: string, password: string) {
+  return fetchJson<AuthResponse>("/api/auth/login", {
+    method: "POST",
+    body: { email, password },
+  });
+}
+
+export async function logout() {
+  return fetchJson<{ success: boolean }>("/api/auth/logout", {
+    method: "POST",
+  });
+}
+
+export async function getCurrentUser() {
+  return fetchJson<UserResponse>("/api/auth/me");
+}
+
+export async function getAdminCars() {
+  return fetchJson<AdminCarListResponse>("/api/admin/cars");
+}
+
+export async function getAdminCar(id: string) {
+  return fetchJson<CarResponse>("/api/admin/cars/" + id);
+}
+
+export async function createAdminCar(payload: CarFormValues) {
+  return fetchJson<{ data: { id: string; slug: string } }>("/api/admin/cars", {
+    method: "POST",
+    body: payload,
+  });
+}
+
+export async function updateAdminCar(
+  id: string,
+  payload: Partial<CarFormValues>,
+) {
+  return fetchJson<{ data: { id: string; slug: string } }>(
+    "/api/admin/cars/" + id,
+    {
+      method: "PATCH",
+      body: payload,
+    },
+  );
+}
+
+export async function deleteAdminCar(id: string) {
+  return fetchJson<{ success: boolean }>("/api/admin/cars/" + id, {
+    method: "DELETE",
+  });
 }

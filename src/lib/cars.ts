@@ -47,6 +47,6 @@ export function getInventoryRoute(type: InventoryRouteType) {
 }
 
 export function getCarDetailRoute(carId: string, sold: boolean) {
-  const baseRoute = sold ? "/sold-cars/" : "/available-cars/";
-  return baseRoute + carId;
+  const type = sold ? "sold" : "available";
+  return "/car-details?id=" + encodeURIComponent(carId) + "&type=" + type;
 }
