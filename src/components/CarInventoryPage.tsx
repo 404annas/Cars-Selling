@@ -1,48 +1,128 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { Gauge, Cog, Settings } from "lucide-react";
-import { allCars } from "@/data/cars";
-import {
-  getCarDetailRoute,
-  isSoldCar,
-  type InventoryRouteType,
-} from "@/lib/carRoutes";
-
-type InventoryFilter = InventoryRouteType;
+import { useAvailableCars, useSoldCars } from "@/hooks/useCars";
+import { getCarDetailRoute, isSoldCar, type InventoryRouteType } from "@/lib/carRoutes";
+import type { FrontendCar } from "@/types/car";
 
 interface CarInventoryPageProps {
   mode: InventoryRouteType;
 }
 
-const getPageTitle = (mode: InventoryRouteType) => {
-  if (mode === "available") return "AVAILABLE CARS";
-  if (mode === "sold") return "SOLD CARS";
-  return "ALL CARS";
-};
-
 const filterButtonBaseClass =
   "px-3 py-1 rounded-full border text-sm font-semibold transition-colors cursor-pointer";
 
+function getPageTitle(mode: InventoryRouteType) {
+  if (mode === "available") return "AVAILABLE CARS";
+  if (mode === "sold") return "SOLD CARS";
+  return "ALL CARS";
+}
+
+function LoadingGrid() {
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-4">
+      {Array.from({ length: 6 }).map((_, index) => (
+        <div key={index} className="border border-[#E5E5E5] rounded-2xl p-4 mb-4 bg-black animate-pulse">
+          <div className="h-16 rounded-xl bg-zinc-900 mb-4" />
+          <div className="h-[400px] sm:h-[450px] rounded-xl bg-zinc-900 mb-4" />
+          <div className="h-28 rounded-xl bg-zinc-900" />
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function InventoryGrid({ cars }: { cars: FrontendCar[] }) {
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-4">
+      {cars.map((car) => {
+        const sold = isSoldCar(car);
+        const detailHref = getCarDetailRoute(car.id, sold);
+
+        return (
+          <div
+            key={car.id}
+            className="border border-[#E5E5E5] rounded-2xl p-4 mb-4 bg-black"
+          >
+            <div className="flex items-center gap-3 mb-4">
+              <div className="relative w-12 h-12 rounded-lg overflow-hidden shrink-0 bg-zinc-900">
+                <img src={car.images[0]} alt={car.name} className="w-full h-full object-cover object-center" />
+              </div>
+              <div>
+                <h3 className="font-semibold orb text-base sm:text-lg leading-none text-white">
+                  {car.name}
+                </h3>
+                <p className="text-sm text-gray-400">{car.tagline}</p>
+              </div>
+            </div>
+
+            <div className="relative h-[400px] sm:h-[450px] w-full mb-4 rounded-xl overflow-hidden group bg-zinc-900">
+              <img
+                src={car.images[0]}
+                alt={car.name}
+                className="w-full h-full object-cover object-center transition-transform duration-500 ease-out group-hover:scale-105 cursor-pointer"
+              />
+            </div>
+
+            <div className="bg-black text-white rounded-xl p-0 space-y-4">
+              <div className="grid grid-cols-3 gap-4 text-center text-xs sm:text-sm border border-orange-950 rounded-xl py-3 pl-2 pr-1">
+                <div className="flex flex-col items-center gap-1">
+                  <Gauge size={22} />
+                  <span>{car.specs.mileage}</span>
+                </div>
+                <div className="flex flex-col items-center gap-1">
+                  <Cog size={22} />
+                  <span>{car.specs.engine}</span>
+                </div>
+                <div className="flex flex-col items-center gap-1">
+                  <Settings size={22} />
+                  <span>{car.specs.transmission}</span>
+                </div>
+              </div>
+
+              <p className="text-xl orb font-semibold">
+                {sold ? "SOLD" : "AUD $" + car.price}
+              </p>
+
+              <Link href={detailHref}>
+                <button className="w-full bg-[#f23410] text-white py-3 rounded-xl font-medium hover:bg-[#d92c0f] orb transition-all duration-300 cursor-pointer sm:text-base text-sm">
+                  SEE DETAILS
+                </button>
+              </Link>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
 export default function CarInventoryPage({ mode }: CarInventoryPageProps) {
-  const availableCars = allCars
-    .filter((car) => !isSoldCar(car.price))
-    .sort((a, b) => a.id - b.id);
-  const soldCars = allCars
-    .filter((car) => isSoldCar(car.price))
-    .sort((a, b) => a.id - b.id);
-  const [activeFilter, setActiveFilter] = useState<InventoryFilter>(
-    mode === "all" ? "all" : mode,
+  const availableQuery = useAvailableCars();
+  const soldQuery = useSoldCars();
+  const [activeFilter, setActiveFilter] = useState<InventoryRouteType>(
+    mode === "all" ? "all" : mode
   );
 
+  const availableCars = availableQuery.data?.data ?? [];
+  const soldCars = soldQuery.data?.data ?? [];
   const filteredCars =
     activeFilter === "available"
       ? availableCars
       : activeFilter === "sold"
         ? soldCars
-        : [...availableCars, ...soldCars];
+        : availableCars.concat(soldCars);
+
+  const isLoading =
+    activeFilter === "available"
+      ? availableQuery.isLoading
+      : activeFilter === "sold"
+        ? soldQuery.isLoading
+        : availableQuery.isLoading || soldQuery.isLoading;
+
+  const error = activeFilter === "sold" ? soldQuery.error : availableQuery.error || soldQuery.error;
 
   return (
     <div className="min-h-screen bg-black">
@@ -67,113 +147,50 @@ export default function CarInventoryPage({ mode }: CarInventoryPageProps) {
             <p className="text-[#f23410] underline text-sm">
               Showing all {filteredCars.length} vehicles
             </p>
-            {mode === "all" && (
+            {mode === "all" ? (
               <div className="flex items-center gap-2">
                 <button
                   type="button"
                   onClick={() => setActiveFilter("all")}
-                  className={`${filterButtonBaseClass} ${
-                    activeFilter === "all"
-                      ? "bg-[#f23410] text-white border-[#f23410]"
-                      : "text-[#f23410] border-[#f23410]/60 hover:border-[#f23410]"
-                  }`}
+                  className={filterButtonBaseClass + " " + (activeFilter === "all"
+                    ? "bg-[#f23410] text-white border-[#f23410]"
+                    : "text-[#f23410] border-[#f23410]/60 hover:border-[#f23410]")}
                 >
                   All Cars
                 </button>
                 <button
                   type="button"
                   onClick={() => setActiveFilter("available")}
-                  className={`${filterButtonBaseClass} ${
-                    activeFilter === "available"
-                      ? "bg-[#f23410] text-white border-[#f23410]"
-                      : "text-[#f23410] border-[#f23410]/60 hover:border-[#f23410]"
-                  }`}
+                  className={filterButtonBaseClass + " " + (activeFilter === "available"
+                    ? "bg-[#f23410] text-white border-[#f23410]"
+                    : "text-[#f23410] border-[#f23410]/60 hover:border-[#f23410]")}
                 >
                   Available Cars
                 </button>
                 <button
                   type="button"
                   onClick={() => setActiveFilter("sold")}
-                  className={`${filterButtonBaseClass} ${
-                    activeFilter === "sold"
-                      ? "bg-[#f23410] text-white border-[#f23410]"
-                      : "text-[#f23410] border-[#f23410]/60 hover:border-[#f23410]"
-                  }`}
+                  className={filterButtonBaseClass + " " + (activeFilter === "sold"
+                    ? "bg-[#f23410] text-white border-[#f23410]"
+                    : "text-[#f23410] border-[#f23410]/60 hover:border-[#f23410]")}
                 >
                   Sold Cars
                 </button>
               </div>
-            )}
+            ) : null}
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-4">
-          {filteredCars.map((car) => {
-            const sold = isSoldCar(car.price);
-            const detailHref = getCarDetailRoute(car.id, sold);
+        {isLoading ? <LoadingGrid /> : null}
 
-            return (
-              <div
-                key={car.id}
-                className="border border-[#E5E5E5] rounded-2xl p-4 mb-4 bg-black"
-              >
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="relative w-12 h-12 rounded-lg overflow-hidden shrink-0">
-                    <Image
-                      src={car.images[0]}
-                      alt={car.name}
-                      fill
-                      className="object-cover object-center"
-                    />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold orb text-base sm:text-lg leading-none text-white">
-                      {car.name}
-                    </h3>
-                    <p className="text-sm text-gray-400">{car.tagline}</p>
-                  </div>
-                </div>
+        {isLoading === false && error ? (
+          <div className="border border-[#E5E5E5] rounded-2xl p-6 text-white">
+            <p className="text-lg orb text-[#f23410] mb-2">Unable to load inventory.</p>
+            <p className="text-sm text-gray-400">{error instanceof Error ? error.message : "Please try again shortly."}</p>
+          </div>
+        ) : null}
 
-                <div className="relative h-[400px] sm:h-[450px] w-full mb-4 rounded-xl overflow-hidden group">
-                  <Image
-                    src={car.images[0]}
-                    alt={car.name}
-                    fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    className="object-cover object-center transition-transform duration-500 ease-out group-hover:scale-105 cursor-pointer"
-                  />
-                </div>
-
-                <div className="bg-black text-white rounded-xl p-0 space-y-4">
-                  <div className="grid grid-cols-3 gap-4 text-center text-xs sm:text-sm border border-orange-950 rounded-xl py-3 pl-2 pr-1">
-                    <div className="flex flex-col items-center gap-1">
-                      <Gauge size={22} />
-                      <span>{car.specs.mileage}</span>
-                    </div>
-                    <div className="flex flex-col items-center gap-1">
-                      <Cog size={22} />
-                      <span>{car.specs.engine}</span>
-                    </div>
-                    <div className="flex flex-col items-center gap-1">
-                      <Settings size={22} />
-                      <span>{car.specs.transmission}</span>
-                    </div>
-                  </div>
-
-                  <p className="text-xl orb font-semibold">
-                    {sold ? "SOLD" : `AUD $${car.price}`}
-                  </p>
-
-                  <Link href={detailHref}>
-                    <button className="w-full bg-[#f23410] text-white py-3 rounded-xl font-medium hover:bg-[#d92c0f] orb transition-all duration-300 cursor-pointer sm:text-base text-sm">
-                      SEE DETAILS
-                    </button>
-                  </Link>
-                </div>
-              </div>
-            );
-          })}
-        </div>
+        {isLoading === false && error == null ? <InventoryGrid cars={filteredCars} /> : null}
       </section>
     </div>
   );
