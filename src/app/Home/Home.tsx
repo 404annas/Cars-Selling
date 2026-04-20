@@ -24,6 +24,7 @@ import Steps from '@/components/Steps'
 import Testimonials from '@/components/Testimonials'
 import Testimonials2 from '@/components/Testimonials2';
 
+
 const Home = () => {
   return (
     <div>
