@@ -1,56 +1,67 @@
 "use client";
 import Image from "next/image";
 
-import heroBottomImg1 from "@/assets/heroB1.svg"; // EV
-import heroBottomImg2 from "@/assets/heroB2.svg"; // SUV
-import heroBottomImg3 from "@/assets/heroB3.svg"; // Truck
-import heroBottomImg4 from "@/assets/heroB4.svg"; // Sedan
-import heroBottomImg5 from "@/assets/heroB5.svg"; // Hybrid
+import heroBottomImg1 from "@/assets/audi.png";
+import heroBottomImg2 from "@/assets/bmw.png";
+import heroBottomImg3 from "@/assets/lexus.png";
+import heroBottomImg4 from "@/assets/mercedes.png";
+import heroBottomImg5 from "@/assets/mitsubishi.png";
+import heroBottomImg6 from "@/assets/honda.png";
+import heroBottomImg7 from "@/assets/toyota.png";
+import heroBottomImg8 from "@/assets/crown2.png";
+import heroBottomImg9 from "@/assets/msports.png";
+import heroBottomImg10 from "@/assets/sti.png";
 
 const HeroBottom = () => {
   const types = [
-    { id: 1, label: "EV", img: heroBottomImg1 },
-    { id: 2, label: "SUV", img: heroBottomImg2 },
-    { id: 3, label: "Truck", img: heroBottomImg3 },
-    { id: 4, label: "Sedan", img: heroBottomImg4 },
-    { id: 5, label: "Hybrid", img: heroBottomImg5 },
+    // Increase these px values to make individual images bigger
+    { id: 1, label: "Audi", img: heroBottomImg1, sizeClass: "w-[160px] h-[90px]" },
+    { id: 2, label: "BMW", img: heroBottomImg2, sizeClass: "w-[100px] h-[80px]" },
+    { id: 3, label: "Lexus", img: heroBottomImg3, sizeClass: "w-[140px] h-[90px]" },
+    { id: 4, label: "Mercedes", img: heroBottomImg4, sizeClass: "w-[100px] h-[80px]", extra: "invert brightness-200" },
+    { id: 5, label: "Mitsubishi", img: heroBottomImg5, sizeClass: "w-[130px] h-[90px]" },
+    { id: 6, label: "Honda", img: heroBottomImg6, sizeClass: "w-[110px] h-[80px]" },
+    { id: 7, label: "Toyota", img: heroBottomImg7, sizeClass: "w-[120px] h-[100px]", extra: "translate-y-2"  },
+    { id: 8, label: "Crown", img: heroBottomImg8, sizeClass: "w-[200px] h-[90px]"},
+    { id: 9, label: "M Sports", img: heroBottomImg9, sizeClass: "w-[160px] h-[90px]" },
+    { id: 10, label: "Sti", img: heroBottomImg10, sizeClass: "w-[150px] h-[100px]" },
   ];
 
-
   return (
-    <section className="bg-black pt-12 pb-10 w-full">
+    <section className="bg-black pt-10 pb-10 w-full overflow-hidden">
       <div className="container mx-auto px-4 max-w-[1200px]">
-
-        {/* Heading */}
         <h2 className="text-2xl font-bold text-[#f23410] mb-8 text-center sm:text-left">
           We Deal Into
         </h2>
 
-        {/* Content Wrapper */}
-        <div className="relative w-full mt-4">
+        <div className="relative w-full">
+          {/* Shadow platform */}
+          <div className="absolute bottom-[18%] lg:-translate-x-16 w-[110%] lg:block hidden h-16 bg-[#ff9868] rounded-[100%] -z-0 blur-[2px] opacity-80 scale-y-75"></div>
 
-          {/* THE SHADOW / PLATFORM EFFECT */}
-          {/* This div creates the curved light blue ground behind the cars */}
-          <div className="absolute bottom-[20%] left-[2%] w-[95%] lg:block hidden h-16 bg-[#ff9868] rounded-[100%] -z-0 blur-[2px] opacity-80 scale-y-75"></div>
-
-          {/* Icons Grid */}
-          <div className="grid sm:grid-cols-2 md:grid-cols-5 gap-4 relative z-10">
+          {/* Grid: 10 columns on desktop, 5 on tablet, 2 on mobile */}
+          <div className="grid grid-cols-2 md:grid-cols-5 lg:grid-cols-10 gap-4 relative z-10 lg:-translate-y-0">
             {types.map((type) => (
               <div
                 key={type.id}
-                className="group flex flex-col items-center justify-end cursor-pointer gap-3 transition-transform duration-300 hover:-translate-y-1"
+                className="group flex flex-col items-center justify-end cursor-pointer gap-3 transition-transform duration-300 hover:-translate-y-2"
               >
-                {/* Image Container */}
-                <div className="relative h-44 w-full flex items-end justify-center">
-                  <Image
-                    src={type.img}
-                    alt={type.label}
-                    className="h-full w-auto object-contain"
-                  />
+                {/* 1. This container controls the OVERALL height area for the logo */}
+                <div className="relative h-28 md:h-36 w-full flex items-end justify-center">
+                  
+                  {/* 2. This container controls the SPECIFIC size of each car logo */}
+                  <div className={`relative ${type.sizeClass}`}>
+                    <Image
+                      src={type.img}
+                      alt={type.label}
+                      fill  /* This makes the image fill the 'sizeClass' div */
+                      className={`object-contain transition-all duration-300 ${type.extra || ""}`}
+                      sizes="(max-width: 768px) 50vw, 10vw"
+                    />
+                  </div>
+
                 </div>
 
-                {/* Label */}
-                <span className="text-[#f23410] font-bold text-sm md:text-base border-b-2 border-transparent group-hover:border-[#f23410] transition-all pb-0.5 duration-30 -mt-10">
+                <span className="text-[#f23410] font-bold text-xs md:text-base border-b-2 border-transparent group-hover:border-[#f23410] transition-all pb-0.5 duration-300 lg:mt-2">
                   {type.label}
                 </span>
               </div>
