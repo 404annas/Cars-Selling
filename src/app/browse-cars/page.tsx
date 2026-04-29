@@ -13,6 +13,12 @@ const Page = () => {
     setDisplayCount((prev) => Math.min(prev + 20, carsData.length));
   };
 
+  const getOptimizedUrl = (url: string) => {
+    if (url && url.includes("cloudinary.com")) {
+      return url.replace("/upload/", "/upload/f_auto,q_auto/");
+    }
+    return url;
+  };
   
   return (
     <div className="min-h-screen bg-black text-white py-10 px-4 sm:px-6 md:px-10">
@@ -41,7 +47,7 @@ const Page = () => {
             <div className="relative aspect-[16/10] overflow-hidden bg-zinc-900">
               <img
                 loading="lazy"
-                src={car.image}
+                src={getOptimizedUrl(car.image)}
                 alt={car.name}
                 className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
               />
@@ -71,8 +77,8 @@ const Page = () => {
               <div className="w-full h-[1px] bg-zinc-800 group-hover:bg-[#F23410]/30 transition-colors" />
 
               <div className="mt-4 flex items-center justify-between">
-                <span className="text-[10px] font-bold text-zinc-600 uppercase tracking-wider group-hover:text-white transition-colors">
-                  View Details
+                <span className="text-[10px] font-bold text-white uppercase tracking-wider bg-[#F23410] px-4 py-2 cursor-pointer hover:bg-[#E01D00] active:bg-[#C21800] transition-all duration-300 rounded-tr-xl">
+                  Get Quote
                 </span>
                 <div className="h-1.5 w-1.5 rounded-full bg-zinc-800 group-hover:bg-[#F23410] transition-colors" />
               </div>
