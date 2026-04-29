@@ -146,7 +146,7 @@ const Page = () => {
                         <AlertCircle size={10} /> {car.conditions}
                       </span>
                     ) : (
-                      <span className="text-zinc-800 text-xs">None</span>
+                      <span className="text-zinc-600 text-xs">None</span>
                     )}
                   </td>
                 </tr>
