@@ -93,15 +93,15 @@ const Page = () => {
                   {/* Model & Link */}
                   <td className="p-5">
                     <a
-                      // href={car.url}
-                      //  target="_blank"
+                      href={car.url}
+                       target="_blank"
                       className="flex items-center gap-2 font-bold group-hover:text-[#F23410] transition-all duration-300"
                     >
                       {car.vehicle}
-                      {/* <ExternalLink
+                      <ExternalLink
                         size={12}
                         className="opacity-0 group-hover:opacity-100 transition-opacity"
-                      /> */}
+                      />
                     </a>
                   </td>
 
