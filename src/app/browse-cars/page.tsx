@@ -13,6 +13,7 @@ const Page = () => {
     setDisplayCount((prev) => Math.min(prev + 20, carsData.length));
   };
 
+  
   return (
     <div className="min-h-screen bg-black text-white py-10 px-4 sm:px-6 md:px-10">
       {/* Header Section */}
