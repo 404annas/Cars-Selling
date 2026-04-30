@@ -110,6 +110,7 @@ const Navbar2 = () => {
                             </div>
                         </div>
 
+
                         <div className="bg-[#f23410] text-white flex items-center px-3 py-1.5 rounded-full cursor-pointer hover:bg-[#d92c0d] transition-colors duration-300">
                             <MapPin size={18} className="mr-2" />
                             <div className="flex flex-col leading-none pr-4">
