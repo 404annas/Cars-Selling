@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   ChevronLeft,
   ChevronRight,
@@ -8,12 +8,28 @@ import {
   AlertCircle,
   Clock,
   ArrowRight,
+  X,
 } from "lucide-react";
 import carsData from "../../../list_all_cars.json";
 
 const Page = () => {
   // --- DATA ---
   const allCars = carsData;
+
+  // --- STATE ---
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
+  // --- DISABLE BODY SCROLL ---
+  useEffect(() => {
+    if (selectedImage) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [selectedImage]);
 
   // --- PAGINATION STATE ---
   const [currentPage, setCurrentPage] = useState(1);
@@ -26,6 +42,20 @@ const Page = () => {
   );
 
   // --- HELPERS ---
+  const getOptimizedUrl = (url: string) => {
+    if (url && url.includes("cloudinary.com")) {
+      return url.replace("/upload/", "/upload/f_auto,q_auto,w_100,c_scale/");
+    }
+    return url;
+  };
+
+  const getLargeUrl = (url: string) => {
+    if (url && url.includes("cloudinary.com")) {
+      return url.replace("/upload/", "/upload/f_auto,q_auto,w_1200/");
+    }
+    return url;
+  };
+
   const getStatusStyle = (status: any) => {
     switch (status) {
       case "Eligible":
@@ -65,6 +95,9 @@ const Page = () => {
             <thead>
               <tr className="border-b border-zinc-800 bg-zinc-900/30">
                 <th className="p-5 text-xs font-black uppercase text-zinc-500">
+                  Preview
+                </th>
+                <th className="p-5 text-xs font-black uppercase text-zinc-500">
                   Vehicle Model
                 </th>
                 <th className="p-5 text-xs font-black uppercase text-zinc-500 text-center">
@@ -85,23 +118,43 @@ const Page = () => {
               </tr>
             </thead>
             <tbody className="divide-y divide-zinc-900">
-              {currentData.map((car, idx) => (
+              {currentData.map((car: any, idx) => (
                 <tr
                   key={idx}
                   className="hover:bg-[#0F0F0F] transition-all duration-300 group"
                 >
+                  {/* Image Preview */}
+                  <td className="p-5">
+                    <div
+                      onClick={() => car.image && setSelectedImage(car.image)}
+                      className={`w-14 h-14 bg-zinc-900 border rounded-full border-zinc-800 overflow-hidden relative group-hover:border-[#F23410]/50 transition-colors ${car.image ? "cursor-pointer" : ""}`}
+                    >
+                      {car.image ? (
+                        <img
+                          src={getOptimizedUrl(car.image)}
+                          alt={car.vehicle}
+                          className="w-full h-full object-cover rounded-full"
+                        />
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center text-[8px] text-zinc-700 uppercase font-black">
+                          No Image
+                        </div>
+                      )}
+                    </div>
+                  </td>
+
                   {/* Model & Link */}
                   <td className="p-5">
                     <a
-                      href={car.url}
-                       target="_blank"
-                      className="flex items-center gap-2 font-bold group-hover:text-[#F23410] transition-all duration-300"
+                      // href={car.url}
+                      //  target="_blank"
+                      className="flex items-center gap-2 font-bold group-hover:text-[#F23410] transition-all duration-300 text-xs md:text-sm"
                     >
                       {car.vehicle}
-                      <ExternalLink
+                      {/* <ExternalLink
                         size={12}
                         className="opacity-0 group-hover:opacity-100 transition-opacity"
-                      />
+                      /> */}
                     </a>
                   </td>
 
@@ -116,7 +169,7 @@ const Page = () => {
 
                   {/* Expiry */}
                   <td className="p-5">
-                    <span className="text-sm text-zinc-400">
+                    <span className="text-xs text-zinc-400">
                       {car.sevs_expiry || "—"}
                     </span>
                   </td>
@@ -157,7 +210,7 @@ const Page = () => {
 
         {/* PAGINATION FOOTER */}
         <div className="p-5 border-t border-zinc-900 bg-[#080808] flex items-center justify-between">
-          <div className="text-xs font-bold text-zinc-600 uppercase tracking-wide">
+          <div className="text-[10px] md:text-xs font-bold text-zinc-600 uppercase tracking-wide">
             Showing {(currentPage - 1) * itemsPerPage + 1} -{" "}
             {Math.min(currentPage * itemsPerPage, allCars.length)} of{" "}
             {allCars.length}
@@ -211,6 +264,39 @@ const Page = () => {
           </div>
         </div>
       </div>
+
+      {/* IMAGE PREVIEW OVERLAY */}
+      {selectedImage && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur-md p-4 md:p-10 transition-all duration-500 animate-in fade-in"
+          onClick={() => setSelectedImage(null)}
+        >
+          <div className="relative max-w-7xl w-full h-full flex items-center justify-center">
+            {/* Close Button */}
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                setSelectedImage(null);
+              }}
+              className="absolute top-0 right-0 -mt-2 -mr-2 md:-mt-6 md:-mr-6 p-3 bg-[#F23410] text-black rounded-full hover:bg-white transition-all duration-300 z-10 shadow-sm group"
+            >
+              <X size={20} className="group-hover:rotate-90 cursor-pointer transition-transform duration-300" />
+            </button>
+
+            {/* Image Wrapper */}
+            <div
+              className="relative w-full h-full flex items-center justify-center"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <img
+                src={getLargeUrl(selectedImage)}
+                alt="Vehicle Preview"
+                className="max-w-full max-h-full object-contain shadow-[0_0_50px_rgba(0,0,0,0.5)] rounded-lg border border-zinc-800"
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

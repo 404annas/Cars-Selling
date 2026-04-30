@@ -87,7 +87,7 @@ const Navbar2 = () => {
                 <div className={`bg-black flex items-center px-4 md:px-8 relative transition-all duration-500 ${isScrolled ? "h-0 opacity-0 invisible" : "h-[60px] opacity-100 visible"}`}>
 
                     {/* Navigation Links */}
-                    <div className="flex items-center ml-36 space-x-6 text-white font-bold text-sm overflow-x-auto no-scrollbar">
+                    <div className="flex items-center ml-36 space-x-4 text-white font-bold text-xs overflow-x-auto no-scrollbar">
                         {/* <Link href="/" className="whitespace-nowrap opacity-60 hover:cursor-not-allowed">Upcoming Cars <span className="text-[10px]">( Coming Soon )</span></Link> */}
                         <Link href="/available-cars" className="hover:opacity-80 transition-all duration-300 whitespace-nowrap ">Available Cars <span className="text-[10px]"></span></Link>
                         <Link href="/sold-cars" className="hover:opacity-80 transition-all duration-300 whitespace-nowrap ">Sold Cars <span className="text-[10px]"></span></Link>
@@ -95,10 +95,12 @@ const Navbar2 = () => {
                         <Link href="/why-choose-us" className="hover:opacity-80 transition-all duration-300 whitespace-nowrap">Why Choose Us</Link>
                         <Link href="/blogs" className="hover:opacity-80 transition-all duration-300 whitespace-nowrap">Blogs</Link>
                         <Link href="/faqs" className="hover:opacity-80 transition-all duration-300 whitespace-nowrap">FAQ&apos;s</Link>
+                        <Link href="/list-of-cars" className="hover:opacity-80 transition-all duration-300 whitespace-nowrap">List Of Imported Cars</Link>
+                        <Link href="/browse-cars" className="hover:opacity-80 transition-all duration-300 whitespace-nowrap">Browse All Cars We Import</Link>
                     </div>
 
                     {/* Right Side Icons */}
-                    <div className="ml-auto flex items-center space-x-3">
+                    <div className="ml-auto flex items-center space-x-2">
                         <div className="bg-[#f23410] text-white flex items-center px-3 py-1.5 rounded-full cursor-pointer hover:bg-[#d92c0d] transition-colors duration-300">
                             <div className="bg-white rounded-full p-1.5 mr-2">
                                 <Phone size={14} className="text-[#f23410]" />
@@ -300,6 +302,12 @@ const Navbar2 = () => {
                                 </Link>
                                 <Link href="/faqs" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3 text-gray-700 font-medium hover:text-[#f23410] transition-colors">
                                     <HelpCircle size={18} /> FAQ&apos;s
+                                </Link>
+                                <Link href="/list-of-cars" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3 text-gray-700 font-medium hover:text-[#f23410] transition-colors">
+                                    <Search size={18} /> List Of Cars We Can Import to Australia
+                                </Link>
+                                <Link href="/browse-cars" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3 text-gray-700 font-medium hover:text-[#f23410] transition-colors">
+                                    <Search size={18} /> Browse All Cars We Import From Australia
                                 </Link>
                             </div>
 
