@@ -19,6 +19,7 @@ import {
 import logo from "@/assets/logo.jpeg";
 import Link from "next/link";
 
+
 import NavbarDropdowns from "@/components/NavbarDropdowns";
 
 const Navbar2 = () => {
