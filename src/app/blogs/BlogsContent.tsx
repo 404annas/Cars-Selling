@@ -8,6 +8,7 @@ import {
     ArrowRight,
     BookOpen,
     CalendarDays,
+    CheckCircle2,
     Clock3,
     MapPin,
 } from "lucide-react";
@@ -137,6 +138,16 @@ export default function BlogsContent() {
                                                     {renderParagraph(paragraph)}
                                                 </p>
                                             ))}
+                                            {section.items?.length ? (
+                                                <ul className="space-y-3">
+                                                    {section.items.map((item) => (
+                                                        <li key={item} className="flex gap-3 text-gray-300">
+                                                            <CheckCircle2 size={18} className="mt-1 text-[#f23410]" />
+                                                            <span className="leading-7">{item}</span>
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            ) : null}
                                         </div>
                                     </div>
                                 ))}
@@ -207,12 +218,22 @@ export default function BlogsContent() {
             <section className="px-4 pb-10 md:px-8">
                 <div className="mx-auto max-w-7xl">
                     <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-                        {blogs.map((blog) => (
-                            <Link
-                                key={blog.title}
-                                href={`/blogs?title=${encodeURIComponent(blog.title)}`}
-                                className="group overflow-hidden rounded-xl border border-white/10 bg-white/5 transition-all duration-300 hover:-translate-y-1 hover:border-[#f23410]/70"
-                            >
+                        {[...blogs]
+                            .sort((a, b) => {
+                                const aTime = a.createdAt
+                                    ? new Date(a.createdAt).valueOf()
+                                    : new Date(a.postedDate).valueOf();
+                                const bTime = b.createdAt
+                                    ? new Date(b.createdAt).valueOf()
+                                    : new Date(b.postedDate).valueOf();
+                                return bTime - aTime;
+                            })
+                            .map((blog) => (
+                                <Link
+                                    key={blog.title}
+                                    href={`/blogs?title=${encodeURIComponent(blog.title)}`}
+                                    className="group overflow-hidden rounded-xl border border-white/10 bg-white/5 transition-all duration-300 hover:-translate-y-1 hover:border-[#f23410]/70"
+                                >
                                 <div className="relative h-[600px] overflow-hidden">
                                     <div className="absolute inset-0 z-10" />
                                     <Image
