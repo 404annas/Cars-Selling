@@ -74,9 +74,6 @@ const Footer2 = () => {
             Australia Choose from over 10,000 fully inspected second-hand car
             models at Elite Motor Cars. Buy used cars online and book a test
             drive at your home or visit an Elite Motor Cars location near you.
-            Enjoy a no-questions-asked 5-day money-back guarantee and a free
-            one-year comprehensive service warranty with Assured Resale Value on
-            every vehicle.
           </p>
 
           {/* Social Icons */}
