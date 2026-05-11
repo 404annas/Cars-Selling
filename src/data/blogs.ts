@@ -2,6 +2,11 @@ import type { StaticImageData } from "next/image";
 
 import mainHero from "@/assets/mainHero.jpg";
 import car37 from "@/assets/car37.jpeg";
+import blog1Img from "@/assets/blog1Elite.png"
+import blog2Img from "@/assets/blog2Elite.png"
+import blog3Img from "@/assets/blog3Elite.png"
+import blog4Img from "@/assets/blog4Elite.png"
+import blog5Img from "@/assets/blog5Elite.png"
 
 export type BlogParagraph =
     | string
@@ -39,7 +44,7 @@ export const blogs: BlogPost[] = [
         title: "A Complete Guide to Car Import Services Across Australia",
         description:
             "Learn how professional car import services across Australia simplify sourcing, shipping, compliance, customs clearance, and final delivery for imported vehicles.",
-        image: mainHero,
+        image: blog5Img,
         postedDate: "26 March 2026",
         readTime: "6 min read",
         location: "Australia",
@@ -99,7 +104,7 @@ export const blogs: BlogPost[] = [
         title: "Compliance and Customs Handling Services for Imported Vehicles in Australia",
         description:
             "Discover professional compliance and customs handling services for imported vehicles in Australia. Learn how expert import solutions ensure smooth clearance, ADR compliance, and hassle-free delivery.",
-        image: mainHero,
+        image: blog3Img,
         postedDate: "8 May 2026",
         readTime: "8 min read",
         location: "Australia",
@@ -248,7 +253,7 @@ export const blogs: BlogPost[] = [
         title: "Import Cars from Japan or Europe to Australia",
         description:
             "Discover premium vehicle imports from Japan and Europe with trusted sourcing, shipping, compliance, and customs support across Australia.",
-        image: mainHero,
+        image: blog1Img,
         postedDate: "9 May 2026",
         createdAt: "2026-05-09T10:00:00.000Z",
         readTime: "8 min read",
@@ -415,7 +420,7 @@ export const blogs: BlogPost[] = [
         title: "JDM Imports Australia – Your Guide to Importing Japanese Cars",
         description:
             "Explore professional JDM imports in Australia with expert vehicle sourcing, customs handling, and ADR compliance services. Import high-quality Japanese cars with confidence.",
-        image: mainHero,
+        image: blog2Img,
         postedDate: "8 May 2026",
         createdAt: "2026-05-08T23:59:59.000Z",
         readTime: "8 min read",
@@ -654,7 +659,7 @@ export const blogs: BlogPost[] = [
         title: "Which Cars Can You Import from Australia? A Complete Buyer’s Guide",
         description:
             "Explore which cars you can import from Australia, including used, luxury, SUVs, and classic models. Learn rules, costs, and expert tips for a smooth import process.",
-        image: mainHero,
+        image: blog4Img,
         postedDate: "23 April 2026",
         readTime: "8 min read",
         location: "Australia",
