@@ -7,6 +7,9 @@ import blog2Img from "@/assets/blog2Elite.png"
 import blog3Img from "@/assets/blog3Elite.png"
 import blog4Img from "@/assets/blog4Elite.png"
 import blog5Img from "@/assets/blog5Elite.png"
+import blog6Img from "@/assets/blog6Elite.png"
+import blog7Img from "@/assets/blog7Elite.png"
+import blog8Img from "@/assets/blog8Elite.png"
 
 export type BlogParagraph =
     | string
@@ -40,6 +43,416 @@ export type BlogPost = {
 };
 
 export const blogs: BlogPost[] = [
+    {
+        title: "Elite Motor Cars Australia: Premium Luxury Vehicles for Every Lifestyle",
+        description:
+            "Explore premium used luxury cars at Elite Motor Cars Australia. Discover high-quality pre-owned BMW, Mercedes-Benz, Audi, SUVs, and performance vehicles.",
+        image: blog8Img,
+        postedDate: "14 May 2026",
+        createdAt: "2026-05-14T12:00:00.000Z",
+        readTime: "8 min read",
+        location: "Australia",
+        metaTitle:
+            "Elite Motor Cars Australia | Premium Used Luxury Cars & SUVs",
+        metaDescription:
+            "Explore premium used luxury cars at Elite Motor Cars Australia. Discover high-quality pre-owned BMW, Mercedes-Benz, Audi, SUVs, and performance vehicles.",
+        introduction:
+            "When it comes to finding premium pre-owned vehicles, Elite Motor Cars Australia has become a trusted destination for drivers seeking luxury, performance, and reliability. The Australian automotive market continues to grow rapidly, especially in the luxury and prestige vehicle sector, where buyers want exceptional quality without paying brand-new prices. From sophisticated European sedans to family-friendly luxury SUVs and high-performance sports cars, Elite Motor Cars Australia offers a carefully selected inventory designed to meet the needs of modern drivers. Whether you are purchasing your first luxury vehicle or upgrading your current car, choosing a reputable dealership plays a major role in ensuring long-term value and satisfaction. At Elite Motor Cars Australia, customers can explore a wide range of premium vehicles backed by quality, professionalism, and customer-focused service.",
+        sections: [
+            {
+                heading: "Why Luxury Car Buyers Choose Elite Motor Cars Australia",
+                paragraphs: [
+                    "Buying a luxury vehicle is more than simply purchasing transportation. Prestige vehicles represent comfort, technology, performance, and status. This is why Australian buyers increasingly rely on trusted dealerships like Elite Motor Cars Australia to help them find vehicles that suit both their lifestyle and budget.",
+                    "The dealership has developed a strong reputation by offering:",
+                    {
+                        text: "Modern car buyers are more informed than ever before. They want transparency, reliability, and access to premium automotive brands, all of which are priorities at ",
+                        linkLabel: "Elite Motor Cars Australia",
+                        linkHref: "https://elitemotorcars.com.au?utm_source=chatgpt.com",
+                        linkSuffix: ".",
+                    },
+                ],
+                items: [
+                    "Carefully inspected vehicles",
+                    "Premium used luxury cars",
+                    "Competitive pricing",
+                    "Professional customer service",
+                    "High-quality vehicle selection",
+                    "Trusted buying experience",
+                ],
+            },
+            {
+                heading: "Premium Luxury Brands Available",
+                paragraphs: [
+                    "One of the major advantages of shopping with Elite Motor Cars Australia is access to world-class automotive brands. Luxury vehicle enthusiasts often seek brands known for innovation, comfort, and driving performance.",
+                    "Popular brands include:",
+                    "These manufacturers continue to dominate the Australian luxury vehicle market because they consistently deliver premium engineering, advanced technology, and sophisticated styling.",
+                ],
+                items: [
+                    "Mercedes-Benz",
+                    "BMW",
+                    "Audi",
+                    "Lexus",
+                    "Land Rover",
+                ],
+            },
+            {
+                heading: "Growing Demand for Used Luxury Cars in Australia",
+                paragraphs: [
+                    "The demand for used luxury vehicles has increased significantly across Australia. Buyers now understand that purchasing a pre-owned prestige vehicle can offer exceptional value while still providing premium features and performance.",
+                    "Choosing a used luxury vehicle allows customers to enjoy:",
+                    "Luxury vehicles often include advanced safety systems, leather interiors, panoramic sunroofs, digital displays, adaptive cruise control, and high-performance engines. Buying pre-owned gives customers access to these premium features at a much more affordable price.",
+                ],
+                items: [
+                    "Lower purchase prices",
+                    "Reduced depreciation",
+                    "Premium technology features",
+                    "Luxury interiors",
+                    "Better value for money",
+                    "Access to higher-end models",
+                ],
+            },
+            {
+                heading: "Luxury SUVs Continue to Lead the Market",
+                paragraphs: [
+                    "SUVs remain one of the fastest-growing segments in the Australian automotive industry. Drivers prefer luxury SUVs because they combine spacious interiors, advanced technology, and strong road presence.",
+                    "At Elite Motor Cars Australia, buyers can explore premium SUVs suitable for families, professionals, and long-distance drivers.",
+                    "Popular luxury SUVs include:",
+                    "These vehicles provide exceptional comfort while maintaining high performance and modern styling.",
+                ],
+                items: [
+                    "BMW X5",
+                    "Audi Q7",
+                    "Mercedes-Benz GLE",
+                    "Range Rover Sport",
+                    "Lexus RX",
+                ],
+            },
+            {
+                heading: "What Makes a Premium Used Car Worth Buying",
+                paragraphs: [
+                    "When shopping for a luxury vehicle, buyers should focus on quality, reliability, and dealership reputation. Elite Motor Cars Australia carefully selects vehicles to ensure customers receive high standards in every purchase.",
+                    "Important factors include:",
+                ],
+                items: [
+                    "Vehicle History: A full service history helps buyers confirm proper maintenance and ownership records.",
+                    "Mechanical Condition: Professional inspections ensure the engine, brakes, suspension, and electronics are functioning correctly.",
+                    "Interior Quality: Luxury vehicles should maintain clean, high-end interiors with premium materials and modern technology features.",
+                    "Safety Features: Modern luxury vehicles often include lane assist, parking sensors, collision prevention systems, and adaptive cruise control.",
+                    "Dealer Trust: Working with a trusted dealership reduces risks and provides greater confidence throughout the buying process.",
+                ],
+            },
+            {
+                heading: "Advanced Technology in Modern Luxury Cars",
+                paragraphs: [
+                    "Luxury vehicles continue to lead automotive innovation. Many vehicles available through Elite Motor Cars Australia include advanced technologies designed to improve comfort, safety, and driving experience.",
+                    "These technologies may include:",
+                    "These features help drivers enjoy a more connected and convenient experience on Australian roads.",
+                ],
+                items: [
+                    "Digital instrument clusters",
+                    "Wireless smartphone connectivity",
+                    "AI-assisted driving systems",
+                    "Hybrid performance technology",
+                    "Intelligent parking assistance",
+                    "Premium infotainment systems",
+                    "Adaptive suspension systems",
+                ],
+            },
+            {
+                heading: "Why Dealership Reputation Matters",
+                paragraphs: [
+                    "Purchasing a luxury vehicle is a major investment. Buyers should always choose dealerships known for professionalism, honesty, and quality inventory.",
+                    "Elite Motor Cars Australia focuses on creating a smooth and transparent buying experience for every customer. From helping buyers select the right vehicle to providing professional assistance throughout the purchase process, the dealership aims to deliver premium service alongside premium vehicles.",
+                    "A reputable dealership helps buyers avoid hidden problems and ensures they receive genuine value from their investment.",
+                ],
+            },
+        ],
+        conclusion:
+            "The Australian luxury car market continues to expand as more buyers seek premium vehicles that combine style, comfort, performance, and advanced technology. Whether you are searching for a luxury sedan, a performance car, or a spacious SUV, Elite Motor Cars Australia offers quality pre-owned vehicles designed to suit modern lifestyles. With access to globally recognized automotive brands, carefully selected inventory, and a commitment to customer satisfaction, Elite Motor Cars Australia has become a trusted destination for drivers seeking premium vehicles at competitive prices. If you are ready to experience luxury driving with confidence, explore the latest collection of prestige vehicles at Elite Motor Cars Australia today.",
+    },
+    {
+        title: "Used Luxury Cars Australia: Premium Driving Without the Premium Price Tag",
+        description:
+            "Explore high-quality used luxury cars in Australia including BMW, Mercedes-Benz, Audi & more. Find premium pre-owned vehicles at competitive prices.",
+        image: blog7Img,
+        postedDate: "14 May 2026",
+        createdAt: "2026-05-14T11:00:00.000Z",
+        readTime: "8 min read",
+        location: "Australia",
+        metaTitle:
+            "Used Luxury Cars Australia | Premium Pre-Owned Prestige Vehicles",
+        metaDescription:
+            "Explore high-quality used luxury cars in Australia including BMW, Mercedes-Benz, Audi & more. Find premium pre-owned vehicles at competitive prices.",
+        introduction:
+            "The market for used luxury cars Australia has grown rapidly as more drivers look for premium vehicles that combine performance, comfort, technology, and value. Luxury vehicles are no longer limited to brand-new purchases. Today, buyers across Australia are choosing high-quality pre-owned prestige cars that offer world-class features at far more affordable prices. From elegant European sedans to spacious luxury SUVs, the Australian used luxury car market offers countless opportunities for drivers who want sophistication without overspending. Whether you are upgrading your daily commute, investing in a family SUV, or searching for a performance-focused vehicle, pre-owned luxury cars provide exceptional value and long-term satisfaction. At Elite Motor Cars Australia, customers can discover a premium selection of carefully inspected prestige vehicles designed to deliver reliability, comfort, and style.",
+        sections: [
+            {
+                heading: "Why Australians Are Choosing Used Luxury Cars",
+                paragraphs: [
+                    "Buying a luxury vehicle used to mean paying premium prices for a brand-new model. However, modern buyers are becoming smarter with their investments. Purchasing a used prestige vehicle allows drivers to enjoy advanced technology, premium interiors, and high-performance engineering while avoiding the steep depreciation associated with new cars.",
+                    {
+                        text: "The popularity of ",
+                        linkLabel: "used luxury cars in Australia",
+                        linkHref: "https://elitemotorcars.com.au/available-cars/",
+                        linkSuffix:
+                            " continues to increase because buyers can access premium brands and high-end features at significantly lower costs.",
+                    },
+                    "Some of the main reasons Australians choose pre-owned luxury vehicles include:",
+                    "This shift in buying behavior has made the pre-owned luxury vehicle market one of the fastest-growing automotive sectors in Australia.",
+                ],
+                items: [
+                    "Better value for money",
+                    "Lower depreciation costs",
+                    "Access to premium technology",
+                    "Luxury performance at affordable prices",
+                    "Wider range of vehicle options",
+                    "Premium comfort and safety features",
+                ],
+            },
+            {
+                heading: "Most Popular Used Luxury Car Brands in Australia",
+                paragraphs: [
+                    "Australian buyers often prefer globally recognized prestige automotive brands known for performance, reliability, and innovation.",
+                    "These premium brands dominate the used luxury cars Australia market because they consistently deliver quality, prestige, and long-term value.",
+                ],
+                items: [
+                    "Mercedes-Benz: Mercedes-Benz vehicles are famous for refined interiors, smooth driving experiences, and cutting-edge safety systems. Popular used models include the C-Class, E-Class, and GLE SUV.",
+                    "BMW: BMW combines sporty performance with executive luxury. Models like the BMW 3 Series, X5, and 5 Series remain highly popular among Australian buyers.",
+                    "Audi: Audi vehicles are known for modern styling, quattro all-wheel-drive technology, and advanced digital features. The Audi Q5 and A4 are especially popular in the used market.",
+                    "Lexus: Lexus offers exceptional reliability alongside luxury comfort. Many Australian buyers choose Lexus for its smooth hybrid performance and lower maintenance costs.",
+                    "Range Rover: Range Rover luxury SUVs provide premium comfort with strong off-road capability, making them ideal for Australian lifestyles.",
+                ],
+            },
+            {
+                heading: "Benefits of Buying a Used Luxury Car",
+                paragraphs: [
+                    "Lower Purchase Price",
+                    "One of the biggest advantages of buying pre-owned is affordability. Luxury vehicles depreciate quickly in their early years, allowing second-hand buyers to secure premium models at reduced prices.",
+                    "Advanced Features for Less",
+                    "Used luxury cars often include features such as:",
+                    "Buyers can enjoy these premium upgrades without paying new-car prices.",
+                    "Reduced Depreciation",
+                    "New vehicles lose a significant portion of their value within the first few years. Purchasing used helps buyers avoid the largest depreciation hit.",
+                    "Greater Vehicle Variety",
+                    "The pre-owned luxury market offers access to discontinued models, upgraded trims, and performance packages that may no longer be available brand new.",
+                ],
+                items: [
+                    "Leather upholstery",
+                    "Panoramic sunroofs",
+                    "Adaptive cruise control",
+                    "Digital displays",
+                    "Premium sound systems",
+                    "Heated and ventilated seats",
+                    "Advanced driver assistance systems",
+                ],
+            },
+            {
+                heading: "Luxury SUVs Are Dominating the Australian Market",
+                paragraphs: [
+                    "Luxury SUVs continue to lead demand across Australia due to their versatility, comfort, and elevated driving position. Families, professionals, and long-distance drivers prefer SUVs for their practicality and spacious interiors.",
+                    "Popular used luxury SUVs include:",
+                    "These vehicles combine premium styling with advanced safety features, making them ideal for Australian roads and lifestyles.",
+                    "The increasing demand for SUVs has become a major trend in the used luxury cars Australia industry.",
+                ],
+                items: [
+                    "BMW X5",
+                    "Audi Q7",
+                    "Mercedes-Benz GLE",
+                    "Lexus RX",
+                    "Range Rover Sport",
+                ],
+            },
+            {
+                heading: "What to Check Before Buying a Used Luxury Car",
+                paragraphs: [
+                    "Purchasing a luxury vehicle requires careful inspection and research. Buyers should always focus on quality, reliability, and dealership reputation.",
+                ],
+                items: [
+                    "Vehicle History: A complete service history helps confirm that the vehicle has been properly maintained.",
+                    "Mechanical Inspection: Professional inspections ensure the engine, transmission, suspension, and electronics are functioning correctly.",
+                    "Interior and Exterior Condition: Luxury vehicles should maintain high cosmetic standards, including clean interiors and well-maintained bodywork.",
+                    "Technology Features: Check that infotainment systems, driver assistance features, and digital functions are operating properly.",
+                    "Dealer Reputation: Working with a trusted luxury car dealership helps ensure transparency and peace of mind throughout the purchase process.",
+                ],
+            },
+            {
+                heading: "The Importance of Buying from a Trusted Dealer",
+                paragraphs: [
+                    "A reputable dealership provides confidence when purchasing a used prestige vehicle. Trusted dealers carefully inspect vehicles before offering them for sale and provide accurate vehicle information to buyers.",
+                    "At Elite Motor Cars Australia, customers benefit from:",
+                    "Choosing a trusted dealer helps buyers avoid unnecessary risks while ensuring they receive long-term value from their investment.",
+                ],
+                items: [
+                    "Premium quality vehicles",
+                    "Carefully selected luxury inventory",
+                    "Competitive pricing",
+                    "Professional customer support",
+                    "Reliable vehicle history information",
+                    "A smooth buying experience",
+                ],
+            },
+            {
+                heading: "Luxury Cars and Modern Technology",
+                paragraphs: [
+                    "Modern luxury vehicles continue to set new standards for automotive technology. Many used prestige cars now include advanced systems that were once available only in brand-new models.",
+                    "These technologies include:",
+                    "These features improve safety, comfort, and overall driving convenience for Australian drivers.",
+                ],
+                items: [
+                    "Wireless smartphone connectivity",
+                    "Digital instrument clusters",
+                    "Adaptive suspension systems",
+                    "Collision prevention systems",
+                    "Lane departure warning",
+                    "Hybrid engine technology",
+                    "Intelligent parking assistance",
+                ],
+            },
+        ],
+        conclusion: {
+            text: "The demand for used luxury cars Australia continues to grow as buyers seek premium quality, advanced technology, and outstanding value. Pre-owned prestige vehicles allow drivers to experience world-class comfort and performance without paying the high cost of a brand-new luxury car. Whether you are searching for a refined sedan, a sporty coupe, or a spacious luxury SUV, the Australian market offers exceptional opportunities for buyers who value both sophistication and affordability. By choosing a trusted dealership like ",
+            linkLabel: "Elite Motor Cars Australia",
+            linkHref: "https://elitemotorcars.com.au/",
+            linkSuffix:
+                ", drivers can enjoy confidence, quality, and a premium automotive experience tailored to their lifestyle.",
+        },
+    },
+    {
+        title: "Luxury Cars Australia: Finding Premium Performance & Prestige on the Road",
+        description:
+            "Explore the world of luxury cars in Australia with premium sedans, SUVs, and performance vehicles. Discover trusted pre-owned luxury cars at Elite Motor Cars.",
+        image: blog6Img,
+        postedDate: "14 May 2026",
+        createdAt: "2026-05-14T10:00:00.000Z",
+        readTime: "8 min read",
+        location: "Australia",
+        metaTitle:
+            "Luxury Cars Australia | Premium Prestige Vehicles at Elite Motor Cars",
+        metaDescription:
+            "Explore the world of luxury cars in Australia with premium sedans, SUVs, and performance vehicles. Discover trusted pre-owned luxury cars at Elite Motor Cars.",
+        introduction:
+            "The demand for luxury cars Australia continues to grow as drivers seek the perfect combination of performance, comfort, technology, and prestige. From elegant European sedans to high-performance SUVs, luxury vehicles have become more than just transportation. They represent lifestyle, status, and driving excellence. Whether you are searching for a sophisticated daily driver, a family-friendly luxury SUV, or a powerful performance car, Australia’s luxury car market offers an incredible range of premium options. Buyers today are increasingly turning toward high-quality pre-owned luxury vehicles that provide exceptional value without compromising on style or innovation. At Elite Motor Cars Australia, customers can explore a carefully selected range of premium vehicles designed to meet the highest standards of quality, comfort, and reliability.",
+        sections: [
+            {
+                heading: "Why Luxury Cars Are Popular in Australia",
+                paragraphs: [
+                    "Australia’s automotive market has seen a major shift toward premium and prestige vehicles over the past decade. Drivers are no longer focused only on affordability. They also value advanced technology, superior safety features, refined interiors, and strong performance.",
+                    "Modern luxury cars in Australia deliver a complete driving experience through features such as:",
+                    "Luxury vehicles are also highly versatile. Whether navigating busy city streets, coastal highways, or long-distance road trips, premium cars provide comfort and confidence on every journey.",
+                ],
+                items: [
+                    "Advanced driver assistance systems",
+                    "Premium leather interiors",
+                    "Intelligent infotainment technology",
+                    "Turbocharged and hybrid performance engines",
+                    "Enhanced fuel efficiency",
+                    "Superior ride comfort",
+                    "State-of-the-art safety systems",
+                ],
+            },
+            {
+                heading: "Popular Luxury Car Brands in Australia",
+                paragraphs: [
+                    "Australian buyers have a strong preference for globally recognized prestige automotive brands. Some of the most sought-after luxury vehicles include:",
+                    "These brands dominate the Australian luxury car market because they deliver long-term value, prestige, and exceptional engineering.",
+                ],
+                items: [
+                    "Mercedes-Benz: Known for elegance, innovation, and comfort, Mercedes-Benz vehicles offer a premium driving experience with cutting-edge technology and refined interiors.",
+                    "BMW: BMW combines luxury with sporty performance. Their sedans and SUVs are popular among drivers who want responsive handling and modern styling.",
+                    "Audi: Audi vehicles are admired for their sleek design, quattro all-wheel-drive technology, and advanced digital features.",
+                    "Lexus: Lexus has become increasingly popular for reliability, hybrid efficiency, and premium craftsmanship.",
+                    "Range Rover: Luxury SUVs from Range Rover provide outstanding off-road capability while maintaining sophistication and comfort.",
+                ],
+            },
+            {
+                heading: "Benefits of Buying Pre-Owned Luxury Cars",
+                paragraphs: [
+                    "Many Australian buyers now prefer pre-owned prestige vehicles due to the excellent value they offer. A used luxury car allows drivers to experience premium quality at a more affordable price compared to purchasing brand-new models.",
+                    "Lower Depreciation",
+                    "New luxury vehicles often experience rapid depreciation in the first few years. Buying pre-owned helps customers avoid the biggest drop in value.",
+                    "Premium Features at Better Prices",
+                    "Pre-owned luxury vehicles often include advanced technology, leather seating, panoramic sunroofs, premium audio systems, and driver-assistance features at significantly reduced prices.",
+                    "Wider Selection",
+                    "The pre-owned market gives buyers access to multiple models, trims, and performance packages that may no longer be available.",
+                    "Luxury Performance Without Compromise",
+                    "Buying used allows customers to access high-performance vehicles that may have originally been outside their budget.",
+                    "At Elite Motor Cars, every vehicle is selected carefully to ensure customers receive quality, reliability, and premium condition.",
+                ],
+            },
+            {
+                heading: "Choosing the Right Luxury Vehicle",
+                paragraphs: [
+                    "Selecting the ideal luxury vehicle depends on lifestyle, driving needs, and personal preferences. Here are some important factors buyers should consider:",
+                ],
+                items: [
+                    "Sedan or SUV: Luxury sedans are ideal for smooth city driving, executive travel, and fuel efficiency. SUVs provide extra space, comfort, and versatility for families and road trips.",
+                    "Performance requirements: Some drivers prioritize acceleration and sporty handling, while others focus on comfort and quiet driving experiences.",
+                    "Technology features: Modern luxury vehicles offer advanced digital dashboards, smartphone integration, adaptive cruise control, and parking assistance systems.",
+                    "Fuel efficiency: Hybrid and fuel-efficient luxury cars are becoming increasingly popular in Australia as drivers seek lower running costs without sacrificing performance.",
+                    "Maintenance history: For pre-owned vehicles, a complete service history and professional inspection are essential for long-term reliability.",
+                ],
+            },
+            {
+                heading: "The Rise of Luxury SUVs in Australia",
+                paragraphs: [
+                    "Luxury SUVs have become one of the fastest-growing vehicle segments across Australia. Drivers appreciate their elevated seating position, spacious interiors, and powerful road presence.",
+                    "Popular luxury SUVs include:",
+                    {
+                        text: "These vehicles combine practicality with premium styling and cutting-edge safety features, making them ideal for both families and professionals. The growing popularity of SUVs has significantly transformed the ",
+                        linkLabel: "luxury cars Australia",
+                        linkHref: "https://elitemotorcars.com.au/available-cars/",
+                        linkSuffix:
+                            " market, with many buyers now prioritizing versatility alongside prestige.",
+                    },
+                ],
+                items: [
+                    "BMW X5",
+                    "Mercedes-Benz GLE",
+                    "Audi Q7",
+                    "Range Rover Sport",
+                    "Lexus RX",
+                ],
+            },
+            {
+                heading: "Why Buy from a Trusted Luxury Car Dealer",
+                paragraphs: [
+                    "Purchasing a prestige vehicle requires confidence and trust. Reputable dealerships provide transparency, quality assurance, and professional customer service throughout the buying process.",
+                    "A trusted luxury dealership offers:",
+                    "At Elite Motor Cars Australia, customers can expect a premium buying experience tailored to their needs and preferences.",
+                ],
+                items: [
+                    "Carefully inspected vehicles",
+                    "Verified service history",
+                    "Competitive finance solutions",
+                    "Professional guidance",
+                    "Flexible vehicle options",
+                    "Customer-focused support",
+                ],
+            },
+            {
+                heading: "Luxury Cars and Modern Technology",
+                paragraphs: [
+                    "Luxury automotive brands continue to lead innovation in the Australian market. Many premium vehicles now include:",
+                    "These advancements improve both convenience and driving safety while enhancing the overall ownership experience.",
+                ],
+                items: [
+                    "Digital instrument clusters",
+                    "AI-powered driving systems",
+                    "Wireless smartphone connectivity",
+                    "Adaptive suspension systems",
+                    "Autonomous safety technologies",
+                    "Hybrid and electric performance options",
+                ],
+            },
+        ],
+        conclusion: {
+            text: "The world of luxury cars Australia offers drivers an unmatched combination of prestige, innovation, comfort, and performance. Whether you prefer a refined European sedan, a powerful SUV, or a sporty performance vehicle, the Australian luxury car market provides exceptional opportunities for buyers seeking premium quality. Choosing a trusted dealership is essential when investing in a luxury vehicle. With a strong selection of premium pre-owned vehicles and a commitment to customer satisfaction, ",
+            linkLabel: "Elite Motor Cars Australia",
+            linkHref: "https://elitemotorcars.com.au/",
+            linkSuffix:
+                " helps drivers experience luxury with confidence and style. If you are ready to upgrade your driving experience, explore the latest premium vehicles and discover the perfect luxury car for your lifestyle today.",
+        },
+    },
     {
         title: "A Complete Guide to Car Import Services Across Australia",
         description:
