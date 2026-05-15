@@ -67,7 +67,7 @@ export const blogs: BlogPost[] = [
                     {
                         text: "Modern car buyers are more informed than ever before. They want transparency, reliability, and access to premium automotive brands, all of which are priorities at ",
                         linkLabel: "Elite Motor Cars Australia",
-                        linkHref: "https://elitemotorcars.com.au?utm_source=chatgpt.com",
+                        linkHref: "https://elitemotorcars.com.au/",
                         linkSuffix: ".",
                     },
                 ],
